@@ -26,6 +26,16 @@ T = {
         "reset_filters_btn": "🚀 Apply YC recommended filters",
         "filters_recommended_caption": "YC's recommended defaults: risk ≤ 25%, fatigue ≤ 7.5, save ≥ 35%, aircraft ≥ 4, prime_deal + acceptable_economy",
 
+        # User preference filters (soft: prefer but don't hard-exclude)
+        "user_prefs_header": "### 🎯 Travel companion's preferences",
+        "excluded_carriers": "❌ Avoid these carriers (warning, not blocking)",
+        "excluded_carriers_help": "Carrier codes to flag (e.g., LH = Lufthansa, BA = British Airways). Will show warning icon on cards.",
+        "preferred_aircraft": "✈️ Preferred aircraft types (priority boost)",
+        "preferred_aircraft_help": "Aircraft types to boost in ranking (e.g., A380, A350, B787). Top 3 may reorder.",
+        "tag_excluded": "⚠ Excluded by you",
+        "tag_preferred": "✈ Preferred aircraft",
+        "tag_codeshare": "⚠ Codeshare",
+
         # KPI
         "kpi_top_pick": "🏆 Top pick",
         "kpi_saved_suffix": "saved",
@@ -162,6 +172,16 @@ T = {
         "max_risk_help": "連接失敗概率上限（預設 25%）",
         "reset_filters_btn": "🚀 套用 YC 推薦過濾器",
         "filters_recommended_caption": "YC 推薦預設值：風險 ≤ 25%、疲勞 ≤ 7.5、省幅 ≥ 35%、機型 ≥ 4，允許 prime_deal + acceptable_economy",
+
+        # 用戶偏好 filter（soft：標籤警告，不硬性排除）
+        "user_prefs_header": "### 🎯 旅伴偏好",
+        "excluded_carriers": "❌ 避開這些航空（警告，不硬性排除）",
+        "excluded_carriers_help": "要標記的航空代碼（例如 LH = 漢莎、BA = 英航）。卡片會顯示警告圖示。",
+        "preferred_aircraft": "✈️ 偏好機型（排序優先）",
+        "preferred_aircraft_help": "要優先排序的機型（例如 A380、A350、B787）。Top 3 可能會重排。",
+        "tag_excluded": "⚠ 你想避開",
+        "tag_preferred": "✈ 偏好機型",
+        "tag_codeshare": "⚠ 代碼共享",
 
         # KPI
         "kpi_top_pick": "🏆 首選",

@@ -220,6 +220,8 @@ with st.sidebar:
         st.session_state["_min_savings_widget"] = 35
         st.session_state["_min_aircraft_widget"] = 4
         st.session_state["_verdict_filter_widget"] = ["prime_deal", "acceptable_economy"]
+        st.session_state["_excluded_carriers_widget"] = ["LH", "BA", "AF", "KL"]
+        st.session_state["_preferred_aircraft_widget"] = ["A380", "A350-900", "B787-9"]
         st.rerun()
     st.caption(t(L, "filters_recommended_caption"))
 
@@ -260,6 +262,23 @@ with st.sidebar:
         key="_verdict_filter_widget",
     )
 
+    # Travel companion's preferences (soft: warning + priority boost, not hard exclusion)
+    st.markdown(t(L, "user_prefs_header"))
+    excluded_carriers = st.multiselect(
+        t(L, "excluded_carriers"),
+        options=["LH", "BA", "AF", "KL", "MH", "EK", "QR", "EY", "TK", "SQ", "KE", "OZ", "JL", "NH"],
+        default=st.session_state.get("_excluded_carriers_widget", ["LH", "BA", "AF", "KL"]),
+        key="_excluded_carriers_widget",
+        help=t(L, "excluded_carriers_help"),
+    )
+    preferred_aircraft = st.multiselect(
+        t(L, "preferred_aircraft"),
+        options=["A380", "A350-900", "A350-1000", "B787-9", "B787-10", "B777-300ER"],
+        default=st.session_state.get("_preferred_aircraft_widget", ["A380", "A350-900", "B787-9"]),
+        key="_preferred_aircraft_widget",
+        help=t(L, "preferred_aircraft_help"),
+    )
+
     st.markdown("---")
     st.markdown(t(L, "yc_original_filters"))
     st.json(filters)
@@ -290,12 +309,37 @@ df_survived = df_survived[
     (df_survived["routing_verdict"].isin(verdict_filter))
 ]
 
+# Compute user-preference score:
+#   - boost if all segments use preferred aircraft (+100 to fat_sort key)
+#   - penalty if any segment uses excluded carrier (+10 to fat_sort key)
+def _pref_score(opt_id: str) -> float:
+    opt = opt_by_id_sort.get(opt_id, {})
+    score = 0.0
+    segs = opt.get("segments", [])
+    if segs and preferred_aircraft:
+        # If ANY long-haul segment uses preferred aircraft, boost
+        long_haul_seg = segs[1] if len(segs) >= 2 else segs[0]
+        ac = long_haul_seg.get("aircraft_type", "")
+        if any(ac.startswith(p) for p in preferred_aircraft):
+            score -= 1.0  # lower = better (sorted asc)
+    if segs and excluded_carriers:
+        for s in segs:
+            op = s.get("operating_carrier", "")
+            mkt = s.get("carrier", "")
+            if op in excluded_carriers or mkt in excluded_carriers:
+                score += 1.0  # higher = worse
+    return score
+
+opt_by_id_sort = {o["id"]: o for o in all_evaluated}
+df_survived["_pref_score"] = df_survived["id"].map(_pref_score)
+
 # Sort by verdict priority then fatigue then risk then price
 verdict_priority = {"prime_deal": 0, "acceptable_economy": 1, "avoid_exhausting": 2}
 df_survived = df_survived.sort_values(
-    by=["routing_verdict", "fatigue", "risk", "total_cost_twd"],
+    by=["routing_verdict", "fatigue", "risk", "total_cost_twd", "_pref_score"],
     key=lambda col: col.map(lambda v: verdict_priority.get(v, 9)) if col.name == "routing_verdict" else col,
 )
+df_survived = df_survived.drop(columns=["_pref_score"])
 
 
 # ----------------------------------------------------------------------
@@ -503,6 +547,33 @@ with tab_top3:
 
                 st.markdown(f"### {medal} {verdict_color} {row['id']}")
                 st.caption(row["label"])
+
+                # Travel companion preference tags
+                opt_for_tags = opt_by_id.get(row["id"], {})
+                tags = []
+                # Check excluded carriers
+                for seg in opt_for_tags.get("segments", []):
+                    op = seg.get("operating_carrier", "")
+                    mkt = seg.get("carrier", "")
+                    if (op and op in excluded_carriers) or (mkt and mkt in excluded_carriers):
+                        tags.append(t(L, "tag_excluded"))
+                        break
+                # Check preferred aircraft (long-haul segment)
+                segs = opt_for_tags.get("segments", [])
+                if segs and preferred_aircraft:
+                    long_haul_seg = segs[1] if len(segs) >= 2 else segs[0]
+                    ac = long_haul_seg.get("aircraft_type", "")
+                    if any(ac.startswith(p) for p in preferred_aircraft):
+                        tags.append(t(L, "tag_preferred"))
+                # Check codeshare on any segment
+                for seg in opt_for_tags.get("segments", []):
+                    op = seg.get("operating_carrier", "")
+                    mkt = seg.get("carrier", "")
+                    if op and mkt and op.upper() != mkt.upper():
+                        tags.append(t(L, "tag_codeshare"))
+                        break
+                if tags:
+                    st.caption(" · ".join(tags))
 
                 st.metric(
                     t(L, "metrics_total_cost"),
