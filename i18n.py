@@ -5,9 +5,9 @@ T = {
         # Page meta
         "page_title": "YC's Flight Deal Dashboard",
         "sidebar_title": "YC's Flight Deal Dashboard",
-        "sidebar_caption": "Asia outer-port → Middle East → Spain",
+        "sidebar_caption": "Asia outer-port (KUL/CGK/BKK/ICN) → Middle East → Spain",
         "title": "✈️ YC's Outer-Port Flight Deal Dashboard",
-        "subtitle": "**KUL · CGK · BKK → Middle East → Spain (MAD/BCN)** · All business class",
+        "subtitle": "**KUL · CGK · BKK · ICN → Middle East → Spain (MAD/BCN)** · All business class",
 
         # Sidebar
         "lang_label": "🌐 Language",
@@ -129,9 +129,9 @@ T = {
         # Page meta
         "page_title": "YC 機票比價看板",
         "sidebar_title": "YC 機票比價看板",
-        "sidebar_caption": "亞洲外站 → 中東轉機 → 西班牙",
+        "sidebar_caption": "亞洲外站 (KUL/CGK/BKK/ICN) → 中東轉機 → 西班牙",
         "title": "✈️ YC 外站機票比價看板",
-        "subtitle": "**KUL · CGK · BKK → 中東轉機 → 西班牙 (MAD/BCN)** · 全商務艙",
+        "subtitle": "**KUL · CGK · BKK · ICN → 中東轉機 → 西班牙 (MAD/BCN)** · 全商務艙",
 
         # Sidebar
         "lang_label": "🌐 語言",

@@ -204,7 +204,18 @@ df_survived = df_survived.sort_values(
 # KPI row
 # ----------------------------------------------------------------------
 st.title(t(L, "title"))
-st.markdown(t(L, "subtitle"))
+
+# Dynamic subtitle built from current data (so adding ICN updates automatically)
+# Identify unique outer ports in the data; sort for a stable label
+ports = sorted(set(df_all["outer_port"].dropna())) if not df_all.empty else ["KUL", "CGK", "BKK"]
+ports_label = " · ".join(ports)
+
+route_arrow_en = "→"
+route_arrow_zh = "→"
+if L == "zh":
+    st.markdown(f"**{ports_label} {route_arrow_zh} 中東轉機 {route_arrow_zh} 西班牙 (MAD/BCN)** · 全商務艙")
+else:
+    st.markdown(f"**{ports_label} {route_arrow_en} Middle East {route_arrow_en} Spain (MAD/BCN)** · All business class")
 
 if df_survived.empty:
     st.warning(t(L, "no_data_warning"))
