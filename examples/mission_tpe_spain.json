@@ -1,0 +1,26 @@
+{
+  "mission_id": "tpe_spain_april_2027",
+  "origin": ["TPE"],
+  "destination": ["MAD", "BCN"],
+  "departure_date": "2027-04-15",
+  "return_date": "2027-04-25",
+
+  "cabin": "economy",
+
+  "preferences": {
+    "avoid_red_eye": true,
+    "avoid_excessive_fatigue": true,
+    "prefer_star_alliance": false,
+    "allow_outer_port": true,
+    "allow_positioning_flight": true,
+    "allow_multi_ticket": true,
+    "avoid_excluded_carriers": ["LH", "BA", "AF", "KL"],
+    "preferred_aircraft_families": ["A380", "A350", "B787"]
+  },
+
+  "constraints": {
+    "max_stops": 2,
+    "max_total_duration_hours": 30,
+    "max_candidates": 80
+  }
+}
