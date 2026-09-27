@@ -17,7 +17,7 @@ import streamlit as st
 sys_path = Path(__file__).parent
 import sys
 sys.path.insert(0, str(sys_path))
-from i18n import get as t, SEASONAL_DATA, DESTINATION_BEST_TIME
+from i18n import get as t, SEASONAL_DATA, DESTINATION_BEST_TIME, aircraft_comfort_score
 from layout_detector import LAYOUT_LABELS, layout_options, is_likely_mobile
 
 
@@ -324,13 +324,14 @@ else:
 # ----------------------------------------------------------------------
 # Tabs
 # ----------------------------------------------------------------------
-tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_summary = st.tabs([
+tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_aircraft, tab_summary = st.tabs([
     t(L, "tab_overview"),
     t(L, "tab_top3"),
     t(L, "tab_compare"),
     t(L, "tab_routes"),
     t(L, "tab_all"),
     t(L, "tab_calendar"),
+    t(L, "tab_aircraft"),
     t(L, "tab_summary"),
 ])
 
@@ -664,6 +665,56 @@ with tab_cal:
     st.markdown("---")
     st.markdown(f"### 💡 {t(L, 'cal_pro_tips_header')}")
     st.markdown(t(L, "cal_pro_tips_body"))
+
+
+# === TAB: Aircraft info ===
+with tab_aircraft:
+    st.markdown(f"### ✈️ {t(L, 'acf_title')}")
+    st.caption(t(L, "acf_caption"))
+
+    if "aircraft_data" not in st.session_state or not st.session_state["aircraft_data"]:
+        # Build fresh from current options
+        rows = []
+        for opt in df_all.to_dict(orient="records") if not df_all.empty else []:
+            for seg in opt.get("segments", []):
+                ac = seg.get("aircraft_type", "—")
+                op = seg.get("operating_carrier", "—")
+                mkt = seg.get("carrier", "—")
+                age = seg.get("aircraft_age_yr", None)
+                product = seg.get("cabin_product", "")
+                codeshare = op.upper() != mkt.upper() if op and mkt else False
+                comfort = aircraft_comfort_score(ac)
+                rows.append({
+                    "候選ID": opt.get("id", "—"),
+                    "航段": f"{seg.get('from','?')}→{seg.get('to','?')}",
+                    "銷售航空": mkt,
+                    "執飛航空": op,
+                    "機型": ac,
+                    "機齡(年)": age if age is not None else "—",
+                    "艙等": product or "—",
+                    "代碼共享": "⚠️ 是" if codeshare else "否",
+                    "舒適度★": comfort,
+                })
+        st.session_state["aircraft_data"] = rows
+
+    df_aircraft = pd.DataFrame(st.session_state["aircraft_data"])
+    if not df_aircraft.empty:
+        st.dataframe(
+            df_aircraft.sort_values(by="舒適度★", ascending=False),
+            use_container_width=True,
+            hide_index=True,
+        )
+
+        # Warnings section
+        codeshares = df_aircraft[df_aircraft["代碼共享"] == "⚠️ 是"]
+        if not codeshares.empty:
+            st.markdown(f"#### ⚠️ {t(L, 'acf_codeshare_warning_header')}")
+            st.caption(t(L, "acf_codeshare_caption"))
+            st.dataframe(codeshares, use_container_width=True, hide_index=True)
+
+        # Show comfort legend
+        st.markdown(f"#### 📖 {t(L, 'acf_legend_header')}")
+        st.markdown(t(L, "acf_legend_body"))
 
 
 # === TAB 6: Markdown summary ===

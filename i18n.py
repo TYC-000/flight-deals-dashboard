@@ -376,3 +376,119 @@ for lang in ["en", "zh"]:
     if lang in T:
         for key, val in LAYOUT_I18N[lang].items():
             T[lang][key] = val
+
+# Aircraft comfort knowledge base
+# comfort_score: 1-5 ★ (5 = modern latest-gen business, 1 = old/codeshare cramped)
+# Common types across our airlines:
+AIRCRAFT_DATA = {
+    "A380":       {"comfort": 5, "notes_zh": "雙層巨無霸 安靜穩，長途首選",            "notes_en": "Double-decker, quiet, stable"},
+    "A350-900":   {"comfort": 5, "notes_zh": "最新世代、安靜、氣壓調整舒適",         "notes_en": "Latest gen, quiet, smooth pressure"},
+    "A350-1000":  {"comfort": 5, "notes_zh": "最現代遠程機",                       "notes_en": "Modern longest-range"},
+    "B787-9":     {"comfort": 5, "notes_zh": "最現代、濕度佳、窗戶電子變色",       "notes_en": "Modern, better humidity, e-dim windows"},
+    "B787-10":    {"comfort": 5, "notes_zh": "B787 加大版",                       "notes_en": "B787 stretched"},
+    "B777-300ER": {"comfort": 4, "notes_zh": "穩定但舊款座椅",                     "notes_en": "Stable but older seats"},
+    "B777-200ER": {"comfort": 3, "notes_zh": "老舊 777-200，商務艙椅距窄",         "notes_en": "Older 777-200, cramped J cabin"},
+    "B777-200LR": {"comfort": 3, "notes_zh": "長程版，但常被指定為舊艙等",          "notes_en": "Long-range, often old config"},
+    "A330-300":   {"comfort": 4, "notes_zh": "中距離適合、機型尚新",               "notes_en": "Mid-range, decent age"},
+    "A330-200":   {"comfort": 3, "notes_zh": "舊款 A330",                         "notes_en": "Older A330"},
+    "B737":       {"comfort": 3, "notes_zh": "短程經濟/商務窄體",                  "notes_en": "Short-range narrowbody"},
+    "A321neo":    {"comfort": 4, "notes_zh": "中型新世代",                        "notes_en": "Modern mid-size"},
+    "A320neo":    {"comfort": 4, "notes_zh": "中型新世代",                        "notes_en": "Modern mid-size"},
+    "B737-MAX":   {"comfort": 4, "notes_zh": "B737 改進版",                       "notes_en": "Improved B737"},
+}
+
+# Codeshare warnings — flights sold by one carrier but flown by another
+# (very common in Asia outer-port; e.g., QR sells but MH operates)
+COMMON_CODESHARES = {
+    "MH": "Malaysia Airlines",
+    "TR": "Scoot (Low-cost subsidiary of SQ)",
+    "7C": "Jeju Air (Korean low-cost)",
+    "TW": "Tigerair Taiwan",
+    "KE": "Korean Air",
+    "OZ": "Asiana",
+    "JL": "Japan Airlines",
+    "NH": "ANA",
+    "EK": "Emirates (self)",
+    "QR": "Qatar Airways (self)",
+    "SQ": "Singapore Airlines (self)",
+    "TK": "Turkish Airlines (self)",
+    "LH": "Lufthansa (self)",
+    "BA": "British Airways",
+    "AF": "Air France",
+    "KL": "KLM",
+}
+
+
+# Fleet age — typical for the airline (years on average)
+# Used when individual segment age is unknown
+AIRLINE_AVG_FLEET_AGE = {
+    "Emirates": 7.5,         # EK 機隊較新
+    "Qatar Airways": 8.0,    # QR
+    "Etihad": 9.0,           # EY
+    "Turkish Airlines": 9.5, # TK
+    "Lufthansa": 13.0,       # LH 機隊偏舊
+    "Finnair": 11.0,
+    "Singapore Airlines": 7.0,  # SQ 最先進
+    "Korean Air": 11.5,
+    "Asiana": 12.0,
+    "Malaysia Airlines": 13.0,  # MH 機隊偏舊
+}
+
+
+def aircraft_comfort_score(aircraft_type: str) -> int:
+    """Look up comfort score (1-5). Falls back to 3 if unknown."""
+    if not aircraft_type:
+        return 3
+    if aircraft_type in AIRCRAFT_DATA:
+        return AIRCRAFT_DATA[aircraft_type]["comfort"]
+    # Try prefix match (e.g. "A350-900ER" → "A350-900")
+    for prefix in sorted(AIRCRAFT_DATA.keys(), key=len, reverse=True):
+        if aircraft_type.startswith(prefix):
+            return AIRCRAFT_DATA[prefix]["comfort"]
+    return 3
+
+
+def is_codeshare(marketing: str, operating: str) -> bool:
+    """True if operating carrier differs from marketing carrier."""
+    if not marketing or not operating:
+        return False
+    return marketing.upper() != operating.upper()
+
+# Aircraft tab translations
+AIRCRAFT_I18N = {
+    "en": {
+        "tab_aircraft": "✈️ Aircraft info",
+        "acf_title": "Aircraft comfort & codeshare alerts",
+        "acf_caption": "Long-haul business-class seat comfort and operator consistency",
+        "acf_codeshare_warning_header": "Codeshare warnings",
+        "acf_codeshare_caption": "Flights below have a different operator than the marketing carrier — cabin product may differ",
+        "acf_legend_header": "Comfort legend",
+        "acf_legend_body": (
+            "- ★5 = A380, A350, B787 (latest gen, ideal)\n"
+            "- ★4 = B777-300ER (modern)\n"
+            "- ★3 = Older 777-200, A330 (mid-age)\n"
+            "- ★2 = codeshare with downgrade risk\n"
+            "- ★1 = old config / very cramped"
+        ),
+    },
+    "zh": {
+        "tab_aircraft": "✈️ 機型資訊",
+        "acf_title": "機型舒適度 & 代碼共享警訊",
+        "acf_caption": "長程商務艙座椅舒適度與執飛一致性",
+        "acf_codeshare_warning_header": "代碼共享警告",
+        "acf_codeshare_caption": "以下航班執飛航空與銷售航空不同 — 艙等與服務可能有差異",
+        "acf_legend_header": "舒適度圖例",
+        "acf_legend_body": (
+            "- ★5 = A380、A350、B787（最新世代，推薦）\n"
+            "- ★4 = B777-300ER（現代機型）\n"
+            "- ★3 = 老款 777-200、A330（中等年齡）\n"
+            "- ★2 = 代碼共享，艙等可能降級\n"
+            "- ★1 = 老舊艙 / 非常擁擠"
+        ),
+    },
+}
+
+for lang in ["en", "zh"]:
+    if lang in T:
+        for key, val in AIRCRAFT_I18N[lang].items():
+            T[lang][key] = val

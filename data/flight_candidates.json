@@ -33,7 +33,10 @@
         "depart": "2026-11-12T08:00",
         "arrive": "2026-11-12T12:30",
         "cabin": "Y",
-        "duration_min": 270
+        "duration_min": 270,
+        "operating_carrier": "D7",
+        "aircraft_type": "A330-300",
+        "aircraft_age_yr": 11
       },
       {
         "carrier": "EK",
@@ -43,7 +46,10 @@
         "depart": "2026-11-12T19:30",
         "arrive": "2026-11-12T23:30",
         "cabin": "J",
-        "duration_min": 420
+        "duration_min": 420,
+        "operating_carrier": "EK",
+        "aircraft_type": "A380",
+        "aircraft_age_yr": 6
       },
       {
         "carrier": "EK",
@@ -53,7 +59,10 @@
         "depart": "2026-11-13T03:25",
         "arrive": "2026-11-13T08:30",
         "cabin": "J",
-        "duration_min": 510
+        "duration_min": 510,
+        "operating_carrier": "EK",
+        "aircraft_type": "A380",
+        "aircraft_age_yr": 5
       }
     ],
     "same_pnr": false,
@@ -98,7 +107,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T11:30",
         "cabin": "Y",
-        "duration_min": 270
+        "duration_min": 270,
+        "operating_carrier": "D7",
+        "aircraft_type": "A330-300",
+        "aircraft_age_yr": 11
       },
       {
         "carrier": "QR",
@@ -108,7 +120,10 @@
         "depart": "2026-11-12T20:30",
         "arrive": "2026-11-12T23:55",
         "cabin": "J",
-        "duration_min": 445
+        "duration_min": 445,
+        "operating_carrier": "QR",
+        "aircraft_type": "B777-300ER",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "QR",
@@ -118,7 +133,11 @@
         "depart": "2026-11-13T01:50",
         "arrive": "2026-11-13T07:30",
         "cabin": "J",
-        "duration_min": 460
+        "duration_min": 460,
+        "operating_carrier": "QR",
+        "aircraft_type": "B777-200LR",
+        "aircraft_age_yr": 7,
+        "cabin_product": "Qsuite"
       }
     ],
     "same_pnr": false,
@@ -163,7 +182,10 @@
         "depart": "2026-11-12T09:00",
         "arrive": "2026-11-12T14:20",
         "cabin": "Y",
-        "duration_min": 320
+        "duration_min": 320,
+        "operating_carrier": "QZ",
+        "aircraft_type": "A320",
+        "aircraft_age_yr": 9
       },
       {
         "carrier": "EY",
@@ -173,7 +195,10 @@
         "depart": "2026-11-12T21:30",
         "arrive": "2026-11-13T03:20",
         "cabin": "J",
-        "duration_min": 420
+        "duration_min": 420,
+        "operating_carrier": "EY",
+        "aircraft_type": "B787-9",
+        "aircraft_age_yr": 5
       },
       {
         "carrier": "EY",
@@ -183,7 +208,10 @@
         "depart": "2026-11-13T08:30",
         "arrive": "2026-11-13T14:00",
         "cabin": "J",
-        "duration_min": 510
+        "duration_min": 510,
+        "operating_carrier": "EY",
+        "aircraft_type": "A350-1000",
+        "aircraft_age_yr": 4
       }
     ],
     "same_pnr": false,
@@ -228,7 +256,10 @@
         "depart": "2026-11-12T09:00",
         "arrive": "2026-11-12T14:20",
         "cabin": "Y",
-        "duration_min": 320
+        "duration_min": 320,
+        "operating_carrier": "QZ",
+        "aircraft_type": "A320",
+        "aircraft_age_yr": 9
       },
       {
         "carrier": "QR",
@@ -238,7 +269,11 @@
         "depart": "2026-11-12T22:45",
         "arrive": "2026-11-13T05:15",
         "cabin": "J",
-        "duration_min": 420
+        "duration_min": 420,
+        "operating_carrier": "QR",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 3,
+        "cabin_product": "Qsuite"
       },
       {
         "carrier": "QR",
@@ -248,7 +283,11 @@
         "depart": "2026-11-13T08:30",
         "arrive": "2026-11-13T13:55",
         "cabin": "J",
-        "duration_min": 505
+        "duration_min": 505,
+        "operating_carrier": "QR",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 2,
+        "cabin_product": "Qsuite"
       }
     ],
     "same_pnr": false,
@@ -293,7 +332,10 @@
         "depart": "2026-11-12T09:00",
         "arrive": "2026-11-12T14:20",
         "cabin": "Y",
-        "duration_min": 320
+        "duration_min": 320,
+        "operating_carrier": "QZ",
+        "aircraft_type": "A320",
+        "aircraft_age_yr": 9
       },
       {
         "carrier": "EY",
@@ -303,7 +345,10 @@
         "depart": "2026-11-12T21:30",
         "arrive": "2026-11-13T03:20",
         "cabin": "J",
-        "duration_min": 420
+        "duration_min": 420,
+        "operating_carrier": "EY",
+        "aircraft_type": "B787-9",
+        "aircraft_age_yr": 5
       },
       {
         "carrier": "EY",
@@ -313,7 +358,10 @@
         "depart": "2026-11-13T08:35",
         "arrive": "2026-11-13T14:05",
         "cabin": "J",
-        "duration_min": 510
+        "duration_min": 510,
+        "operating_carrier": "EY",
+        "aircraft_type": "B787-9",
+        "aircraft_age_yr": 6
       }
     ],
     "same_pnr": false,
@@ -358,7 +406,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:00",
         "cabin": "Y",
-        "duration_min": 240
+        "duration_min": 240,
+        "operating_carrier": "FD",
+        "aircraft_type": "A320",
+        "aircraft_age_yr": 10
       },
       {
         "carrier": "EK",
@@ -368,7 +419,10 @@
         "depart": "2026-11-12T20:30",
         "arrive": "2026-11-13T00:55",
         "cabin": "J",
-        "duration_min": 385
+        "duration_min": 385,
+        "operating_carrier": "EK",
+        "aircraft_type": "B777-300ER",
+        "aircraft_age_yr": 7
       },
       {
         "carrier": "EK",
@@ -378,7 +432,10 @@
         "depart": "2026-11-13T03:45",
         "arrive": "2026-11-13T08:30",
         "cabin": "J",
-        "duration_min": 525
+        "duration_min": 525,
+        "operating_carrier": "EK",
+        "aircraft_type": "A380",
+        "aircraft_age_yr": 4
       }
     ],
     "same_pnr": false,
@@ -627,7 +684,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:45",
         "cabin": "Y",
-        "duration_min": 165
+        "duration_min": 165,
+        "operating_carrier": "TW",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 3
       },
       {
         "carrier": "KE",
@@ -637,7 +697,10 @@
         "depart": "2026-11-12T18:30",
         "arrive": "2026-11-13T07:30",
         "cabin": "J",
-        "duration_min": 780
+        "duration_min": 780,
+        "operating_carrier": "KE",
+        "aircraft_type": "B777-300ER",
+        "aircraft_age_yr": 9
       }
     ],
     "same_pnr": false,
@@ -682,7 +745,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:45",
         "cabin": "Y",
-        "duration_min": 165
+        "duration_min": 165,
+        "operating_carrier": "TW",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 3
       },
       {
         "carrier": "KE",
@@ -692,7 +758,10 @@
         "depart": "2026-11-12T17:30",
         "arrive": "2026-11-12T23:45",
         "cabin": "J",
-        "duration_min": 750
+        "duration_min": 750,
+        "operating_carrier": "KE",
+        "aircraft_type": "B777-300ER",
+        "aircraft_age_yr": 11
       },
       {
         "carrier": "KL",
@@ -702,7 +771,10 @@
         "depart": "2026-11-13T07:30",
         "arrive": "2026-11-13T09:50",
         "cabin": "J",
-        "duration_min": 140
+        "duration_min": 140,
+        "operating_carrier": "KL",
+        "aircraft_type": "B737",
+        "aircraft_age_yr": 10
       }
     ],
     "same_pnr": true,
@@ -747,7 +819,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:45",
         "cabin": "Y",
-        "duration_min": 165
+        "duration_min": 165,
+        "operating_carrier": "TW",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 3
       },
       {
         "carrier": "QR",
@@ -757,7 +832,11 @@
         "depart": "2026-11-12T21:30",
         "arrive": "2026-11-13T02:30",
         "cabin": "J",
-        "duration_min": 540
+        "duration_min": 540,
+        "operating_carrier": "QR",
+        "aircraft_type": "B777-200LR",
+        "aircraft_age_yr": 8,
+        "cabin_product": "Qsuite"
       },
       {
         "carrier": "QR",
@@ -812,7 +891,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:45",
         "cabin": "Y",
-        "duration_min": 165
+        "duration_min": 165,
+        "operating_carrier": "TW",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 3
       },
       {
         "carrier": "QR",
@@ -822,7 +904,11 @@
         "depart": "2026-11-12T19:55",
         "arrive": "2026-11-13T00:50",
         "cabin": "J",
-        "duration_min": 535
+        "duration_min": 535,
+        "operating_carrier": "QR",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 3,
+        "cabin_product": "Qsuite"
       },
       {
         "carrier": "QR",
@@ -877,7 +963,10 @@
         "depart": "2026-11-12T07:00",
         "arrive": "2026-11-12T10:45",
         "cabin": "Y",
-        "duration_min": 165
+        "duration_min": 165,
+        "operating_carrier": "TW",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 3
       },
       {
         "carrier": "EK",
@@ -887,7 +976,10 @@
         "depart": "2026-11-12T20:30",
         "arrive": "2026-11-13T01:55",
         "cabin": "J",
-        "duration_min": 510
+        "duration_min": 510,
+        "operating_carrier": "EK",
+        "aircraft_type": "B777-300ER",
+        "aircraft_age_yr": 6
       },
       {
         "carrier": "EK",
@@ -897,7 +989,10 @@
         "depart": "2026-11-13T03:25",
         "arrive": "2026-11-13T08:30",
         "cabin": "J",
-        "duration_min": 510
+        "duration_min": 510,
+        "operating_carrier": "EK",
+        "aircraft_type": "A380",
+        "aircraft_age_yr": 5
       }
     ],
     "same_pnr": true,
@@ -942,7 +1037,10 @@
         "depart": "2026-11-12T07:30",
         "arrive": "2026-11-12T12:00",
         "cabin": "Y",
-        "duration_min": 250
+        "duration_min": 250,
+        "operating_carrier": "TR",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "SQ",
@@ -952,7 +1050,10 @@
         "depart": "2026-11-12T23:30",
         "arrive": "2026-11-13T05:50",
         "cabin": "J",
-        "duration_min": 750
+        "duration_min": 750,
+        "operating_carrier": "SQ",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "SQ",
@@ -962,7 +1063,10 @@
         "depart": "2026-11-13T08:30",
         "arrive": "2026-11-13T09:45",
         "cabin": "J",
-        "duration_min": 75
+        "duration_min": 75,
+        "operating_carrier": "SQ",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 5
       }
     ],
     "same_pnr": true,
@@ -1009,7 +1113,10 @@
         "depart": "2026-11-12T07:30",
         "arrive": "2026-11-12T12:00",
         "cabin": "Y",
-        "duration_min": 250
+        "duration_min": 250,
+        "operating_carrier": "TR",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "TK",
@@ -1019,7 +1126,10 @@
         "depart": "2026-11-12T20:25",
         "arrive": "2026-11-13T01:50",
         "cabin": "J",
-        "duration_min": 645
+        "duration_min": 645,
+        "operating_carrier": "TK",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 6
       },
       {
         "carrier": "TK",
@@ -1029,7 +1139,10 @@
         "depart": "2026-11-13T07:35",
         "arrive": "2026-11-13T09:40",
         "cabin": "J",
-        "duration_min": 185
+        "duration_min": 185,
+        "operating_carrier": "TK",
+        "aircraft_type": "A321neo",
+        "aircraft_age_yr": 4
       }
     ],
     "same_pnr": true,
@@ -1076,7 +1189,10 @@
         "depart": "2026-11-12T07:30",
         "arrive": "2026-11-12T12:00",
         "cabin": "Y",
-        "duration_min": 250
+        "duration_min": 250,
+        "operating_carrier": "TR",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "TK",
@@ -1086,7 +1202,10 @@
         "depart": "2026-11-12T20:25",
         "arrive": "2026-11-13T01:50",
         "cabin": "J",
-        "duration_min": 645
+        "duration_min": 645,
+        "operating_carrier": "TK",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 6
       },
       {
         "carrier": "TK",
@@ -1096,7 +1215,10 @@
         "depart": "2026-11-13T06:55",
         "arrive": "2026-11-13T08:00",
         "cabin": "J",
-        "duration_min": 185
+        "duration_min": 185,
+        "operating_carrier": "TK",
+        "aircraft_type": "A321neo",
+        "aircraft_age_yr": 3
       }
     ],
     "same_pnr": true,
@@ -1143,7 +1265,10 @@
         "depart": "2026-11-12T07:30",
         "arrive": "2026-11-12T12:00",
         "cabin": "Y",
-        "duration_min": 250
+        "duration_min": 250,
+        "operating_carrier": "TR",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "LH",
@@ -1153,7 +1278,10 @@
         "depart": "2026-11-12T22:00",
         "arrive": "2026-11-13T05:50",
         "cabin": "J",
-        "duration_min": 770
+        "duration_min": 770,
+        "operating_carrier": "LH",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 7
       }
     ],
     "same_pnr": false,
@@ -1200,7 +1328,10 @@
         "depart": "2026-11-12T07:30",
         "arrive": "2026-11-12T12:00",
         "cabin": "Y",
-        "duration_min": 250
+        "duration_min": 250,
+        "operating_carrier": "TR",
+        "aircraft_type": "A320neo",
+        "aircraft_age_yr": 4
       },
       {
         "carrier": "AY",
@@ -1210,7 +1341,10 @@
         "depart": "2026-11-12T19:55",
         "arrive": "2026-11-13T05:25",
         "cabin": "J",
-        "duration_min": 720
+        "duration_min": 720,
+        "operating_carrier": "AY",
+        "aircraft_type": "A350-900",
+        "aircraft_age_yr": 5
       },
       {
         "carrier": "AY",
@@ -1220,7 +1354,10 @@
         "depart": "2026-11-13T08:00",
         "arrive": "2026-11-13T10:35",
         "cabin": "J",
-        "duration_min": 155
+        "duration_min": 155,
+        "operating_carrier": "AY",
+        "aircraft_type": "A321neo",
+        "aircraft_age_yr": 4
       }
     ],
     "same_pnr": true,
