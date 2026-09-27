@@ -1,0 +1,68 @@
+{
+  "schema": "fx_provider_v1_2_2",
+  "trace_at": "2026-09-27T18:13:26.255870+00:00",
+  "fx_provider": "frankfurter",
+  "smoke_test": true,
+  "summary": {
+    "conversions_requested": 1,
+    "conversions_succeeded": 1,
+    "conversions_failed": 0,
+    "identity_conversions": 0,
+    "conversions_skipped_for_budget": 0,
+    "search_budget_used": 1,
+    "search_budget_max": 2,
+    "verification_status_distribution": {
+      "LIVE": 1
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 1
+    },
+    "failure_kind_distribution": {}
+  },
+  "evidences": [
+    {
+      "base": "USD",
+      "quote": "TWD",
+      "provider": "frankfurter",
+      "provider_mode": "live",
+      "verification_status": "LIVE",
+      "fx_evidence": {
+        "schema_version": "v1.2.2",
+        "provider": "frankfurter",
+        "provider_mode": "live",
+        "base_currency": "USD",
+        "quote_currency": "TWD",
+        "rate": 31.774,
+        "rate_date": "2026-09-27",
+        "rate_source_type": "latest/current",
+        "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "freshness_label": "latest/current",
+        "verification_status": "LIVE",
+        "source": "frankfurter",
+        "endpoint": "/v2/rate/{base}/{quote}",
+        "request_metadata": {
+          "is_historical_request": false,
+          "explicit_rate_date": null
+        },
+        "is_identity": false,
+        "supports_no_credential": true,
+        "warnings": [],
+        "failure_reason": null,
+        "failure_kind": null,
+        "provenance": {
+          "source": "frankfurter",
+          "source_type": "live",
+          "endpoint": "/v2/rate/{base}/{quote}",
+          "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+          "rate_date": "2026-09-27",
+          "verification_status": "LIVE"
+        }
+      },
+      "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+      "rate_date": "2026-09-27",
+      "rate": 31.774
+    }
+  ]
+}
