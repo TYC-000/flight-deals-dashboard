@@ -1,0 +1,3120 @@
+{
+  "version": "l4/v1",
+  "generated_at": "2026-09-28T00:00:00+00:00",
+  "A": {
+    "name": "Case A — No price difference (NOT_ARBITRAGE)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 420,
+      "comparison_currency": "EUR",
+      "delta": 0,
+      "abs_delta": 0,
+      "delta_percentage": 0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "NOT_ARBITRAGE",
+      "evidence_maturity": "OBSERVED",
+      "price_difference": 0,
+      "normalized_price_difference": 0,
+      "percentage_difference": 0,
+      "absolute_price_difference": 0,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "no price discrepancy observed"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636179+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636179+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "B": {
+    "name": "Case B — Comparable price difference (POTENTIAL_OPPORTUNITY)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -80,
+      "abs_delta": 80,
+      "delta_percentage": -16.0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "POTENTIAL_OPPORTUNITY",
+      "evidence_maturity": "SUPPORTED",
+      "price_difference": -80,
+      "normalized_price_difference": -80,
+      "percentage_difference": -16.0,
+      "absolute_price_difference": 80,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "hard comparability + price discrepancy observed",
+        "delta=-80 EUR (-16.0%)"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636353+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636353+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "C": {
+    "name": "Case C — Missing FX (REFUSED)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 480,
+        "currency": "USD",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 480,
+      "comparison_currency": "EUR",
+      "delta": -80,
+      "abs_delta": 80,
+      "delta_percentage": -16.0,
+      "fx_state": "REFUSED"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "NOT_COMPARABLE",
+      "evidence_maturity": "OBSERVED",
+      "price_difference": -80,
+      "normalized_price_difference": -60,
+      "percentage_difference": -16.0,
+      "absolute_price_difference": 80,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "USD",
+          "amount": 480
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "REFUSED",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [
+        "comparison refused"
+      ],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636401+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636401+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "D": {
+    "name": "Case D — Passenger mismatch",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 2,
+      "passenger_types": [
+        "ADT",
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 900,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "SOFT_COMPARABLE",
+      "comparison_reasons": [
+        "PASSENGER_COUNT_MISMATCH"
+      ],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 900,
+      "comparison_currency": "EUR",
+      "delta": -480,
+      "abs_delta": 480,
+      "delta_percentage": -53.3,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "NOT_COMPARABLE",
+      "evidence_maturity": "OBSERVED",
+      "price_difference": -480,
+      "normalized_price_difference": -480,
+      "percentage_difference": -53.3,
+      "absolute_price_difference": 480,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 900
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [
+        "PASSENGER_COUNT_MISMATCH"
+      ],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636438+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636438+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "E": {
+    "name": "Case E — Cabin mismatch (NOT_COMPARABLE)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "business",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 2000,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "NOT_COMPARABLE",
+      "comparison_reasons": [
+        "CABIN_MISMATCH"
+      ],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 2000,
+      "comparison_currency": "EUR",
+      "delta": -1580,
+      "abs_delta": 1580,
+      "delta_percentage": -79,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "NOT_COMPARABLE",
+      "evidence_maturity": "OBSERVED",
+      "price_difference": -1580,
+      "normalized_price_difference": -1580,
+      "percentage_difference": -79,
+      "absolute_price_difference": 1580,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 2000
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [
+        "CABIN_MISMATCH"
+      ],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636472+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636472+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "F": {
+    "name": "Case F — Multi-ticket (friction)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "multi-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 300,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "SOFT_COMPARABLE",
+      "comparison_reasons": [
+        "TICKET_STRUCTURE_MISMATCH"
+      ],
+      "refusal_reasons": [],
+      "normalized_price_a": 300,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -200,
+      "abs_delta": 200,
+      "delta_percentage": -40,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
+      "evidence_maturity": "PARTIALLY_SUPPORTED",
+      "price_difference": -200,
+      "normalized_price_difference": -200,
+      "percentage_difference": -40,
+      "absolute_price_difference": 200,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 300
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "self",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": true,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "multi-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [
+        "comparison SOFT/UNKNOWN; required evidence not yet cleared",
+        "required_for_verification: second-producer-cross-check",
+        "required_for_verification: operating-carrier-rules",
+        "required_for_verification: seats-remaining",
+        "required_for_verification: multi-passenger-parity",
+        "required_for_verification: live-fx-refresh"
+      ],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636504+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636504+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "G": {
+    "name": "Case G — Airport change (friction)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001",
+      "airport_change": true
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 480,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 480,
+      "comparison_currency": "EUR",
+      "delta": -60,
+      "abs_delta": 60,
+      "delta_percentage": -12.5,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "POTENTIAL_OPPORTUNITY",
+      "evidence_maturity": "SUPPORTED",
+      "price_difference": -60,
+      "normalized_price_difference": -60,
+      "percentage_difference": -12.5,
+      "absolute_price_difference": 60,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 480
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": true,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "hard comparability + price discrepancy observed",
+        "delta=-60 EUR (-12.5%)"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636567+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636567+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "H": {
+    "name": "Case H — Stale price",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-20T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-20T10:01:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -80,
+      "abs_delta": 80,
+      "delta_percentage": -16.0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "POTENTIAL_OPPORTUNITY",
+      "evidence_maturity": "SUPPORTED",
+      "price_difference": -80,
+      "normalized_price_difference": -80,
+      "percentage_difference": -16.0,
+      "absolute_price_difference": 80,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-20T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-20T10:01:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-20T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-20T10:01:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_EXPIRED",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 10608,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "a"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "hard comparability + price discrepancy observed",
+        "delta=-80 EUR (-16.0%)"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636601+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636601+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "I": {
+    "name": "Case I — Provider disagreement",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -80,
+      "abs_delta": 80,
+      "delta_percentage": -16.0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "POTENTIAL_OPPORTUNITY",
+      "evidence_maturity": "SUPPORTED",
+      "price_difference": -80,
+      "normalized_price_difference": -80,
+      "percentage_difference": -16.0,
+      "absolute_price_difference": 80,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "hard comparability + price discrepancy observed",
+        "delta=-80 EUR (-16.0%)"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636641+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636641+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "J": {
+    "name": "Case J — Structural opportunity (outer-port)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 350,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001",
+      "outer_port_origin": true
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "SOFT_COMPARABLE",
+      "comparison_reasons": [
+        "STRUCTURAL_DIFFERENCE"
+      ],
+      "refusal_reasons": [],
+      "normalized_price_a": 350,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -150,
+      "abs_delta": 150,
+      "delta_percentage": -30,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
+      "evidence_maturity": "PARTIALLY_SUPPORTED",
+      "price_difference": -150,
+      "normalized_price_difference": -150,
+      "percentage_difference": -30,
+      "absolute_price_difference": 150,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 350
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": true,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [
+        "comparison SOFT/UNKNOWN; required evidence not yet cleared",
+        "required_for_verification: second-producer-cross-check",
+        "required_for_verification: operating-carrier-rules",
+        "required_for_verification: seats-remaining",
+        "required_for_verification: multi-passenger-parity",
+        "required_for_verification: live-fx-refresh"
+      ],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636673+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636673+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "K": {
+    "name": "Case K — Missing baseline (INSUFFICIENT_EVIDENCE)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 420,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": null,
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": 420,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": -80,
+      "abs_delta": 80,
+      "delta_percentage": -16.0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
+      "evidence_maturity": "PARTIALLY_SUPPORTED",
+      "price_difference": -80,
+      "normalized_price_difference": -80,
+      "percentage_difference": -16.0,
+      "absolute_price_difference": 80,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 420
+        },
+        "baseline": {
+          "provider": null,
+          "provider_mode": null,
+          "retrieved_at": null,
+          "verification_status": null,
+          "currency": null,
+          "amount": null
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": null
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": null
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": null
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": null,
+          "provider_mode": null,
+          "retrieved_at": null
+        },
+        "provider_disagreement": null,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "real-time-schedule-confirmation",
+        "second-producer-cross-check",
+        "baseline-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "real-time-schedule-confirmation",
+        "second-producer-cross-check",
+        "baseline-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [],
+      "insufficient_evidence_reasons": [
+        "comparison SOFT/UNKNOWN; required evidence not yet cleared",
+        "required_for_verification: real-time-schedule-confirmation",
+        "required_for_verification: second-producer-cross-check",
+        "required_for_verification: baseline-producer-cross-check",
+        "required_for_verification: operating-carrier-rules",
+        "required_for_verification: seats-remaining",
+        "required_for_verification: multi-passenger-parity",
+        "required_for_verification: live-fx-refresh"
+      ],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636707+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636707+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  },
+  "L": {
+    "name": "Case L — Price absent (NOT_ARBITRAGE)",
+    "candidate": {
+      "candidate_id": "A",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": null,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "duffel",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "duffel"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "baseline": {
+      "candidate_id": "B",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ],
+      "ticket_structure": "single-ticket",
+      "ticket_count": 1,
+      "itinerary_identity": "TPE-MAD",
+      "baggage": {
+        "included": {
+          "checked_pieces": 1,
+          "carry_on": 1
+        },
+        "evidence_complete": true
+      },
+      "price_evidence": {
+        "total_amount": 500,
+        "currency": "EUR",
+        "retrieved_at": "2026-09-27T10:00:00+00:00",
+        "verification_status": "LIVE",
+        "provider": "kiwi",
+        "provider_mode": "live"
+      },
+      "schedule_evidence": {
+        "verification_status": "LIVE",
+        "provider": "kiwi"
+      },
+      "passenger_parity_ref": "PP-001"
+    },
+    "comparison": {
+      "comparison_id": "A::B",
+      "comparability_status": "HARD_COMPARABLE",
+      "comparison_reasons": [],
+      "refusal_reasons": [],
+      "normalized_price_a": null,
+      "normalized_price_b": 500,
+      "comparison_currency": "EUR",
+      "delta": 0,
+      "abs_delta": 0,
+      "delta_percentage": 0,
+      "fx_state": "IDENTITY"
+    },
+    "arbitrage_evidence": {
+      "schema_version": "l4/v1",
+      "arbitrage_id": "L4::A::?",
+      "candidate_id": "A",
+      "baseline_id": null,
+      "comparison_id": "A::B",
+      "arbitrage_state": "NOT_ARBITRAGE",
+      "evidence_maturity": "OBSERVED",
+      "price_difference": 0,
+      "normalized_price_difference": null,
+      "percentage_difference": 0,
+      "absolute_price_difference": 0,
+      "price_evidence_refs": {
+        "candidate": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": null
+        },
+        "baseline": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00",
+          "verification_status": "LIVE",
+          "currency": "EUR",
+          "amount": 500
+        }
+      },
+      "schedule_evidence_refs": {
+        "candidate": {
+          "verification_status": "LIVE",
+          "provider": "duffel"
+        },
+        "baseline": {
+          "verification_status": "LIVE",
+          "provider": "kiwi"
+        }
+      },
+      "fx_evidence_ref": {
+        "state": "IDENTITY",
+        "evidence_provider": null
+      },
+      "passenger_parity_ref": "PP-001",
+      "baseline_evidence_ref": null,
+      "friction_evidence": {
+        "schema_version": "v1.1.4-friction/v1",
+        "baggage": {
+          "included_pieces": 1,
+          "recheck_required": null,
+          "evidence_complete": true
+        },
+        "transfer": {
+          "type": "managed",
+          "airport_change": null,
+          "overnight_connection": null,
+          "min_connection_min": null,
+          "typical_connection_min": null,
+          "evidence_complete": true
+        },
+        "schedule_uncertainty": {
+          "is_uncertain": false,
+          "schedule_status": "UNAVAILABLE",
+          "verification_status": "UNKNOWN"
+        },
+        "cancellation_refund": {
+          "refundable": null,
+          "changeable": null,
+          "change_fee": null,
+          "refund_fee": null,
+          "evidence_complete": false
+        },
+        "positioning_risk": {
+          "has_positioning": false,
+          "separate_pnr": false,
+          "evidence_complete": true
+        },
+        "visa_transit_risk": {
+          "requires_transit_visa": null,
+          "evidence_complete": false
+        },
+        "warnings": [],
+        "unknown_fields": [
+          "cancellation_refund.refundable",
+          "cancellation_refund.changeable",
+          "visa_transit_risk.requires_transit_visa"
+        ]
+      },
+      "ticket_structure": {
+        "candidate": "single-ticket",
+        "baseline": "single-ticket"
+      },
+      "baggage": {
+        "candidate": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        },
+        "baseline": {
+          "included": {
+            "checked_pieces": 1,
+            "carry_on": 1
+          },
+          "evidence_complete": true
+        }
+      },
+      "provider_evidence": {
+        "provider_a": {
+          "provider": "duffel",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_b": {
+          "provider": "kiwi",
+          "provider_mode": "live",
+          "retrieved_at": "2026-09-27T10:00:00+00:00"
+        },
+        "provider_disagreement": true,
+        "provider_independence": "UNKNOWN",
+        "provider_independence_known": false
+      },
+      "freshness": {
+        "freshness_a_bucket": "FRESHNESS_COLD",
+        "freshness_b_bucket": "FRESHNESS_UNKNOWN",
+        "freshness_a_min": 528,
+        "freshness_b_min": -1.0,
+        "freshness_window_min": 1440,
+        "freshness_window_exceeded": null,
+        "both_fresh": false,
+        "stale_side": "b"
+      },
+      "required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "missing_required_for_verification": [
+        "second-producer-cross-check",
+        "operating-carrier-rules",
+        "seats-remaining",
+        "multi-passenger-parity",
+        "live-fx-refresh"
+      ],
+      "arbitrage_reasons": [
+        "no price discrepancy observed"
+      ],
+      "insufficient_evidence_reasons": [],
+      "refusal_reasons": [],
+      "unknown_reasons": [
+        "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+      ],
+      "rule_version": "l4/v1",
+      "rule_definition": "l4/v1",
+      "retrieved_at": "2026-09-27T18:48:45.636742+00:00",
+      "evidence_provenance": {
+        "source": "arbitrage_detection_l4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:48:45.636742+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "l4/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "arbitrage_detection_l4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null
+    }
+  }
+}
