@@ -1,0 +1,2778 @@
+{
+  "trace_at": "2026-09-27T16:41:50.859046+00:00",
+  "data_source": "OpenFlights routes.dat/airports.dat — DATABASE evidence only.",
+  "counts": {
+    "candidates_received": 80,
+    "candidates_with_schedule_evidence": 50,
+    "candidates_partial": 25,
+    "candidates_unknown": 5,
+    "segments_checked": 194,
+    "segments_found": 161,
+    "segments_missing": 33,
+    "connection_checks_performed": 114,
+    "structural_signals_detected": 198,
+    "elapsed_seconds": 0,
+    "openflights_routes_loaded": 37595,
+    "openflights_airports_loaded": 6072
+  },
+  "candidates": [
+    {
+      "candidate_id": "AUTO-multi_ticket-TPE-KUL-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        }
+      ],
+      "structural_signals": [
+        "multi_ticket",
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-multi_ticket-TPE-BKK-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        }
+      ],
+      "structural_signals": [
+        "multi_ticket",
+        "outer_port",
+        "positioning"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-multi_ticket-TPE-SIN-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        }
+      ],
+      "structural_signals": [
+        "multi_ticket",
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 1,
+      "segments_found": 0,
+      "segments_missing": 1,
+      "verification_status": "UNKNOWN",
+      "schedule_status": "UNAVAILABLE",
+      "connection_checks": [],
+      "structural_signals": [
+        "schedule_uncertain"
+      ],
+      "failure_reason": "all_segments_unknown_in_openflights"
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 1,
+      "segments_found": 0,
+      "segments_missing": 1,
+      "verification_status": "UNKNOWN",
+      "schedule_status": "UNAVAILABLE",
+      "connection_checks": [],
+      "structural_signals": [
+        "schedule_uncertain"
+      ],
+      "failure_reason": "all_segments_unknown_in_openflights"
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-FRA-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-DOH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-DXB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-AUH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 0,
+      "segments_missing": 2,
+      "verification_status": "UNKNOWN",
+      "schedule_status": "UNAVAILABLE",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "AUH",
+          "connection_airport_to": "AUH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": "all_segments_unknown_in_openflights"
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-FRA-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-DOH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-DXB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-direct_hub-TPE-AUH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 0,
+      "segments_missing": 2,
+      "verification_status": "UNKNOWN",
+      "schedule_status": "UNAVAILABLE",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "AUH",
+          "connection_airport_to": "AUH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": "all_segments_unknown_in_openflights"
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-ZRH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ZRH",
+          "connection_airport_to": "ZRH"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-VIE-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "VIE",
+          "connection_airport_to": "VIE"
+        }
+      ],
+      "structural_signals": [
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-CPH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CPH",
+          "connection_airport_to": "CPH"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-WAW-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "WAW",
+          "connection_airport_to": "WAW"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-DUB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DUB",
+          "connection_airport_to": "DUB"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-MUC-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "MUC",
+          "connection_airport_to": "MUC"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-ZRH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ZRH",
+          "connection_airport_to": "ZRH"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-VIE-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "VIE",
+          "connection_airport_to": "VIE"
+        }
+      ],
+      "structural_signals": [
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-CPH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CPH",
+          "connection_airport_to": "CPH"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-WAW-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "WAW",
+          "connection_airport_to": "WAW"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-DUB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DUB",
+          "connection_airport_to": "DUB"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-europe_entry-TPE-MUC-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "MUC",
+          "connection_airport_to": "MUC"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-CDG-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-AMS-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "AMS",
+          "connection_airport_to": "AMS"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-FCO-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FCO",
+          "connection_airport_to": "FCO"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-LIS-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "LIS",
+          "connection_airport_to": "LIS"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-CDG-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-AMS-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "AMS",
+          "connection_airport_to": "AMS"
+        }
+      ],
+      "structural_signals": [],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-FCO-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FCO",
+          "connection_airport_to": "FCO"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-major_hub-TPE-LIS-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "LIS",
+          "connection_airport_to": "LIS"
+        }
+      ],
+      "structural_signals": [
+        "schedule_uncertain",
+        "secondary_entry"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-middle_east-TPE-RUH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 0,
+      "segments_missing": 2,
+      "verification_status": "UNKNOWN",
+      "schedule_status": "UNAVAILABLE",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "RUH",
+          "connection_airport_to": "RUH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "schedule_uncertain"
+      ],
+      "failure_reason": "all_segments_unknown_in_openflights"
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        }
+      ],
+      "structural_signals": [
+        "positioning"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-FRA-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-CDG-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-FRA-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-CDG-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-ICN-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "ICN",
+          "connection_airport_to": "ICN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-FRA-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-CDG-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-FRA-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-CDG-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CDG",
+          "connection_airport_to": "CDG"
+        }
+      ],
+      "structural_signals": [
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-northeast_asia-TPE-NRT-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "NRT",
+          "connection_airport_to": "NRT"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 1,
+      "segments_missing": 1,
+      "verification_status": "MIXED(DATABASE|UNKNOWN)",
+      "schedule_status": "PARTIAL",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "schedule_uncertain"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 2,
+      "segments_found": 2,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "BKK",
+          "connection_airport_to": "BKK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "SIN",
+          "connection_airport_to": "SIN"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "IST",
+          "connection_airport_to": "IST"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CGK",
+          "connection_airport_to": "CGK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CGK",
+          "connection_airport_to": "CGK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CGK",
+          "connection_airport_to": "CGK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DOH",
+          "connection_airport_to": "DOH"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "CGK",
+          "connection_airport_to": "CGK"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "DXB",
+          "connection_airport_to": "DXB"
+        }
+      ],
+      "structural_signals": [
+        "alternative_hub",
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-positioning-TPE-KUL-FRA-MAD",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-positioning-TPE-KUL-FRA-BCN",
+      "schedule_lookup_attempted": true,
+      "schedule_source": "openflights",
+      "segments_checked": 3,
+      "segments_found": 3,
+      "segments_missing": 0,
+      "verification_status": "DATABASE",
+      "schedule_status": "SUPPORTED",
+      "connection_checks": [
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "KUL",
+          "connection_airport_to": "KUL"
+        },
+        {
+          "connection_time_min": null,
+          "overnight_connection": false,
+          "same_airport": true,
+          "airport_change": false,
+          "tight_connection": false,
+          "self_transfer": false,
+          "missing_schedule": false,
+          "missing_reason": null,
+          "connection_airport_from": "FRA",
+          "connection_airport_to": "FRA"
+        }
+      ],
+      "structural_signals": [
+        "outer_port",
+        "positioning",
+        "unusual_routing"
+      ],
+      "failure_reason": null
+    }
+  ]
+}
