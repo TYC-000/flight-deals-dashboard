@@ -24,6 +24,14 @@ from dashboard_adapter import (
     safe_in as _safe_in,
     compute_pref_score as _adapter_compute_pref_score,
 )
+from dashboard_view_model import (
+    build_view as _vm_build_view,
+    load_evidence_index as _vm_load_evidence_index,
+    load_fx_evidence_index as _vm_load_fx_evidence_index,
+    load_candidates as _vm_load_candidates,
+    UNKNOWN as _VM_UNKNOWN,
+    EVIDENCE_UNAVAILABLE as _VM_EVIDENCE_UNAVAILABLE,
+)
 
 
 def inject_layout_css(layout: str) -> None:
@@ -374,6 +382,315 @@ df_survived = df_survived.drop(columns=["_pref_score"])
 
 
 # ----------------------------------------------------------------------
+# Dashboard View Model (Dashboard Intelligence v0.2)
+# ----------------------------------------------------------------------
+# Load canonical evidence and build a per-candidate view object. This is
+# presentation-only — it does NOT modify any canonical evidence and does NOT
+# introduce any new arbitrage, ranking, or recommendation logic.
+#
+# The View Model joins evidence by candidate_id. When a candidate has no
+# match (e.g., flight_results.json has 80 candidates but the L4.1 evidence
+# files cover only 2), the corresponding *_view field is None and the UI
+# displays "Evidence unavailable" — never fabricated.
+@st.cache_data(ttl=60)
+def _load_view_model() -> dict:
+    """
+    Load all canonical evidence files and build a View Model keyed by
+    candidate_id. Returns:
+      {
+        "by_id": {candidate_id -> DashboardCandidateView.to_dict()},
+        "summary": {arbitrage_state -> count, ...},
+        "data_freshness": {"flight_results_at": ..., "evidence_files": {...}}
+      }
+    """
+    DATA = Path(__file__).parent / "data"
+    try:
+        candidates = _vm_load_candidates(DATA / "flight_results.json")
+    except Exception:
+        candidates = []
+
+    sched_idx = _vm_load_evidence_index(DATA / "schedule_evidence_v1_2_1.json")
+    price_idx = _vm_load_evidence_index(DATA / "price_evidence.json")
+    fx_idx = _vm_load_fx_evidence_index(DATA / "fx_evidence_v1_2_2.json")
+    parity_idx = _vm_load_evidence_index(DATA / "passenger_parity_evidence_v1_2_3.json")
+    base_idx = _vm_load_evidence_index(DATA / "baseline_evidence_v1_2_4.json")
+    comp_idx = _vm_load_evidence_index(DATA / "comparison_evidence_v1_2_5.json")
+    arb_idx = _vm_load_evidence_index(DATA / "arbitrage_evidence_l4.json")
+
+    by_id: dict = {}
+    summary: dict = {
+        "candidates": len(candidates),
+        "potential_opportunity": 0,
+        "insufficient_evidence": 0,
+        "not_comparable": 0,
+        "not_arbitrage": 0,
+        "refused": 0,
+        "with_evidence": 0,
+        "without_evidence": 0,
+    }
+    for c in candidates:
+        v = _vm_build_view(c, sched_idx, price_idx, fx_idx, parity_idx, base_idx, comp_idx, arb_idx)
+        cid = c.get("id")
+        if isinstance(cid, str):
+            by_id[cid] = v.to_dict()
+        # Aggregate arbitrage state counts
+        if v.arbitrage is None:
+            summary["without_evidence"] += 1
+        else:
+            summary["with_evidence"] += 1
+            st_name = v.arbitrage.arbitrage_state
+            if st_name == "POTENTIAL_OPPORTUNITY":
+                summary["potential_opportunity"] += 1
+            elif st_name == "INSUFFICIENT_EVIDENCE":
+                summary["insufficient_evidence"] += 1
+            elif st_name == "NOT_COMPARABLE":
+                summary["not_comparable"] += 1
+            elif st_name == "NOT_ARBITRAGE":
+                summary["not_arbitrage"] += 1
+            elif st_name in ("REFUSED",):
+                summary["refused"] += 1
+
+    # Data freshness audit
+    freshness = {"evidence_files": {}}
+    try:
+        if (DATA / "flight_results.json").exists():
+            fr = json.loads((DATA / "flight_results.json").read_text())
+            freshness["flight_results_at"] = fr.get("evaluated_at")
+            freshness["flight_results_candidate_count"] = len(fr.get("all_evaluated", []))
+    except Exception:
+        pass
+    for fn in ["schedule_evidence_v1_2_1.json", "price_evidence.json",
+               "fx_evidence_v1_2_2.json", "passenger_parity_evidence_v1_2_3.json",
+               "baseline_evidence_v1_2_4.json", "comparison_evidence_v1_2_5.json",
+               "arbitrage_evidence_l4.json"]:
+        p = DATA / fn
+        if p.exists():
+            try:
+                d = json.loads(p.read_text())
+                freshness["evidence_files"][fn] = {
+                    "present": True,
+                    "retrieved_at": d.get("trace_at") or d.get("retrieved_at"),
+                    "evidence_count": d.get("n_evidences") or len(d.get("evidences", [])),
+                }
+            except Exception:
+                freshness["evidence_files"][fn] = {"present": True, "parse_error": True}
+
+    return {"by_id": by_id, "summary": summary, "data_freshness": freshness}
+
+
+_VIEW_MODEL = _load_view_model()
+_VM_BY_ID = _VIEW_MODEL["by_id"]
+_VM_SUMMARY = _VIEW_MODEL["summary"]
+_VM_FRESHNESS = _VIEW_MODEL["data_freshness"]
+
+
+# ----------------------------------------------------------------------
+# Evidence-aware presentation helpers (Dashboard Intelligence v0.2)
+# ----------------------------------------------------------------------
+def _vm_render_state_badge(state: str) -> str:
+    """Return a neutral visual badge for an evidence state. NO ranking."""
+    color_map = {
+        "POTENTIAL_OPPORTUNITY": "🟡",
+        "INSUFFICIENT_EVIDENCE": "⚪",
+        "NOT_COMPARABLE": "⚪",
+        "NOT_ARBITRAGE": "⚪",
+        "EVIDENCE_VERIFIED": "🟢",
+        "VERIFIED_OPPORTUNITY": "🟢",
+    }
+    icon = color_map.get(state, "⚪")
+    return f"{icon} {state}"
+
+
+def _vm_render_verification_badge(vs: str) -> str:
+    """Return a neutral visual badge for a 5-tier verification status."""
+    color_map = {
+        "LIVE": "🟢",
+        "VERIFIED": "🟢",
+        "DATABASE": "🟡",
+        "ESTIMATED": "🟡",
+        "UNKNOWN": "⚪",
+    }
+    icon = color_map.get(vs, "⚪")
+    return f"{icon} {vs}"
+
+
+def _vm_render_evidence_card(view: dict) -> None:
+    """Render a single candidate's evidence card using st.expander."""
+    cid = view.get("identity", {}).get("candidate_id") or "—"
+    label = view.get("identity", {}).get("label") or "—"
+    route = view.get("identity", {}).get("route") or []
+    st.markdown(f"**{label}**")
+    st.caption(f"candidate_id: `{cid}` · route: {' → '.join(route) if route else '—'}")
+
+    # Discovery
+    discovery = view.get("discovery") or {}
+    st.markdown("**Discovery**")
+    c1, c2 = st.columns(2)
+    with c1:
+        st.write("discovery_reason:", discovery.get("discovery_reason") or _VM_UNKNOWN)
+        st.write("candidate_family:", discovery.get("candidate_family") or _VM_UNKNOWN)
+    with c2:
+        st.write("route_structure:", discovery.get("route_structure") or _VM_UNKNOWN)
+
+    # Schedule evidence
+    sched = view.get("schedule")
+    st.markdown("**Schedule evidence**")
+    if sched:
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            st.write("verification:", _vm_render_verification_badge(sched.get("verification_status") or _VM_UNKNOWN))
+        with c2:
+            st.write("provider:", sched.get("provider") or _VM_UNKNOWN)
+        with c3:
+            st.write("provider_mode:", sched.get("provider_mode") or _VM_UNKNOWN)
+        st.write("schedule_status:", sched.get("schedule_status") or _VM_UNKNOWN)
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Price evidence
+    st.markdown("**Price evidence**")
+    price = view.get("price") or {}
+    providers = price.get("providers") or []
+    if providers:
+        for p in providers:
+            c1, c2, c3, c4 = st.columns(4)
+            with c1:
+                st.write("provider:", p.get("provider") or _VM_UNKNOWN)
+            with c2:
+                st.write("mode:", p.get("provider_mode") or _VM_UNKNOWN)
+            with c3:
+                st.write("currency:", p.get("currency") or _VM_UNKNOWN)
+            with c4:
+                vs = p.get("verification_status") or _VM_UNKNOWN
+                st.write("verification:", _vm_render_verification_badge(vs))
+            # Pricing details
+            price_val = p.get("price")
+            st.write(f"  price: {price_val if price_val is not None else _VM_UNKNOWN}")
+            retrieved = p.get("retrieved_at")
+            if retrieved:
+                st.caption(f"  retrieved_at: {retrieved}")
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Legacy fields — clearly labeled
+    legacy_twd = price.get("legacy_total_cost_twd")
+    legacy_pct = price.get("legacy_savings_pct")
+    if legacy_twd is not None or legacy_pct is not None:
+        with st.expander("Legacy / derived fields (informational only)"):
+            st.caption(
+                "These fields are pre-computed at candidate-generation time "
+                "and have no associated live provider or freshness. They are "
+                "shown for backward compatibility only — they do NOT represent "
+                "a live provider price."
+            )
+            if legacy_twd is not None:
+                st.write(f"legacy_total_cost_twd: {legacy_twd:,}")
+            if legacy_pct is not None:
+                st.write(f"legacy_savings_pct: {legacy_pct}")
+
+    # FX evidence
+    st.markdown("**FX evidence**")
+    fx = view.get("fx")
+    if fx:
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            st.write("state:", fx.get("fx_state") or _VM_UNKNOWN)
+        with c2:
+            base = fx.get("base_currency") or "?"
+            quote = fx.get("quote_currency") or "?"
+            st.write(f"pair: {base}→{quote}")
+        with c3:
+            rate = fx.get("rate")
+            st.write(f"rate: {rate if rate is not None else _VM_UNKNOWN}")
+        vs = fx.get("verification_status") or _VM_UNKNOWN
+        st.write("verification:", _vm_render_verification_badge(vs))
+        st.write(f"provider: {fx.get('provider') or _VM_UNKNOWN}")
+        # Honest warning if FX is REFUSED/UNKNOWN
+        if fx.get("fx_state") in ("REFUSED", "UNKNOWN"):
+            st.caption("⚠ FX-converted prices cannot be displayed as 'real' when FX state is REFUSED or UNKNOWN.")
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Baseline
+    st.markdown("**Baseline**")
+    base = view.get("baseline")
+    if base:
+        c1, c2, c3 = st.columns(3)
+        with c1:
+            st.write("class:", base.get("baseline_class") or _VM_UNKNOWN)
+        with c2:
+            st.write("candidate_id:", base.get("baseline_candidate_id") or _VM_UNKNOWN)
+        with c3:
+            st.write("verification:", _vm_render_verification_badge(base.get("verification_status") or _VM_UNKNOWN))
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Comparison
+    st.markdown("**Comparison**")
+    comp = view.get("comparison")
+    if comp:
+        c1, c2 = st.columns(2)
+        with c1:
+            st.write("comparability:", comp.get("comparability_status") or _VM_UNKNOWN)
+            st.write("fx_state:", comp.get("fx_state") or _VM_UNKNOWN)
+        with c2:
+            delta = comp.get("delta")
+            st.write(f"delta: {delta if delta is not None else _VM_UNKNOWN}")
+            d_pct = comp.get("delta_percentage")
+            st.write(f"delta_pct: {d_pct if d_pct is not None else _VM_UNKNOWN}")
+        if comp.get("refusal_reasons"):
+            st.caption(f"refusal_reasons: {comp['refusal_reasons']}")
+        if comp.get("provider_disagreement") is True:
+            st.caption("⚠ Provider disagreement (recorded as evidence, not as an error)")
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Arbitrage state
+    st.markdown("**Arbitrage state (L4)**")
+    arb = view.get("arbitrage")
+    if arb:
+        st.write("state:", _vm_render_state_badge(arb.get("arbitrage_state") or _VM_UNKNOWN))
+        st.write(f"evidence_maturity: {arb.get('evidence_maturity') or _VM_UNKNOWN}")
+        if arb.get("arbitrage_reasons"):
+            st.caption(f"reasons: {arb['arbitrage_reasons']}")
+        if arb.get("insufficient_evidence_reasons"):
+            st.caption(f"insufficient: {arb['insufficient_evidence_reasons']}")
+        if arb.get("required_for_verification"):
+            with st.expander("What remains unverified for VERIFIED"):
+                for r in arb["required_for_verification"]:
+                    st.write(f"• {r}")
+    else:
+        st.write(f"⚠ {_VM_EVIDENCE_UNAVAILABLE}")
+
+    # Friction
+    st.markdown("**Friction**")
+    f = view.get("friction") or {}
+    items = []
+    for k in ["airport_change", "self_transfer", "multi_ticket", "positioning",
+              "outer_port", "long_connection", "schedule_uncertainty",
+              "baggage_uncertainty", "recheck_required", "overnight", "tight_connection"]:
+        v = f.get(k)
+        if v is True:
+            items.append(f"⚠ {k}")
+        elif v is False:
+            items.append(f"✓ no {k}")
+        elif v is None:
+            items.append(f"? {k} unknown")
+    if items:
+        for it in items:
+            st.write(it)
+    else:
+        st.write(_VM_UNKNOWN)
+
+    # Missing / unverified
+    st.markdown("**Missing / unverified**")
+    missing = view.get("missing") or {}
+    for k, v in missing.items():
+        if v:
+            st.write(f"⚠ {k}")
+
+
+# ----------------------------------------------------------------------
 # KPI row
 # ----------------------------------------------------------------------
 st.title(t(L, "title"))
@@ -431,7 +748,7 @@ else:
 # ----------------------------------------------------------------------
 # Tabs
 # ----------------------------------------------------------------------
-tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_aircraft, tab_summary = st.tabs([
+tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_aircraft, tab_summary, tab_evidence = st.tabs([
     t(L, "tab_overview"),
     t(L, "tab_top3"),
     t(L, "tab_compare"),
@@ -440,11 +757,36 @@ tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_aircraft, tab_s
     t(L, "tab_calendar"),
     t(L, "tab_aircraft"),
     t(L, "tab_summary"),
+    "Evidence (L0–L4.1)",
 ])
 
 
 # === TAB 1: Overview charts ===
 with tab_kpi:
+    # Dashboard Intelligence v0.2: L4 evidence state counts (descriptive, not ranking).
+    # These are honest counts of canonical L4 arbitrage states. They are NOT
+    # recommendations and they do NOT imply which candidate is "best".
+    s = _VM_SUMMARY
+    if s.get("candidates", 0) > 0:
+        st.markdown("##### L4 evidence overview")
+        c1, c2, c3, c4, c5, c6 = st.columns(6)
+        with c1:
+            st.metric("Candidates", s.get("candidates", 0))
+        with c2:
+            st.metric("With evidence", s.get("with_evidence", 0))
+        with c3:
+            st.metric("Potential", s.get("potential_opportunity", 0))
+        with c4:
+            st.metric("Insufficient", s.get("insufficient_evidence", 0))
+        with c5:
+            st.metric("Not comparable", s.get("not_comparable", 0))
+        with c6:
+            st.metric("No evidence", s.get("without_evidence", 0))
+        st.caption(
+            "Descriptive state counts, NOT rankings. See the 'Evidence (L0–L4.1)' tab for details."
+        )
+        st.markdown("---")
+
     if df_survived.empty:
         st.info(t(L, "no_data_scatter"))
     else:
@@ -886,6 +1228,90 @@ with tab_summary:
         raw_data = json.load(f)
     with st.expander(t(L, "raw_json_expander"), expanded=False):
         st.json(raw_data)
+
+
+# === TAB 9: Evidence (L0–L4.1) — Dashboard Intelligence v0.2 ===
+# Honest display of the existing L0–L4.1 evidence architecture.
+# No ranking, no scoring, no recommendation. Counts only.
+with tab_evidence:
+    st.markdown("### Evidence (L0–L4.1)")
+    st.caption(
+        "Each row shows canonical L0–L4.1 evidence for one candidate, "
+        "as recorded in `data/*.json`. Where evidence does not exist, "
+        "the panel displays 'Evidence unavailable' — never fabricated."
+    )
+
+    # Honest data-freshness banner
+    fr_at = _VM_FRESHNESS.get("flight_results_at", "n/a")
+    fr_count = _VM_FRESHNESS.get("flight_results_candidate_count", "?")
+    st.markdown("#### Data freshness")
+    st.write(f"flight_results.json evaluated_at: **{fr_at}** · candidates: **{fr_count}**")
+    with st.expander("Per-evidence-file timestamps (canonical)"):
+        for fn, info in _VM_FRESHNESS.get("evidence_files", {}).items():
+            st.write(f"• `{fn}` — present={info.get('present')}, "
+                     f"retrieved_at={info.get('retrieved_at', 'n/a')}, "
+                     f"count={info.get('evidence_count', 'n/a')}")
+
+    # Overview state counts (L4 — descriptive, not ranking)
+    st.markdown("#### Overview")
+    s = _VM_SUMMARY
+    c1, c2, c3, c4, c5, c6 = st.columns(6)
+    with c1:
+        st.metric("Candidates", s.get("candidates", 0))
+    with c2:
+        st.metric("With evidence", s.get("with_evidence", 0))
+    with c3:
+        st.metric("Potential", s.get("potential_opportunity", 0))
+    with c4:
+        st.metric("Insufficient", s.get("insufficient_evidence", 0))
+    with c5:
+        st.metric("Not comparable", s.get("not_comparable", 0))
+    with c6:
+        st.metric("No evidence", s.get("without_evidence", 0))
+    st.caption(
+        "These are descriptive state counts, NOT rankings. "
+        "A 'Potential' count of 0 means no candidate currently has the "
+        "evidence layers required to qualify as POTENTIAL_OPPORTUNITY."
+    )
+
+    # Honest data-coverage note
+    if s.get("without_evidence", 0) > 0:
+        st.info(
+            f"{s['without_evidence']} of {s['candidates']} candidates have "
+            "no L4.1 evidence join. This is the canonical interface mismatch: "
+            "flight_results.json was generated by v0.2.1 Jev, while the L4.1 "
+            "evidence files cover only 2 candidates from a different mission "
+            "(`M-L41-INTEGRATION`). Per spec STEP 30, the View Model does not "
+            "fabricate evidence for unmatched candidates."
+        )
+
+    # Per-candidate evidence cards
+    st.markdown("#### Per-candidate evidence cards")
+    st.caption(
+        "Click a candidate below to see its full evidence card. "
+        "When the L4.1 evidence layers are missing for a candidate, the "
+        "panel displays 'Evidence unavailable' rather than guessing."
+    )
+    # Build candidate list (use the same survived DataFrame the rest of the
+    # dashboard uses, so we honor sidebar filters for context).
+    cand_list = df_survived["id"].tolist() if "id" in df_survived.columns else []
+    if not cand_list:
+        cand_list = list(_VM_BY_ID.keys())
+    # Show first N candidates to keep the page manageable
+    MAX_CARDS = 30
+    shown = 0
+    for cid in cand_list:
+        if shown >= MAX_CARDS:
+            st.caption(f"… and {len(cand_list) - MAX_CARDS} more candidates not shown "
+                       f"(use the search/filter sidebar to narrow down).")
+            break
+        view = _VM_BY_ID.get(cid)
+        if view is None:
+            continue
+        label = view.get("identity", {}).get("label") or cid
+        with st.expander(f"{label}  ({cid})"):
+            _vm_render_evidence_card(view)
+        shown += 1
 
 st.markdown("---")
 st.caption(t(L, "footer_caption", n=len(all_evaluated)))
