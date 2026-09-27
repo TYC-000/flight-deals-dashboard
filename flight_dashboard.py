@@ -478,6 +478,28 @@ with tab_top3:
                     t(L, "top3_savings_pct", pct=row['savings_pct']),
                 )
 
+                # Aircraft info: show which long-haul aircraft is used, comfort rating, codeshare warnings
+                opt_aircraft_lines = []
+                for seg in opt_by_id.get(row["id"], {}).get("segments", []):
+                    op = seg.get("operating_carrier", "—")
+                    mkt = seg.get("carrier", "—")
+                    ac = seg.get("aircraft_type", "—")
+                    age = seg.get("aircraft_age_yr")
+                    product = seg.get("cabin_product", "")
+                    cs = "⚠️" if op.upper() != mkt.upper() else ""
+                    comfort = aircraft_comfort_score(ac)
+                    age_part = f"{age}年" if age is not None else "—"
+                    prod_part = f" ({product})" if product else ""
+                    opt_aircraft_lines.append(
+                        f"  - {seg.get('from','?')}→{seg.get('to','?')}: "
+                        f"`{mkt}`{' ' + cs + ' ' + op if cs else ''}  · "
+                        f"**{ac}** ({age_part}) ★{comfort}{prod_part}"
+                    )
+                aircraft_summary = "\n".join(opt_aircraft_lines) if opt_aircraft_lines else "—"
+
+                acf = opt_by_id.get(row["id"], {}).get("evaluation", {}).get("aircraft_comfort", "—")
+                downgrade = "⚠downgraded" if opt_by_id.get(row["id"], {}).get("evaluation", {}).get("aircraft_auto_downgrade") else ""
+
                 st.markdown(f"""
 - **{t(L, 'metrics_origin')}**: {row['origin']}
 - **{t(L, 'metrics_outer')}**: {row['outer_port']}
@@ -487,9 +509,13 @@ with tab_top3:
 - **{t(L, 'metrics_verdict')}**: {row['routing_verdict']}
 - **{t(L, 'metrics_risk')}**: {row['risk']:.0%}
 - **{t(L, 'metrics_fatigue')}**: {row['fatigue']:.1f} / 10
+- **{t(L, 'metrics_aircraft_score')}**: {acf} / 10 {downgrade}
 - **{t(L, 'metrics_elapsed')}**: {row['total_elapsed_h']}h
 - **{t(L, 'metrics_same_pnr')}**: {row['same_pnr']}
 - **{t(L, 'metrics_segments')}**: {row['n_segments']}
+
+**{t(L, 'metrics_aircraft_breakdown')}**:
+{aircraft_summary}
 """)
 
                 with st.expander(t(L, "metrics_notes"), expanded=False):

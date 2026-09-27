@@ -470,6 +470,8 @@ AIRCRAFT_I18N = {
             "- ★2 = codeshare with downgrade risk\n"
             "- ★1 = old config / very cramped"
         ),
+        "metrics_aircraft_score": "Aircraft comfort (1-10)",
+        "metrics_aircraft_breakdown": "Per-segment aircraft details",
     },
     "zh": {
         "tab_aircraft": "✈️ 機型資訊",
@@ -485,6 +487,8 @@ AIRCRAFT_I18N = {
             "- ★2 = 代碼共享，艙等可能降級\n"
             "- ★1 = 老舊艙 / 非常擁擠"
         ),
+        "metrics_aircraft_score": "機型舒適度 (1-10)",
+        "metrics_aircraft_breakdown": "每段航班的機型細節",
     },
 }
 
