@@ -1,0 +1,33 @@
+{
+  "schema": "live_schedule_provider_v1_2_1",
+  "trace_at": "2026-09-27T17:58:52.020515+00:00",
+  "provider": "duffel",
+  "smoke_test": false,
+  "summary": {
+    "candidates_received": 5,
+    "candidates_looked_up": 1,
+    "candidates_with_live_evidence": 0,
+    "candidates_with_database_evidence": 0,
+    "candidates_failed": 1,
+    "candidates_skipped_for_budget": 4,
+    "schedule_budget_used": 1,
+    "schedule_budget_max": 1,
+    "verification_status_distribution": {},
+    "schedule_status_distribution": {},
+    "failure_kind_distribution": {
+      "PROVIDER_ERROR": 1
+    }
+  },
+  "evidences": [
+    {
+      "candidate_id": "TEST-A",
+      "provider": "duffel",
+      "provider_mode": "live",
+      "schedule_evidence": null,
+      "retrieved_at": "2026-09-27T17:58:51.578516+00:00",
+      "failure_kind": "PROVIDER_ERROR",
+      "failure_reason": "http 401",
+      "freshness": null
+    }
+  ]
+}
