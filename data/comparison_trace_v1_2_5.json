@@ -1,0 +1,14 @@
+{
+  "trace_at": "2026-09-27T18:35:12.345399+00:00",
+  "candidate_a_path": "/Users/aib/.hermes/cache/scratch/flight-dashboard/_cmp_a.json",
+  "candidate_b_path": "/Users/aib/.hermes/cache/scratch/flight-dashboard/_cmp_b.json",
+  "comparison_id": "A::B",
+  "comparability_status": "SOFT_COMPARABLE",
+  "refusal_reasons": [],
+  "comparison_reasons": [],
+  "soft_observations": [
+    "SOFT_PASSENGER_PARITY_UNKNOWN",
+    "PP_PASSENGER_COUNT_UNKNOWN",
+    "PP_PASSENGER_TYPE_UNKNOWN"
+  ]
+}
