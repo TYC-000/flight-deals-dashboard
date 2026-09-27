@@ -19,6 +19,11 @@ import sys
 sys.path.insert(0, str(sys_path))
 from i18n import get as t, SEASONAL_DATA, DESTINATION_BEST_TIME, aircraft_comfort_score
 from layout_detector import LAYOUT_LABELS, layout_options, is_likely_mobile
+from dashboard_adapter import (
+    safe_startswith as _safe_startswith,
+    safe_in as _safe_in,
+    compute_pref_score as _adapter_compute_pref_score,
+)
 
 
 def inject_layout_css(layout: str) -> None:
@@ -312,21 +317,31 @@ df_survived = df_survived[
 # Compute user-preference score:
 #   - boost if long-haul segment uses preferred aircraft
 #   - strong penalty if any segment uses excluded carrier
+#
+# v0.2 (Dashboard Runtime Repair): the underlying canonical evidence may
+# have `aircraft_type = None` for any segment (current backend data shows
+# 100% null). The original implementation called `.startswith()` on the
+# raw value, which raised AttributeError. We now route the aircraft match
+# through `dashboard_adapter.safe_startswith`, which returns False for
+# non-string values instead of raising. The carrier membership test is
+# routed through `safe_in` for symmetry and future-proofing. Semantics
+# (boost -1 / penalty +3 / neutral 0) are preserved.
 def _pref_score(opt_id: str) -> float:
     opt = opt_by_id_sort.get(opt_id, {})
-    score = 0.0
     segs = opt.get("segments", [])
+    score = 0.0
     if segs and preferred_aircraft:
         long_haul_seg = segs[1] if len(segs) >= 2 else segs[0]
-        ac = long_haul_seg.get("aircraft_type", "")
-        if any(ac.startswith(p) for p in preferred_aircraft):
+        ac = long_haul_seg.get("aircraft_type")
+        if _safe_startswith(ac, preferred_aircraft):
             score -= 1.0  # boost
     if segs and excluded_carriers:
         for s in segs:
-            op = s.get("operating_carrier", "")
-            mkt = s.get("carrier", "")
-            if op in excluded_carriers or mkt in excluded_carriers:
+            op = s.get("operating_carrier")
+            mkt = s.get("carrier")
+            if _safe_in(op, excluded_carriers) or _safe_in(mkt, excluded_carriers):
                 score += 3.0  # strong penalty — outweighs fatigue gap
+                break
     return score
 
 # Downgrade verdict if carrier is excluded (visual + sort impact)
@@ -336,9 +351,9 @@ def _downgrade_verdict(opt_id: str, current_verdict: str) -> str:
     opt = opt_by_id_sort.get(opt_id, {})
     segs = opt.get("segments", [])
     for s in segs:
-        op = s.get("operating_carrier", "")
-        mkt = s.get("carrier", "")
-        if op in excluded_carriers or mkt in excluded_carriers:
+        op = s.get("operating_carrier")
+        mkt = s.get("carrier")
+        if _safe_in(op, excluded_carriers) or _safe_in(mkt, excluded_carriers):
             return "acceptable_economy"
     return current_verdict
 
@@ -578,8 +593,8 @@ with tab_top3:
                 segs = opt_for_tags.get("segments", [])
                 if segs and preferred_aircraft:
                     long_haul_seg = segs[1] if len(segs) >= 2 else segs[0]
-                    ac = long_haul_seg.get("aircraft_type", "")
-                    if any(ac.startswith(p) for p in preferred_aircraft):
+                    ac = long_haul_seg.get("aircraft_type")
+                    if _safe_startswith(ac, preferred_aircraft):
                         tags.append(t(L, "tag_preferred"))
                 # Check codeshare on any segment
                 for seg in opt_for_tags.get("segments", []):
