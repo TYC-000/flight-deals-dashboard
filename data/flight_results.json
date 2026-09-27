@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-09-27 13:27:18",
+  "evaluated_at": "2026-09-27 16:36:27",
   "filters": {
     "min_savings_pct_vs_tpe": 35,
     "max_connection_risk": 0.25,
@@ -72,7 +72,7 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.97,
+        "fatigue_index": 6.76,
         "routing_verdict": "prime_deal"
       }
     },
@@ -141,8 +141,8 @@
       "total_elapsed_min": 1530,
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
-        "connection_failure_risk": 0.19,
-        "fatigue_index": 7.07,
+        "connection_failure_risk": 0.2,
+        "fatigue_index": 6.97,
         "routing_verdict": "prime_deal"
       }
     },
@@ -211,7 +211,7 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.09,
+        "connection_failure_risk": 0.08,
         "fatigue_index": 7.14,
         "routing_verdict": "prime_deal"
       }
@@ -284,7 +284,7 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.97,
+        "fatigue_index": 6.76,
         "routing_verdict": "prime_deal"
       }
     },
@@ -353,8 +353,8 @@
       "total_elapsed_min": 1530,
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
-        "connection_failure_risk": 0.19,
-        "fatigue_index": 7.07,
+        "connection_failure_risk": 0.2,
+        "fatigue_index": 6.97,
         "routing_verdict": "prime_deal"
       }
     },
@@ -423,79 +423,9 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.09,
+        "connection_failure_risk": 0.08,
         "fatigue_index": 7.14,
         "routing_verdict": "prime_deal"
-      }
-    },
-    {
-      "id": "CGK-QR-1",
-      "label": "CGK→DOH→BCN (QR via DOH) — Google Flights $811",
-      "currency": "TWD",
-      "positioning_cost": 10000,
-      "long_haul_cost": 25000,
-      "transit_hotel_cost": 2000,
-      "total_cost": 37000,
-      "tpe_direct_baseline": 180000,
-      "savings_pct": 79,
-      "positioning": {
-        "from": "TPE",
-        "to": "CGK",
-        "carrier": "AirAsia QZ",
-        "duration_min": 320,
-        "cabin": "Y"
-      },
-      "long_haul": {
-        "from": "CGK",
-        "to": "BCN",
-        "via": "DOH",
-        "carrier": "Qatar Airways QR",
-        "duration_min": 1180,
-        "cabin": "J"
-      },
-      "segments": [
-        {
-          "carrier": "QZ",
-          "flight": "QZ-852",
-          "from": "TPE",
-          "to": "CGK",
-          "depart": "2026-11-12T09:00",
-          "arrive": "2026-11-12T14:20",
-          "cabin": "Y",
-          "duration_min": 320
-        },
-        {
-          "carrier": "QR",
-          "flight": "QR-965",
-          "from": "CGK",
-          "to": "DOH",
-          "depart": "2026-11-12T22:45",
-          "arrive": "2026-11-13T05:15",
-          "cabin": "J",
-          "duration_min": 420
-        },
-        {
-          "carrier": "QR",
-          "flight": "QR-145",
-          "from": "DOH",
-          "to": "BCN",
-          "depart": "2026-11-13T08:30",
-          "arrive": "2026-11-13T13:55",
-          "cabin": "J",
-          "duration_min": 505
-        }
-      ],
-      "same_pnr": false,
-      "interlined_baggage": false,
-      "terminal_change_kul_dxb": false,
-      "min_connection_kul_dxb_min": 510,
-      "min_connection_dxb_mad_min": 195,
-      "total_elapsed_min": 1735,
-      "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
-      "evaluation": {
-        "connection_failure_risk": 0.13,
-        "fatigue_index": 7.38,
-        "routing_verdict": "acceptable_economy"
       }
     }
   ],
@@ -566,7 +496,7 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.97,
+        "fatigue_index": 6.76,
         "routing_verdict": "prime_deal"
       }
     },
@@ -635,8 +565,8 @@
       "total_elapsed_min": 1470,
       "notes": "DOH 中轉只需 1h55m，可機場貴賓室休息",
       "evaluation": {
-        "connection_failure_risk": 0.3,
-        "fatigue_index": 6.62,
+        "connection_failure_risk": 0.35,
+        "fatigue_index": 6.48,
         "routing_verdict": "prime_deal"
       }
     },
@@ -705,8 +635,8 @@
       "total_elapsed_min": 1680,
       "notes": "trip.com 報價 USD 2,249；Etihad EY 47 為連續夜航，AUH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.07,
-        "fatigue_index": 7.63,
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.53,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -775,8 +705,8 @@
       "total_elapsed_min": 1735,
       "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
       "evaluation": {
-        "connection_failure_risk": 0.13,
-        "fatigue_index": 7.38,
+        "connection_failure_risk": 0.14,
+        "fatigue_index": 7.56,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -845,7 +775,7 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.09,
+        "connection_failure_risk": 0.08,
         "fatigue_index": 7.14,
         "routing_verdict": "prime_deal"
       }
@@ -915,9 +845,243 @@
       "total_elapsed_min": 1530,
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
-        "connection_failure_risk": 0.19,
-        "fatigue_index": 7.07,
+        "connection_failure_risk": 0.2,
+        "fatigue_index": 6.97,
         "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "AUTO-kul-emirates-MAD",
+      "label": "[Auto-scan 09/27] KUL→DXB→MAD (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 8000,
+      "long_haul_cost": 44320,
+      "transit_hotel_cost": 2000,
+      "total_cost": 54320,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 70,
+      "positioning": {
+        "from": "TPE",
+        "to": "KUL",
+        "carrier": "AirAsia D7",
+        "duration_min": 270,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "KUL",
+        "to": "MAD",
+        "via": "DXB",
+        "carrier": "Emirates",
+        "duration_min": 1180,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1480,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1407.",
+      "evaluation": {
+        "connection_failure_risk": 0.27,
+        "fatigue_index": 7.96,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "AUTO-kul-emirates-BCN",
+      "label": "[Auto-scan 09/27] KUL→DXB→BCN (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 8000,
+      "long_haul_cost": 47486,
+      "transit_hotel_cost": 2000,
+      "total_cost": 57486,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 68,
+      "positioning": {
+        "from": "TPE",
+        "to": "KUL",
+        "carrier": "AirAsia D7",
+        "duration_min": 270,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "KUL",
+        "to": "BCN",
+        "via": "DXB",
+        "carrier": "Emirates",
+        "duration_min": 1180,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1480,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1507.",
+      "evaluation": {
+        "connection_failure_risk": 0.31,
+        "fatigue_index": 7.79,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "AUTO-cgk-emirates-MAD",
+      "label": "[Auto-scan 09/27] CGK→AUH→MAD (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 10000,
+      "long_haul_cost": 44320,
+      "transit_hotel_cost": 2000,
+      "total_cost": 56320,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 69,
+      "positioning": {
+        "from": "TPE",
+        "to": "CGK",
+        "carrier": "AirAsia QZ",
+        "duration_min": 318,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "CGK",
+        "to": "MAD",
+        "via": "AUH",
+        "carrier": "Emirates",
+        "duration_min": 1160,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1528,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1407.",
+      "evaluation": {
+        "connection_failure_risk": 0.14,
+        "fatigue_index": 7.75,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "AUTO-cgk-emirates-BCN",
+      "label": "[Auto-scan 09/27] CGK→AUH→BCN (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 10000,
+      "long_haul_cost": 41154,
+      "transit_hotel_cost": 2000,
+      "total_cost": 53154,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 70,
+      "positioning": {
+        "from": "TPE",
+        "to": "CGK",
+        "carrier": "AirAsia QZ",
+        "duration_min": 318,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "CGK",
+        "to": "BCN",
+        "via": "AUH",
+        "carrier": "Emirates",
+        "duration_min": 1160,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1528,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
+      "evaluation": {
+        "connection_failure_risk": 0.15,
+        "fatigue_index": 7.96,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "AUTO-bkk-emirates-MAD",
+      "label": "[Auto-scan 09/27] BKK→DXB→MAD (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 8000,
+      "long_haul_cost": 41154,
+      "transit_hotel_cost": 2000,
+      "total_cost": 51154,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 72,
+      "positioning": {
+        "from": "TPE",
+        "to": "BKK",
+        "carrier": "AirAsia FD",
+        "duration_min": 240,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "BKK",
+        "to": "MAD",
+        "via": "DXB",
+        "carrier": "Emirates",
+        "duration_min": 1160,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1450,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
+      "evaluation": {
+        "connection_failure_risk": 0.3,
+        "fatigue_index": 7.34,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "AUTO-bkk-emirates-BCN",
+      "label": "[Auto-scan 09/27] BKK→DXB→BCN (Emirates)",
+      "currency": "TWD",
+      "positioning_cost": 8000,
+      "long_haul_cost": 41154,
+      "transit_hotel_cost": 2000,
+      "total_cost": 51154,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 72,
+      "positioning": {
+        "from": "TPE",
+        "to": "BKK",
+        "carrier": "AirAsia FD",
+        "duration_min": 240,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "BKK",
+        "to": "BCN",
+        "via": "DXB",
+        "carrier": "Emirates",
+        "duration_min": 1160,
+        "cabin": "J"
+      },
+      "segments": [],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 360,
+      "min_connection_dxb_mad_min": 200,
+      "total_elapsed_min": 1450,
+      "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
+      "evaluation": {
+        "connection_failure_risk": 0.27,
+        "fatigue_index": 7.44,
+        "routing_verdict": "acceptable_economy"
       }
     }
   ],
@@ -929,6 +1093,34 @@
     {
       "id": "CGK-EY-1",
       "reason": "fatigue>7.5"
+    },
+    {
+      "id": "CGK-QR-1",
+      "reason": "fatigue>7.5"
+    },
+    {
+      "id": "AUTO-kul-emirates-MAD",
+      "reason": "risk>25%, fatigue>7.5"
+    },
+    {
+      "id": "AUTO-kul-emirates-BCN",
+      "reason": "risk>25%, fatigue>7.5"
+    },
+    {
+      "id": "AUTO-cgk-emirates-MAD",
+      "reason": "fatigue>7.5"
+    },
+    {
+      "id": "AUTO-cgk-emirates-BCN",
+      "reason": "fatigue>7.5"
+    },
+    {
+      "id": "AUTO-bkk-emirates-MAD",
+      "reason": "risk>25%"
+    },
+    {
+      "id": "AUTO-bkk-emirates-BCN",
+      "reason": "risk>25%"
     }
   ]
 }
