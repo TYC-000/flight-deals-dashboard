@@ -213,27 +213,51 @@ with st.sidebar:
         st.stop()
 
     filters = results.get("filters", {})
+    # YC recommended thresholds — button to restore
+    if st.button(t(L, "reset_filters_btn"), key="reset_filters", use_container_width=True):
+        st.session_state["_max_risk_widget"] = 25
+        st.session_state["_max_fatigue_widget"] = 7.5
+        st.session_state["_min_savings_widget"] = 35
+        st.session_state["_min_aircraft_widget"] = 4
+        st.session_state["_verdict_filter_widget"] = ["prime_deal", "acceptable_economy"]
+        st.rerun()
+    st.caption(t(L, "filters_recommended_caption"))
+
     st.markdown(t(L, "filters_override"))
 
     max_risk = st.slider(
         t(L, "max_risk"),
-        min_value=0, max_value=100, value=47,
+        min_value=0, max_value=100,
+        value=st.session_state.get("_max_risk_widget", 25),
+        key="_max_risk_widget",
+        help=t(L, "max_risk_help"),
+    )
+    min_aircraft = st.slider(
+        t(L, "min_aircraft"),
+        min_value=1, max_value=10,
+        value=st.session_state.get("_min_aircraft_widget", 4),
+        step=1,
+        key="_min_aircraft_widget",
+        help=t(L, "min_aircraft_help"),
     )
     max_fatigue = st.slider(
         t(L, "max_fatigue"),
         min_value=0.0, max_value=10.0,
-        value=float(filters.get("max_fatigue_index", 7.5)),
+        value=st.session_state.get("_max_fatigue_widget", 7.5),
         step=0.5,
+        key="_max_fatigue_widget",
     )
     min_savings = st.slider(
         t(L, "min_savings"),
         min_value=0, max_value=100,
-        value=int(filters.get("min_savings_pct_vs_tpe", 35)),
+        value=st.session_state.get("_min_savings_widget", 35),
+        key="_min_savings_widget",
     )
     verdict_filter = st.multiselect(
         t(L, "allowed_verdicts"),
         options=["prime_deal", "acceptable_economy", "avoid_exhausting"],
-        default=["prime_deal", "acceptable_economy"],
+        default=st.session_state.get("_verdict_filter_widget", ["prime_deal", "acceptable_economy"]),
+        key="_verdict_filter_widget",
     )
 
     st.markdown("---")
@@ -250,11 +274,19 @@ with st.sidebar:
 all_evaluated = results.get("all_evaluated", [])
 df_all = results_to_dataframe(all_evaluated)
 
+# Pull aircraft_comfort from raw all_evaluated (since df_all stripped it)
+acf_by_id = {
+    o["id"]: o.get("evaluation", {}).get("aircraft_comfort", 5.0)
+    for o in all_evaluated
+}
+df_all["aircraft_comfort"] = df_all["id"].map(acf_by_id).fillna(5.0)
+
 df_survived = df_all.copy()
 df_survived = df_survived[
     (df_survived["risk"] <= max_risk / 100) &
     (df_survived["fatigue"] <= max_fatigue) &
     (df_survived["savings_pct"] >= min_savings) &
+    (df_survived["aircraft_comfort"] >= min_aircraft) &
     (df_survived["routing_verdict"].isin(verdict_filter))
 ]
 

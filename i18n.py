@@ -11,15 +11,20 @@ T = {
 
         # Sidebar
         "lang_label": "🌐 Language",
-        "filters_override": "### 🎛️ Filters (override)",
-        "max_risk": "Max connection risk (%)",
+        "filters_override": "### 🎛️ Filters (override defaults)",
+        "max_risk": "Max connection failure risk (%)",
         "max_fatigue": "Max fatigue index",
-        "min_savings": "Min savings vs TPE-direct (%)",
-        "allowed_verdicts": "Allowed verdicts",
-        "yc_original_filters": "### ⚙️ YC's Original Filters",
+        "min_savings": "Min savings vs TPE direct (%)",
+        "allowed_verdicts": "Allowed Jev verdicts",
+        "yc_original_filters": "### ⚙️ YC's original filter rules",
         "evaluated_at": "Evaluated at: {ts}",
         "language_english": "English",
         "language_chinese": "繁體中文",
+        "min_aircraft": "Min aircraft comfort (1-10)",
+        "min_aircraft_help": "Min comfort score (Jev scores A380/A350/B787 ≈ 9-10; older 777 ≈ 4-6)",
+        "max_risk_help": "Max connection failure probability (25% default)",
+        "reset_filters_btn": "🚀 Apply YC recommended filters",
+        "filters_recommended_caption": "YC's recommended defaults: risk ≤ 25%, fatigue ≤ 7.5, save ≥ 35%, aircraft ≥ 4, prime_deal + acceptable_economy",
 
         # KPI
         "kpi_top_pick": "🏆 Top pick",
@@ -109,6 +114,14 @@ T = {
         "table_filter": "Pick options to compare",
         "download_csv": "⬇️ Download filtered as CSV",
 
+        # Filter controls
+        "reset_filters_btn": "🚀 Apply YC recommended filters",
+        "filters_recommended_caption": "YC's recommended defaults: risk ≤ 25%, fatigue ≤ 7.5, save ≥ 35%, aircraft ≥ 4, prime_deal + acceptable_economy",
+        "max_risk_help": "Max connection failure probability (25% default)",
+        "min_aircraft": "Min aircraft comfort (1-10)",
+        "min_aircraft_help": "Min comfort rating (Jev scores A380/A350/B787 ≈ 9-10; older 777 ≈ 4-6)",
+
+
         # Summary
         "summary_title": "📝 Auto-generated summary",
         "raw_json_expander": "🔍 Raw JSON",
@@ -144,6 +157,11 @@ T = {
         "evaluated_at": "評估時間：{ts}",
         "language_english": "English",
         "language_chinese": "繁體中文",
+        "min_aircraft": "機型舒適度下限 (1-10)",
+        "min_aircraft_help": "最低舒適度分數（Jev 評 A380/A350/B787 ≈ 9-10；老款 777 ≈ 4-6）",
+        "max_risk_help": "連接失敗概率上限（預設 25%）",
+        "reset_filters_btn": "🚀 套用 YC 推薦過濾器",
+        "filters_recommended_caption": "YC 推薦預設值：風險 ≤ 25%、疲勞 ≤ 7.5、省幅 ≥ 35%、機型 ≥ 4，允許 prime_deal + acceptable_economy",
 
         # KPI
         "kpi_top_pick": "🏆 首選",
