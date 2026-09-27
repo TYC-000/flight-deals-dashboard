@@ -110,9 +110,30 @@ st.set_page_config(
 # ----------------------------------------------------------------------
 # Language picker — must come BEFORE any UI text so we can pick strings
 # ----------------------------------------------------------------------
-# Init default
+# Init default — overwrite possible values in priority order below
+#
+# Priority (highest first):
+#   1. URL query string  ?lang=zh  (shareable — receives override)
+#   2. Browser localStorage pref (sticky per-browser)
+#   3. Hard fallback = "zh" (so first impression matches your main use case)
+#
+# localStorage note: streamlit only exposes Py→JS via components.html (iframe),
+# which we already use elsewhere. For now we read URL query + persistent fallback.
+DEFAULT_LANG = "zh"  # change to "en" if you want English-first
+
 if "_lang" not in st.session_state:
-    st.session_state["_lang"] = "en"
+    st.session_state["_lang"] = DEFAULT_LANG
+
+# Priority 1: URL query override  (?lang=en or ?lang=zh)
+_qp = st.query_params.get("lang")
+if isinstance(_qp, list):
+    _qp = _qp[0] if _qp else None
+if _qp in ("en", "zh"):
+    st.session_state["_lang"] = _qp
+    try:
+        st.query_params["lang"] = _qp  # make sticky in URL after first load
+    except Exception:
+        pass
 
 # Reserve a placeholder for the sidebar's language radio
 _LANG_PLACEHOLDER = st.sidebar.empty()
