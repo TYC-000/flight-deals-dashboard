@@ -569,3 +569,100 @@ run_pipeline.py, eval_flight_yc.py, flight_dashboard.py) was modified.
    they must use `duffel` explicitly.
 3. The 2% FX markup awareness in `provenance.fx_envelope.markup_pct` is
    documented but not silently applied (conservative choice).
+
+
+---
+
+# v1.1.2 — Real Duffel Smoke Validation (addendum)
+
+> Status: **REAL PROVIDER VALIDATION NOT PERFORMED.**
+>
+> Spec §1 explicit: "If no credential exists: Report exactly: REAL
+> PROVIDER VALIDATION NOT PERFORMED. Then STOP. Do not fabricate prices.
+> Do not run Mock as a substitute. Do not begin v1.2."
+
+## Credential discovery (spec §1)
+
+Searched (token values NEVER exposed):
+
+- `DUFFEL_API_KEY_TEST` env var — **NOT SET**
+- `DUFFEL_API_KEY_LIVE` env var — **NOT SET**
+- `~/.hermes/.env` (exists, 19213 bytes) — **no DUFFEL entries**
+- `~/.hermes/config.yaml` — **no DUFFEL entries**
+- `~/.zshrc`, `~/.zshenv`, `~/.bashrc`, `~/.bash_profile`, `~/.hermes/.env.local`
+  — **no DUFFEL entries**
+
+**Result: NONE.** No credential available in any allowed location.
+
+## What was done (without making any real network call against Duffel)
+
+The following were validated WITHOUT real Duffel credentials:
+
+- A. `--provider mock` → MockDuffelProvider (verified by v1.1.1 Test A, PASS)
+- B. `--provider duffel` without creds → fail-closed (verified by v1.1.1 Test B, PASS)
+- C. Missing credentials fail closed (verified by v1.1.1 Test C, PASS)
+- D. No silent Mock fallback (verified by v1.1.1 Test D, PASS)
+- H. Smoke test hard limit ≤ 2 (verified by v1.1.1 Test N, PASS)
+- I. No API key in stdout/stderr — verified independently:
+  set `DUFFEL_API_KEY_TEST=test_TEST_KEY_DO_NOT_LEAK_abcdef123456`, ran
+  `--provider duffel --smoke-test`, grepped for the key — **no leak**.
+- J. no BOOKABLE (verified by v1.1.1 Test J, PASS)
+- K. no ArbitrageEvidence created (verified by v1.1.1 Test K, PASS)
+- L. no `arbitrage_score` identifier (verified by v1.1.1 Test L, PASS)
+- M. `information_priority_score` is the terminology (verified by v1.1.1 Test I, PASS)
+- N. Existing regressions remain green (verified by all-suite run below)
+
+The following could **not** be validated (require real credentials):
+
+- E. Real provenance identity (`provider="duffel"`, `provider_mode="live"`)
+- F. Mock provenance identity — verified by v1.1.1 Test E
+- G. Mock vs Real schema compatibility — Mock-only; Real requires real Duffel
+- Schema compatibility is verified by code review (v1.1.1 Test F, PASS) but not by real round-trip
+
+## Regression status (all PASS)
+
+| Suite | Tests | Status |
+|---|---|---|
+| v0.2 (`test_pipeline_v0.2.py`)        | 6   | ✅ PASS |
+| v0.2.1 (`test_pipeline_v0.2.1.py`)      | 7   | ✅ PASS |
+| v1.0 (`test_schedule_intelligence_v1.py`) | 72  | ✅ PASS |
+| v1.1 (`test_price_intelligence_v1.py`)    | 104 | ✅ PASS |
+| v1.1.1 (`test_price_intelligence_v1_1.py`) | 83  | ✅ PASS |
+
+## Files modified (v1.1.2)
+
+**None.** This milestone is a status report.
+
+(No production module, no test file, no documentation file — beyond this
+addendum — was modified.)
+
+The only file added was the doc addendum.
+
+## What the user must do for REAL DUFFEL SMOKE VALIDATION
+
+1. Set `DUFFEL_API_KEY_TEST=<real Duffel test token>` in the shell environment
+   (or in `~/.hermes/.env`).
+2. Re-run:
+   ```bash
+   python3 price_intelligence.py data/_synthetic_cands_for_v111.json \
+       --provider duffel --smoke-test --max-searches 2
+   ```
+3. Inspect `data/price_evidence.json` and `data/price_trace.json`:
+   - `evidences[*].provider` should be `"duffel"`
+   - `evidences[*].provider_mode` should be `"live"`
+   - `evidences[*].verification_status` should be `"LIVE"`
+4. Then v1.1.2 may report `REAL DUFFEL SMOKE VALIDATION PASSED`.
+
+## Remaining limitations
+
+1. No real Duffel credential was available; round-trip validation
+   deferred to when the user supplies one.
+2. The credential-leakage test (I) was performed with a **fake** test key;
+   it does NOT exercise the real Duffel adapter's HTTP plumbing.
+3. Real Duffel cost: per the matrix doc, ~$0.005/excess search after the
+   1500:1 search-to-book ratio, or $3 per confirmed order. With no orders,
+   a `--smoke-test --max-searches 2` run costs ~$0.010.
+
+## STOP CONDITION
+
+**REAL PROVIDER VALIDATION NOT PERFORMED.**
