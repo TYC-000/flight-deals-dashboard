@@ -673,9 +673,10 @@ with tab_aircraft:
     st.caption(t(L, "acf_caption"))
 
     if "aircraft_data" not in st.session_state or not st.session_state["aircraft_data"]:
-        # Build fresh from current options
+        # Build fresh from current options (parens needed around conditional expression)
+        records = df_all.to_dict(orient="records") if not df_all.empty else []
         rows = []
-        for opt in df_all.to_dict(orient="records") if not df_all.empty else []:
+        for opt in records:
             for seg in opt.get("segments", []):
                 ac = seg.get("aircraft_type", "—")
                 op = seg.get("operating_carrier", "—")
