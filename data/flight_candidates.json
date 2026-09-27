@@ -1369,5 +1369,107 @@
     "catering_friendly": "★★★★☆",
     "lounge_info": "HEL: Finnair Lounge — 北歐風, SMR is one of the cleanest in Europe",
     "notes": "HEL 轉機搭順風 — 冬天可省 1 小時 daylight，芬蘭航空北歐節奏友善"
+  },
+  {
+    "id": "AUTO-icn-emirates-MAD",
+    "label": "[Auto-scan 09/27] ICN→None→MAD (Emirates)",
+    "currency": "TWD",
+    "positioning_cost": 7500,
+    "long_haul_cost": 60149,
+    "transit_hotel_cost": 2000,
+    "total_cost": 69649,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 61,
+    "positioning": {
+      "from": "TPE",
+      "to": "ICN",
+      "carrier": "Tigerair TW",
+      "duration_min": 162,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "ICN",
+      "to": "MAD",
+      "via": null,
+      "carrier": "Emirates",
+      "duration_min": 1180,
+      "cabin": "J"
+    },
+    "segments": [],
+    "same_pnr": false,
+    "interlined_baggage": false,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 360,
+    "min_connection_dxb_mad_min": 200,
+    "total_elapsed_min": 1372,
+    "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1909."
+  },
+  {
+    "id": "AUTO-icn-emirates-BCN",
+    "label": "[Auto-scan 09/27] ICN→None→BCN (Emirates)",
+    "currency": "TWD",
+    "positioning_cost": 7500,
+    "long_haul_cost": 63314,
+    "transit_hotel_cost": 2000,
+    "total_cost": 72814,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 60,
+    "positioning": {
+      "from": "TPE",
+      "to": "ICN",
+      "carrier": "Tigerair TW",
+      "duration_min": 162,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "ICN",
+      "to": "BCN",
+      "via": null,
+      "carrier": "Emirates",
+      "duration_min": 1180,
+      "cabin": "J"
+    },
+    "segments": [],
+    "same_pnr": false,
+    "interlined_baggage": false,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 360,
+    "min_connection_dxb_mad_min": 200,
+    "total_elapsed_min": 1372,
+    "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 2010."
+  },
+  {
+    "id": "AUTO-sin-lufthansa-FRA",
+    "label": "[Auto-scan 09/27] SIN→DXB→FRA (Lufthansa)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 53817,
+    "transit_hotel_cost": 2000,
+    "total_cost": 66817,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 63,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 252,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "FRA",
+      "via": "DXB",
+      "carrier": "Lufthansa",
+      "duration_min": 1160,
+      "cabin": "J"
+    },
+    "segments": [],
+    "same_pnr": false,
+    "interlined_baggage": false,
+    "terminal_change_kul_dxb": true,
+    "min_connection_kul_dxb_min": 360,
+    "min_connection_dxb_mad_min": 200,
+    "total_elapsed_min": 1462,
+    "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1708."
   }
 ]
