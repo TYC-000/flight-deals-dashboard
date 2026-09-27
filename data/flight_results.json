@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-09-27 16:36:27",
+  "evaluated_at": "2026-09-27 16:58:59",
   "filters": {
     "min_savings_pct_vs_tpe": 35,
     "max_connection_risk": 0.25,
@@ -72,147 +72,137 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.76,
+        "fatigue_index": 6.83,
         "routing_verdict": "prime_deal"
       }
     },
     {
-      "id": "BKK-EK-1",
-      "label": "BKK→DXB→BCN (EK via DXB)",
+      "id": "QR-ICN-BCN",
+      "label": "ICN→DOH→BCN (Qatar Airways via Doha)",
       "currency": "TWD",
-      "positioning_cost": 8000,
-      "long_haul_cost": 52000,
+      "positioning_cost": 7500,
+      "long_haul_cost": 57000,
       "transit_hotel_cost": 2000,
-      "total_cost": 62000,
+      "total_cost": 66500,
       "tpe_direct_baseline": 180000,
-      "savings_pct": 66,
+      "savings_pct": 63,
       "positioning": {
         "from": "TPE",
-        "to": "BKK",
-        "carrier": "AirAsia FD",
-        "duration_min": 240,
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
         "cabin": "Y"
       },
       "long_haul": {
-        "from": "BKK",
+        "from": "ICN",
         "to": "BCN",
-        "via": "DXB",
-        "carrier": "Emirates EK",
-        "duration_min": 1180,
+        "via": "DOH",
+        "carrier": "Qatar Airways QR",
+        "duration_min": 1130,
         "cabin": "J"
       },
       "segments": [
         {
-          "carrier": "FD",
-          "flight": "FD-852",
+          "carrier": "TW",
+          "flight": "TW672",
           "from": "TPE",
-          "to": "BKK",
+          "to": "ICN",
           "depart": "2026-11-12T07:00",
-          "arrive": "2026-11-12T10:00",
+          "arrive": "2026-11-12T10:45",
           "cabin": "Y",
-          "duration_min": 240
+          "duration_min": 165
         },
         {
-          "carrier": "EK",
-          "flight": "EK-419",
-          "from": "BKK",
-          "to": "DXB",
-          "depart": "2026-11-12T20:30",
-          "arrive": "2026-11-13T00:55",
+          "carrier": "QR",
+          "flight": "QR8593",
+          "from": "ICN",
+          "to": "DOH",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T00:50",
           "cabin": "J",
-          "duration_min": 385
+          "duration_min": 535
         },
         {
-          "carrier": "EK",
-          "flight": "EK-189",
-          "from": "DXB",
+          "carrier": "QR",
+          "flight": "QR145",
+          "from": "DOH",
           "to": "BCN",
-          "depart": "2026-11-13T03:45",
-          "arrive": "2026-11-13T08:30",
+          "depart": "2026-11-13T03:30",
+          "arrive": "2026-11-13T09:25",
           "cabin": "J",
-          "duration_min": 525
+          "duration_min": 515
         }
       ],
-      "same_pnr": false,
-      "interlined_baggage": false,
-      "terminal_change_kul_dxb": true,
-      "min_connection_kul_dxb_min": 640,
-      "min_connection_dxb_mad_min": 170,
-      "total_elapsed_min": 1530,
-      "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 550,
+      "min_connection_dxb_mad_min": 160,
+      "total_elapsed_min": 1645,
+      "notes": "全部 QR 自己的票 + MCT 達標；DOH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.2,
+        "connection_failure_risk": 0.16,
         "fatigue_index": 6.97,
         "routing_verdict": "prime_deal"
       }
     },
     {
-      "id": "CGK-EY-BCN-1",
-      "label": "CGK→AUH→BCN (Etihad) — trip.com 79% off USD 1,587",
+      "id": "KE-ICN-MAD-direct",
+      "label": "ICN→MAD (Korean Air nonstop KE) — direct, zero connection risk",
       "currency": "TWD",
-      "positioning_cost": 10000,
-      "long_haul_cost": 49000,
-      "transit_hotel_cost": 2000,
-      "total_cost": 61000,
+      "positioning_cost": 7500,
+      "long_haul_cost": 63000,
+      "transit_hotel_cost": 0,
+      "total_cost": 70500,
       "tpe_direct_baseline": 180000,
-      "savings_pct": 66,
+      "savings_pct": 60,
       "positioning": {
         "from": "TPE",
-        "to": "CGK",
-        "carrier": "AirAsia QZ",
-        "duration_min": 320,
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
         "cabin": "Y"
       },
       "long_haul": {
-        "from": "CGK",
-        "to": "BCN",
-        "via": "AUH",
-        "carrier": "Etihad EY",
-        "duration_min": 1180,
+        "from": "ICN",
+        "to": "MAD",
+        "via": null,
+        "carrier": "Korean Air KE",
+        "duration_min": 780,
         "cabin": "J"
       },
       "segments": [
         {
-          "carrier": "QZ",
-          "flight": "QZ-852",
+          "carrier": "TW",
+          "flight": "TW672",
           "from": "TPE",
-          "to": "CGK",
-          "depart": "2026-11-12T09:00",
-          "arrive": "2026-11-12T14:20",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
           "cabin": "Y",
-          "duration_min": 320
+          "duration_min": 165
         },
         {
-          "carrier": "EY",
-          "flight": "EY-475",
-          "from": "CGK",
-          "to": "AUH",
-          "depart": "2026-11-12T21:30",
-          "arrive": "2026-11-13T03:20",
+          "carrier": "KE",
+          "flight": "KE9091",
+          "from": "ICN",
+          "to": "MAD",
+          "depart": "2026-11-12T18:30",
+          "arrive": "2026-11-13T07:30",
           "cabin": "J",
-          "duration_min": 420
-        },
-        {
-          "carrier": "EY",
-          "flight": "EY-637",
-          "from": "AUH",
-          "to": "BCN",
-          "depart": "2026-11-13T08:35",
-          "arrive": "2026-11-13T14:05",
-          "cabin": "J",
-          "duration_min": 510
+          "duration_min": 780
         }
       ],
       "same_pnr": false,
       "interlined_baggage": false,
       "terminal_change_kul_dxb": false,
-      "min_connection_kul_dxb_min": 430,
-      "min_connection_dxb_mad_min": 315,
-      "total_elapsed_min": 1685,
-      "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
+      "min_connection_kul_dxb_min": 465,
+      "min_connection_dxb_mad_min": 0,
+      "total_elapsed_min": 1530,
+      "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
       "evaluation": {
-        "connection_failure_risk": 0.08,
-        "fatigue_index": 7.14,
+        "connection_failure_risk": 0.05,
+        "fatigue_index": 7.07,
         "routing_verdict": "prime_deal"
       }
     }
@@ -284,77 +274,137 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.76,
+        "fatigue_index": 6.83,
         "routing_verdict": "prime_deal"
       }
     },
     {
-      "id": "BKK-EK-1",
-      "label": "BKK→DXB→BCN (EK via DXB)",
+      "id": "QR-ICN-BCN",
+      "label": "ICN→DOH→BCN (Qatar Airways via Doha)",
       "currency": "TWD",
-      "positioning_cost": 8000,
-      "long_haul_cost": 52000,
+      "positioning_cost": 7500,
+      "long_haul_cost": 57000,
       "transit_hotel_cost": 2000,
-      "total_cost": 62000,
+      "total_cost": 66500,
       "tpe_direct_baseline": 180000,
-      "savings_pct": 66,
+      "savings_pct": 63,
       "positioning": {
         "from": "TPE",
-        "to": "BKK",
-        "carrier": "AirAsia FD",
-        "duration_min": 240,
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
         "cabin": "Y"
       },
       "long_haul": {
-        "from": "BKK",
+        "from": "ICN",
         "to": "BCN",
-        "via": "DXB",
-        "carrier": "Emirates EK",
-        "duration_min": 1180,
+        "via": "DOH",
+        "carrier": "Qatar Airways QR",
+        "duration_min": 1130,
         "cabin": "J"
       },
       "segments": [
         {
-          "carrier": "FD",
-          "flight": "FD-852",
+          "carrier": "TW",
+          "flight": "TW672",
           "from": "TPE",
-          "to": "BKK",
+          "to": "ICN",
           "depart": "2026-11-12T07:00",
-          "arrive": "2026-11-12T10:00",
+          "arrive": "2026-11-12T10:45",
           "cabin": "Y",
-          "duration_min": 240
+          "duration_min": 165
         },
         {
-          "carrier": "EK",
-          "flight": "EK-419",
-          "from": "BKK",
-          "to": "DXB",
-          "depart": "2026-11-12T20:30",
-          "arrive": "2026-11-13T00:55",
+          "carrier": "QR",
+          "flight": "QR8593",
+          "from": "ICN",
+          "to": "DOH",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T00:50",
           "cabin": "J",
-          "duration_min": 385
+          "duration_min": 535
         },
         {
-          "carrier": "EK",
-          "flight": "EK-189",
-          "from": "DXB",
+          "carrier": "QR",
+          "flight": "QR145",
+          "from": "DOH",
           "to": "BCN",
-          "depart": "2026-11-13T03:45",
-          "arrive": "2026-11-13T08:30",
+          "depart": "2026-11-13T03:30",
+          "arrive": "2026-11-13T09:25",
           "cabin": "J",
-          "duration_min": 525
+          "duration_min": 515
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 550,
+      "min_connection_dxb_mad_min": 160,
+      "total_elapsed_min": 1645,
+      "notes": "全部 QR 自己的票 + MCT 達標；DOH 貴賓室可沖澡",
+      "evaluation": {
+        "connection_failure_risk": 0.16,
+        "fatigue_index": 6.97,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "KE-ICN-MAD-direct",
+      "label": "ICN→MAD (Korean Air nonstop KE) — direct, zero connection risk",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 63000,
+      "transit_hotel_cost": 0,
+      "total_cost": 70500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 60,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "MAD",
+        "via": null,
+        "carrier": "Korean Air KE",
+        "duration_min": 780,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "KE",
+          "flight": "KE9091",
+          "from": "ICN",
+          "to": "MAD",
+          "depart": "2026-11-12T18:30",
+          "arrive": "2026-11-13T07:30",
+          "cabin": "J",
+          "duration_min": 780
         }
       ],
       "same_pnr": false,
       "interlined_baggage": false,
-      "terminal_change_kul_dxb": true,
-      "min_connection_kul_dxb_min": 640,
-      "min_connection_dxb_mad_min": 170,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 465,
+      "min_connection_dxb_mad_min": 0,
       "total_elapsed_min": 1530,
-      "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
+      "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
       "evaluation": {
-        "connection_failure_risk": 0.2,
-        "fatigue_index": 6.97,
+        "connection_failure_risk": 0.05,
+        "fatigue_index": 7.07,
         "routing_verdict": "prime_deal"
       }
     },
@@ -423,9 +473,219 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.08,
-        "fatigue_index": 7.14,
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.1,
         "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "BKK-EK-1",
+      "label": "BKK→DXB→BCN (EK via DXB)",
+      "currency": "TWD",
+      "positioning_cost": 8000,
+      "long_haul_cost": 52000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 62000,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 66,
+      "positioning": {
+        "from": "TPE",
+        "to": "BKK",
+        "carrier": "AirAsia FD",
+        "duration_min": 240,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "BKK",
+        "to": "BCN",
+        "via": "DXB",
+        "carrier": "Emirates EK",
+        "duration_min": 1180,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "FD",
+          "flight": "FD-852",
+          "from": "TPE",
+          "to": "BKK",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:00",
+          "cabin": "Y",
+          "duration_min": 240
+        },
+        {
+          "carrier": "EK",
+          "flight": "EK-419",
+          "from": "BKK",
+          "to": "DXB",
+          "depart": "2026-11-12T20:30",
+          "arrive": "2026-11-13T00:55",
+          "cabin": "J",
+          "duration_min": 385
+        },
+        {
+          "carrier": "EK",
+          "flight": "EK-189",
+          "from": "DXB",
+          "to": "BCN",
+          "depart": "2026-11-13T03:45",
+          "arrive": "2026-11-13T08:30",
+          "cabin": "J",
+          "duration_min": 525
+        }
+      ],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 640,
+      "min_connection_dxb_mad_min": 170,
+      "total_elapsed_min": 1530,
+      "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
+      "evaluation": {
+        "connection_failure_risk": 0.19,
+        "fatigue_index": 7.18,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "KE-ICN-BCN-direct",
+      "label": "ICN→BCN (Korean Air via ICN→AMS→BCN) — KE+KL partner",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 68000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 77500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 57,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "BCN",
+        "via": "AMS",
+        "carrier": "Korean Air + KLM partner",
+        "duration_min": 1010,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "KE",
+          "flight": "KE925",
+          "from": "ICN",
+          "to": "AMS",
+          "depart": "2026-11-12T17:30",
+          "arrive": "2026-11-12T23:45",
+          "cabin": "J",
+          "duration_min": 750
+        },
+        {
+          "carrier": "KL",
+          "flight": "KL1685",
+          "from": "AMS",
+          "to": "BCN",
+          "depart": "2026-11-13T07:30",
+          "arrive": "2026-11-13T09:50",
+          "cabin": "J",
+          "duration_min": 140
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 405,
+      "min_connection_dxb_mad_min": 465,
+      "total_elapsed_min": 1610,
+      "notes": "SkyTeam partner 同 PNR；AMS 貴賓室休息時間充裕；BCN 無中轉",
+      "evaluation": {
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.22,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "CGK-QR-1",
+      "label": "CGK→DOH→BCN (QR via DOH) — Google Flights $811",
+      "currency": "TWD",
+      "positioning_cost": 10000,
+      "long_haul_cost": 25000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 37000,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 79,
+      "positioning": {
+        "from": "TPE",
+        "to": "CGK",
+        "carrier": "AirAsia QZ",
+        "duration_min": 320,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "CGK",
+        "to": "BCN",
+        "via": "DOH",
+        "carrier": "Qatar Airways QR",
+        "duration_min": 1180,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "QZ",
+          "flight": "QZ-852",
+          "from": "TPE",
+          "to": "CGK",
+          "depart": "2026-11-12T09:00",
+          "arrive": "2026-11-12T14:20",
+          "cabin": "Y",
+          "duration_min": 320
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR-965",
+          "from": "CGK",
+          "to": "DOH",
+          "depart": "2026-11-12T22:45",
+          "arrive": "2026-11-13T05:15",
+          "cabin": "J",
+          "duration_min": 420
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR-145",
+          "from": "DOH",
+          "to": "BCN",
+          "depart": "2026-11-13T08:30",
+          "arrive": "2026-11-13T13:55",
+          "cabin": "J",
+          "duration_min": 505
+        }
+      ],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 510,
+      "min_connection_dxb_mad_min": 195,
+      "total_elapsed_min": 1735,
+      "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
+      "evaluation": {
+        "connection_failure_risk": 0.13,
+        "fatigue_index": 7.38,
+        "routing_verdict": "acceptable_economy"
       }
     }
   ],
@@ -496,7 +756,7 @@
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
         "connection_failure_risk": 0.11,
-        "fatigue_index": 6.76,
+        "fatigue_index": 6.83,
         "routing_verdict": "prime_deal"
       }
     },
@@ -565,8 +825,8 @@
       "total_elapsed_min": 1470,
       "notes": "DOH 中轉只需 1h55m，可機場貴賓室休息",
       "evaluation": {
-        "connection_failure_risk": 0.35,
-        "fatigue_index": 6.48,
+        "connection_failure_risk": 0.33,
+        "fatigue_index": 6.7,
         "routing_verdict": "prime_deal"
       }
     },
@@ -636,7 +896,7 @@
       "notes": "trip.com 報價 USD 2,249；Etihad EY 47 為連續夜航，AUH 貴賓室可沖澡",
       "evaluation": {
         "connection_failure_risk": 0.09,
-        "fatigue_index": 7.53,
+        "fatigue_index": 7.56,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -705,8 +965,8 @@
       "total_elapsed_min": 1735,
       "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
       "evaluation": {
-        "connection_failure_risk": 0.14,
-        "fatigue_index": 7.56,
+        "connection_failure_risk": 0.13,
+        "fatigue_index": 7.38,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -775,8 +1035,8 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.08,
-        "fatigue_index": 7.14,
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.1,
         "routing_verdict": "prime_deal"
       }
     },
@@ -845,8 +1105,8 @@
       "total_elapsed_min": 1530,
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
-        "connection_failure_risk": 0.2,
-        "fatigue_index": 6.97,
+        "connection_failure_risk": 0.19,
+        "fatigue_index": 7.18,
         "routing_verdict": "prime_deal"
       }
     },
@@ -884,8 +1144,8 @@
       "total_elapsed_min": 1480,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1407.",
       "evaluation": {
-        "connection_failure_risk": 0.27,
-        "fatigue_index": 7.96,
+        "connection_failure_risk": 0.26,
+        "fatigue_index": 7.75,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -923,8 +1183,8 @@
       "total_elapsed_min": 1480,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1507.",
       "evaluation": {
-        "connection_failure_risk": 0.31,
-        "fatigue_index": 7.79,
+        "connection_failure_risk": 0.29,
+        "fatigue_index": 7.85,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -962,8 +1222,8 @@
       "total_elapsed_min": 1528,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1407.",
       "evaluation": {
-        "connection_failure_risk": 0.14,
-        "fatigue_index": 7.75,
+        "connection_failure_risk": 0.15,
+        "fatigue_index": 7.85,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -1002,7 +1262,7 @@
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
         "connection_failure_risk": 0.15,
-        "fatigue_index": 7.96,
+        "fatigue_index": 7.85,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -1041,7 +1301,7 @@
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
         "connection_failure_risk": 0.3,
-        "fatigue_index": 7.34,
+        "fatigue_index": 7.41,
         "routing_verdict": "acceptable_economy"
       }
     },
@@ -1080,7 +1340,347 @@
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
         "connection_failure_risk": 0.27,
-        "fatigue_index": 7.44,
+        "fatigue_index": 7.47,
+        "routing_verdict": "acceptable_economy"
+      }
+    },
+    {
+      "id": "KE-ICN-MAD-direct",
+      "label": "ICN→MAD (Korean Air nonstop KE) — direct, zero connection risk",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 63000,
+      "transit_hotel_cost": 0,
+      "total_cost": 70500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 60,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "MAD",
+        "via": null,
+        "carrier": "Korean Air KE",
+        "duration_min": 780,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "KE",
+          "flight": "KE9091",
+          "from": "ICN",
+          "to": "MAD",
+          "depart": "2026-11-12T18:30",
+          "arrive": "2026-11-13T07:30",
+          "cabin": "J",
+          "duration_min": 780
+        }
+      ],
+      "same_pnr": false,
+      "interlined_baggage": false,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 465,
+      "min_connection_dxb_mad_min": 0,
+      "total_elapsed_min": 1530,
+      "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
+      "evaluation": {
+        "connection_failure_risk": 0.05,
+        "fatigue_index": 7.07,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "KE-ICN-BCN-direct",
+      "label": "ICN→BCN (Korean Air via ICN→AMS→BCN) — KE+KL partner",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 68000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 77500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 57,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "BCN",
+        "via": "AMS",
+        "carrier": "Korean Air + KLM partner",
+        "duration_min": 1010,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "KE",
+          "flight": "KE925",
+          "from": "ICN",
+          "to": "AMS",
+          "depart": "2026-11-12T17:30",
+          "arrive": "2026-11-12T23:45",
+          "cabin": "J",
+          "duration_min": 750
+        },
+        {
+          "carrier": "KL",
+          "flight": "KL1685",
+          "from": "AMS",
+          "to": "BCN",
+          "depart": "2026-11-13T07:30",
+          "arrive": "2026-11-13T09:50",
+          "cabin": "J",
+          "duration_min": 140
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 405,
+      "min_connection_dxb_mad_min": 465,
+      "total_elapsed_min": 1610,
+      "notes": "SkyTeam partner 同 PNR；AMS 貴賓室休息時間充裕；BCN 無中轉",
+      "evaluation": {
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.22,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "OZ-ICN-MAD",
+      "label": "ICN→DOH→MAD (Asiana + Qatar SkyTeam)",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 60000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 69500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 61,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "MAD",
+        "via": "DOH",
+        "carrier": "Asiana OZ + Qatar QR (SkyTeam codeshare)",
+        "duration_min": 1080,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR8591",
+          "from": "ICN",
+          "to": "DOH",
+          "depart": "2026-11-12T21:30",
+          "arrive": "2026-11-13T02:30",
+          "cabin": "J",
+          "duration_min": 540
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR155",
+          "from": "DOH",
+          "to": "MAD",
+          "depart": "2026-11-13T03:50",
+          "arrive": "2026-11-13T09:30",
+          "cabin": "J",
+          "duration_min": 460
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 645,
+      "min_connection_dxb_mad_min": 80,
+      "total_elapsed_min": 1650,
+      "notes": "QR SkyTeam codeshare with OZ；DOH MCT 80 分鐘達標",
+      "evaluation": {
+        "connection_failure_risk": 0.57,
+        "fatigue_index": 7.14,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "QR-ICN-BCN",
+      "label": "ICN→DOH→BCN (Qatar Airways via Doha)",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 57000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 66500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 63,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "BCN",
+        "via": "DOH",
+        "carrier": "Qatar Airways QR",
+        "duration_min": 1130,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR8593",
+          "from": "ICN",
+          "to": "DOH",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T00:50",
+          "cabin": "J",
+          "duration_min": 535
+        },
+        {
+          "carrier": "QR",
+          "flight": "QR145",
+          "from": "DOH",
+          "to": "BCN",
+          "depart": "2026-11-13T03:30",
+          "arrive": "2026-11-13T09:25",
+          "cabin": "J",
+          "duration_min": 515
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 550,
+      "min_connection_dxb_mad_min": 160,
+      "total_elapsed_min": 1645,
+      "notes": "全部 QR 自己的票 + MCT 達標；DOH 貴賓室可沖澡",
+      "evaluation": {
+        "connection_failure_risk": 0.16,
+        "fatigue_index": 6.97,
+        "routing_verdict": "prime_deal"
+      }
+    },
+    {
+      "id": "EK-ICN-MAD",
+      "label": "ICN→DXB→MAD (Emirates via Dubai)",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 62000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 71500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 60,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "MAD",
+        "via": "DXB",
+        "carrier": "Emirates EK",
+        "duration_min": 1230,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165
+        },
+        {
+          "carrier": "EK",
+          "flight": "EK323",
+          "from": "ICN",
+          "to": "DXB",
+          "depart": "2026-11-12T20:30",
+          "arrive": "2026-11-13T01:55",
+          "cabin": "J",
+          "duration_min": 510
+        },
+        {
+          "carrier": "EK",
+          "flight": "EK141",
+          "from": "DXB",
+          "to": "MAD",
+          "depart": "2026-11-13T03:25",
+          "arrive": "2026-11-13T08:30",
+          "cabin": "J",
+          "duration_min": 510
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": true,
+      "min_connection_kul_dxb_min": 585,
+      "min_connection_dxb_mad_min": 90,
+      "total_elapsed_min": 1650,
+      "notes": "DXB Term 3 → Term 1 跨航廈；90 分鐘 MCT 達標但稍趕",
+      "evaluation": {
+        "connection_failure_risk": 0.53,
+        "fatigue_index": 7.35,
         "routing_verdict": "acceptable_economy"
       }
     }
@@ -1092,10 +1692,6 @@
     },
     {
       "id": "CGK-EY-1",
-      "reason": "fatigue>7.5"
-    },
-    {
-      "id": "CGK-QR-1",
       "reason": "fatigue>7.5"
     },
     {
@@ -1120,6 +1716,14 @@
     },
     {
       "id": "AUTO-bkk-emirates-BCN",
+      "reason": "risk>25%"
+    },
+    {
+      "id": "OZ-ICN-MAD",
+      "reason": "risk>25%"
+    },
+    {
+      "id": "EK-ICN-MAD",
       "reason": "risk>25%"
     }
   ]
