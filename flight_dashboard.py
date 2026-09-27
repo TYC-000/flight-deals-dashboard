@@ -17,7 +17,7 @@ import streamlit as st
 sys_path = Path(__file__).parent
 import sys
 sys.path.insert(0, str(sys_path))
-from i18n import get as t
+from i18n import get as t, SEASONAL_DATA, DESTINATION_BEST_TIME
 
 # ----------------------------------------------------------------------
 # Configuration
