@@ -13,6 +13,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+# i18n helper
+sys_path = Path(__file__).parent
+import sys
+sys.path.insert(0, str(sys_path))
+from i18n import get as t
+
 # ----------------------------------------------------------------------
 # Configuration
 # ----------------------------------------------------------------------
@@ -23,7 +29,6 @@ CANDIDATES_PATH = DATA_DIR / "flight_candidates.json"
 
 TPE_BASELINE_TWD = 180_000  # baseline TPE-direct business class
 PAGE_ICON = "✈️"
-PAGE_TITLE = "YC's Flight Deal Dashboard"
 
 
 # ----------------------------------------------------------------------
@@ -93,8 +98,9 @@ def segments_for_route(option: dict) -> list[dict]:
 # ----------------------------------------------------------------------
 # Page config
 # ----------------------------------------------------------------------
+# Default to English at config time; language picker below overrides via st.rerun
 st.set_page_config(
-    page_title=PAGE_TITLE,
+    page_title="YC's Flight Deal Dashboard",
     page_icon=PAGE_ICON,
     layout="wide",
     initial_sidebar_state="expanded",
@@ -102,43 +108,74 @@ st.set_page_config(
 
 
 # ----------------------------------------------------------------------
+# Language picker — must come BEFORE any UI text so we can pick strings
+# ----------------------------------------------------------------------
+# Init default
+if "_lang" not in st.session_state:
+    st.session_state["_lang"] = "en"
+
+# Reserve a placeholder for the sidebar's language radio
+_LANG_PLACEHOLDER = st.sidebar.empty()
+
+
+# ----------------------------------------------------------------------
 # Sidebar
 # ----------------------------------------------------------------------
 with st.sidebar:
-    st.title(f"{PAGE_ICON} {PAGE_TITLE}")
-    st.caption("Asia outer-port → Middle East → Spain")
+    # Language picker — first thing the user sees
+    lang_choice = _LANG_PLACEHOLDER.radio(
+        t("en", "lang_label"),
+        options=["en", "zh"],
+        format_func=lambda v: t(v, "lang_label").split(" ", 1)[1] if v == "zh" else "English",
+        index=0 if st.session_state["_lang"] == "en" else 1,
+        horizontal=True,
+        key="_lang_radio",
+    )
+    if lang_choice != st.session_state["_lang"]:
+        st.session_state["_lang"] = lang_choice
+        st.rerun()
+    L = st.session_state["_lang"]
+
+    st.title(f"{PAGE_ICON} {t(L, 'sidebar_title')}")
+    st.caption(t(L, "sidebar_caption"))
 
     results = load_results()
 
     if results is None:
-        st.error("❌ No results found. Run `eval_flight_yc.py` first.")
-        st.code("python3 /Users/aib/.hermes/tools/eval_flight_yc.py /tmp/flight_es_candidates.json -o data/flight_results.json", language="bash")
+        st.error(t(L, "no_candidates_error"))
+        st.code(t(L, "no_candidates_command"), language="bash")
         st.stop()
 
     filters = results.get("filters", {})
-    st.markdown("### 🎛️ Filters (override)")
+    st.markdown(t(L, "filters_override"))
 
-    max_risk = st.slider("Max connection risk (%)",
-                          min_value=0, max_value=100, value=47)
-    max_fatigue = st.slider("Max fatigue index",
-                            min_value=0.0, max_value=10.0,
-                            value=float(filters.get("max_fatigue_index", 7.5)),
-                            step=0.5)
-    min_savings = st.slider("Min savings vs TPE-direct (%)",
-                            min_value=0, max_value=100,
-                            value=int(filters.get("min_savings_pct_vs_tpe", 35)))
+    max_risk = st.slider(
+        t(L, "max_risk"),
+        min_value=0, max_value=100, value=47,
+    )
+    max_fatigue = st.slider(
+        t(L, "max_fatigue"),
+        min_value=0.0, max_value=10.0,
+        value=float(filters.get("max_fatigue_index", 7.5)),
+        step=0.5,
+    )
+    min_savings = st.slider(
+        t(L, "min_savings"),
+        min_value=0, max_value=100,
+        value=int(filters.get("min_savings_pct_vs_tpe", 35)),
+    )
     verdict_filter = st.multiselect(
-        "Allowed verdicts",
+        t(L, "allowed_verdicts"),
         options=["prime_deal", "acceptable_economy", "avoid_exhausting"],
         default=["prime_deal", "acceptable_economy"],
     )
 
     st.markdown("---")
-    st.markdown("### ⚙️ YC's Original Filters")
+    st.markdown(t(L, "yc_original_filters"))
     st.json(filters)
 
     st.markdown("---")
-    st.caption(f"Evaluated at: {results.get('evaluated_at', 'n/a')}")
+    st.caption(t(L, "evaluated_at", ts=results.get("evaluated_at", "n/a")))
 
 
 # ----------------------------------------------------------------------
@@ -166,11 +203,11 @@ df_survived = df_survived.sort_values(
 # ----------------------------------------------------------------------
 # KPI row
 # ----------------------------------------------------------------------
-st.title(f"{PAGE_ICON} YC's Outer-Port Flight Deal Dashboard")
-st.markdown("**KUL · CGK · BKK → 中東 hub → Spain (MAD/BCN)** · 全部商務艙")
+st.title(t(L, "title"))
+st.markdown(t(L, "subtitle"))
 
 if df_survived.empty:
-    st.warning(f"⚠️ No options match current filters. Try widening them in the sidebar.")
+    st.warning(t(L, "no_data_warning"))
 else:
     top_pick = df_survived.iloc[0]
     total_savings = int(df_survived["savings_twd"].sum())
@@ -179,28 +216,28 @@ else:
     c1, c2, c3, c4 = st.columns(4)
     with c1:
         st.metric(
-            "🏆 Top pick",
+            t(L, "kpi_top_pick"),
             f"NT$ {int(top_pick['total_cost_twd']):,}",
-            f"{top_pick['savings_pct']}% saved",
+            f"{top_pick['savings_pct']}% {t(L, 'kpi_saved_suffix')}",
             delta_color="inverse",
         )
     with c2:
         st.metric(
-            "💰 Average savings",
+            t(L, "kpi_avg_savings"),
             f"{avg_savings_pct}%",
-            f"vs TPE-direct NT$ {TPE_BASELINE_TWD:,}",
+            t(L, "kpi_avg_savings_sub", n=f"{TPE_BASELINE_TWD:,}"),
         )
     with c3:
         st.metric(
-            "📋 Options matched",
+            t(L, "kpi_options_matched"),
             f"{len(df_survived)} / {len(df_all)}",
-            f"{len(df_survived)} survivable",
+            f"{len(df_survived)} {t(L, 'kpi_options_matched_sub')}",
         )
     with c4:
         st.metric(
-            "💸 Total potential savings",
+            t(L, "kpi_total_savings"),
             f"NT$ {total_savings:,}",
-            f"{int(total_savings/1000)}K NT$" if total_savings > 1000 else None,
+            f"{int(total_savings/1000)} {t(L, 'kpi_total_savings_unit')}" if total_savings > 1000 else None,
         )
 
 
@@ -208,19 +245,19 @@ else:
 # Tabs
 # ----------------------------------------------------------------------
 tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_summary = st.tabs([
-    "📈 Overview",
-    "🏆 Top 3",
-    "⚖️ Compare",
-    "🗺️ Routes",
-    "📋 All options",
-    "📝 Summary",
+    t(L, "tab_overview"),
+    t(L, "tab_top3"),
+    t(L, "tab_compare"),
+    t(L, "tab_routes"),
+    t(L, "tab_all"),
+    t(L, "tab_summary"),
 ])
 
 
 # === TAB 1: Overview charts ===
 with tab_kpi:
     if df_survived.empty:
-        st.info("No data to plot.")
+        st.info(t(L, "no_data_scatter"))
     else:
         col_a, col_b = st.columns(2)
 
@@ -250,18 +287,18 @@ with tab_kpi:
                     "acceptable_economy": "#f59e0b",
                     "avoid_exhausting": "#dc2626",
                 },
-                title="Risk vs Fatigue (size = savings %)",
-                labels={"risk": "Connection failure risk", "fatigue": "Fatigue index (1-10)"},
+                title=t(L, "scatter_title"),
+                labels={"risk": t(L, "scatter_x"), "fatigue": t(L, "scatter_y")},
             )
             fig_scatter.update_layout(height=450)
-            # Add quadrant lines
             fig_scatter.add_vline(x=0.25, line_dash="dash", line_color="red", opacity=0.5)
             fig_scatter.add_hline(y=7.5, line_dash="dash", line_color="red", opacity=0.5)
-            # Annotate quadrants
-            fig_scatter.add_annotation(x=0.05, y=8.5, text="HIGH RISK<br>HIGH FATIGUE", showarrow=False,
-                                        font=dict(color="red", size=10), opacity=0.5)
-            fig_scatter.add_annotation(x=0.05, y=1.5, text="low risk<br>low fatigue", showarrow=False,
-                                        font=dict(color="green", size=10), opacity=0.5)
+            fig_scatter.add_annotation(x=0.05, y=8.5,
+                text=t(L, "high_risk_high_fatigue"), showarrow=False,
+                font=dict(color="red", size=10), opacity=0.5)
+            fig_scatter.add_annotation(x=0.05, y=1.5,
+                text=t(L, "low_risk_low_fatigue"), showarrow=False,
+                font=dict(color="green", size=10), opacity=0.5)
             st.plotly_chart(fig_scatter, use_container_width=True)
 
         # --- Bar: price comparison ---
@@ -278,17 +315,16 @@ with tab_kpi:
                     "acceptable_economy": "#f59e0b",
                     "avoid_exhausting": "#dc2626",
                 },
-                title="Total cost (TWD) — lower is better",
-                labels={"total_cost_twd": "TWD", "label": "Option"},
+                title=t(L, "bar_title"),
+                labels={"total_cost_twd": t(L, "bar_xlabel"), "label": ""},
             )
-            # Reference line for TPE baseline
             fig_bar.add_vline(x=TPE_BASELINE_TWD, line_dash="dash", line_color="red",
-                               annotation_text=f"TPE-direct ≈ NT$ {TPE_BASELINE_TWD:,}",
-                               annotation_position="top right")
+                annotation_text=t(L, "tpe_baseline_label", n=TPE_BASELINE_TWD),
+                annotation_position="top right")
             fig_bar.update_layout(height=450, yaxis={"automargin": True})
             st.plotly_chart(fig_bar, use_container_width=True)
 
-        # --- Savings comparison ---
+        # --- Savings + elapsed ---
         col_c, col_d = st.columns(2)
         with col_c:
             df_savings = df_survived.sort_values("savings_pct", ascending=False).head(10)
@@ -302,14 +338,13 @@ with tab_kpi:
                     "acceptable_economy": "#f59e0b",
                     "avoid_exhausting": "#dc2626",
                 },
-                title="Savings % vs TPE-direct — higher is better",
-                labels={"savings_pct": "Savings %"},
+                title=t(L, "savings_title"),
+                labels={"savings_pct": t(L, "savings_xlabel")},
             )
             fig_sav.update_layout(height=400, yaxis={"automargin": True})
             st.plotly_chart(fig_sav, use_container_width=True)
 
         with col_d:
-            # Elapsed time
             df_ela = df_survived.sort_values("total_elapsed_h")
             fig_ela = px.bar(
                 df_ela,
@@ -317,8 +352,8 @@ with tab_kpi:
                 orientation="h",
                 color="fatigue",
                 color_continuous_scale="RdYlGn_r",
-                title="Total elapsed time (hours)",
-                labels={"total_elapsed_h": "Hours"},
+                title=t(L, "elapsed_title"),
+                labels={"total_elapsed_h": t(L, "elapsed_xlabel")},
             )
             fig_ela.update_layout(height=400, yaxis={"automargin": True})
             st.plotly_chart(fig_ela, use_container_width=True)
@@ -327,16 +362,16 @@ with tab_kpi:
 # === TAB 2: Top 3 cards ===
 with tab_top3:
     if df_survived.empty:
-        st.info("No options survive filters.")
+        st.info(t(L, "no_options_compare"))
     else:
+        st.markdown(f"### {t(L, 'top3_title')}")
+        st.caption(t(L, "top3_intro"))
         top3 = df_survived.head(3)
-        # Build option dicts from json
         opt_by_id = {o["id"]: o for o in all_evaluated}
         cols = st.columns(len(top3))
         medals = ["🥇", "🥈", "🥉"]
         for col, (_, row), medal in zip(cols, top3.iterrows(), medals):
             with col:
-                # Card
                 verdict_color = {
                     "prime_deal": "🟢",
                     "acceptable_economy": "🟡",
@@ -346,27 +381,30 @@ with tab_top3:
                 st.markdown(f"### {medal} {verdict_color} {row['id']}")
                 st.caption(row["label"])
 
-                st.metric("💰 Total cost", f"NT$ {int(row['total_cost_twd']):,}",
-                          f"-{row['savings_pct']}%")
+                st.metric(
+                    t(L, "metrics_total_cost"),
+                    f"NT$ {int(row['total_cost_twd']):,}",
+                    t(L, "top3_savings_pct", pct=row['savings_pct']),
+                )
 
                 st.markdown(f"""
-                - **Origin**: {row['origin']}
-                - **Outer port**: {row['outer_port']}
-                - **Hub**: {row['via_hub']}
-                - **Carrier**: {row['carrier']}
-                - **Destination**: {row['destination']}
-                - **Verdict**: {row['routing_verdict']}
-                - **Connection risk**: {row['risk']:.0%}
-                - **Fatigue**: {row['fatigue']:.1f} / 10
-                - **Elapsed**: {row['total_elapsed_h']}h
-                - **Same PNR**: {row['same_pnr']}
-                - **Segments**: {row['n_segments']}
-                """)
+- **{t(L, 'metrics_origin')}**: {row['origin']}
+- **{t(L, 'metrics_outer')}**: {row['outer_port']}
+- **{t(L, 'metrics_hub')}**: {row['via_hub']}
+- **{t(L, 'metrics_carrier')}**: {row['carrier']}
+- **{t(L, 'metrics_destination')}**: {row['destination']}
+- **{t(L, 'metrics_verdict')}**: {row['routing_verdict']}
+- **{t(L, 'metrics_risk')}**: {row['risk']:.0%}
+- **{t(L, 'metrics_fatigue')}**: {row['fatigue']:.1f} / 10
+- **{t(L, 'metrics_elapsed')}**: {row['total_elapsed_h']}h
+- **{t(L, 'metrics_same_pnr')}**: {row['same_pnr']}
+- **{t(L, 'metrics_segments')}**: {row['n_segments']}
+""")
 
-                with st.expander("📝 Notes", expanded=False):
-                    st.write(opt_by_id.get(row["id"], {}).get("notes", "N/A"))
+                with st.expander(t(L, "metrics_notes"), expanded=False):
+                    st.write(opt_by_id.get(row["id"], {}).get("notes", t(L, "metrics_no_notes")))
 
-                with st.expander("🛫 Full route", expanded=False):
+                with st.expander(t(L, "metrics_route"), expanded=False):
                     for seg in segments_for_route(opt_by_id.get(row["id"], {})):
                         st.write(f"  - **{seg['carrier']} {seg['flight']}**: "
                                   f"{seg['from']} → {seg['to']}  "
@@ -376,17 +414,17 @@ with tab_top3:
 # === TAB 3: Side-by-side comparison ===
 with tab_compare:
     if df_survived.empty:
-        st.info("No options to compare.")
+        st.info(t(L, "no_options_compare"))
     else:
-        st.markdown("### ⚖️ Compare up to 4 options")
+        st.markdown(f"### {t(L, 'compare_pick')}")
         compare_ids = st.multiselect(
-            "Pick options to compare",
+            t(L, "compare_pick"),
             options=df_survived["id"].tolist(),
             default=df_survived.head(3)["id"].tolist(),
             max_selections=4,
         )
         if not compare_ids:
-            st.info("Select at least one option.")
+            st.info(t(L, "compare_select_one"))
         else:
             compare_df = df_survived[df_survived["id"].isin(compare_ids)].T
             compare_df.columns = compare_df.iloc[0]
@@ -411,19 +449,17 @@ with tab_compare:
                 },
             )
 
-            # Radar chart
             opt_by_id = {o["id"]: o for o in all_evaluated}
-            categories = ["Savings %", "Low risk", "Low fatigue", "Short time", "Same PNR"]
+            categories = t(L, "compare_categories")
 
             fig_radar = go.Figure()
             for cid in compare_ids:
                 row = df_survived[df_survived["id"] == cid].iloc[0]
                 opt = opt_by_id.get(cid, {})
-                # Normalise each metric to 0-1 (1 = best)
                 s_pct = row["savings_pct"] / 100
                 low_risk = 1 - row["risk"]
                 low_fatigue = 1 - (row["fatigue"] / 10)
-                short_time = max(0, 1 - (row["total_elapsed_h"] / 30))  # 30h = 0
+                short_time = max(0, 1 - (row["total_elapsed_h"] / 30))
                 same_pnr = 1.0 if opt.get("same_pnr") else 0.0
 
                 fig_radar.add_trace(go.Scatterpolar(
@@ -436,7 +472,7 @@ with tab_compare:
                 polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
                 showlegend=True,
                 height=500,
-                title="Multi-criteria radar",
+                title=t(L, "compare_radar_title"),
             )
             st.plotly_chart(fig_radar, use_container_width=True)
 
@@ -444,16 +480,16 @@ with tab_compare:
 # === TAB 4: Route map ===
 with tab_map:
     if df_survived.empty:
-        st.info("No routes to show.")
+        st.info(t(L, "no_options_routes"))
     else:
-        st.markdown("### 🗺️ All routings (text view)")
+        st.markdown(f"### {t(L, 'routes_intro')}")
         opt_by_id = {o["id"]: o for o in all_evaluated}
         for _, row in df_survived.iterrows():
             opt = opt_by_id.get(row["id"], {})
             with st.expander(f"**{row['id']}** — {row['label']}  ({row['total_cost_twd']:,} TWD)"):
                 cols = st.columns([0.6, 0.4])
                 with cols[0]:
-                    st.markdown("**Route waypoints:**")
+                    st.markdown(t(L, "route_waypoints"))
                     for seg in segments_for_route(opt):
                         st.markdown(
                             f"- 🛫 **{seg['from']}** → 🛬 **{seg['to']}**  "
@@ -462,20 +498,19 @@ with tab_map:
                         )
                 with cols[1]:
                     st.markdown(f"""
-                    **Stats:**
-                    - Risk: {row['risk']:.0%}
-                    - Fatigue: {row['fatigue']:.1f}/10
-                    - Elapsed: {row['total_elapsed_h']}h
-                    - Same PNR: {row['same_pnr']}
-                    """)
+**Stats:**
+- Risk: {row['risk']:.0%}
+- Fatigue: {row['fatigue']:.1f}/10
+- Elapsed: {row['total_elapsed_h']}h
+- Same PNR: {row['same_pnr']}
+""")
 
 
 # === TAB 5: Full table ===
 with tab_table:
-    st.markdown("### 📋 All evaluated options")
-    st.caption(f"{len(df_all)} total · {len(df_survived)} currently match your filters")
+    st.markdown(f"### {t(L, 'table_title')}")
+    st.caption(t(L, "table_caption", total=len(df_all), matched=len(df_survived)))
 
-    # Highlight survivability
     df_display = df_all.copy()
     df_display["survives"] = df_display["id"].isin(df_survived["id"])
 
@@ -484,30 +519,30 @@ with tab_table:
         use_container_width=True,
         hide_index=True,
         column_config={
-            "id": st.column_config.TextColumn("ID", width="small"),
-            "label": st.column_config.TextColumn("Label", width="large"),
+            "id": st.column_config.TextColumn(t(L, "table_col_id"), width="small"),
+            "label": st.column_config.TextColumn(t(L, "table_col_label"), width="large"),
             "total_cost_twd": st.column_config.NumberColumn(
-                "Cost (TWD)", format="NT$ %d",
+                t(L, "table_col_cost"), format="NT$ %d",
             ),
             "savings_pct": st.column_config.ProgressColumn(
-                "Save %", format="%d%%", min_value=0, max_value=100,
+                t(L, "table_col_save_pct"), format="%d%%", min_value=0, max_value=100,
             ),
             "savings_twd": st.column_config.NumberColumn(
-                "Save (TWD)", format="NT$ %d",
+                t(L, "table_col_save_twd"), format="NT$ %d",
             ),
             "risk": st.column_config.ProgressColumn(
-                "Risk", format="%.0f%%", min_value=0, max_value=100,
+                t(L, "table_col_risk"), format="%.0f%%", min_value=0, max_value=100,
             ),
             "fatigue": st.column_config.ProgressColumn(
-                "Fatigue", format="%.1f", min_value=0, max_value=10,
+                t(L, "table_col_fatigue"), format="%.1f", min_value=0, max_value=10,
             ),
-            "survives": st.column_config.CheckboxColumn("Survives filter"),
-            "same_pnr": st.column_config.CheckboxColumn("Same PNR"),
+            "survives": st.column_config.CheckboxColumn(t(L, "table_col_survives")),
+            "same_pnr": st.column_config.CheckboxColumn(t(L, "table_col_pnr")),
         },
     )
 
     st.download_button(
-        "⬇️ Download filtered as CSV",
+        t(L, "download_csv"),
         df_survived.to_csv(index=False).encode("utf-8"),
         file_name=f"flight_deals_{datetime.now().strftime('%Y%m%d_%H%M')}.csv",
         mime="text/csv",
@@ -517,16 +552,13 @@ with tab_table:
 
 # === TAB 6: Markdown summary ===
 with tab_summary:
-    st.markdown("### 📝 Auto-generated summary")
+    st.markdown(f"### {t(L, 'summary_title')}")
     st.markdown(load_summary())
 
     with open(RESULTS_PATH) as f:
         raw_data = json.load(f)
-    with st.expander("🔍 Raw JSON", expanded=False):
+    with st.expander(t(L, "raw_json_expander"), expanded=False):
         st.json(raw_data)
 
 st.markdown("---")
-st.caption(
-    f"🤖 Powered by Jev (TypeSafe SystemOne) · {len(all_evaluated)} options evaluated · "
-    f"~NT$ 0.00002 per evaluation"
-)
+st.caption(t(L, "footer_caption", n=len(all_evaluated)))
