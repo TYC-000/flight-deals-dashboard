@@ -1,0 +1,122 @@
+{
+  "schema": "passenger_parity_v1_2_3",
+  "trace_at": "2026-09-27T18:21:09.882330+00:00",
+  "evidence_a_path": "/Users/aib/.hermes/cache/scratch/flight-dashboard/_tmp_fixture_a.json",
+  "evidence_b_path": "/Users/aib/.hermes/cache/scratch/flight-dashboard/_tmp_fixture_b.json",
+  "parity_evidence": {
+    "schema_version": "v1.2.3",
+    "parity_status": "PARITY",
+    "hard_parity_reasons": [],
+    "soft_parity_observations": [],
+    "dimension_results": {
+      "passenger_count": {
+        "match": true,
+        "known": true,
+        "a": 1,
+        "b": 1
+      },
+      "passenger_type_composition": {
+        "match": true,
+        "known": true,
+        "a": [
+          "ADT"
+        ],
+        "b": [
+          "ADT"
+        ],
+        "a_pc_known": true,
+        "b_pc_known": true
+      },
+      "cabin": {
+        "match": true,
+        "known": true,
+        "a": "economy",
+        "b": "economy"
+      },
+      "itinerary_identity": {
+        "match": true,
+        "known": true,
+        "a": "TPE-MAD",
+        "b": "TPE-MAD"
+      },
+      "ticket_structure": {
+        "match": true,
+        "known": true,
+        "a": "single-ticket",
+        "b": "single-ticket"
+      },
+      "baggage": {
+        "match": true,
+        "known": true,
+        "a": {
+          "checked_pieces": 1,
+          "carry_on": 1,
+          "basis_known": true
+        },
+        "b": {
+          "checked_pieces": 1,
+          "carry_on": 1,
+          "basis_known": true
+        }
+      },
+      "fare_basis": {
+        "match": false,
+        "known": false,
+        "a": null,
+        "b": null
+      },
+      "price_per_passenger": {
+        "match": true,
+        "known": true,
+        "a": 500.0,
+        "b": 500.0,
+        "derived": true,
+        "note": "derived analytical field; never interpreted as opportunity"
+      }
+    },
+    "price_per_passenger": {
+      "a": 500.0,
+      "b": 500.0,
+      "difference": 0.0,
+      "derived": true,
+      "note": "derived analytical field; never used to claim 'cheaper', 'better', 'opportunity', or 'arbitrage'"
+    },
+    "totals": {
+      "a_total_price": 500.0,
+      "b_total_price": 500.0,
+      "currency_a": "USD",
+      "currency_b": "USD",
+      "currency_parity": true
+    },
+    "provider_disagreement": false,
+    "providers": {
+      "a": {
+        "provider": "duffel",
+        "provider_mode": "live",
+        "retrieved_at": "2026-09-27T10:00:00+00:00"
+      },
+      "b": {
+        "provider": "duffel",
+        "provider_mode": "live",
+        "retrieved_at": "2026-09-27T10:00:00+00:00"
+      }
+    },
+    "verification_status": "DATABASE",
+    "source": "passenger_parity_v1_2_3",
+    "endpoint": null,
+    "retrieved_at": "2026-09-27T18:21:09.882532+00:00",
+    "is_identity": false,
+    "supports_no_credential": true,
+    "warnings": [],
+    "failure_reason": null,
+    "failure_kind": null,
+    "provenance": {
+      "source": "passenger_parity_v1_2_3",
+      "source_type": "cache",
+      "endpoint": null,
+      "retrieved_at": "2026-09-27T18:21:09.882532+00:00",
+      "verification_status": "DATABASE",
+      "evidence_arity": 2
+    }
+  }
+}
