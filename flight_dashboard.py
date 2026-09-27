@@ -276,12 +276,13 @@ else:
 # ----------------------------------------------------------------------
 # Tabs
 # ----------------------------------------------------------------------
-tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_summary = st.tabs([
+tab_kpi, tab_top3, tab_compare, tab_map, tab_table, tab_cal, tab_summary = st.tabs([
     t(L, "tab_overview"),
     t(L, "tab_top3"),
     t(L, "tab_compare"),
     t(L, "tab_routes"),
     t(L, "tab_all"),
+    t(L, "tab_calendar"),
     t(L, "tab_summary"),
 ])
 
@@ -580,6 +581,32 @@ with tab_table:
         mime="text/csv",
         key="dl_csv",
     )
+
+
+# === TAB: Best booking calendar ===
+with tab_cal:
+    st.markdown(f"### 🗓️ {t(L, 'cal_title')}")
+    st.caption(t(L, "cal_caption"))
+
+    col_season, col_destination = st.columns(2)
+
+    with col_season:
+        st.markdown(f"#### 🌡️ {t(L, 'cal_season_header')}")
+        for month, price, weather, dest_note in SEASONAL_DATA[L]:
+            emoji = "🟢" if price == "cheap" else ("🔴" if price == "peak" else "🟡")
+            label = t(L, "cal_cheap" if price == "cheap" else (
+                      "cal_peak" if price == "peak" else "cal_moderate"))
+            st.markdown(f"**{month}** {emoji} **{label}**  \n{weather}  \n{('→ ' + dest_note) if dest_note else ''}")
+
+    with col_destination:
+        st.markdown(f"#### 📍 {t(L, 'cal_dest_header')}")
+        st.caption(t(L, "cal_dest_caption"))
+        for dest, season_note in DESTINATION_BEST_TIME[L].items():
+            st.markdown(f"- **{dest}** — {season_note}")
+
+    st.markdown("---")
+    st.markdown(f"### 💡 {t(L, 'cal_pro_tips_header')}")
+    st.markdown(t(L, "cal_pro_tips_body"))
 
 
 # === TAB 6: Markdown summary ===

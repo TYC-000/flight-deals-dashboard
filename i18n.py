@@ -263,3 +263,100 @@ def get(lang: str, key: str, **fmt) -> str:
         except (KeyError, IndexError):
             return s
     return s
+
+
+# === Seasonal pricing data + best-time-by-destination ===
+# Pricing category: "cheap", "moderate", or "peak"
+SEASONAL_DATA = {
+    "en": [
+        ("March",        "cheap",    "Light Easter traffic, snow on Alps", "West/South Europe great"),
+        ("April",        "moderate", "Easter shift can spike some weeks", "Avoid Easter week"),
+        ("May",          "moderate", "Decent weather, decent prices",     ""),
+        ("June",         "moderate", "School breaks begin",                ""),
+        ("July",         "peak",     "School summer holiday",              "Mediterranean is 35°C+"),
+        ("August",       "peak",     "High season",                        "Avoid Southern Europe heat"),
+        ("September",    "cheap",    "Kids back to school, prices drop",   "Great weather in Spain"),
+        ("October",      "cheap",    "Mid-Oct to early-Dec best window",   "10 月是歐洲旅遊甜點"),
+        ("November",     "cheap",    "Same window as Oct",                 "Christmas markets begin"),
+        ("December 15-31","peak",    "Christmas/New Year",                 "Avoid"),
+        ("Jan–mid Feb",   "cheap",    "Post-holiday lull",                  "OK to fly"),
+        ("Mid-Feb–Mar",   "cheap",    "Same window",                        ""),
+    ],
+    "zh": [
+        ("3 月",         "cheap",    "復活節前、日本賞櫻結束",            "西歐 / 南歐天氣恢復"),
+        ("4 月",         "moderate", "復活節所在週可能飆價",              "避開復活節那週"),
+        ("5 月",         "moderate", "天氣佳、價格中等",                  ""),
+        ("6 月",         "moderate", "暑假開始前夕",                      ""),
+        ("7 月",         "peak",     "學生放暑假",                        "南歐地中海 35°C+"),
+        ("8 月",         "peak",     "旅遊最高峰",                        "避免南歐高溫"),
+        ("9 月",         "cheap",    "學生開學，票價回檔",                "西班牙天氣最佳"),
+        ("10 月",        "cheap",    "10月中到12月初 → 最佳購票期",       "歐洲秋景 + 票甜"),
+        ("11 月",        "cheap",    "10月中到12月初這段延伸",            "耶誕市集開始"),
+        ("12/15-31",     "peak",     "聖誕 + 跨年",                       "避免"),
+        ("1 月-2月初",   "cheap",    "節慶後空窗",                        "適合出發"),
+        ("2 月中-3 月",  "cheap",    "同上視窗",                          ""),
+    ],
+}
+
+DESTINATION_BEST_TIME = {
+    "en": {
+        "MAD": "Madrid — Apr–Jun, Sep–Oct best (sun + 22°C, low humidity)",
+        "BCN": "Barcelona — May–Jun, Sep (city breaks ok; Aug too hot)",
+        "CDG": "Paris — Apr–Jun, Sep–early Oct",
+        "FCO": "Rome — Apr, May, Sep–Oct (skip Aug 35°C+ heat)",
+        "AMS": "Amsterdam — Apr–May, Sep (tulips / autumn)",
+        "ZRH": "Zurich — Jun–Sep (Swiss Alps year-round but snowy highlands)",
+        "FRA": "Frankfurt — May–Jun, Sep (Christmas markets in Dec)",
+    },
+    "zh": {
+        "MAD": "馬德里 — 4-6 月、9-10 月最佳（日照 + 22°C 不潮濕）",
+        "BCN": "巴塞隆納 — 5-6 月、9 月；8 月太熱",
+        "CDG": "巴黎 — 4-6 月、9 月到 10 月初",
+        "FCO": "羅馬 — 4 月、5 月、9-10 月（避開 8 月 35°C+）",
+        "AMS": "阿姆斯特丹 — 4-5 月、9 月（鬱金香 / 秋景）",
+        "ZRH": "蘇黎世 — 6-9 月（阿爾卑斯全年可去但冬天雪封）",
+        "FRA": "法蘭克福 — 5-6 月、9 月；12 月聖誕市集",
+    },
+}
+
+# Calendar tab translations
+I18N_CALENDAR = {
+    "en": {
+        "tab_calendar": "🗓️ Booking Calendar",
+        "cal_title": "Best time to buy Europe flights",
+        "cal_caption": "Curated from deal-hunter rules of thumb",
+        "cal_season_header": "📅 Month-by-Month Pricing",
+        "cal_dest_header": "📍 Best Season by Destination",
+        "cal_dest_caption": "Match window to destination for max comfort + low cost",
+        "cal_cheap": "Cheap",
+        "cal_peak": "Peak (avoid)",
+        "cal_moderate": "Moderate",
+        "cal_pro_tips_header": "Pro booking tips",
+        "cal_pro_tips_body": """- Book **Tue-Thu 00:00-03:00 TPE time** — fare classes often reset
+- Web search "Star Alliance cheap business class XYZ-2027" 6-8 weeks before
+- Open-jaw (one-way each leg) sometimes cheaper than round-trip
+- Positioning flights via ICN (TW) cheapest for KR/JP/Taiwan residents""",
+    },
+    "zh": {
+        "tab_calendar": "🗓️ 購票時機",
+        "cal_title": "買歐洲機票的最佳時機",
+        "cal_caption": "整理自出國達人建議（你旅伴的智慧）",
+        "cal_season_header": "📅 各月票價走勢",
+        "cal_dest_header": "📍 各目的地最佳季節",
+        "cal_dest_caption": "把窗 + 目的地時間對齊會最舒服、最便宜",
+        "cal_cheap": "便宜期",
+        "cal_peak": "貴期（避免）",
+        "cal_moderate": "中等",
+        "cal_pro_tips_header": "搶票小技巧",
+        "cal_pro_tips_body": """- 週二到週四 **凌晨 0-3 點（TPE 時間）** 上網搶票，fare class 會重置
+- 出發前 6-8 週搜「星盟 2027 4 月商務艙 X」之類的關鍵字
+- **Open-jaw**（去回不同機場）有時候比 round-trip 便宜
+- 台灣出發走 ICN（虎航）最便宜的 KR/JP/Taiwan 三角接管""",
+    },
+}
+
+# Merge calendar translations into main T dict
+for lang in ["en", "zh"]:
+    if lang in T:
+        for key, val in I18N_CALENDAR[lang].items():
+            T[lang][key] = val

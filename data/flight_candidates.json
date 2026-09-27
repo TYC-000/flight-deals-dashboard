@@ -907,5 +907,330 @@
     "min_connection_dxb_mad_min": 90,
     "total_elapsed_min": 1650,
     "notes": "DXB Term 3 → Term 1 跨航廈；90 分鐘 MCT 達標但稍趕"
+  },
+  {
+    "id": "SQ-SIN-CDG",
+    "label": "SIN→FRA→CDG (Singapore Airlines via Frankfurt)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 56000,
+    "transit_hotel_cost": 2000,
+    "total_cost": 69000,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 62,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 250,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "CDG",
+      "via": "FRA",
+      "carrier": "Singapore Airlines SQ",
+      "duration_min": 1230,
+      "cabin": "J"
+    },
+    "segments": [
+      {
+        "carrier": "TR",
+        "flight": "TR993",
+        "from": "TPE",
+        "to": "SIN",
+        "depart": "2026-11-12T07:30",
+        "arrive": "2026-11-12T12:00",
+        "cabin": "Y",
+        "duration_min": 250
+      },
+      {
+        "carrier": "SQ",
+        "flight": "SQ326",
+        "from": "SIN",
+        "to": "FRA",
+        "depart": "2026-11-12T23:30",
+        "arrive": "2026-11-13T05:50",
+        "cabin": "J",
+        "duration_min": 750
+      },
+      {
+        "carrier": "SQ",
+        "flight": "SQ336",
+        "from": "FRA",
+        "to": "CDG",
+        "depart": "2026-11-13T08:30",
+        "arrive": "2026-11-13T09:45",
+        "cabin": "J",
+        "duration_min": 75
+      }
+    ],
+    "same_pnr": true,
+    "interlined_baggage": true,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 690,
+    "min_connection_dxb_mad_min": 160,
+    "total_elapsed_min": 1460,
+    "catering_friendly": "★★★★★",
+    "lounge_info": "SIN: SilverKris (SQ Hub) — buffet + 淋浴, FRA: Lufthansa Senator",
+    "notes": "新航自家全 PNR，餐飲亞洲最佳（含台灣料理）, FRA hub 轉機 SUITE 感受佳"
+  },
+  {
+    "id": "TK-SIN-BCN",
+    "label": "SIN→IST→BCN (Turkish Airlines via Istanbul)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 42000,
+    "transit_hotel_cost": 0,
+    "total_cost": 53000,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 70,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 250,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "BCN",
+      "via": "IST",
+      "carrier": "Turkish Airlines TK",
+      "duration_min": 1340,
+      "cabin": "J"
+    },
+    "segments": [
+      {
+        "carrier": "TR",
+        "flight": "TR993",
+        "from": "TPE",
+        "to": "SIN",
+        "depart": "2026-11-12T07:30",
+        "arrive": "2026-11-12T12:00",
+        "cabin": "Y",
+        "duration_min": 250
+      },
+      {
+        "carrier": "TK",
+        "flight": "TK55",
+        "from": "SIN",
+        "to": "IST",
+        "depart": "2026-11-12T20:25",
+        "arrive": "2026-11-13T01:50",
+        "cabin": "J",
+        "duration_min": 645
+      },
+      {
+        "carrier": "TK",
+        "flight": "TK1853",
+        "from": "IST",
+        "to": "BCN",
+        "depart": "2026-11-13T07:35",
+        "arrive": "2026-11-13T09:40",
+        "cabin": "J",
+        "duration_min": 185
+      }
+    ],
+    "same_pnr": true,
+    "interlined_baggage": true,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 500,
+    "min_connection_dxb_mad_min": 345,
+    "total_elapsed_min": 1565,
+    "catering_friendly": "★★★★☆",
+    "lounge_info": "IST: TK Lounge (CIP lounge area) — 中東+歐式 buffet, 建議吃飽後再上後段",
+    "notes": "全段 TK 票，IST 轉機 5h45m 長，可逛 Istanbul 市區（visa on arrival 適用）"
+  },
+  {
+    "id": "TK-SIN-FCO",
+    "label": "SIN→IST→FCO (Turkish Airlines via Istanbul to Rome)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 44000,
+    "transit_hotel_cost": 0,
+    "total_cost": 55000,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 69,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 250,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "FCO",
+      "via": "IST",
+      "carrier": "Turkish Airlines TK",
+      "duration_min": 1380,
+      "cabin": "J"
+    },
+    "segments": [
+      {
+        "carrier": "TR",
+        "flight": "TR993",
+        "from": "TPE",
+        "to": "SIN",
+        "depart": "2026-11-12T07:30",
+        "arrive": "2026-11-12T12:00",
+        "cabin": "Y",
+        "duration_min": 250
+      },
+      {
+        "carrier": "TK",
+        "flight": "TK55",
+        "from": "SIN",
+        "to": "IST",
+        "depart": "2026-11-12T20:25",
+        "arrive": "2026-11-13T01:50",
+        "cabin": "J",
+        "duration_min": 645
+      },
+      {
+        "carrier": "TK",
+        "flight": "TK1861",
+        "from": "IST",
+        "to": "FCO",
+        "depart": "2026-11-13T06:55",
+        "arrive": "2026-11-13T08:00",
+        "cabin": "J",
+        "duration_min": 185
+      }
+    ],
+    "same_pnr": true,
+    "interlined_baggage": true,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 500,
+    "min_connection_dxb_mad_min": 305,
+    "total_elapsed_min": 1490,
+    "catering_friendly": "★★★★☆",
+    "lounge_info": "IST: TK Lounge",
+    "notes": "羅馬 FCO 直達 5h 共乘 — TK 飛歐洲最便宜入口之一"
+  },
+  {
+    "id": "LH-SIN-FRA",
+    "label": "SIN→FRA direct (Lufthansa nonstop to Frankfurt)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 55000,
+    "transit_hotel_cost": 0,
+    "total_cost": 66000,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 63,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 250,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "FRA",
+      "via": null,
+      "carrier": "Lufthansa LH",
+      "duration_min": 770,
+      "cabin": "J"
+    },
+    "segments": [
+      {
+        "carrier": "TR",
+        "flight": "TR993",
+        "from": "TPE",
+        "to": "SIN",
+        "depart": "2026-11-12T07:30",
+        "arrive": "2026-11-12T12:00",
+        "cabin": "Y",
+        "duration_min": 250
+      },
+      {
+        "carrier": "LH",
+        "flight": "LH778",
+        "from": "SIN",
+        "to": "FRA",
+        "depart": "2026-11-12T22:00",
+        "arrive": "2026-11-13T05:50",
+        "cabin": "J",
+        "duration_min": 770
+      }
+    ],
+    "same_pnr": false,
+    "interlined_baggage": false,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 600,
+    "min_connection_dxb_mad_min": 0,
+    "total_elapsed_min": 1320,
+    "catering_friendly": "★★★☆☆",
+    "lounge_info": "SIN: SQ SilverKris（同航廈）可在 TR 抵達後走",
+    "notes": "唯一『無轉機』轉到 FRA — 德國旅客超夢幻路線；FRA 後可接陸路+廉航去 BCN/AMS/BCN"
+  },
+  {
+    "id": "AY-SIN-CDG",
+    "label": "SIN→HEL→CDG (Finnair via Helsinki)",
+    "currency": "TWD",
+    "positioning_cost": 11000,
+    "long_haul_cost": 48000,
+    "transit_hotel_cost": 2000,
+    "total_cost": 61000,
+    "tpe_direct_baseline": 180000,
+    "savings_pct": 66,
+    "positioning": {
+      "from": "TPE",
+      "to": "SIN",
+      "carrier": "Scoot TR",
+      "duration_min": 250,
+      "cabin": "Y"
+    },
+    "long_haul": {
+      "from": "SIN",
+      "to": "CDG",
+      "via": "HEL",
+      "carrier": "Finnair AY",
+      "duration_min": 1310,
+      "cabin": "J"
+    },
+    "segments": [
+      {
+        "carrier": "TR",
+        "flight": "TR993",
+        "from": "TPE",
+        "to": "SIN",
+        "depart": "2026-11-12T07:30",
+        "arrive": "2026-11-12T12:00",
+        "cabin": "Y",
+        "duration_min": 250
+      },
+      {
+        "carrier": "AY",
+        "flight": "AY132",
+        "from": "SIN",
+        "to": "HEL",
+        "depart": "2026-11-12T19:55",
+        "arrive": "2026-11-13T05:25",
+        "cabin": "J",
+        "duration_min": 720
+      },
+      {
+        "carrier": "AY",
+        "flight": "AY873",
+        "from": "HEL",
+        "to": "CDG",
+        "depart": "2026-11-13T08:00",
+        "arrive": "2026-11-13T10:35",
+        "cabin": "J",
+        "duration_min": 155
+      }
+    ],
+    "same_pnr": true,
+    "interlined_baggage": true,
+    "terminal_change_kul_dxb": false,
+    "min_connection_kul_dxb_min": 475,
+    "min_connection_dxb_mad_min": 155,
+    "total_elapsed_min": 1565,
+    "catering_friendly": "★★★★☆",
+    "lounge_info": "HEL: Finnair Lounge — 北歐風, SMR is one of the cleanest in Europe",
+    "notes": "HEL 轉機搭順風 — 冬天可省 1 小時 daylight，芬蘭航空北歐節奏友善"
   }
 ]
