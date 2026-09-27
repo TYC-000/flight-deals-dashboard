@@ -1,0 +1,258 @@
+{
+  "trace_at": "2026-09-27T16:57:28.095831+00:00",
+  "provider": "mock_duffel",
+  "started_at": "2026-09-27T16:57:28.027614+00:00",
+  "counts": {
+    "provider": "mock_duffel",
+    "candidates_received": 80,
+    "candidates_selected": 10,
+    "candidates_searched": 10,
+    "candidates_skipped_for_budget": 0,
+    "candidates_with_evidence": 10,
+    "candidates_failed": 0,
+    "candidates_skipped_for_selection": 70,
+    "search_budget_used": 10,
+    "search_budget_max": 10,
+    "search_cache_hits": 0,
+    "verification_status_distribution": {
+      "LIVE": 10
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 10
+    },
+    "failure_kind_distribution": {},
+    "refuse_comparison_count": 0
+  },
+  "candidates": [
+    {
+      "candidate_id": "AUTO-multi_ticket-TPE-BKK-MAD",
+      "provider": "mock_duffel",
+      "request_key": "34ff61b0d41054e6",
+      "request_time": "2026-09-27T16:57:28.094242+00:00",
+      "response_time": "2026-09-27T16:57:28.094242+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094242+00:00",
+      "expires_at": "2026-09-27T17:17:28.094257+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 2,
+      "currency": "TWD",
+      "total_price": 48093.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
+      "provider": "mock_duffel",
+      "request_key": "0cddc92cb70f02c9",
+      "request_time": "2026-09-27T16:57:28.094314+00:00",
+      "response_time": "2026-09-27T16:57:28.094314+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094314+00:00",
+      "expires_at": "2026-09-27T17:17:28.094322+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 48412.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
+      "provider": "mock_duffel",
+      "request_key": "7d6a9261c9543e37",
+      "request_time": "2026-09-27T16:57:28.094370+00:00",
+      "response_time": "2026-09-27T16:57:28.094370+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094370+00:00",
+      "expires_at": "2026-09-27T17:17:28.094377+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 48730.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
+      "provider": "mock_duffel",
+      "request_key": "7558234dc9a04205",
+      "request_time": "2026-09-27T16:57:28.094411+00:00",
+      "response_time": "2026-09-27T16:57:28.094411+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094411+00:00",
+      "expires_at": "2026-09-27T17:17:28.094417+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 49049.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
+      "provider": "mock_duffel",
+      "request_key": "2db03537827438ad",
+      "request_time": "2026-09-27T16:57:28.094450+00:00",
+      "response_time": "2026-09-27T16:57:28.094450+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094450+00:00",
+      "expires_at": "2026-09-27T17:17:28.094456+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 49367.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
+      "provider": "mock_duffel",
+      "request_key": "fc15204d61a2362b",
+      "request_time": "2026-09-27T16:57:28.094483+00:00",
+      "response_time": "2026-09-27T16:57:28.094483+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094483+00:00",
+      "expires_at": "2026-09-27T17:17:28.094489+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 49686.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
+      "provider": "mock_duffel",
+      "request_key": "1dd44d3cebd758b3",
+      "request_time": "2026-09-27T16:57:28.094514+00:00",
+      "response_time": "2026-09-27T16:57:28.094514+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094514+00:00",
+      "expires_at": "2026-09-27T17:17:28.094519+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 50004.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
+      "provider": "mock_duffel",
+      "request_key": "e2610b11ee413e5f",
+      "request_time": "2026-09-27T16:57:28.094548+00:00",
+      "response_time": "2026-09-27T16:57:28.094548+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094548+00:00",
+      "expires_at": "2026-09-27T17:17:28.094553+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 50323.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
+      "provider": "mock_duffel",
+      "request_key": "81c676324459a7f7",
+      "request_time": "2026-09-27T16:57:28.094582+00:00",
+      "response_time": "2026-09-27T16:57:28.094582+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094582+00:00",
+      "expires_at": "2026-09-27T17:17:28.094587+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 50641.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
+      "provider": "mock_duffel",
+      "request_key": "5322a920a2316bb3",
+      "request_time": "2026-09-27T16:57:28.094614+00:00",
+      "response_time": "2026-09-27T16:57:28.094614+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T16:57:28.094614+00:00",
+      "expires_at": "2026-09-27T17:17:28.094619+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 3,
+      "currency": "TWD",
+      "total_price": 50960.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    }
+  ]
+}

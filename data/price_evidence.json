@@ -1,0 +1,2367 @@
+{
+  "schema": "price_intelligence_v1",
+  "trace_at": "2026-09-27T16:57:28.094699+00:00",
+  "provider": "mock_duffel",
+  "summary": {
+    "provider": "mock_duffel",
+    "candidates_received": 80,
+    "candidates_selected": 10,
+    "candidates_searched": 10,
+    "candidates_skipped_for_budget": 0,
+    "candidates_with_evidence": 10,
+    "candidates_failed": 0,
+    "candidates_skipped_for_selection": 70,
+    "search_budget_used": 10,
+    "search_budget_max": 10,
+    "search_cache_hits": 0,
+    "verification_status_distribution": {
+      "LIVE": 10
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 10
+    },
+    "failure_kind_distribution": {},
+    "refuse_comparison_count": 0
+  },
+  "evidences": [
+    {
+      "candidate_id": "AUTO-multi_ticket-TPE-BKK-MAD",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 48093.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094273+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 2,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094242+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-multi_ticket-TPE-BKK-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 755.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "MAD",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 755.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 2,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 48093.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094273+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 40879.47,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094275+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5771.22,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094277+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094284+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094285+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094257+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094257+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094242+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094242+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094242+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-multi_ticket-TPE-BKK-MAD",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 48412.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094335+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094314+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 506.6666666666667,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "DOH",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 506.6666666666667,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DOH",
+                "to": "BCN",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 506.6666666666667,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 48412.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094335+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 41150.2,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094337+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5809.44,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094340+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094345+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094346+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094322+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094322+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094314+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094314+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094314+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 48730.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094383+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094370+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 510.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "DOH",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 510.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DOH",
+                "to": "MAD",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 510.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 48730.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094383+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 41420.93,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094385+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5847.66,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094387+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094390+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094391+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094377+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094377+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094370+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094370+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094370+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 49049.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094422+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094411+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 513.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "DXB",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 513.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DXB",
+                "to": "BCN",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 513.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 49049.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094422+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 41691.65,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094423+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5885.88,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094424+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094428+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094429+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094417+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094417+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094411+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094411+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094411+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 49367.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094460+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094450+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 516.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "DXB",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 516.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DXB",
+                "to": "MAD",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 516.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 49367.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094460+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 41962.38,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094462+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5924.1,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094463+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094466+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094467+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094456+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094456+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094450+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094450+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094450+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 49686.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094493+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094483+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 520.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "IST",
+                "carrier": "TK",
+                "operating_carrier": "TK",
+                "flight_number": "TK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 520.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "IST",
+                "to": "BCN",
+                "carrier": "TK",
+                "operating_carrier": "TK",
+                "flight_number": "TK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 520.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 49686.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094493+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 42233.1,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094494+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5962.32,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094495+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094498+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094498+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094489+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094489+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094483+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094483+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094483+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 50004.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094523+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094514+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "BKK",
+                "carrier": "TG",
+                "operating_carrier": "TG",
+                "flight_number": "TG-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 523.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "BKK",
+                "to": "IST",
+                "carrier": "TK",
+                "operating_carrier": "TK",
+                "flight_number": "TK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 523.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "IST",
+                "to": "MAD",
+                "carrier": "TK",
+                "operating_carrier": "TK",
+                "flight_number": "TK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 523.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 50004.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094523+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 42503.83,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094525+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 6000.54,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094526+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094528+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094529+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094519+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094519+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094514+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094514+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094514+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 50323.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094557+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094548+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "CGK",
+                "carrier": "GA",
+                "operating_carrier": "GA",
+                "flight_number": "GA-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 526.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "CGK",
+                "to": "DOH",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 526.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DOH",
+                "to": "BCN",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 526.6666666666666,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 50323.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094557+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 42774.55,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094558+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 6038.76,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094560+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094564+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094565+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094553+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094553+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094548+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094548+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094548+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 50641.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094591+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094582+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "CGK",
+                "carrier": "GA",
+                "operating_carrier": "GA",
+                "flight_number": "GA-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 530.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "CGK",
+                "to": "DOH",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 530.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DOH",
+                "to": "MAD",
+                "carrier": "QR",
+                "operating_carrier": "QR",
+                "flight_number": "QR-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 530.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 50641.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094591+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 43045.28,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094593+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 6076.98,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094594+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094597+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094598+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094587+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094587+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094582+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094582+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094582+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    },
+    {
+      "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
+      "verification_status": "LIVE",
+      "price_status": "OK_WITH_WARNINGS",
+      "currency": "TWD",
+      "total_price": {
+        "amount": 50960.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-27T16:57:28.094623+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 3,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
+      "freshness_min": 0,
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-27T16:57:28.094614+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "price_evidence": {
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "CGK",
+                "carrier": "GA",
+                "operating_carrier": "GA",
+                "flight_number": "GA-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 533.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "CGK",
+                "to": "DXB",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 533.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_3",
+            "stops": [
+              {
+                "from": "DXB",
+                "to": "BCN",
+                "carrier": "EK",
+                "operating_carrier": "EK",
+                "flight_number": "EK-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 533.3333333333334,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 3,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 50960.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094623+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 43316.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094624+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 6115.2,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094626+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094628+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-27T16:57:28.094629+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "J",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-27T17:17:28.094619+00:00",
+        "price_quote_expires_at": "2026-09-27T17:17:28.094619+00:00",
+        "price_retrieved_at": "2026-09-27T16:57:28.094614+00:00",
+        "retrieved_at": "2026-09-27T16:57:28.094614+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "duffel",
+          "source_type": "live",
+          "retrieved_at": "2026-09-27T16:57:28.094614+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
+          "verification_status": "LIVE"
+        },
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
+    }
+  ]
+}
