@@ -310,28 +310,44 @@ df_survived = df_survived[
 ]
 
 # Compute user-preference score:
-#   - boost if all segments use preferred aircraft (+100 to fat_sort key)
-#   - penalty if any segment uses excluded carrier (+10 to fat_sort key)
+#   - boost if long-haul segment uses preferred aircraft
+#   - strong penalty if any segment uses excluded carrier
 def _pref_score(opt_id: str) -> float:
     opt = opt_by_id_sort.get(opt_id, {})
     score = 0.0
     segs = opt.get("segments", [])
     if segs and preferred_aircraft:
-        # If ANY long-haul segment uses preferred aircraft, boost
         long_haul_seg = segs[1] if len(segs) >= 2 else segs[0]
         ac = long_haul_seg.get("aircraft_type", "")
         if any(ac.startswith(p) for p in preferred_aircraft):
-            score -= 1.0  # lower = better (sorted asc)
+            score -= 1.0  # boost
     if segs and excluded_carriers:
         for s in segs:
             op = s.get("operating_carrier", "")
             mkt = s.get("carrier", "")
             if op in excluded_carriers or mkt in excluded_carriers:
-                score += 1.0  # higher = worse
+                score += 3.0  # strong penalty — outweighs fatigue gap
     return score
+
+# Downgrade verdict if carrier is excluded (visual + sort impact)
+def _downgrade_verdict(opt_id: str, current_verdict: str) -> str:
+    if current_verdict != "prime_deal":
+        return current_verdict
+    opt = opt_by_id_sort.get(opt_id, {})
+    segs = opt.get("segments", [])
+    for s in segs:
+        op = s.get("operating_carrier", "")
+        mkt = s.get("carrier", "")
+        if op in excluded_carriers or mkt in excluded_carriers:
+            return "acceptable_economy"
+    return current_verdict
 
 opt_by_id_sort = {o["id"]: o for o in all_evaluated}
 df_survived["_pref_score"] = df_survived["id"].map(_pref_score)
+df_survived["routing_verdict"] = df_survived.apply(
+    lambda r: _downgrade_verdict(r["id"], r["routing_verdict"]),
+    axis=1,
+)
 
 # Sort by verdict priority then fatigue then risk then price
 verdict_priority = {"prime_deal": 0, "acceptable_economy": 1, "avoid_exhausting": 2}
