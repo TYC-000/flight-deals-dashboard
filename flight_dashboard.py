@@ -221,7 +221,7 @@ with st.sidebar:
         st.session_state["_min_aircraft_widget"] = 4
         st.session_state["_verdict_filter_widget"] = ["prime_deal", "acceptable_economy"]
         st.session_state["_excluded_carriers_widget"] = ["LH", "BA", "AF", "KL"]
-        st.session_state["_preferred_aircraft_widget"] = ["A380", "A350-900", "B787-9"]
+        st.session_state["_preferred_aircraft_widget"] = ["A380", "A350-900", "A350-1000", "B787-9", "B787-10"]
         st.rerun()
     st.caption(t(L, "filters_recommended_caption"))
 
@@ -274,7 +274,7 @@ with st.sidebar:
     preferred_aircraft = st.multiselect(
         t(L, "preferred_aircraft"),
         options=["A380", "A350-900", "A350-1000", "B787-9", "B787-10", "B777-300ER"],
-        default=st.session_state.get("_preferred_aircraft_widget", ["A380", "A350-900", "B787-9"]),
+        default=st.session_state.get("_preferred_aircraft_widget", ["A380", "A350-900", "A350-1000", "B787-9", "B787-10"]),
         key="_preferred_aircraft_widget",
         help=t(L, "preferred_aircraft_help"),
     )
