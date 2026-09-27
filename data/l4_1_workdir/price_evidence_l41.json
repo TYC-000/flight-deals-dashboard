@@ -1,16 +1,28 @@
 {
   "schema": "price_intelligence_v1_1",
-  "trace_at": "2026-09-27T19:26:39.382194+00:00",
+  "trace_at": "2026-09-27T19:26:39.377207+00:00",
   "provider": "mock_duffel",
   "smoke_test": true,
   "summary": {
     "provider": "mock_duffel",
     "candidates_received": 2,
+    "candidates_selected": 2,
+    "candidates_searched": 2,
+    "candidates_skipped_for_budget": 0,
     "candidates_with_evidence": 2,
     "candidates_failed": 0,
-    "n_live": 2,
-    "n_mock": 2,
-    "n_refused": 0
+    "candidates_skipped_for_selection": 0,
+    "search_budget_used": 2,
+    "search_budget_max": 2,
+    "search_cache_hits": 0,
+    "verification_status_distribution": {
+      "LIVE": 2
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 2
+    },
+    "failure_kind_distribution": {},
+    "refuse_comparison_count": 0
   },
   "evidences": [
     {

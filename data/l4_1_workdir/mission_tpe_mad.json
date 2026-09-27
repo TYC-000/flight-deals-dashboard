@@ -1,0 +1,15 @@
+{
+  "mission_id": "M-L41-TPE-MAD",
+  "origin": "TPE",
+  "destination": "MAD",
+  "departure_date": "2027-04-15",
+  "return_date": "2027-04-25",
+  "cabin": "economy",
+  "passengers": 1,
+  "preferences": {
+    "allow_outer_port": true,
+    "allow_multi_ticket": true,
+    "allow_secondary_entry": true,
+    "max_positioning_hops": 2
+  }
+}

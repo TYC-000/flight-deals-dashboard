@@ -1,7 +1,7 @@
 {
-  "trace_at": "2026-09-27T18:13:26.256669+00:00",
+  "trace_at": "2026-09-27T19:26:29.630976+00:00",
   "fx_provider": "frankfurter",
-  "started_at": "2026-09-27T18:13:25.946843+00:00",
+  "started_at": "2026-09-27T19:26:29.356710+00:00",
   "smoke_test": true,
   "counts": {
     "conversions_requested": 1,
@@ -35,7 +35,7 @@
         "rate": 31.774,
         "rate_date": "2026-09-27",
         "rate_source_type": "latest/current",
-        "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+        "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
         "freshness_min": 0,
         "freshness_bucket": "FRESHNESS_RECENT",
         "freshness_label": "latest/current",
@@ -55,12 +55,12 @@
           "source": "frankfurter",
           "source_type": "live",
           "endpoint": "/v2/rate/{base}/{quote}",
-          "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+          "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
           "rate_date": "2026-09-27",
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-09-27T18:13:26.101013+00:00",
+      "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
       "rate_date": "2026-09-27",
       "rate": 31.774
     }

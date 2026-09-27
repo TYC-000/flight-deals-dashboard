@@ -1,117 +1,106 @@
 {
-  "schema_version": "v1.2.5",
-  "comparison_id": "A::B",
-  "candidate_a_id": "A",
-  "candidate_b_id": "B",
-  "baseline_pair": null,
-  "price_a": 500.0,
-  "price_b": 500.0,
-  "normalized_price_a": 500.0,
-  "normalized_price_b": 500.0,
-  "comparison_currency": "EUR",
-  "fx_state": "IDENTITY",
-  "fx_used": false,
-  "fx_evidence_ref": null,
-  "delta": 0.0,
-  "abs_delta": 0.0,
-  "delta_percentage": 0.0,
-  "parity_status": [
-    "SOFT_COMPARABLE"
-  ],
-  "comparability_status": "SOFT_COMPARABLE",
-  "comparison_reasons": [],
-  "refusal_reasons": [],
-  "soft_observations": [
-    "SOFT_PASSENGER_PARITY_UNKNOWN",
-    "PP_PASSENGER_COUNT_UNKNOWN",
-    "PP_PASSENGER_TYPE_UNKNOWN"
-  ],
-  "unknown_reasons": [],
-  "schedule_evidence_a": {
-    "verification_status": "LIVE",
-    "provider": "duffel",
-    "segments": [
-      {
-        "from": "TPE",
-        "to": "FRA"
+  "schema": "comparison_engine_v1_2_5",
+  "trace_at": "2026-09-27T19:26:39.787797+00:00",
+  "n_evidences": 1,
+  "evidences": [
+    {
+      "schema_version": "v1.2.5",
+      "comparison_id": "None::None",
+      "candidate_a_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "candidate_b_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "baseline_pair": null,
+      "price_a": null,
+      "price_b": null,
+      "normalized_price_a": null,
+      "normalized_price_b": null,
+      "comparison_currency": "EUR",
+      "fx_state": "REFUSED",
+      "fx_used": false,
+      "fx_evidence_ref": null,
+      "delta": null,
+      "abs_delta": null,
+      "delta_percentage": null,
+      "parity_status": [
+        "REFUSED"
+      ],
+      "comparability_status": "REFUSED",
+      "comparison_reasons": [],
+      "refusal_reasons": [
+        "REFUSAL_CURRENCY_UNKNOWN",
+        "REFUSAL_PRICE_NOT_FOUND"
+      ],
+      "soft_observations": [
+        "SOFT_MISSION_BINDING_UNKNOWN",
+        "TICKET_STRUCTURE_UNKNOWN",
+        "SOFT_BAGGAGE_UNKNOWN",
+        "SOFT_ITINERARY_MISMATCH",
+        "SOFT_PASSENGER_PARITY_UNKNOWN",
+        "PP_PASSENGER_COUNT_UNKNOWN",
+        "PP_PASSENGER_TYPE_UNKNOWN",
+        "PP_ITINERARY_UNKNOWN",
+        "PP_TICKET_STRUCTURE_UNKNOWN",
+        "PP_BAGGAGE_UNKNOWN"
+      ],
+      "unknown_reasons": [],
+      "schedule_evidence_a": {
+        "verification_status": "UNKNOWN",
+        "provider": null,
+        "segments": [],
+        "routing": null,
+        "segment_count": null
       },
-      {
-        "from": "FRA",
-        "to": "MAD"
-      }
-    ],
-    "routing": null,
-    "segment_count": 2
-  },
-  "schedule_evidence_b": {
-    "verification_status": "LIVE",
-    "provider": "duffel",
-    "segments": [
-      {
-        "from": "TPE",
-        "to": "FRA"
+      "schedule_evidence_b": {
+        "verification_status": "UNKNOWN",
+        "provider": null,
+        "segments": [],
+        "routing": null,
+        "segment_count": null
       },
-      {
-        "from": "FRA",
-        "to": "MAD"
-      }
-    ],
-    "routing": null,
-    "segment_count": 2
-  },
-  "passenger_parity_evidence_ref_a": null,
-  "passenger_parity_evidence_ref_b": null,
-  "baseline_evidence_id_a": null,
-  "baseline_evidence_id_b": null,
-  "ticket_structure_a": "single-ticket",
-  "ticket_structure_b": "single-ticket",
-  "cabin_a": "economy",
-  "cabin_b": "economy",
-  "baggage_a": {
-    "included": {
-      "checked_pieces": 1,
-      "carry_on": 1
-    },
-    "evidence_complete": true
-  },
-  "baggage_b": {
-    "included": {
-      "checked_pieces": 1,
-      "carry_on": 1
-    },
-    "evidence_complete": true
-  },
-  "itinerary_a": "TPE-MAD",
-  "itinerary_b": "TPE-MAD",
-  "date_binding": {
-    "travel_date_a": "2027-04-15",
-    "travel_date_b": "2027-04-15",
-    "return_date_a": null,
-    "return_date_b": null
-  },
-  "provider_a": "duffel",
-  "provider_b": "duffel",
-  "provider_mode_a": "live",
-  "provider_mode_b": "live",
-  "provider_disagreement": false,
-  "verification_status_a": "LIVE",
-  "verification_status_b": "LIVE",
-  "rule_version": "v1.2.5/v1",
-  "retrieved_at": "2026-09-27T18:35:12.345629+00:00",
-  "evidence_provenance": {
-    "source": "comparison_engine_v1_2_5",
-    "source_type": "cache",
-    "endpoint": null,
-    "retrieved_at": "2026-09-27T18:35:12.345629+00:00",
-    "verification_status": "DATABASE",
-    "rule_version": "v1.2.5/v1",
-    "evidence_arity": 2
-  },
-  "verification_status": "DATABASE",
-  "source": "comparison_engine_v1_2_5",
-  "is_identity": false,
-  "supports_no_credential": true,
-  "warnings": [],
-  "failure_reason": null,
-  "failure_kind": null
+      "passenger_parity_evidence_ref_a": null,
+      "passenger_parity_evidence_ref_b": null,
+      "baseline_evidence_id_a": null,
+      "baseline_evidence_id_b": null,
+      "ticket_structure_a": null,
+      "ticket_structure_b": null,
+      "cabin_a": "economy",
+      "cabin_b": "economy",
+      "baggage_a": {},
+      "baggage_b": {},
+      "itinerary_a": null,
+      "itinerary_b": null,
+      "date_binding": {
+        "travel_date_a": null,
+        "travel_date_b": null,
+        "return_date_a": null,
+        "return_date_b": null
+      },
+      "provider_a": null,
+      "provider_b": null,
+      "provider_mode_a": null,
+      "provider_mode_b": null,
+      "provider_disagreement": null,
+      "verification_status_a": "UNKNOWN",
+      "verification_status_b": "UNKNOWN",
+      "rule_version": "v1.2.5/v1",
+      "retrieved_at": "2026-09-27T19:26:39.787009+00:00",
+      "evidence_provenance": {
+        "source": "comparison_engine_v1_2_5",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T19:26:39.787009+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "v1.2.5/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "comparison_engine_v1_2_5",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "stage": "comparison",
+      "trace_at": "2026-09-27T19:26:39.787190+00:00"
+    }
+  ]
 }

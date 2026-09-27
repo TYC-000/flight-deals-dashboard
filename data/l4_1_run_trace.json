@@ -1,0 +1,103 @@
+{
+  "started_at": "2026-09-27T19:26:39.292981+00:00",
+  "version": "l4.1/v1",
+  "stages": [
+    {
+      "stage": "discovery",
+      "n_candidates": 2,
+      "candidate_ids": [
+        "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "AUTO-L41-direct_hub-TPE-FRA-MAD"
+      ]
+    },
+    {
+      "stage": "schedule_enrichment_v1_0",
+      "n_in": 2,
+      "n_out": 2,
+      "n_candidate_ids_preserved": 2,
+      "data_source": "openflights_routes.dat"
+    },
+    {
+      "stage": "price_evidence",
+      "n_evidences": 2,
+      "n_live": 2,
+      "n_mock": 2,
+      "n_refused": 0,
+      "actual_provider": "mock_duffel",
+      "actual_provider_mode": "mock",
+      "candidate_ids_with_live_evidence": [
+        "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "AUTO-L41-direct_hub-TPE-FRA-MAD"
+      ]
+    },
+    {
+      "stage": "live_schedule_v1_2_1",
+      "n_evidences": 2,
+      "provider": "mock_duffel",
+      "provider_mode": "mock",
+      "candidate_ids_with_schedule": [
+        "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "AUTO-L41-direct_hub-TPE-FRA-MAD"
+      ]
+    },
+    {
+      "stage": "fx",
+      "fx_evidence_emitted": true,
+      "fx_state": "LIVE"
+    },
+    {
+      "stage": "pairing",
+      "n_live_candidates": 2,
+      "n_pairs": 1
+    }
+  ],
+  "real_external_requests": [
+    {
+      "provider": "frankfurter",
+      "endpoint": "/v2/rate/{base}/{quote}",
+      "verified_smoke_only": true,
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T19:26:39.561882+00:00"
+    }
+  ],
+  "credential_checks": [
+    {
+      "stage": "price_provider",
+      "requested": {
+        "provider": "mock",
+        "provider_mode": "mock"
+      },
+      "honored": true,
+      "actual_provider": "mock",
+      "actual_mode": "mock",
+      "credential_present": false,
+      "credential_checked_env": null,
+      "refusal_reason": null
+    }
+  ],
+  "mission": {
+    "mission_id": "M-L41-INTEGRATION",
+    "origin": "TPE",
+    "destination": "MAD",
+    "departure_date": "2027-04-15",
+    "return_date": "2027-04-25",
+    "cabin": "economy",
+    "passengers": 1,
+    "preferences": {
+      "allow_outer_port": true,
+      "allow_multi_ticket": true,
+      "allow_secondary_entry": true,
+      "max_positioning_hops": 2
+    }
+  },
+  "completed_at": "2026-09-27T19:26:39.790050+00:00",
+  "n_arbitrage_evidences": 1,
+  "n_comparison_evidences": 1,
+  "n_parity_evidences": 1,
+  "n_baseline_evidences": 1,
+  "n_price_evidences": 2,
+  "n_schedule_evidences": 2,
+  "candidate_ids_with_l4": [
+    "AUTO-L41-multi_ticket-TPE-KUL-MAD"
+  ]
+}

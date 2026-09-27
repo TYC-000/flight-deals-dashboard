@@ -1,5 +1,5 @@
 {
-  "trace_at": "2026-09-27T16:57:13.914659+00:00",
+  "trace_at": "2026-09-27T19:26:15.281452+00:00",
   "data_source": "OpenFlights routes.dat/airports.dat — DATABASE evidence only.",
   "counts": {
     "candidates_received": 80,

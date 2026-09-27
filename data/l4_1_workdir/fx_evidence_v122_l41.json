@@ -1,14 +1,23 @@
 {
   "schema": "fx_provider_v1_2_2",
-  "trace_at": "2026-09-27T19:26:39.783201+00:00",
+  "trace_at": "2026-09-27T19:26:39.756393+00:00",
   "fx_provider": "frankfurter",
   "smoke_test": true,
   "summary": {
+    "conversions_requested": 1,
     "conversions_succeeded": 1,
     "conversions_failed": 0,
+    "identity_conversions": 0,
+    "conversions_skipped_for_budget": 0,
+    "search_budget_used": 1,
+    "search_budget_max": 2,
     "verification_status_distribution": {
       "LIVE": 1
-    }
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 1
+    },
+    "failure_kind_distribution": {}
   },
   "evidences": [
     {

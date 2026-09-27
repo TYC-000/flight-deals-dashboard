@@ -1,0 +1,75 @@
+{
+  "trace_at": "2026-09-27T19:26:39.377548+00:00",
+  "provider": "mock_duffel",
+  "started_at": "2026-09-27T19:26:39.376655+00:00",
+  "smoke_test": true,
+  "counts": {
+    "provider": "mock_duffel",
+    "candidates_received": 2,
+    "candidates_selected": 2,
+    "candidates_searched": 2,
+    "candidates_skipped_for_budget": 0,
+    "candidates_with_evidence": 2,
+    "candidates_failed": 0,
+    "candidates_skipped_for_selection": 0,
+    "search_budget_used": 2,
+    "search_budget_max": 2,
+    "search_cache_hits": 0,
+    "verification_status_distribution": {
+      "LIVE": 2
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 2
+    },
+    "failure_kind_distribution": {},
+    "refuse_comparison_count": 0
+  },
+  "candidates": [
+    {
+      "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "provider": "mock_duffel",
+      "request_key": "11728466236e8941",
+      "request_time": "2026-09-27T19:26:39.377008+00:00",
+      "response_time": "2026-09-27T19:26:39.377008+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T19:26:39.377008+00:00",
+      "expires_at": "2026-09-27T19:46:39.377022+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 2,
+      "currency": "TWD",
+      "total_price": 48093.5,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    },
+    {
+      "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "provider": "mock_duffel",
+      "request_key": "bd4157539fa883a0",
+      "request_time": "2026-09-27T19:26:39.377129+00:00",
+      "response_time": "2026-09-27T19:26:39.377129+00:00",
+      "elapsed_ms": null,
+      "price_found": true,
+      "price_status": "OK_WITH_WARNINGS",
+      "verification_status": "LIVE",
+      "retrieved_at": "2026-09-27T19:26:39.377129+00:00",
+      "expires_at": "2026-09-27T19:46:39.377137+00:00",
+      "freshness": "FRESHNESS_RECENT",
+      "ticket_count": 2,
+      "currency": "TWD",
+      "total_price": 48412.0,
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
+      "failure_reason": null,
+      "failure_kind": null,
+      "cache_hit": false
+    }
+  ]
+}
