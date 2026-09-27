@@ -360,3 +360,19 @@ for lang in ["en", "zh"]:
     if lang in T:
         for key, val in I18N_CALENDAR[lang].items():
             T[lang][key] = val
+
+
+# Layout preference labels (used by layout_detector + flight_dashboard)
+LAYOUT_I18N = {
+    "en": {
+        "layout_label": "📐 Layout",
+    },
+    "zh": {
+        "layout_label": "📐 版面",
+    },
+}
+
+for lang in ["en", "zh"]:
+    if lang in T:
+        for key, val in LAYOUT_I18N[lang].items():
+            T[lang][key] = val

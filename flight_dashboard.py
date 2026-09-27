@@ -18,6 +18,22 @@ sys_path = Path(__file__).parent
 import sys
 sys.path.insert(0, str(sys_path))
 from i18n import get as t, SEASONAL_DATA, DESTINATION_BEST_TIME
+from layout_detector import LAYOUT_LABELS, layout_options, is_likely_mobile
+
+
+def inject_layout_css(layout: str) -> None:
+    """Inject CSS to adjust metric tile density based on layout choice."""
+    if layout == "compact":
+        css = """
+        <style>
+        [data-testid="stMetric"] { font-size: 1.05rem; padding: 8px 12px; }
+        [data-testid="stMetric"] label { font-size: 0.85rem; opacity: 0.8; }
+        [data-testid="stMetric"] [data-testid="stMetricValue"] { font-size: 1.4rem !important; }
+        [data-testid="stMetric"] [data-testid="stMetricDelta"] { font-size: 0.9rem !important; }
+        [data-testid="stTabs"] button { font-size: 0.95rem; padding: 10px 14px; }
+        </style>
+        """
+        st.markdown(css, unsafe_allow_html=True)
 
 # ----------------------------------------------------------------------
 # Configuration
@@ -157,6 +173,35 @@ with st.sidebar:
         st.rerun()
     L = st.session_state["_lang"]
 
+    # Layout picker (responsive: spacious default; user can switch)
+    if "_layout_user_set" not in st.session_state:
+        # First visit — choose based on a hint
+        # Streamlit doesn't expose User-Agent directly; we check ContextVia st_javascript? No.
+        # Default to spacious, with a small prompt for mobile users
+        st.session_state["_layout"] = "spacious"
+        st.session_state["_layout_user_set"] = False
+    layout_labels = layout_options(L)
+    layout_idx = 0 if st.session_state.get("_layout", "spacious") == "spacious" else 1
+    layout_choice_label = st.radio(
+        t(L, "layout_label"),
+        options=layout_labels,
+        index=layout_idx,
+        horizontal=True,
+        key="_layout_radio",
+    )
+    layout_choice = "spacious" if layout_choice_label == layout_labels[0] else "compact"
+    if layout_choice != st.session_state.get("_layout"):
+        st.session_state["_layout"] = layout_choice
+        st.session_state["_layout_user_set"] = True
+    LAYOUT = layout_choice
+
+    # Mobile hint when user hasn't manually toggled yet
+    if not st.session_state["_layout_user_set"]:
+        if L == "zh":
+            st.caption("📱 手機/平板建議切到「精簡」，資訊密度較低")
+        else:
+            st.caption("📱 On mobile / tablet, switch to \"Compact\" for better density")
+
     st.title(f"{PAGE_ICON} {t(L, 'sidebar_title')}")
     st.caption(t(L, "sidebar_caption"))
 
@@ -245,7 +290,10 @@ else:
     total_savings = int(df_survived["savings_twd"].sum())
     avg_savings_pct = round(df_survived["savings_pct"].mean(), 1)
 
-    c1, c2, c3, c4 = st.columns(4)
+    # Inject CSS based on layout choice
+    inject_layout_css(LAYOUT)
+
+    c1, c2, c3, c4 = (st.columns(2) if LAYOUT == "compact" else st.columns(4))
     with c1:
         st.metric(
             t(L, "kpi_top_pick"),
@@ -292,7 +340,12 @@ with tab_kpi:
     if df_survived.empty:
         st.info(t(L, "no_data_scatter"))
     else:
-        col_a, col_b = st.columns(2)
+        # Layout-aware: compact stacks vertically (single column); spacious puts 2 charts side-by-side
+        if LAYOUT == "compact":
+            col_a = st.container()
+            col_b = st.container()
+        else:
+            col_a, col_b = st.columns(2)
 
         # --- Scatter: risk vs fatigue ---
         with col_a:
@@ -358,7 +411,11 @@ with tab_kpi:
             st.plotly_chart(fig_bar, use_container_width=True)
 
         # --- Savings + elapsed ---
-        col_c, col_d = st.columns(2)
+        if LAYOUT == "compact":
+            col_c = st.container()
+            col_d = st.container()
+        else:
+            col_c, col_d = st.columns(2)
         with col_c:
             df_savings = df_survived.sort_values("savings_pct", ascending=False).head(10)
             fig_sav = px.bar(
