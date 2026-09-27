@@ -346,14 +346,19 @@ def select_candidates(
     max_searches: int,
     schedule_enrichment_lookup: Callable[[str], dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    """Rank candidates by schedule support × structural interest, return top-N.
+    """Rank candidates by information-priority score, return top-N.
 
-    Selection policy (per spec §9):
+    Selection policy (per spec §9; v1.1.1 §7):
       1. Prefer schedule_status == SUPPORTED
       2. Prefer candidates with at least one of these signals:
             multi_ticket, positioning, outer_port, alternative_hub, secondary_entry
-      3. Prefer candidates with fewer segments (lower complexity)
+      3. Penalize complexity (more segments = higher chance of invalidation)
       4. Deterministic tiebreaking by id
+
+    The score is named `information_priority_score` — NEVER `arbitrage_score`,
+    `candidate_score`, or `price_score`. It answers the question: "which
+    candidates are worth spending limited provider queries on?" — NOT "which
+    candidate is a confirmed arbitrage opportunity?".
 
     `schedule_enrichment_lookup` is a function candidate_id -> schedule_intelligence dict.
     Defaults to reading from a top-level `schedule_intelligence` field on the candidate.
@@ -370,14 +375,14 @@ def select_candidates(
             sched = schedule_enrichment_lookup(cid) or sched
         sched_status = sched.get("schedule_status", "UNCERTAIN")
 
-        # Base score
-        score = 0.0
+        # information_priority_score (per v1.1.1 §7: NOT arbitrage_score)
+        ips = 0.0
         if sched_status == "SUPPORTED":
-            score += 10.0
+            ips += 10.0
         elif sched_status == "PARTIAL":
-            score += 5.0
+            ips += 5.0
         elif sched_status == "UNCERTAIN":
-            score += 1.0
+            ips += 1.0
         # else UNAVAILABLE: 0
 
         # 2. Structural signals (preferred keywords per spec §9)
@@ -393,19 +398,19 @@ def select_candidates(
             "schedule_uncertain":-1.0,
         }
         for sig in signals:
-            score += signal_weights.get(sig, 0.0)
+            ips += signal_weights.get(sig, 0.0)
 
         # 3. Penalize complexity (more segments = higher chance of invalidation)
         n_seg = len(c.get("segments") or [])
-        score -= 0.5 * max(0, n_seg - 1)
+        ips -= 0.5 * max(0, n_seg - 1)
 
         # 4. Same-pnr (single ticket) is generally simpler → small boost
         if c.get("same_pnr") is True:
-            score += 1.0
+            ips += 1.0
 
-        enriched.append((score, cid, c))
+        enriched.append((ips, cid, c))
 
-    # Sort by score DESC, then by id ASC (deterministic tiebreak)
+    # Sort by ips DESC, then by id ASC (deterministic tiebreak)
     enriched.sort(key=lambda x: (-x[0], x[1]))
     # Return the candidates (not score tuples)
     return [c for _, _, c in enriched[:max_searches]]
@@ -591,7 +596,7 @@ class MockDuffelProvider:
             }
         }
         # Build a fully normalized payload via DuffelProvider.normalize
-        pe = normalize_duffel_response(raw, candidate, retrieved_at)
+        pe = normalize_duffel_response(raw, candidate, retrieved_at, provider_name=self.name)
         if not isinstance(pe, dict):
             return build_failure_result(FK_PROVIDER_ERROR, retrieved_at, "normalize failed")
         # simulate STALE_PRICE behavior post-emit
@@ -743,7 +748,7 @@ class DuffelProvider:
         # Pick the cheapest offer
         cheapest = min(offers, key=lambda o: float(o.get("total_amount") or 0))
         raw_offer = {"data": cheapest, "_request_body": body, "_currency_received_at": retrieved_at}
-        pe = normalize_duffel_response(raw_offer, candidate, retrieved_at)
+        pe = normalize_duffel_response(raw_offer, candidate, retrieved_at, provider_name=self.name)
         if not isinstance(pe, dict):
             return build_failure_result(FK_PROVIDER_ERROR, retrieved_at, "normalize failed")
         return build_success_result(raw_offer, pe, retrieved_at, elapsed_ms)
@@ -757,11 +762,16 @@ def normalize_duffel_response(
     raw: dict[str, Any],
     candidate: dict[str, Any],
     retrieved_at: str,
+    provider_name: str = "duffel",
 ) -> dict[str, Any] | str:
     """Convert a Duffel offer response into a normalized PriceEvidence payload.
 
     Returns the payload dict, or a string error code if normalization failed.
     Never silently fabricates missing fields.
+
+    `provider_name` must be either "duffel" or "mock_duffel" — surfaced
+    in payload.provenance.source AND in payload.provider/provider_mode so
+    downstream can never confuse Mock with real Duffel.
     """
     offer = raw.get("data") or {}
     if not offer:
@@ -770,6 +780,12 @@ def normalize_duffel_response(
     currency = offer.get("total_currency") or offer.get("base_currency")
     if not currency:
         return FK_CURRENCY_UNKNOWN
+
+    # Provider provenance: explicit, never mixed
+    provider_mode = "live" if provider_name == "duffel" else "mock"
+    if provider_name not in ("duffel", "mock_duffel"):
+        # Refuse to fabricate a provenance identity
+        return FK_PROVIDER_ERROR
 
     # Duffel's `type` field tells us single vs split ticket
     # type == "single_ticket"   → all slices are in one PNR
@@ -947,14 +963,18 @@ def normalize_duffel_response(
         "confidence_reasons":     confidence_reasons,
         "warnings":               warnings,
         "provenance": {
-            "source":             "duffel" if not offer.get("_offer_type") == "mock" else "mock_duffel",
-            "source_type":        SRC_LIVE,
+            "source":             provider_name,  # "duffel" or "mock_duffel"
+            "source_type":        SRC_LIVE if provider_name == "duffel" else SRC_CACHE,
             "retrieved_at":       retrieved_at,
             "freshness_min":      fmin,
             "endpoint":           "air/offer_requests",
             "offer_id":           offer.get("id"),
             "verification_status": VS_LIVE,
         },
+        # Explicit provider identity (v1.1.1 §2):
+        # Mock ≠ Real Duffel. These fields are ALWAYS present.
+        "provider":      provider_name,    # "duffel" | "mock_duffel"
+        "provider_mode": provider_mode,    # "live" | "mock"
         "verification_status": VS_LIVE,
         "price_status": "OK" if not warnings else "OK_WITH_WARNINGS",
         "failure_reason":      None,
@@ -1095,7 +1115,7 @@ def run_price_intelligence(
         # Convert result → PriceEvidence-shaped per-candidate record
         cid = cand.get("id", "(no id)")
         summary["candidates_searched"] += 1
-        pe_record = price_evidence_from_result(result, cid)
+        pe_record = price_evidence_from_result(result, cid, provider_name=getattr(provider, "name", "duffel"))
         price_evidences.append(pe_record)
 
         if result.get("success"):
@@ -1119,16 +1139,24 @@ def run_price_intelligence(
     return price_evidences, summary, budget
 
 
-def price_evidence_from_result(result: dict[str, Any], candidate_id: str) -> dict[str, Any]:
-    """Build a per-candidate PriceEvidence-shaped record from a lookup result."""
+def price_evidence_from_result(result: dict[str, Any], candidate_id: str, provider_name: str = "duffel") -> dict[str, Any]:
+    """Build a per-candidate PriceEvidence-shaped record from a lookup result.
+
+    `provider_name` is surfaced in BOTH success and failure records (v1.1.1 §2):
+      - "duffel"     → real, provider_mode = "live"
+      - "mock_duffel" → synthetic, provider_mode = "mock"
+    """
     if result.get("success") and result.get("price_evidence"):
         pe = result["price_evidence"]
         # Defensive: ensure no forbidden keys present
-        for forbidden in ("arbitrage_score", "arbitrage_opportunity", "net_arbitrage", "booking_status"):
+        for forbidden in ("arbitrage_score", "arbitrage_opportunity", "net_arbitrage",
+                          "booking_status"):
             if forbidden in pe:
                 raise AssertionError(f"Forbidden key in PriceEvidence: {forbidden}")
         return {
             "candidate_id":        candidate_id,
+            "provider":            pe.get("provider", provider_name),
+            "provider_mode":       pe.get("provider_mode", "live" if provider_name == "duffel" else "mock"),
             "verification_status": pe.get("verification_status"),
             "price_status":        pe.get("price_status", "OK"),
             "currency":            pe.get("currency"),
@@ -1148,22 +1176,24 @@ def price_evidence_from_result(result: dict[str, Any], candidate_id: str) -> dic
     # Failure case
     failure_kind = result.get("failure_kind") or FK_PROVIDER_ERROR
     return {
-        "candidate_id":        candidate_id,
-        "verification_status": VS_UNKNOWN,
-        "price_status":        "FAILED",
-        "currency":            None,
-        "total_price":         None,
-        "ticket_count":        None,
-        "is_single_ticket":    None,
-        "self_transfer":       None,
+        "candidate_id":         candidate_id,
+        "provider":             provider_name,
+        "provider_mode":        "live" if provider_name == "duffel" else "mock",
+        "verification_status":  VS_UNKNOWN,
+        "price_status":         "FAILED",
+        "currency":             None,
+        "total_price":          None,
+        "ticket_count":         None,
+        "is_single_ticket":     None,
+        "self_transfer":        None,
         "separate_ticket_risk": None,
-        "freshness_min":       None,
-        "freshness_bucket":    FreshnessBucket.UNKNOWN,
-        "retrieved_at":        result.get("retrieved_at"),
-        "warnings":            [failure_kind] if failure_kind else [],
-        "price_evidence":      None,
-        "failure_kind":        failure_kind,
-        "failure_reason":      result.get("failure_reason"),
+        "freshness_min":        None,
+        "freshness_bucket":     FreshnessBucket.UNKNOWN,
+        "retrieved_at":         result.get("retrieved_at"),
+        "warnings":             [failure_kind] if failure_kind else [],
+        "price_evidence":       None,
+        "failure_kind":         failure_kind,
+        "failure_reason":       result.get("failure_reason"),
     }
 
 
@@ -1184,7 +1214,7 @@ def build_trace_records(
         search_key = make_search_key(cand, date_window="trace", passengers=1) if cand else None
         out.append({
             "candidate_id":          cid,
-            "provider":              provider_name,
+            "provider":              provider_name,  # explicit identity (v1.1.1 §2)
             "request_key":           search_key,
             "request_time":          pe.get("retrieved_at"),
             "response_time":         pe.get("retrieved_at"),
@@ -1203,7 +1233,6 @@ def build_trace_records(
             "failure_kind":          pe.get("failure_kind"),
             "cache_hit":             cid in budget._candidates_skipped_for_budget and pe.get("price_status") == "OK",
         })
-    # Also include candidates that were skipped for selection (still trace-worthy)
     return out
 
 
@@ -1328,15 +1357,37 @@ def _print_observability(summary: dict[str, Any], provider_name: str, started: s
 
 
 def build_provider(spec: str) -> PriceProvider:
-    """Construct a provider from a CLI spec string. NEVER log credentials."""
-    spec = spec.lower()
+    """Construct a provider from a CLI spec string. NEVER log credentials.
+
+    Provider modes (per v1.1.1 spec):
+      mock   → MockDuffelProvider
+      duffel → DuffelProvider (raises MISSING_CREDENTIALS if no token)
+      auto   → may select real provider if credentials present;
+                otherwise fail closed (does NOT silently fall back to Mock)
+
+    For `--provider mock` and `--provider duffel`: explicit, fail-fast.
+    For `--provider auto`: explicit fallback policy (real if creds, mock
+                            otherwise) but NEVER mingled.
+
+    Per v1.1.1 §1: never silently fall back from --provider duffel to Mock.
+    """
+    spec = (spec or "").lower()
+    if spec == "mock":
+        return MockDuffelProvider()
     if spec == "duffel":
+        # Strict: must have real token. If not, fail closed with MISSING_CREDENTIALS
         token = os.environ.get("DUFFEL_API_KEY_LIVE") or os.environ.get("DUFFEL_API_KEY_TEST")
         if not token:
-            print("[warn] no Duffel credentials; falling back to mock_duffel", file=sys.stderr)
-            return MockDuffelProvider()
+            raise RuntimeError(
+                "MISSING_CREDENTIALS: DUFFEL_API_KEY_LIVE or DUFFEL_API_KEY_TEST not set in env"
+            )
         return DuffelProvider(token=token)
-    if spec == "mock":
+    if spec == "auto":
+        token = os.environ.get("DUFFEL_API_KEY_LIVE") or os.environ.get("DUFFEL_API_KEY_TEST")
+        if token:
+            print("[auto-mode] using real DuffelProvider (credentials present)", file=sys.stderr)
+            return DuffelProvider(token=token)
+        print("[auto-mode] no credentials; using MockDuffelProvider (NOT real market data)", file=sys.stderr)
         return MockDuffelProvider()
     raise ValueError(f"unknown provider: {spec}")
 
@@ -1350,20 +1401,34 @@ def main(argv: list[str] | None = None) -> int:
         default=str(DATA_DIR / "flight_candidates.json"),
         help="Path to candidates JSON (default: data/flight_candidates.json)",
     )
-    parser.add_argument("--provider", default="mock", help="duffel | mock")
-    parser.add_argument("--max-searches", type=int, default=10)
+    parser.add_argument(
+        "--provider", default="mock",
+        help="duffel | mock | auto (auto = real if creds, mock otherwise; never silent)",
+    )
+    parser.add_argument("--max-searches", type=int, default=10,
+                        help="Max provider queries per run (default 10; smoke tests use 2)")
+    parser.add_argument("--smoke-test", action="store_true",
+                        help="Enforce max 2 searches (per v1.1.1 spec §5)")
     parser.add_argument("--date-window", default="2027-04-15")
     parser.add_argument("--passengers", type=int, default=1)
     parser.add_argument("--output", type=Path, default=str(PRICE_EVIDENCE_PATH))
     parser.add_argument("--trace", type=Path, default=str(PRICE_TRACE_PATH))
     args = parser.parse_args(argv)
 
+    # v1.1.1 §5: smoke-test guard
+    if args.smoke_test:
+        if args.max_searches > 2:
+            print(f"[smoke-test] overriding max_searches from {args.max_searches} to 2", file=sys.stderr)
+            args.max_searches = 2
+
     started_at = datetime.now(timezone.utc).isoformat()
 
-    print(f"\nPrice Intelligence v1.1", file=sys.stderr)
-    print(f"  Provider: {args.provider}", file=sys.stderr)
+    print(f"\nPrice Intelligence v1.1.1", file=sys.stderr)
+    print(f"  Provider spec: {args.provider}", file=sys.stderr)
     print(f"  Date window: {args.date_window}", file=sys.stderr)
     print(f"  Max searches: {args.max_searches}", file=sys.stderr)
+    if args.smoke_test:
+        print(f"  Smoke test mode: ENABLED (max 2 real API requests)", file=sys.stderr)
     print(f"  Input: {args.input}", file=sys.stderr)
 
     if not args.input.exists():
@@ -1379,7 +1444,19 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\n[ERROR] Input must be a JSON array of candidates", file=sys.stderr)
         return 3
 
-    provider = build_provider(args.provider)
+    # Build provider (fail-closed semantics)
+    try:
+        provider = build_provider(args.provider)
+    except RuntimeError as e:
+        # MISSING_CREDENTIALS — per spec §4: graceful fail-closed
+        print(f"\n[ERROR] Provider build failed: {e}", file=sys.stderr)
+        print(f"\n>>> FAIL CLOSED: not running. Set DUFFEL_API_KEY_LIVE/TEST, or use --provider mock.", file=sys.stderr)
+        return 10  # distinct exit code for missing credentials
+    except ValueError as e:
+        print(f"\n[ERROR] Invalid provider: {e}", file=sys.stderr)
+        return 11
+
+    print(f"  Provider instance: {provider.name}", file=sys.stderr)
     print(f"  Provider health: {provider.health_check()}", file=sys.stderr)
 
     evidences, summary, budget = run_price_intelligence(
@@ -1396,9 +1473,10 @@ def main(argv: list[str] | None = None) -> int:
     # Output
     args.output.parent.mkdir(parents=True, exist_ok=True)
     payload = {
-        "schema": "price_intelligence_v1",
+        "schema": "price_intelligence_v1_1",
         "trace_at": datetime.now(timezone.utc).isoformat(),
         "provider": provider.name,
+        "smoke_test": args.smoke_test,
         "summary": summary,
         "evidences": evidences,
     }
@@ -1409,6 +1487,7 @@ def main(argv: list[str] | None = None) -> int:
         "trace_at": datetime.now(timezone.utc).isoformat(),
         "provider": provider.name,
         "started_at": started_at,
+        "smoke_test": args.smoke_test,
         "counts": summary,
         "candidates": trace_records,
     }

@@ -423,3 +423,149 @@ v1.1 implementation complete:
 - 104 tests passing
 
 Do **NOT** begin v1.2 (Arbitrage Detection) until next milestone direction.
+
+
+---
+
+# v1.1.1 — Real Provider Validation & Fail-Closed Integrity (addendum)
+
+> Real-Provider Validation (per v1.1.1 spec). No new feature work; only
+> hardening of provider modes and provenance.
+
+## 1. Provider modes
+
+| `--provider` | Behavior without creds | Behavior with creds |
+|---|---|---|
+| `mock`     | Uses MockDuffelProvider always | Uses MockDuffelProvider always |
+| `duffel`   | **FAIL CLOSED** (exit 10, no silent fallback) | Real DuffelProvider |
+| `auto`     | MockDuffelProvider + explicit log | Real DuffelProvider + explicit log |
+
+Per v1.1.1 §1: `duffel` mode NEVER silently falls back to Mock.
+
+## 2. Fail-closed semantics
+
+```bash
+$ python3 price_intelligence.py --provider duffel --max-searches 2
+[ERROR] Provider build failed: MISSING_CREDENTIALS: ...
+
+>>> FAIL CLOSED: not running. Set DUFFEL_API_KEY_LIVE/TEST, or use --provider mock.
+$ echo $?
+10
+```
+
+Distinct exit codes:
+- `0` — success
+- `1`–`3` — input/file errors
+- `10` — MISSING_CREDENTIALS (fail closed)
+- `11` — invalid provider spec
+
+## 3. Provider provenance (`price_evidence.provenance`, per spec §2)
+
+Every PriceEvidence carries explicit, non-confusable identity:
+
+| Field | Mock | Real Duffel |
+|---|---|---|
+| `provider`           | `"mock_duffel"` | `"duffel"` |
+| `provider_mode`      | `"mock"`        | `"live"`   |
+| `provenance.source`  | `"mock_duffel"` | `"duffel"` |
+| `provenance.source_type` | `SRC_CACHE` (= `"cache"`) | `SRC_LIVE` (= `"live"`) |
+| `verification_status` | `LIVE` (intentionally kept — Mock still produces LIVE-shaped evidence, marked explicitly via `provider_mode`) | `LIVE` |
+
+## 4. Smoke test guard (v1.1.1 §5)
+
+```bash
+python3 price_intelligence.py --provider mock --max-searches 10 --smoke-test
+```
+
+`--smoke-test` caps `max-searches` at **2** regardless of input. This prevents accidental 80-candidate real-world runs during local validation.
+
+## 5. Search-priority score terminology
+
+The candidate-selection score is named `information_priority_score` (in code:
+`ips`). It is **never** `arbitrage_score`, `candidate_score`, or `price_score`.
+It answers: "which candidates are worth spending limited provider queries on?"
+— NOT "which candidate is a confirmed arbitrage opportunity?".
+
+Weights (unchanged from v1.1):
+```
++10 SUPPORTED, +5 PARTIAL, +1 UNCERTAIN
++6 multi_ticket, +5 positioning, +4 outer_port,
++3 alternative_hub, +2 secondary_entry
+-1 unusual_routing, -2 airport_change, -1 schedule_uncertain
+-0.5 per extra segment beyond first
++1 same_pnr=True
+```
+
+## 6. Real API smoke-test
+
+**REAL PROVIDER VALIDATION NOT PERFORMED.**
+
+No `DUFFEL_API_KEY_LIVE` or `DUFFEL_API_KEY_TEST` was present in the runtime
+environment. Therefore:
+
+- Real Duffel integration was **not executed** in this milestone.
+- The `--smoke-test` guard exists but was not used against real Duffel.
+- This means: schema equivalence between Mock and Real has been **verified
+  by code-review only**, not by an end-to-end real-API validation.
+
+Duffel integration is therefore NOT production-validated.
+
+## 7. v1.1.1 test results
+
+| Test | Status |
+|---|---|
+| A. explicit mock mode            | ✅ PASS |
+| B. explicit Duffel mode          | ✅ PASS (rc=10 fail-closed) |
+| C. missing credentials fail closed | ✅ PASS |
+| D. no silent Mock fallback       | ✅ PASS |
+| E. provider provenance           | ✅ PASS |
+| F. Mock vs real schema equivalence | ✅ PASS |
+| G. deterministic search key      | ✅ PASS |
+| H. search budget                 | ✅ PASS |
+| I. information priority selection | ✅ PASS (no arbitrage_score identifier) |
+| J. no BOOKABLE enum               | ✅ PASS |
+| K. no ArbitrageEvidence output   | ✅ PASS |
+| L. no arbitrage_score identifier | ✅ PASS (excluding comments/guards) |
+| M. trace provider identity       | ✅ PASS |
+| N. real smoke-test guard         | ✅ PASS |
+
+**Total: 83 individual assertions, all PASS.**
+
+### Regression status
+
+| Suite | Tests | Status |
+|---|---|---|
+| v0.2 (`test_pipeline_v0.2.py`)        | 6   | ✅ PASS |
+| v0.2.1 (`test_pipeline_v0.2.1.py`)      | 7   | ✅ PASS |
+| v1.0 (`test_schedule_intelligence_v1.py`) | 72  | ✅ PASS |
+| v1.1 (`test_price_intelligence_v1.py`)    | 104 | ✅ PASS |
+| v1.1.1 (`test_price_intelligence_v1_1.py`) | 83  | ✅ PASS |
+
+## 8. Files modified (v1.1.1)
+
+```
+Modified:
+- price_intelligence.py        (provider modes, fail-closed semantics,
+                                provider identity surfaced in payload,
+                                information_priority_score naming,
+                                smoke-test guard)
+- data/price_evidence.json     (regenerated; provider/provider_mode fields added)
+- data/price_trace.json        (regenerated; trace now carries provider identity)
+- docs/price_intelligence_v1.md  (THIS ADDDENDUM added)
+
+New:
+- test_price_intelligence_v1_1.py  (14 tests, 83 assertions)
+```
+
+No production module (candidate_discovery.py, schedule_intelligence.py,
+run_pipeline.py, eval_flight_yc.py, flight_dashboard.py) was modified.
+
+## 9. Known limitations
+
+1. Real Duffel integration is **not production-validated** in this milestone
+   (no credential available). Schema equivalence between Mock and Real is
+   verified by code review only.
+2. `auto` mode has a soft fallback to Mock — if the user wants strictness
+   they must use `duffel` explicitly.
+3. The 2% FX markup awareness in `provenance.fx_envelope.markup_pct` is
+   documented but not silently applied (conservative choice).
