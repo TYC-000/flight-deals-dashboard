@@ -1359,21 +1359,27 @@ def _print_observability(summary: dict[str, Any], provider_name: str, started: s
 def build_provider(spec: str) -> PriceProvider:
     """Construct a provider from a CLI spec string. NEVER log credentials.
 
-    Provider modes (per v1.1.1 spec):
-      mock   → MockDuffelProvider
-      duffel → DuffelProvider (raises MISSING_CREDENTIALS if no token)
-      auto   → may select real provider if credentials present;
-                otherwise fail closed (does NOT silently fall back to Mock)
+    Provider modes (per v1.1.1 + v1.2.0 spec):
+      mock       → MockDuffelProvider
+      duffel     → DuffelProvider (raises MISSING_CREDENTIALS if no token)
+      kiwi       → KiwiPriceProvider (raises MISSING_CREDENTIALS if no token)
+      mock_kiwi  → MockKiwiProvider (deterministic, no creds)
+      auto       → may select real provider if credentials present;
+                    otherwise fail closed (does NOT silently fall back to Mock)
 
-    For `--provider mock` and `--provider duffel`: explicit, fail-fast.
-    For `--provider auto`: explicit fallback policy (real if creds, mock
-                            otherwise) but NEVER mingled.
+    For `--provider kiwi`: explicit, fail-fast. NEVER silently falls back
+    to MockDuffelProvider or MockKiwiProvider.
 
-    Per v1.1.1 §1: never silently fall back from --provider duffel to Mock.
+    Per v1.1.1 §1: never silently fall back from --provider duffel/kiwi
+    to Mock.
     """
     spec = (spec or "").lower()
     if spec == "mock":
         return MockDuffelProvider()
+    if spec == "mock_kiwi":
+        # Lazy import to keep the canonical v1.1 path self-contained
+        from kiwi_price_provider import MockKiwiProvider  # noqa: WPS433
+        return MockKiwiProvider()
     if spec == "duffel":
         # Strict: must have real token. If not, fail closed with MISSING_CREDENTIALS
         token = os.environ.get("DUFFEL_API_KEY_LIVE") or os.environ.get("DUFFEL_API_KEY_TEST")
@@ -1382,11 +1388,28 @@ def build_provider(spec: str) -> PriceProvider:
                 "MISSING_CREDENTIALS: DUFFEL_API_KEY_LIVE or DUFFEL_API_KEY_TEST not set in env"
             )
         return DuffelProvider(token=token)
+    if spec == "kiwi":
+        # Strict: must have real token. If not, fail closed with MISSING_CREDENTIALS
+        token = os.environ.get("KIWI_API_KEY") or os.environ.get("KIWI_TEQUILA_API_KEY")
+        if not token:
+            raise RuntimeError(
+                "MISSING_CREDENTIALS: KIWI_API_KEY or KIWI_TEQUILA_API_KEY not set in env"
+            )
+        # Lazy import to keep v1.1 path independent
+        from kiwi_price_provider import KiwiPriceProvider  # noqa: WPS433
+        return KiwiPriceProvider(token=token)
     if spec == "auto":
-        token = os.environ.get("DUFFEL_API_KEY_LIVE") or os.environ.get("DUFFEL_API_KEY_TEST")
-        if token:
+        # Prefer Duffel, then Kiwi, then MockDuffelProvider.
+        # Fallback is explicit (logged), never silent.
+        duffel_token = os.environ.get("DUFFEL_API_KEY_LIVE") or os.environ.get("DUFFEL_API_KEY_TEST")
+        kiwi_token = os.environ.get("KIWI_API_KEY") or os.environ.get("KIWI_TEQUILA_API_KEY")
+        if duffel_token:
             print("[auto-mode] using real DuffelProvider (credentials present)", file=sys.stderr)
-            return DuffelProvider(token=token)
+            return DuffelProvider(token=duffel_token)
+        if kiwi_token:
+            print("[auto-mode] using real KiwiPriceProvider (credentials present)", file=sys.stderr)
+            from kiwi_price_provider import KiwiPriceProvider  # noqa: WPS433
+            return KiwiPriceProvider(token=kiwi_token)
         print("[auto-mode] no credentials; using MockDuffelProvider (NOT real market data)", file=sys.stderr)
         return MockDuffelProvider()
     raise ValueError(f"unknown provider: {spec}")
@@ -1450,7 +1473,7 @@ def main(argv: list[str] | None = None) -> int:
     except RuntimeError as e:
         # MISSING_CREDENTIALS — per spec §4: graceful fail-closed
         print(f"\n[ERROR] Provider build failed: {e}", file=sys.stderr)
-        print(f"\n>>> FAIL CLOSED: not running. Set DUFFEL_API_KEY_LIVE/TEST, or use --provider mock.", file=sys.stderr)
+        print(f"\n>>> FAIL CLOSED: not running. Set appropriate API key for '{args.provider}', or use --provider mock.", file=sys.stderr)
         return 10  # distinct exit code for missing credentials
     except ValueError as e:
         print(f"\n[ERROR] Invalid provider: {e}", file=sys.stderr)

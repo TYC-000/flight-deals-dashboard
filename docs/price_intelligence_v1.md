@@ -666,3 +666,62 @@ The only file added was the doc addendum.
 ## STOP CONDITION
 
 **REAL PROVIDER VALIDATION NOT PERFORMED.**
+
+
+---
+
+# v1.2.0 — Kiwi PriceProvider Integration (addendum)
+
+> Status: **Implementation complete.**
+> **KIWI REAL PROVIDER VALIDATION NOT PERFORMED** — no credential available.
+
+## What v1.2.0 added
+
+- `kiwi_price_provider.py` — new module with `KiwiPriceProvider` (real),
+  `MockKiwiProvider` (deterministic), `normalize_kiwi_response()`
+  (Kiwi JSON → PriceEvidence contract)
+- `price_intelligence.build_provider()` extended:
+  - `--provider kiwi` → `KiwiPriceProvider` (rc=10 if no creds)
+  - `--provider mock_kiwi` → `MockKiwiProvider` (no creds needed)
+  - `--provider auto` now prefers Duffel → Kiwi → MockDuffelProvider
+    (explicit fallback log line)
+- 60-test v1.2.0 test suite (all PASS): provider identity, schema keys,
+  required fields, freshness, verification, failure, currency, baggage,
+  ticket structure, no BOOKABLE, no ArbitrageEvidence, no arbitrage_score,
+  information_priority_score terminology, no credential leakage,
+  explicit provider mode, no silent fallback, cross-provider coexistence
+  fixture, smoke-test hard limit.
+
+## Why this milestone stops here
+
+Per v1.1.5 evidence source matrix, the technical sequencing was:
+1. v1.2.0 — Kiwi PriceProvider Integration ✅ (this milestone)
+2. v1.2.1 — Live Schedule Upgrade (Gap B)
+3. v1.2.2 — Frankfurter FX Integration (Gap D)
+4. v1.2.3 — Baseline Canonicalization + Parity Validator (Gap F)
+5. v1.2.4 — Friction Evidence + Multi-Passenger Policy (Gap E)
+6. v1.2.5 — Evidence Maturity Ladder + VerifiedOpportunity emission
+
+This milestone is **Gap A only**. No arbitrage detection, no comparison
+engine, no opportunity ranking.
+
+## Regression status
+
+| Suite | Tests | Status |
+|---|---|---|
+| v0.2          | 6   | ✅ |
+| v0.2.1        | 7   | ✅ |
+| v1.0          | 72  | ✅ |
+| v1.1          | 104 | ✅ |
+| v1.1.1        | 83  | ✅ |
+| **v1.2.0**    | **60** | ✅ |
+
+No production module modified:
+candidate_discovery.py, schedule_intelligence.py, run_pipeline.py,
+eval_flight_yc.py, flight_dashboard.py are unchanged.
+
+## STOP CONDITION
+
+**KIWI REAL PROVIDER VALIDATION NOT PERFORMED.**
+
+Do **NOT** begin v1.2.1 or Arbitrage Detection automatically.
