@@ -106,6 +106,23 @@ CARRIER_HINTS: dict[tuple[str, str], list[str]] = {
 TPE_DIRECT_BASELINE_TWD = 180_000
 
 
+def _normalize_route(route: list[str]) -> list[str]:
+    """Normalize a candidate route list.
+
+    - Strip trailing duplicate destination (e.g., ['TPE','KUL','MAD','MAD'] → ['TPE','KUL','MAD'])
+    - Remove empty strings
+    - Validate non-empty start/end
+
+    v0.2 enhancement.
+    """
+    if not route:
+        return route
+    # Strip trailing duplicates
+    while len(route) >= 2 and route[-1] == route[-2]:
+        route = route[:-1]
+    return route
+
+
 def _flight_min(from_airport: str, to_airport: str) -> int | None:
     """Return estimated flight minutes, or None if no estimate available."""
     return ESTIMATED_FLIGHT_MIN.get((from_airport, to_airport))
@@ -213,17 +230,17 @@ def _build_candidate(
     # Compute total elapsed
     elapsed_min = _estimate_elapsed(legs)
 
-    # Build canonical id
-    canonical_route = "→".join([a for leg in legs for a in leg])  # or just '>'.join([a for a, _ in legs])
-    # Simpler canonical: route as list
-    route_list = [legs[0][0]] + [to for _, to in legs]
+    # Build canonical id (use normalized route)
+    canonical_route = "→".join([a for leg in legs for a in leg])
+    # Simpler canonical: route as list (normalized)
+    route_list = _normalize_route([legs[0][0]] + [to for _, to in legs])
 
     # Long-haul carrier (for label/positioning.long_haul)
     long_haul_carriers = _carriers(long_haul_legs[0][0], long_haul_legs[0][1])
     long_haul_main = long_haul_carriers[0] if long_haul_carriers else None
 
     # Build positioning block (if applicable)
-    positioning_block = None
+    positioning_block: dict | None = None
     if has_positioning and positioning_legs:
         p_carriers = _carriers(positioning_legs[0][0], positioning_legs[0][1])
         positioning_block = {
@@ -233,6 +250,10 @@ def _build_candidate(
             "duration_min": _flight_min(positioning_legs[0][0], positioning_legs[0][1]),
             "cabin": "Y",
         }
+
+    # v0.2 fix: Jev evaluator expects positioning to be a dict (possibly empty),
+    # not None. Use {} when there's no positioning flight.
+    positioning_for_jev: dict = positioning_block or {}
 
     # Build long_haul block (the J-class leg)
     if long_haul_legs:
@@ -254,7 +275,11 @@ def _build_candidate(
         long_haul_block["via"] = long_haul_via
 
     # ID — use a short readable slug
-    id_slug = f"AUTO-{family}-{'-'.join(route_list)}-{destination}".replace("→", "-")
+    # Bug fix v0.2: don't append destination if already last in route_list
+    if destination and destination == route_list[-1]:
+        id_slug = f"AUTO-{family}-{'-'.join(route_list)}"
+    else:
+        id_slug = f"AUTO-{family}-{'-'.join(route_list)}-{destination}"
     id_slug = id_slug.replace("/", "-").replace(" ", "")
 
     # Discovery reasons
@@ -289,7 +314,7 @@ def _build_candidate(
         "total_cost": 0,  # Filled below
         "tpe_direct_baseline": TPE_DIRECT_BASELINE_TWD,
         "savings_pct": 0,  # Filled below
-        "positioning": positioning_block,
+        "positioning": positioning_for_jev,
         "long_haul": long_haul_block,
         "segments": segments,
         "same_pnr": same_pnr,
@@ -497,6 +522,42 @@ FAMILY_GENERATORS = {
 }
 
 
+def _apply_family_diversity(
+    candidates: list[dict],
+    max_ratio: float = 0.35,
+) -> list[dict]:
+    """Ensure no single family dominates.
+
+    Drop candidates from over-represented families until no family exceeds max_ratio.
+
+    Strategy:
+    - Group candidates by candidate_type
+    - For each group, keep at most floor(max_ratio * total) entries
+    - Round-robin shuffle within group to avoid always dropping the same entries
+
+    v0.2 enhancement. Default max_ratio=0.35 (no family > 35%).
+    """
+    if not candidates:
+        return candidates
+    total = len(candidates)
+    per_family_cap = max(1, int(total * max_ratio))
+
+    by_family: dict[str, list[dict]] = {}
+    for c in candidates:
+        fam = c.get("candidate_type", "unknown")
+        by_family.setdefault(fam, []).append(c)
+
+    # Cap each family
+    kept: list[dict] = []
+    for fam, items in by_family.items():
+        if len(items) > per_family_cap:
+            # Keep first N (deterministic for reproducibility)
+            kept.extend(items[:per_family_cap])
+        else:
+            kept.extend(items)
+    return kept
+
+
 def _apply_constraints(candidates: list[dict], mission: dict) -> list[dict]:
     """Apply mission constraints (max stops, max duration, max candidates)."""
     constraints = mission.get("constraints", {})
@@ -542,6 +603,10 @@ def generate_candidates(mission: dict) -> list[dict]:
     # Apply constraints
     all_candidates = _apply_constraints(all_candidates, mission)
 
+    # Apply family diversity (v0.2)
+    max_ratio = mission.get("constraints", {}).get("family_max_ratio", 0.35)
+    all_candidates = _apply_family_diversity(all_candidates, max_ratio=max_ratio)
+
     # Deduplicate
     all_candidates = _deduplicate(all_candidates)
 
@@ -584,18 +649,19 @@ def main() -> int:
     # Generate
     candidates = generate_candidates(mission)
 
-    # Family stats
+    # Family stats (use candidate_type for diversity reporting)
     family_counts: dict[str, int] = {}
     for c in candidates:
-        for r in c.get("discovery_reason", []):
-            family_counts[r] = family_counts.get(r, 0) + 1
+        fam = c.get("candidate_type", "unknown")
+        family_counts[fam] = family_counts.get(fam, 0) + 1
 
     print(f"\n✅ Generated {len(candidates)} candidates", file=sys.stderr)
-    print(f"\nRouting families:", file=sys.stderr)
-    for family in ROUTING_FAMILIES:
-        n = family_counts.get(family, 0)
-        print(f"  {family:<32} {n:>3}", file=sys.stderr)
-    print(f"  (total reason-tag occurrences: {sum(family_counts.values())})", file=sys.stderr)
+    print(f"\nRouting families (by candidate_type):", file=sys.stderr)
+    for family in sorted(family_counts.keys()):
+        n = family_counts[family]
+        ratio = n / len(candidates) * 100 if candidates else 0
+        marker = " [over cap]" if ratio > 35 else ""
+        print(f"  {family:<35} {n:>3}  ({ratio:>5.1f}%){marker}", file=sys.stderr)
 
     # Write output
     output_path = args.output or Path("data/flight_candidates_generated.json")

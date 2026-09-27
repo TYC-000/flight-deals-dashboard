@@ -21,6 +21,7 @@
   "constraints": {
     "max_stops": 2,
     "max_total_duration_hours": 30,
-    "max_candidates": 80
+    "max_candidates": 80,
+    "family_max_ratio": 0.35
   }
 }

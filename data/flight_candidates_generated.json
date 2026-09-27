@@ -1,6 +1,6 @@
 [
   {
-    "id": "AUTO-multi_ticket-TPE-KUL-MAD-MAD",
+    "id": "AUTO-multi_ticket-TPE-KUL-MAD",
     "label": "TPE → KUL → MAD (MH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -83,7 +83,7 @@
     "canonical_route_key": "TPE->KUL->MAD"
   },
   {
-    "id": "AUTO-multi_ticket-TPE-BKK-MAD-MAD",
+    "id": "AUTO-multi_ticket-TPE-BKK-MAD",
     "label": "TPE → BKK → MAD (TG)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -166,7 +166,7 @@
     "canonical_route_key": "TPE->BKK->MAD"
   },
   {
-    "id": "AUTO-multi_ticket-TPE-SIN-MAD-MAD",
+    "id": "AUTO-multi_ticket-TPE-SIN-MAD",
     "label": "TPE → SIN → MAD (SQ)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -249,7 +249,7 @@
     "canonical_route_key": "TPE->SIN->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-MAD",
     "label": "TPE → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -258,7 +258,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -308,7 +308,7 @@
     "canonical_route_key": "TPE->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-BCN",
     "label": "TPE → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -317,7 +317,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -367,7 +367,7 @@
     "canonical_route_key": "TPE->BCN"
   },
   {
-    "id": "AUTO-direct_hub-TPE-FRA-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-FRA-MAD",
     "label": "TPE → FRA → MAD (LH)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -376,7 +376,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -441,7 +441,7 @@
     "canonical_route_key": "TPE->FRA->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-IST-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-IST-MAD",
     "label": "TPE → IST → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -450,7 +450,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -515,7 +515,7 @@
     "canonical_route_key": "TPE->IST->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-DOH-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-DOH-MAD",
     "label": "TPE → DOH → MAD (QR)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -524,7 +524,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -590,7 +590,7 @@
     "canonical_route_key": "TPE->DOH->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-DXB-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-DXB-MAD",
     "label": "TPE → DXB → MAD (EK)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -599,7 +599,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -665,7 +665,7 @@
     "canonical_route_key": "TPE->DXB->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-AUH-MAD-MAD",
+    "id": "AUTO-direct_hub-TPE-AUH-MAD",
     "label": "TPE → AUH → MAD (EY)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -674,7 +674,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -740,7 +740,7 @@
     "canonical_route_key": "TPE->AUH->MAD"
   },
   {
-    "id": "AUTO-direct_hub-TPE-FRA-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-FRA-BCN",
     "label": "TPE → FRA → BCN (LH)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -749,7 +749,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -814,7 +814,7 @@
     "canonical_route_key": "TPE->FRA->BCN"
   },
   {
-    "id": "AUTO-direct_hub-TPE-IST-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-IST-BCN",
     "label": "TPE → IST → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -823,7 +823,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -888,7 +888,7 @@
     "canonical_route_key": "TPE->IST->BCN"
   },
   {
-    "id": "AUTO-direct_hub-TPE-DOH-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-DOH-BCN",
     "label": "TPE → DOH → BCN (QR)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -897,7 +897,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -963,7 +963,7 @@
     "canonical_route_key": "TPE->DOH->BCN"
   },
   {
-    "id": "AUTO-direct_hub-TPE-DXB-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-DXB-BCN",
     "label": "TPE → DXB → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -972,7 +972,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1038,7 +1038,7 @@
     "canonical_route_key": "TPE->DXB->BCN"
   },
   {
-    "id": "AUTO-direct_hub-TPE-AUH-BCN-BCN",
+    "id": "AUTO-direct_hub-TPE-AUH-BCN",
     "label": "TPE → AUH → BCN (EY)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1047,7 +1047,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1113,7 +1113,7 @@
     "canonical_route_key": "TPE->AUH->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-ZRH-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-ZRH-MAD",
     "label": "TPE → ZRH → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1122,7 +1122,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1187,7 +1187,7 @@
     "canonical_route_key": "TPE->ZRH->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-VIE-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-VIE-MAD",
     "label": "TPE → VIE → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1196,7 +1196,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1261,7 +1261,7 @@
     "canonical_route_key": "TPE->VIE->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-CPH-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-CPH-MAD",
     "label": "TPE → CPH → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1270,7 +1270,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1335,7 +1335,7 @@
     "canonical_route_key": "TPE->CPH->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-WAW-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-WAW-MAD",
     "label": "TPE → WAW → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1344,7 +1344,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1409,7 +1409,7 @@
     "canonical_route_key": "TPE->WAW->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-DUB-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-DUB-MAD",
     "label": "TPE → DUB → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1418,7 +1418,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1483,7 +1483,7 @@
     "canonical_route_key": "TPE->DUB->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-MUC-MAD-MAD",
+    "id": "AUTO-europe_entry-TPE-MUC-MAD",
     "label": "TPE → MUC → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1492,7 +1492,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -1557,7 +1557,7 @@
     "canonical_route_key": "TPE->MUC->MAD"
   },
   {
-    "id": "AUTO-europe_entry-TPE-ZRH-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-ZRH-BCN",
     "label": "TPE → ZRH → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1566,7 +1566,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1631,7 +1631,7 @@
     "canonical_route_key": "TPE->ZRH->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-VIE-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-VIE-BCN",
     "label": "TPE → VIE → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1640,7 +1640,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1705,7 +1705,7 @@
     "canonical_route_key": "TPE->VIE->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-CPH-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-CPH-BCN",
     "label": "TPE → CPH → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1714,7 +1714,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1779,7 +1779,7 @@
     "canonical_route_key": "TPE->CPH->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-WAW-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-WAW-BCN",
     "label": "TPE → WAW → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1788,7 +1788,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1853,7 +1853,7 @@
     "canonical_route_key": "TPE->WAW->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-DUB-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-DUB-BCN",
     "label": "TPE → DUB → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1862,7 +1862,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -1927,7 +1927,7 @@
     "canonical_route_key": "TPE->DUB->BCN"
   },
   {
-    "id": "AUTO-europe_entry-TPE-MUC-BCN-BCN",
+    "id": "AUTO-europe_entry-TPE-MUC-BCN",
     "label": "TPE → MUC → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -1936,7 +1936,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -2001,7 +2001,7 @@
     "canonical_route_key": "TPE->MUC->BCN"
   },
   {
-    "id": "AUTO-major_hub-TPE-CDG-MAD-MAD",
+    "id": "AUTO-major_hub-TPE-CDG-MAD",
     "label": "TPE → CDG → MAD (AF)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2010,7 +2010,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -2075,7 +2075,7 @@
     "canonical_route_key": "TPE->CDG->MAD"
   },
   {
-    "id": "AUTO-major_hub-TPE-AMS-MAD-MAD",
+    "id": "AUTO-major_hub-TPE-AMS-MAD",
     "label": "TPE → AMS → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2084,7 +2084,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -2149,7 +2149,7 @@
     "canonical_route_key": "TPE->AMS->MAD"
   },
   {
-    "id": "AUTO-major_hub-TPE-FCO-MAD-MAD",
+    "id": "AUTO-major_hub-TPE-FCO-MAD",
     "label": "TPE → FCO → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2158,7 +2158,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -2223,7 +2223,7 @@
     "canonical_route_key": "TPE->FCO->MAD"
   },
   {
-    "id": "AUTO-major_hub-TPE-LIS-MAD-MAD",
+    "id": "AUTO-major_hub-TPE-LIS-MAD",
     "label": "TPE → LIS → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2232,7 +2232,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -2297,7 +2297,7 @@
     "canonical_route_key": "TPE->LIS->MAD"
   },
   {
-    "id": "AUTO-major_hub-TPE-CDG-BCN-BCN",
+    "id": "AUTO-major_hub-TPE-CDG-BCN",
     "label": "TPE → CDG → BCN (AF)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2306,7 +2306,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -2371,7 +2371,7 @@
     "canonical_route_key": "TPE->CDG->BCN"
   },
   {
-    "id": "AUTO-major_hub-TPE-AMS-BCN-BCN",
+    "id": "AUTO-major_hub-TPE-AMS-BCN",
     "label": "TPE → AMS → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2380,7 +2380,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -2445,7 +2445,7 @@
     "canonical_route_key": "TPE->AMS->BCN"
   },
   {
-    "id": "AUTO-major_hub-TPE-FCO-BCN-BCN",
+    "id": "AUTO-major_hub-TPE-FCO-BCN",
     "label": "TPE → FCO → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2454,7 +2454,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -2519,7 +2519,7 @@
     "canonical_route_key": "TPE->FCO->BCN"
   },
   {
-    "id": "AUTO-major_hub-TPE-LIS-BCN-BCN",
+    "id": "AUTO-major_hub-TPE-LIS-BCN",
     "label": "TPE → LIS → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2528,7 +2528,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "BCN",
@@ -2593,7 +2593,7 @@
     "canonical_route_key": "TPE->LIS->BCN"
   },
   {
-    "id": "AUTO-middle_east-TPE-RUH-MAD-MAD",
+    "id": "AUTO-middle_east-TPE-RUH-MAD",
     "label": "TPE → RUH → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 0,
@@ -2602,7 +2602,7 @@
     "total_cost": 54000,
     "tpe_direct_baseline": 180000,
     "savings_pct": 70.0,
-    "positioning": null,
+    "positioning": {},
     "long_haul": {
       "from": "TPE",
       "to": "MAD",
@@ -2668,7 +2668,7 @@
     "canonical_route_key": "TPE->RUH->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-ICN-MAD",
     "label": "TPE → ICN → MAD (KE)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -2749,7 +2749,7 @@
     "canonical_route_key": "TPE->ICN->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-ICN-BCN",
     "label": "TPE → ICN → BCN (KE)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -2830,7 +2830,7 @@
     "canonical_route_key": "TPE->ICN->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-FRA-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-ICN-FRA-MAD",
     "label": "TPE → ICN → FRA → MAD (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -2926,7 +2926,7 @@
     "canonical_route_key": "TPE->ICN->FRA->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-CDG-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-ICN-CDG-MAD",
     "label": "TPE → ICN → CDG → MAD (AF)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3022,7 +3022,7 @@
     "canonical_route_key": "TPE->ICN->CDG->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-IST-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-ICN-IST-MAD",
     "label": "TPE → ICN → IST → MAD (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3118,7 +3118,7 @@
     "canonical_route_key": "TPE->ICN->IST->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-FRA-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-ICN-FRA-BCN",
     "label": "TPE → ICN → FRA → BCN (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3214,7 +3214,7 @@
     "canonical_route_key": "TPE->ICN->FRA->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-CDG-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-ICN-CDG-BCN",
     "label": "TPE → ICN → CDG → BCN (AF)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3310,7 +3310,7 @@
     "canonical_route_key": "TPE->ICN->CDG->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-ICN-IST-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-ICN-IST-BCN",
     "label": "TPE → ICN → IST → BCN (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3406,7 +3406,7 @@
     "canonical_route_key": "TPE->ICN->IST->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-FRA-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-NRT-FRA-MAD",
     "label": "TPE → NRT → FRA → MAD (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3502,7 +3502,7 @@
     "canonical_route_key": "TPE->NRT->FRA->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-CDG-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-NRT-CDG-MAD",
     "label": "TPE → NRT → CDG → MAD (AF)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3598,7 +3598,7 @@
     "canonical_route_key": "TPE->NRT->CDG->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-IST-MAD-MAD",
+    "id": "AUTO-northeast_asia-TPE-NRT-IST-MAD",
     "label": "TPE → NRT → IST → MAD (auto)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3694,7 +3694,7 @@
     "canonical_route_key": "TPE->NRT->IST->MAD"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-FRA-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-NRT-FRA-BCN",
     "label": "TPE → NRT → FRA → BCN (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3790,7 +3790,7 @@
     "canonical_route_key": "TPE->NRT->FRA->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-CDG-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-NRT-CDG-BCN",
     "label": "TPE → NRT → CDG → BCN (AF)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3886,7 +3886,7 @@
     "canonical_route_key": "TPE->NRT->CDG->BCN"
   },
   {
-    "id": "AUTO-northeast_asia-TPE-NRT-IST-BCN-BCN",
+    "id": "AUTO-northeast_asia-TPE-NRT-IST-BCN",
     "label": "TPE → NRT → IST → BCN (auto)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -3982,7 +3982,7 @@
     "canonical_route_key": "TPE->NRT->IST->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-MAD",
     "label": "TPE → KUL → MAD (MH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4064,7 +4064,7 @@
     "canonical_route_key": "TPE->KUL->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-BCN",
     "label": "TPE → KUL → BCN (MH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4146,7 +4146,7 @@
     "canonical_route_key": "TPE->KUL->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-MAD",
     "label": "TPE → BKK → MAD (TG)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4228,7 +4228,7 @@
     "canonical_route_key": "TPE->BKK->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-BCN",
     "label": "TPE → BKK → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4310,7 +4310,7 @@
     "canonical_route_key": "TPE->BKK->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-MAD",
     "label": "TPE → SIN → MAD (SQ)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4392,7 +4392,7 @@
     "canonical_route_key": "TPE->SIN->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-BCN",
     "label": "TPE → SIN → BCN (SQ)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4474,7 +4474,7 @@
     "canonical_route_key": "TPE->SIN->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-MAD",
     "label": "TPE → KUL → DOH → MAD (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4572,7 +4572,7 @@
     "canonical_route_key": "TPE->KUL->DOH->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-MAD",
     "label": "TPE → KUL → DXB → MAD (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4670,7 +4670,7 @@
     "canonical_route_key": "TPE->KUL->DXB->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-MAD",
     "label": "TPE → KUL → IST → MAD (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4767,7 +4767,7 @@
     "canonical_route_key": "TPE->KUL->IST->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-BCN",
     "label": "TPE → KUL → DOH → BCN (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4865,7 +4865,7 @@
     "canonical_route_key": "TPE->KUL->DOH->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-BCN",
     "label": "TPE → KUL → DXB → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -4963,7 +4963,7 @@
     "canonical_route_key": "TPE->KUL->DXB->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-BCN",
     "label": "TPE → KUL → IST → BCN (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5060,7 +5060,7 @@
     "canonical_route_key": "TPE->KUL->IST->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-MAD",
     "label": "TPE → BKK → DOH → MAD (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5158,7 +5158,7 @@
     "canonical_route_key": "TPE->BKK->DOH->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-MAD",
     "label": "TPE → BKK → DXB → MAD (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5256,7 +5256,7 @@
     "canonical_route_key": "TPE->BKK->DXB->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-MAD",
     "label": "TPE → BKK → IST → MAD (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5353,7 +5353,7 @@
     "canonical_route_key": "TPE->BKK->IST->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DOH-BCN",
     "label": "TPE → BKK → DOH → BCN (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5451,7 +5451,7 @@
     "canonical_route_key": "TPE->BKK->DOH->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-DXB-BCN",
     "label": "TPE → BKK → DXB → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5549,7 +5549,7 @@
     "canonical_route_key": "TPE->BKK->DXB->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-BKK-IST-BCN",
     "label": "TPE → BKK → IST → BCN (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5646,7 +5646,7 @@
     "canonical_route_key": "TPE->BKK->IST->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-MAD",
     "label": "TPE → SIN → DOH → MAD (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5744,7 +5744,7 @@
     "canonical_route_key": "TPE->SIN->DOH->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-MAD",
     "label": "TPE → SIN → DXB → MAD (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5842,7 +5842,7 @@
     "canonical_route_key": "TPE->SIN->DXB->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-MAD",
     "label": "TPE → SIN → IST → MAD (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -5939,7 +5939,7 @@
     "canonical_route_key": "TPE->SIN->IST->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-BCN",
     "label": "TPE → SIN → DOH → BCN (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6037,7 +6037,7 @@
     "canonical_route_key": "TPE->SIN->DOH->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-DXB-BCN",
     "label": "TPE → SIN → DXB → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6135,7 +6135,7 @@
     "canonical_route_key": "TPE->SIN->DXB->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-BCN",
     "label": "TPE → SIN → IST → BCN (TK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6232,7 +6232,7 @@
     "canonical_route_key": "TPE->SIN->IST->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
     "label": "TPE → CGK → DOH → MAD (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6330,7 +6330,7 @@
     "canonical_route_key": "TPE->CGK->DOH->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-MAD-MAD",
+    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-MAD",
     "label": "TPE → CGK → DXB → MAD (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6428,7 +6428,7 @@
     "canonical_route_key": "TPE->CGK->DXB->MAD"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-BCN",
     "label": "TPE → CGK → DOH → BCN (QR)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6526,7 +6526,7 @@
     "canonical_route_key": "TPE->CGK->DOH->BCN"
   },
   {
-    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN-BCN",
+    "id": "AUTO-southeast_asia_outer_port-TPE-CGK-DXB-BCN",
     "label": "TPE → CGK → DXB → BCN (EK)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6624,7 +6624,7 @@
     "canonical_route_key": "TPE->CGK->DXB->BCN"
   },
   {
-    "id": "AUTO-positioning-TPE-KUL-FRA-MAD-MAD",
+    "id": "AUTO-positioning-TPE-KUL-FRA-MAD",
     "label": "TPE → KUL → FRA → MAD (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
@@ -6721,7 +6721,7 @@
     "canonical_route_key": "TPE->KUL->FRA->MAD"
   },
   {
-    "id": "AUTO-positioning-TPE-KUL-FRA-BCN-BCN",
+    "id": "AUTO-positioning-TPE-KUL-FRA-BCN",
     "label": "TPE → KUL → FRA → BCN (LH)",
     "currency": "TWD",
     "positioning_cost": 8000,
