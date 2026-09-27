@@ -1,0 +1,40 @@
+{
+  "trace_at": "2026-09-27T18:28:02.273904+00:00",
+  "mission_path": "/tmp/_sm_mission.json",
+  "candidate_path": "/tmp/_sm_cand.json",
+  "candidate_id": "C_demo",
+  "eligibility": [
+    {
+      "baseline_class": "canonical_direct",
+      "eligibility": "NOT_ELIGIBLE",
+      "rule_applies": true
+    },
+    {
+      "baseline_class": "conventional_hub",
+      "eligibility": "ELIGIBLE",
+      "rule_applies": true
+    },
+    {
+      "baseline_class": "secondary_entry",
+      "eligibility": "NOT_ELIGIBLE",
+      "rule_applies": true
+    },
+    {
+      "baseline_class": "outer_port_positioning",
+      "eligibility": "UNKNOWN",
+      "rule_applies": true
+    },
+    {
+      "baseline_class": "same_airport_pair",
+      "eligibility": "ELIGIBLE",
+      "rule_applies": true
+    },
+    {
+      "baseline_class": "fictional_no_fly",
+      "eligibility": "NOT_ELIGIBLE",
+      "rule_applies": true
+    }
+  ],
+  "n_eligible_baselines": 2,
+  "n_comparison_pairs": 2
+}

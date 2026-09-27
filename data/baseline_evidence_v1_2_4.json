@@ -1,0 +1,394 @@
+{
+  "schema_version": "v1.2.4",
+  "mission_canonical": {
+    "mission_id": "M_demo",
+    "origin": "TPE",
+    "destination": "MAD",
+    "travel_date": "2027-04-15",
+    "return_date": "2027-04-25",
+    "is_round_trip": true,
+    "cabin": "economy",
+    "passenger_count": 1,
+    "passenger_types": [
+      "ADT"
+    ],
+    "passenger_basis_known": true,
+    "raw": {
+      "mission_id": "M_demo",
+      "origin": "TPE",
+      "destination": "MAD",
+      "travel_date": "2027-04-15",
+      "return_date": "2027-04-25",
+      "cabin": "economy",
+      "passenger_count": 1,
+      "passenger_types": [
+        "ADT"
+      ]
+    }
+  },
+  "candidate_canonical": {
+    "candidate_id": "C_demo",
+    "origin": "TPE",
+    "destination": "MAD",
+    "routing": [
+      [
+        "TPE",
+        "FRA"
+      ],
+      [
+        "FRA",
+        "MAD"
+      ]
+    ],
+    "segment_count": 2,
+    "is_non_stop": false,
+    "travel_date": "2027-04-15",
+    "return_date": "2027-04-25",
+    "is_round_trip": true,
+    "cabin": "economy",
+    "cabin_known": true,
+    "passenger_count": 1,
+    "passenger_count_known": true,
+    "passenger_types": [
+      "ADT"
+    ],
+    "passenger_types_known": true,
+    "marketing_carriers": [],
+    "operating_carriers": [],
+    "operating_carriers_known": false,
+    "ticket_structure": null,
+    "ticket_count": null,
+    "schedule_evidence_status": "UNKNOWN",
+    "price_evidence_status": "UNKNOWN",
+    "fx_evidence_status": "UNKNOWN",
+    "outer_port_origin": true,
+    "outer_port_destination": false,
+    "secondary_entry_origin": false,
+    "secondary_entry_destination": false,
+    "raw_provider": null,
+    "raw_provider_mode": null
+  },
+  "baseline_eligibility": {
+    "candidate_id": "C_demo",
+    "baseline_classes": [
+      {
+        "baseline_class": "canonical_direct",
+        "eligibility": "NOT_ELIGIBLE",
+        "rule_applies": true
+      },
+      {
+        "baseline_class": "conventional_hub",
+        "eligibility": "ELIGIBLE",
+        "rule_applies": true
+      },
+      {
+        "baseline_class": "secondary_entry",
+        "eligibility": "NOT_ELIGIBLE",
+        "rule_applies": true
+      },
+      {
+        "baseline_class": "outer_port_positioning",
+        "eligibility": "UNKNOWN",
+        "rule_applies": true
+      },
+      {
+        "baseline_class": "same_airport_pair",
+        "eligibility": "ELIGIBLE",
+        "rule_applies": true
+      },
+      {
+        "baseline_class": "fictional_no_fly",
+        "eligibility": "NOT_ELIGIBLE",
+        "rule_applies": true
+      }
+    ]
+  },
+  "canonical_baselines": [
+    {
+      "schema_version": "v1.2.4",
+      "baseline_class": "conventional_hub",
+      "mission_binding": {
+        "mission_id": "M_demo",
+        "origin": "TPE",
+        "destination": "MAD",
+        "travel_date": "2027-04-15",
+        "return_date": "2027-04-25",
+        "is_round_trip": true,
+        "cabin": "economy",
+        "passenger_count": 1,
+        "passenger_types": [
+          "ADT"
+        ],
+        "passenger_basis_known": true
+      },
+      "candidate_binding": {
+        "candidate_id": "C_demo"
+      },
+      "canonical_representation": {
+        "origin": "TPE",
+        "destination": "MAD",
+        "routing": [
+          [
+            "TPE",
+            "FRA"
+          ],
+          [
+            "FRA",
+            "MAD"
+          ]
+        ],
+        "segment_count": 2,
+        "travel_date": "2027-04-15",
+        "return_date": "2027-04-25",
+        "is_round_trip": true,
+        "airports": [
+          "TPE",
+          "FRA",
+          "MAD"
+        ],
+        "routing_family": "outer_port",
+        "marketing_carriers": [],
+        "operating_carriers": [],
+        "operating_carriers_known": false,
+        "cabin": "economy",
+        "cabin_known": true,
+        "passenger_count": 1,
+        "passenger_count_known": true,
+        "passenger_types": [
+          "ADT"
+        ],
+        "passenger_types_known": true,
+        "ticket_structure": null,
+        "ticket_count": null,
+        "positioning": true,
+        "outer_port": true,
+        "secondary_entry": false,
+        "airport_change": false,
+        "multi_ticket": false,
+        "schedule_evidence_status": "UNKNOWN",
+        "price_evidence_status": "UNKNOWN",
+        "fx_evidence_status": "UNKNOWN"
+      },
+      "canonicalization_reason": "baseline class 'conventional_hub' is ELIGIBLE for the given mission/candidate pair under rule version v1.2.4/v1. This is a structural reference, NOT a price-based selection (never the cheapest candidate, first candidate, or Jev survivor).",
+      "verification_status": "DATABASE",
+      "source": "baseline_canonicalization_v1_2_4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "provenance": {
+        "source": "baseline_canonicalization_v1_2_4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+        "verification_status": "DATABASE",
+        "canonicalization_rule_version": "v1.2.4/v1",
+        "evidence_arity": 0,
+        "derived_from": {
+          "candidate_id": "C_demo",
+          "candidate_origin": "TPE",
+          "candidate_destination": "MAD",
+          "candidate_provider": null,
+          "candidate_provider_mode": null
+        }
+      }
+    },
+    {
+      "schema_version": "v1.2.4",
+      "baseline_class": "same_airport_pair",
+      "mission_binding": {
+        "mission_id": "M_demo",
+        "origin": "TPE",
+        "destination": "MAD",
+        "travel_date": "2027-04-15",
+        "return_date": "2027-04-25",
+        "is_round_trip": true,
+        "cabin": "economy",
+        "passenger_count": 1,
+        "passenger_types": [
+          "ADT"
+        ],
+        "passenger_basis_known": true
+      },
+      "candidate_binding": {
+        "candidate_id": "C_demo"
+      },
+      "canonical_representation": {
+        "origin": "TPE",
+        "destination": "MAD",
+        "routing": [
+          [
+            "TPE",
+            "FRA"
+          ],
+          [
+            "FRA",
+            "MAD"
+          ]
+        ],
+        "segment_count": 2,
+        "travel_date": "2027-04-15",
+        "return_date": "2027-04-25",
+        "is_round_trip": true,
+        "airports": [
+          "TPE",
+          "FRA",
+          "MAD"
+        ],
+        "routing_family": "outer_port",
+        "marketing_carriers": [],
+        "operating_carriers": [],
+        "operating_carriers_known": false,
+        "cabin": "economy",
+        "cabin_known": true,
+        "passenger_count": 1,
+        "passenger_count_known": true,
+        "passenger_types": [
+          "ADT"
+        ],
+        "passenger_types_known": true,
+        "ticket_structure": null,
+        "ticket_count": null,
+        "positioning": true,
+        "outer_port": true,
+        "secondary_entry": false,
+        "airport_change": false,
+        "multi_ticket": false,
+        "schedule_evidence_status": "UNKNOWN",
+        "price_evidence_status": "UNKNOWN",
+        "fx_evidence_status": "UNKNOWN"
+      },
+      "canonicalization_reason": "baseline class 'same_airport_pair' is ELIGIBLE for the given mission/candidate pair under rule version v1.2.4/v1. This is a structural reference, NOT a price-based selection (never the cheapest candidate, first candidate, or Jev survivor).",
+      "verification_status": "DATABASE",
+      "source": "baseline_canonicalization_v1_2_4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "provenance": {
+        "source": "baseline_canonicalization_v1_2_4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+        "verification_status": "DATABASE",
+        "canonicalization_rule_version": "v1.2.4/v1",
+        "evidence_arity": 0,
+        "derived_from": {
+          "candidate_id": "C_demo",
+          "candidate_origin": "TPE",
+          "candidate_destination": "MAD",
+          "candidate_provider": null,
+          "candidate_provider_mode": null
+        }
+      }
+    }
+  ],
+  "comparison_pairs": [
+    {
+      "schema_version": "v1.2.4",
+      "comparison_pair_id": "C_demo::conventional_hub",
+      "candidate_id": "C_demo",
+      "baseline_class": "conventional_hub",
+      "comparability": "hard_comparable",
+      "hard_match": {
+        "origin": true,
+        "destination": true,
+        "date": true,
+        "return_date": true,
+        "cabin": true,
+        "passenger_basis": true
+      },
+      "soft_observations": {
+        "outer_port_candidate": true,
+        "ticket_structure": null,
+        "airport_change": false
+      },
+      "verification_status": "DATABASE",
+      "source": "baseline_canonicalization_v1_2_4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "provenance": {
+        "source": "baseline_canonicalization_v1_2_4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+        "verification_status": "DATABASE",
+        "canonicalization_rule_version": "v1.2.4/v1",
+        "evidence_arity": 0,
+        "derived_from": {
+          "candidate_id": "C_demo",
+          "candidate_origin": "TPE",
+          "candidate_destination": "MAD",
+          "candidate_provider": null,
+          "candidate_provider_mode": null
+        }
+      }
+    },
+    {
+      "schema_version": "v1.2.4",
+      "comparison_pair_id": "C_demo::same_airport_pair",
+      "candidate_id": "C_demo",
+      "baseline_class": "same_airport_pair",
+      "comparability": "hard_comparable",
+      "hard_match": {
+        "origin": true,
+        "destination": true,
+        "date": true,
+        "return_date": true,
+        "cabin": true,
+        "passenger_basis": true
+      },
+      "soft_observations": {
+        "outer_port_candidate": true,
+        "ticket_structure": null,
+        "airport_change": false
+      },
+      "verification_status": "DATABASE",
+      "source": "baseline_canonicalization_v1_2_4",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "provenance": {
+        "source": "baseline_canonicalization_v1_2_4",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+        "verification_status": "DATABASE",
+        "canonicalization_rule_version": "v1.2.4/v1",
+        "evidence_arity": 0,
+        "derived_from": {
+          "candidate_id": "C_demo",
+          "candidate_origin": "TPE",
+          "candidate_destination": "MAD",
+          "candidate_provider": null,
+          "candidate_provider_mode": null
+        }
+      }
+    }
+  ],
+  "canonicalization_rule_version": "v1.2.4/v1",
+  "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+  "verification_status": "DATABASE",
+  "source": "baseline_canonicalization_v1_2_4",
+  "is_identity": false,
+  "supports_no_credential": true,
+  "warnings": [],
+  "failure_reason": null,
+  "failure_kind": null,
+  "provenance": {
+    "source": "baseline_canonicalization_v1_2_4",
+    "source_type": "cache",
+    "endpoint": null,
+    "retrieved_at": "2026-09-27T18:28:02.274106+00:00",
+    "verification_status": "DATABASE",
+    "canonicalization_rule_version": "v1.2.4/v1",
+    "evidence_arity": 3
+  }
+}
