@@ -1,182 +1,1125 @@
 {
   "schema": "schedule_provider_v1_2_1",
-  "trace_at": "2026-09-27T19:26:39.415379+00:00",
-  "schedule_provider": "mock_duffel",
+  "trace_at": "2026-09-28T05:25:42.527374+00:00",
+  "schedule_provider": "openflights",
   "smoke_test": true,
+  "n_evidences": 25,
   "evidences": [
     {
-      "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "LIVE",
-      "schedule_status": "SUPPORTED",
-      "schedule_evidence": {
-        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-        "provider": "mock_duffel",
-        "provider_mode": "mock",
-        "retrieved_at": "2026-09-27T19:26:39.410400+00:00",
-        "mission_date_window": "2027-04-15",
-        "searched_date": "2027-04-15",
-        "expires_at": "2026-09-27T19:26:39+00:00Z",
-        "freshness": null,
-        "verification_status": "LIVE",
-        "schedule_status": "SUPPORTED",
-        "live_mode": false,
-        "segments": [
-          {
-            "segment_index": 0,
-            "slice_index": 0,
-            "origin": "TPE",
-            "destination": "KUL",
-            "departure_date": "2027-04-15",
-            "departure_time": "08:00:00",
-            "arrival_date": "2027-04-15",
-            "arrival_time": "13:00:00",
-            "departing_at_iso": "2027-04-15T08:00:00Z",
-            "arriving_at_iso": "2027-04-15T13:00:00Z",
-            "duration_minutes": 300,
-            "flight_number": "D7-100",
-            "operating_carrier_flight_number": "D7-100",
-            "marketing_carrier": "D7",
-            "operating_carrier": "D7",
-            "aircraft": "789",
-            "verification_status": "LIVE"
-          },
-          {
-            "segment_index": 1,
-            "slice_index": 1,
-            "origin": "KUL",
-            "destination": "MAD",
-            "departure_date": "2027-04-15",
-            "departure_time": "15:00:00",
-            "arrival_date": "2027-04-15",
-            "arrival_time": "20:00:00",
-            "departing_at_iso": "2027-04-15T15:00:00Z",
-            "arriving_at_iso": "2027-04-15T20:00:00Z",
-            "duration_minutes": 300,
-            "flight_number": "MH-101",
-            "operating_carrier_flight_number": "MH-101",
-            "marketing_carrier": "MH",
-            "operating_carrier": "MH",
-            "aircraft": "789",
-            "verification_status": "LIVE"
-          }
-        ],
-        "connection_checks": [
-          {
-            "between_segment_index": 0,
-            "arrival_airport": "KUL",
-            "departure_airport": "KUL",
-            "connection_time_min": 120,
-            "overnight_connection": false,
-            "tight_connection": false,
-            "airport_change_required": false
-          }
-        ],
-        "aircraft_in_disclosure": true,
-        "terminal_in_disclosure": false,
-        "live_search_used": true,
-        "warnings": [],
-        "failure_reason": null,
-        "provenance": {
-          "source": "mock_duffel",
-          "source_type": "cache",
-          "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-09-27T19:26:39.410400+00:00",
-          "offer_id": "off_mock_sched_AUTO-L41-multi_ticket-TPE-KUL-MAD",
-          "live_mode": false,
-          "verification_status": "LIVE"
+      "candidate_id": "KUL-EK-1",
+      "route": [
+        "TPE",
+        "KUL",
+        "DXB",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "KUL",
+          "carrier": "D7",
+          "operating_carrier": "D7",
+          "flight": "D7-371",
+          "depart": "2026-11-12T08:00",
+          "arrive": "2026-11-12T12:30",
+          "duration_min": 270,
+          "cabin": "Y",
+          "aircraft_type": "A330-300",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "KUL",
+          "to": "DXB",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK-345",
+          "depart": "2026-11-12T19:30",
+          "arrive": "2026-11-12T23:30",
+          "duration_min": 420,
+          "cabin": "J",
+          "aircraft_type": "A380",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DXB",
+          "to": "MAD",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK-141",
+          "depart": "2026-11-13T03:25",
+          "arrive": "2026-11-13T08:30",
+          "duration_min": 510,
+          "cabin": "J",
+          "aircraft_type": "A380",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
         }
-      },
-      "retrieved_at": "2026-09-27T19:26:39.410400+00:00",
-      "freshness": "FRESHNESS_RECENT"
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408157+00:00",
+      "evidence_ref": "sched::KUL-EK-1"
     },
     {
-      "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "LIVE",
-      "schedule_status": "SUPPORTED",
-      "schedule_evidence": {
-        "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
-        "provider": "mock_duffel",
-        "provider_mode": "mock",
-        "retrieved_at": "2026-09-27T19:26:39.410541+00:00",
-        "mission_date_window": "2027-04-15",
-        "searched_date": "2027-04-15",
-        "expires_at": "2026-09-27T19:26:39+00:00Z",
-        "freshness": null,
-        "verification_status": "LIVE",
-        "schedule_status": "SUPPORTED",
-        "live_mode": false,
-        "segments": [
-          {
-            "segment_index": 0,
-            "slice_index": 0,
-            "origin": "TPE",
-            "destination": "FRA",
-            "departure_date": "2027-04-15",
-            "departure_time": "08:00:00",
-            "arrival_date": "2027-04-15",
-            "arrival_time": "13:00:00",
-            "departing_at_iso": "2027-04-15T08:00:00Z",
-            "arriving_at_iso": "2027-04-15T13:00:00Z",
-            "duration_minutes": 300,
-            "flight_number": "LH-100",
-            "operating_carrier_flight_number": "LH-100",
-            "marketing_carrier": "LH",
-            "operating_carrier": "LH",
-            "aircraft": "789",
-            "verification_status": "LIVE"
-          },
-          {
-            "segment_index": 1,
-            "slice_index": 1,
-            "origin": "FRA",
-            "destination": "MAD",
-            "departure_date": "2027-04-15",
-            "departure_time": "15:00:00",
-            "arrival_date": "2027-04-15",
-            "arrival_time": "20:00:00",
-            "departing_at_iso": "2027-04-15T15:00:00Z",
-            "arriving_at_iso": "2027-04-15T20:00:00Z",
-            "duration_minutes": 300,
-            "flight_number": "LH-101",
-            "operating_carrier_flight_number": "LH-101",
-            "marketing_carrier": "LH",
-            "operating_carrier": "LH",
-            "aircraft": "789",
-            "verification_status": "LIVE"
-          }
-        ],
-        "connection_checks": [
-          {
-            "between_segment_index": 0,
-            "arrival_airport": "FRA",
-            "departure_airport": "FRA",
-            "connection_time_min": 120,
-            "overnight_connection": false,
-            "tight_connection": false,
-            "airport_change_required": false
-          }
-        ],
-        "aircraft_in_disclosure": true,
-        "terminal_in_disclosure": false,
-        "live_search_used": true,
-        "warnings": [],
-        "failure_reason": null,
-        "provenance": {
-          "source": "mock_duffel",
-          "source_type": "cache",
-          "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-09-27T19:26:39.410541+00:00",
-          "offer_id": "off_mock_sched_AUTO-L41-direct_hub-TPE-FRA-MAD",
-          "live_mode": false,
-          "verification_status": "LIVE"
+      "candidate_id": "KUL-QR-1",
+      "route": [
+        "TPE",
+        "KUL",
+        "DOH",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "KUL",
+          "carrier": "D7",
+          "operating_carrier": "D7",
+          "flight": "D7-371",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T11:30",
+          "duration_min": 270,
+          "cabin": "Y",
+          "aircraft_type": "A330-300",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "KUL",
+          "to": "DOH",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR-845",
+          "depart": "2026-11-12T20:30",
+          "arrive": "2026-11-12T23:55",
+          "duration_min": 445,
+          "cabin": "J",
+          "aircraft_type": "B777-300ER",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DOH",
+          "to": "MAD",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR-155",
+          "depart": "2026-11-13T01:50",
+          "arrive": "2026-11-13T07:30",
+          "duration_min": 460,
+          "cabin": "J",
+          "aircraft_type": "B777-200LR",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
         }
-      },
-      "retrieved_at": "2026-09-27T19:26:39.410541+00:00",
-      "freshness": "FRESHNESS_RECENT"
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408284+00:00",
+      "evidence_ref": "sched::KUL-QR-1"
+    },
+    {
+      "candidate_id": "CGK-EY-1",
+      "route": [
+        "TPE",
+        "CGK",
+        "AUH",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "CGK",
+          "carrier": "QZ",
+          "operating_carrier": "QZ",
+          "flight": "QZ-852",
+          "depart": "2026-11-12T09:00",
+          "arrive": "2026-11-12T14:20",
+          "duration_min": 320,
+          "cabin": "Y",
+          "aircraft_type": "A320",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "CGK",
+          "to": "AUH",
+          "carrier": "EY",
+          "operating_carrier": "EY",
+          "flight": "EY-475",
+          "depart": "2026-11-12T21:30",
+          "arrive": "2026-11-13T03:20",
+          "duration_min": 420,
+          "cabin": "J",
+          "aircraft_type": "B787-9",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "AUH",
+          "to": "MAD",
+          "carrier": "EY",
+          "operating_carrier": "EY",
+          "flight": "EY-377",
+          "depart": "2026-11-13T08:30",
+          "arrive": "2026-11-13T14:00",
+          "duration_min": 510,
+          "cabin": "J",
+          "aircraft_type": "A350-1000",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408289+00:00",
+      "evidence_ref": "sched::CGK-EY-1"
+    },
+    {
+      "candidate_id": "CGK-QR-1",
+      "route": [
+        "TPE",
+        "CGK",
+        "DOH",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "CGK",
+          "carrier": "QZ",
+          "operating_carrier": "QZ",
+          "flight": "QZ-852",
+          "depart": "2026-11-12T09:00",
+          "arrive": "2026-11-12T14:20",
+          "duration_min": 320,
+          "cabin": "Y",
+          "aircraft_type": "A320",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "CGK",
+          "to": "DOH",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR-965",
+          "depart": "2026-11-12T22:45",
+          "arrive": "2026-11-13T05:15",
+          "duration_min": 420,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DOH",
+          "to": "BCN",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR-145",
+          "depart": "2026-11-13T08:30",
+          "arrive": "2026-11-13T13:55",
+          "duration_min": 505,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408291+00:00",
+      "evidence_ref": "sched::CGK-QR-1"
+    },
+    {
+      "candidate_id": "CGK-EY-BCN-1",
+      "route": [
+        "TPE",
+        "CGK",
+        "AUH",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "CGK",
+          "carrier": "QZ",
+          "operating_carrier": "QZ",
+          "flight": "QZ-852",
+          "depart": "2026-11-12T09:00",
+          "arrive": "2026-11-12T14:20",
+          "duration_min": 320,
+          "cabin": "Y",
+          "aircraft_type": "A320",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "CGK",
+          "to": "AUH",
+          "carrier": "EY",
+          "operating_carrier": "EY",
+          "flight": "EY-475",
+          "depart": "2026-11-12T21:30",
+          "arrive": "2026-11-13T03:20",
+          "duration_min": 420,
+          "cabin": "J",
+          "aircraft_type": "B787-9",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "AUH",
+          "to": "BCN",
+          "carrier": "EY",
+          "operating_carrier": "EY",
+          "flight": "EY-637",
+          "depart": "2026-11-13T08:35",
+          "arrive": "2026-11-13T14:05",
+          "duration_min": 510,
+          "cabin": "J",
+          "aircraft_type": "B787-9",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408293+00:00",
+      "evidence_ref": "sched::CGK-EY-BCN-1"
+    },
+    {
+      "candidate_id": "BKK-EK-1",
+      "route": [
+        "TPE",
+        "BKK",
+        "DXB",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "BKK",
+          "carrier": "FD",
+          "operating_carrier": "FD",
+          "flight": "FD-852",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:00",
+          "duration_min": 240,
+          "cabin": "Y",
+          "aircraft_type": "A320",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "BKK",
+          "to": "DXB",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK-419",
+          "depart": "2026-11-12T20:30",
+          "arrive": "2026-11-13T00:55",
+          "duration_min": 385,
+          "cabin": "J",
+          "aircraft_type": "B777-300ER",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DXB",
+          "to": "BCN",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK-189",
+          "depart": "2026-11-13T03:45",
+          "arrive": "2026-11-13T08:30",
+          "duration_min": 525,
+          "cabin": "J",
+          "aircraft_type": "A380",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408295+00:00",
+      "evidence_ref": "sched::BKK-EK-1"
+    },
+    {
+      "candidate_id": "AUTO-kul-emirates-MAD",
+      "route": [
+        "TPE",
+        "KUL",
+        "MAD"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408297+00:00",
+      "evidence_ref": "sched::AUTO-kul-emirates-MAD"
+    },
+    {
+      "candidate_id": "AUTO-kul-emirates-BCN",
+      "route": [
+        "TPE",
+        "KUL",
+        "BCN"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408299+00:00",
+      "evidence_ref": "sched::AUTO-kul-emirates-BCN"
+    },
+    {
+      "candidate_id": "AUTO-cgk-emirates-MAD",
+      "route": [
+        "TPE",
+        "CGK",
+        "MAD"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408300+00:00",
+      "evidence_ref": "sched::AUTO-cgk-emirates-MAD"
+    },
+    {
+      "candidate_id": "AUTO-cgk-emirates-BCN",
+      "route": [
+        "TPE",
+        "CGK",
+        "BCN"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408302+00:00",
+      "evidence_ref": "sched::AUTO-cgk-emirates-BCN"
+    },
+    {
+      "candidate_id": "AUTO-bkk-emirates-MAD",
+      "route": [
+        "TPE",
+        "BKK",
+        "MAD"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408303+00:00",
+      "evidence_ref": "sched::AUTO-bkk-emirates-MAD"
+    },
+    {
+      "candidate_id": "AUTO-bkk-emirates-BCN",
+      "route": [
+        "TPE",
+        "BKK",
+        "BCN"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408304+00:00",
+      "evidence_ref": "sched::AUTO-bkk-emirates-BCN"
+    },
+    {
+      "candidate_id": "KE-ICN-MAD-direct",
+      "route": [
+        "TPE",
+        "ICN",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "ICN",
+          "carrier": "TW",
+          "operating_carrier": "TW",
+          "flight": "TW672",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "duration_min": 165,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "ICN",
+          "to": "MAD",
+          "carrier": "KE",
+          "operating_carrier": "KE",
+          "flight": "KE9091",
+          "depart": "2026-11-12T18:30",
+          "arrive": "2026-11-13T07:30",
+          "duration_min": 780,
+          "cabin": "J",
+          "aircraft_type": "B777-300ER",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408306+00:00",
+      "evidence_ref": "sched::KE-ICN-MAD-direct"
+    },
+    {
+      "candidate_id": "KE-ICN-BCN-direct",
+      "route": [
+        "TPE",
+        "ICN",
+        "AMS",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "ICN",
+          "carrier": "TW",
+          "operating_carrier": "TW",
+          "flight": "TW672",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "duration_min": 165,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "ICN",
+          "to": "AMS",
+          "carrier": "KE",
+          "operating_carrier": "KE",
+          "flight": "KE925",
+          "depart": "2026-11-12T17:30",
+          "arrive": "2026-11-12T23:45",
+          "duration_min": 750,
+          "cabin": "J",
+          "aircraft_type": "B777-300ER",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "AMS",
+          "to": "BCN",
+          "carrier": "KL",
+          "operating_carrier": "KL",
+          "flight": "KL1685",
+          "depart": "2026-11-13T07:30",
+          "arrive": "2026-11-13T09:50",
+          "duration_min": 140,
+          "cabin": "J",
+          "aircraft_type": "B737",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408308+00:00",
+      "evidence_ref": "sched::KE-ICN-BCN-direct"
+    },
+    {
+      "candidate_id": "OZ-ICN-MAD",
+      "route": [
+        "TPE",
+        "ICN",
+        "DOH",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "ICN",
+          "carrier": "TW",
+          "operating_carrier": "TW",
+          "flight": "TW672",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "duration_min": 165,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "ICN",
+          "to": "DOH",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR8591",
+          "depart": "2026-11-12T21:30",
+          "arrive": "2026-11-13T02:30",
+          "duration_min": 540,
+          "cabin": "J",
+          "aircraft_type": "B777-200LR",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DOH",
+          "to": "MAD",
+          "carrier": "QR",
+          "operating_carrier": null,
+          "flight": "QR155",
+          "depart": "2026-11-13T03:50",
+          "arrive": "2026-11-13T09:30",
+          "duration_min": 460,
+          "cabin": "J",
+          "aircraft_type": null,
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408310+00:00",
+      "evidence_ref": "sched::OZ-ICN-MAD"
+    },
+    {
+      "candidate_id": "QR-ICN-BCN",
+      "route": [
+        "TPE",
+        "ICN",
+        "DOH",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "ICN",
+          "carrier": "TW",
+          "operating_carrier": "TW",
+          "flight": "TW672",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "duration_min": 165,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "ICN",
+          "to": "DOH",
+          "carrier": "QR",
+          "operating_carrier": "QR",
+          "flight": "QR8593",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T00:50",
+          "duration_min": 535,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DOH",
+          "to": "BCN",
+          "carrier": "QR",
+          "operating_carrier": null,
+          "flight": "QR145",
+          "depart": "2026-11-13T03:30",
+          "arrive": "2026-11-13T09:25",
+          "duration_min": 515,
+          "cabin": "J",
+          "aircraft_type": null,
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408312+00:00",
+      "evidence_ref": "sched::QR-ICN-BCN"
+    },
+    {
+      "candidate_id": "EK-ICN-MAD",
+      "route": [
+        "TPE",
+        "ICN",
+        "DXB",
+        "MAD"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "ICN",
+          "carrier": "TW",
+          "operating_carrier": "TW",
+          "flight": "TW672",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "duration_min": 165,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "ICN",
+          "to": "DXB",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK323",
+          "depart": "2026-11-12T20:30",
+          "arrive": "2026-11-13T01:55",
+          "duration_min": 510,
+          "cabin": "J",
+          "aircraft_type": "B777-300ER",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "DXB",
+          "to": "MAD",
+          "carrier": "EK",
+          "operating_carrier": "EK",
+          "flight": "EK141",
+          "depart": "2026-11-13T03:25",
+          "arrive": "2026-11-13T08:30",
+          "duration_min": 510,
+          "cabin": "J",
+          "aircraft_type": "A380",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408314+00:00",
+      "evidence_ref": "sched::EK-ICN-MAD"
+    },
+    {
+      "candidate_id": "SQ-SIN-CDG",
+      "route": [
+        "TPE",
+        "SIN",
+        "FRA",
+        "CDG"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "SIN",
+          "carrier": "TR",
+          "operating_carrier": "TR",
+          "flight": "TR993",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "duration_min": 250,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "SIN",
+          "to": "FRA",
+          "carrier": "SQ",
+          "operating_carrier": "SQ",
+          "flight": "SQ326",
+          "depart": "2026-11-12T23:30",
+          "arrive": "2026-11-13T05:50",
+          "duration_min": 750,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "FRA",
+          "to": "CDG",
+          "carrier": "SQ",
+          "operating_carrier": "SQ",
+          "flight": "SQ336",
+          "depart": "2026-11-13T08:30",
+          "arrive": "2026-11-13T09:45",
+          "duration_min": 75,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408316+00:00",
+      "evidence_ref": "sched::SQ-SIN-CDG"
+    },
+    {
+      "candidate_id": "TK-SIN-BCN",
+      "route": [
+        "TPE",
+        "SIN",
+        "IST",
+        "BCN"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "SIN",
+          "carrier": "TR",
+          "operating_carrier": "TR",
+          "flight": "TR993",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "duration_min": 250,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "SIN",
+          "to": "IST",
+          "carrier": "TK",
+          "operating_carrier": "TK",
+          "flight": "TK55",
+          "depart": "2026-11-12T20:25",
+          "arrive": "2026-11-13T01:50",
+          "duration_min": 645,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "IST",
+          "to": "BCN",
+          "carrier": "TK",
+          "operating_carrier": "TK",
+          "flight": "TK1853",
+          "depart": "2026-11-13T07:35",
+          "arrive": "2026-11-13T09:40",
+          "duration_min": 185,
+          "cabin": "J",
+          "aircraft_type": "A321neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408318+00:00",
+      "evidence_ref": "sched::TK-SIN-BCN"
+    },
+    {
+      "candidate_id": "TK-SIN-FCO",
+      "route": [
+        "TPE",
+        "SIN",
+        "IST",
+        "FCO"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "SIN",
+          "carrier": "TR",
+          "operating_carrier": "TR",
+          "flight": "TR993",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "duration_min": 250,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "SIN",
+          "to": "IST",
+          "carrier": "TK",
+          "operating_carrier": "TK",
+          "flight": "TK55",
+          "depart": "2026-11-12T20:25",
+          "arrive": "2026-11-13T01:50",
+          "duration_min": 645,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "IST",
+          "to": "FCO",
+          "carrier": "TK",
+          "operating_carrier": "TK",
+          "flight": "TK1861",
+          "depart": "2026-11-13T06:55",
+          "arrive": "2026-11-13T08:00",
+          "duration_min": 185,
+          "cabin": "J",
+          "aircraft_type": "A321neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408319+00:00",
+      "evidence_ref": "sched::TK-SIN-FCO"
+    },
+    {
+      "candidate_id": "LH-SIN-FRA",
+      "route": [
+        "TPE",
+        "SIN",
+        "FRA"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "SIN",
+          "carrier": "TR",
+          "operating_carrier": "TR",
+          "flight": "TR993",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "duration_min": 250,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "SIN",
+          "to": "FRA",
+          "carrier": "LH",
+          "operating_carrier": "LH",
+          "flight": "LH778",
+          "depart": "2026-11-12T22:00",
+          "arrive": "2026-11-13T05:50",
+          "duration_min": 770,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [
+        "multi_ticket",
+        "airport_change"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408322+00:00",
+      "evidence_ref": "sched::LH-SIN-FRA"
+    },
+    {
+      "candidate_id": "AY-SIN-CDG",
+      "route": [
+        "TPE",
+        "SIN",
+        "HEL",
+        "CDG"
+      ],
+      "segments": [
+        {
+          "from": "TPE",
+          "to": "SIN",
+          "carrier": "TR",
+          "operating_carrier": "TR",
+          "flight": "TR993",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "duration_min": 250,
+          "cabin": "Y",
+          "aircraft_type": "A320neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "SIN",
+          "to": "HEL",
+          "carrier": "AY",
+          "operating_carrier": "AY",
+          "flight": "AY132",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T05:25",
+          "duration_min": 720,
+          "cabin": "J",
+          "aircraft_type": "A350-900",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        },
+        {
+          "from": "HEL",
+          "to": "CDG",
+          "carrier": "AY",
+          "operating_carrier": "AY",
+          "flight": "AY873",
+          "depart": "2026-11-13T08:00",
+          "arrive": "2026-11-13T10:35",
+          "duration_min": 155,
+          "cabin": "J",
+          "aircraft_type": "A321neo",
+          "schedule_source": "openflights_database",
+          "verification_status": "DATABASE"
+        }
+      ],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "SUPPORTED",
+      "structural_signals": [],
+      "retrieved_at": "2026-09-28T05:25:42.408324+00:00",
+      "evidence_ref": "sched::AY-SIN-CDG"
+    },
+    {
+      "candidate_id": "AUTO-icn-emirates-MAD",
+      "route": [
+        "TPE",
+        "ICN",
+        "MAD"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408326+00:00",
+      "evidence_ref": "sched::AUTO-icn-emirates-MAD"
+    },
+    {
+      "candidate_id": "AUTO-icn-emirates-BCN",
+      "route": [
+        "TPE",
+        "ICN",
+        "BCN"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408327+00:00",
+      "evidence_ref": "sched::AUTO-icn-emirates-BCN"
+    },
+    {
+      "candidate_id": "AUTO-sin-lufthansa-FRA",
+      "route": [
+        "TPE",
+        "SIN",
+        "FRA"
+      ],
+      "segments": [],
+      "verification_status": "DATABASE",
+      "provider": "openflights",
+      "provider_mode": "database",
+      "schedule_status": "UNCERTAIN",
+      "structural_signals": [
+        "multi_ticket"
+      ],
+      "retrieved_at": "2026-09-28T05:25:42.408328+00:00",
+      "evidence_ref": "sched::AUTO-sin-lufthansa-FRA"
     }
   ]
 }

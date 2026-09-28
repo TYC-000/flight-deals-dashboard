@@ -1,399 +1,257 @@
 {
   "schema": "baseline_canonicalization_v1_2_4",
-  "trace_at": "2026-09-27T19:26:39.788363+00:00",
-  "n_evidences": 1,
+  "trace_at": "2026-09-28T05:25:42.529276+00:00",
+  "n_evidences": 25,
   "evidences": [
     {
-      "schema_version": "v1.2.4",
-      "mission_canonical": {
-        "mission_id": "M-L41-INTEGRATION",
-        "origin": "TPE",
-        "destination": "MAD",
-        "travel_date": null,
-        "return_date": "2027-04-25",
-        "is_round_trip": true,
-        "cabin": "economy",
-        "passenger_count": null,
-        "passenger_types": [],
-        "passenger_basis_known": false,
-        "raw": {
-          "mission_id": "M-L41-INTEGRATION",
-          "origin": "TPE",
-          "destination": "MAD",
-          "departure_date": "2027-04-15",
-          "return_date": "2027-04-25",
-          "cabin": "economy",
-          "passengers": 1,
-          "preferences": {
-            "allow_outer_port": true,
-            "allow_multi_ticket": true,
-            "allow_secondary_entry": true,
-            "max_positioning_hops": 2
-          }
-        }
-      },
       "candidate_canonical": {
-        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-        "origin": "TPE",
-        "destination": "MAD",
-        "routing": [
-          [
-            "TPE",
-            "KUL"
-          ],
-          [
-            "KUL",
-            "MAD"
-          ]
-        ],
-        "segment_count": 2,
-        "is_non_stop": false,
-        "travel_date": null,
-        "return_date": null,
-        "is_round_trip": false,
-        "cabin": "economy",
-        "cabin_known": true,
-        "passenger_count": null,
-        "passenger_count_known": false,
-        "passenger_types": [
-          "ADT"
-        ],
-        "passenger_types_known": true,
-        "marketing_carriers": [],
-        "operating_carriers": [],
-        "operating_carriers_known": false,
-        "ticket_structure": null,
-        "ticket_count": null,
-        "schedule_evidence_status": "UNKNOWN",
-        "price_evidence_status": "UNKNOWN",
-        "fx_evidence_status": "UNKNOWN",
-        "outer_port_origin": true,
-        "outer_port_destination": false,
-        "secondary_entry_origin": false,
-        "secondary_entry_destination": false,
-        "raw_provider": null,
-        "raw_provider_mode": null
+        "candidate_id": "KUL-EK-1"
       },
-      "baseline_eligibility": {
-        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-        "baseline_classes": [
-          {
-            "baseline_class": "canonical_direct",
-            "eligibility": "NOT_ELIGIBLE",
-            "rule_applies": true
-          },
-          {
-            "baseline_class": "conventional_hub",
-            "eligibility": "ELIGIBLE",
-            "rule_applies": true
-          },
-          {
-            "baseline_class": "secondary_entry",
-            "eligibility": "NOT_ELIGIBLE",
-            "rule_applies": true
-          },
-          {
-            "baseline_class": "outer_port_positioning",
-            "eligibility": "UNKNOWN",
-            "rule_applies": true
-          },
-          {
-            "baseline_class": "same_airport_pair",
-            "eligibility": "ELIGIBLE",
-            "rule_applies": true
-          },
-          {
-            "baseline_class": "fictional_no_fly",
-            "eligibility": "NOT_ELIGIBLE",
-            "rule_applies": true
-          }
-        ]
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527249+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::KUL-EK-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "KUL-QR-1"
       },
-      "canonical_baselines": [
-        {
-          "schema_version": "v1.2.4",
-          "baseline_class": "conventional_hub",
-          "mission_binding": {
-            "mission_id": "M-L41-INTEGRATION",
-            "origin": "TPE",
-            "destination": "MAD",
-            "travel_date": null,
-            "return_date": "2027-04-25",
-            "is_round_trip": true,
-            "cabin": "economy",
-            "passenger_count": null,
-            "passenger_types": [],
-            "passenger_basis_known": false
-          },
-          "candidate_binding": {
-            "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD"
-          },
-          "canonical_representation": {
-            "origin": "TPE",
-            "destination": "MAD",
-            "routing": [
-              [
-                "TPE",
-                "KUL"
-              ],
-              [
-                "KUL",
-                "MAD"
-              ]
-            ],
-            "segment_count": 2,
-            "travel_date": null,
-            "return_date": null,
-            "is_round_trip": false,
-            "airports": [
-              "TPE",
-              "KUL",
-              "MAD"
-            ],
-            "routing_family": "outer_port",
-            "marketing_carriers": [],
-            "operating_carriers": [],
-            "operating_carriers_known": false,
-            "cabin": "economy",
-            "cabin_known": true,
-            "passenger_count": null,
-            "passenger_count_known": false,
-            "passenger_types": [
-              "ADT"
-            ],
-            "passenger_types_known": true,
-            "ticket_structure": null,
-            "ticket_count": null,
-            "positioning": true,
-            "outer_port": true,
-            "secondary_entry": false,
-            "airport_change": false,
-            "multi_ticket": false,
-            "schedule_evidence_status": "UNKNOWN",
-            "price_evidence_status": "UNKNOWN",
-            "fx_evidence_status": "UNKNOWN"
-          },
-          "canonicalization_reason": "baseline class 'conventional_hub' is ELIGIBLE for the given mission/candidate pair under rule version v1.2.4/v1. This is a structural reference, NOT a price-based selection (never the cheapest candidate, first candidate, or Jev survivor).",
-          "verification_status": "DATABASE",
-          "source": "baseline_canonicalization_v1_2_4",
-          "is_identity": false,
-          "supports_no_credential": true,
-          "warnings": [],
-          "failure_reason": null,
-          "failure_kind": null,
-          "provenance": {
-            "source": "baseline_canonicalization_v1_2_4",
-            "source_type": "cache",
-            "endpoint": null,
-            "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-            "verification_status": "DATABASE",
-            "canonicalization_rule_version": "v1.2.4/v1",
-            "evidence_arity": 0,
-            "derived_from": {
-              "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-              "candidate_origin": "TPE",
-              "candidate_destination": "MAD",
-              "candidate_provider": null,
-              "candidate_provider_mode": null
-            }
-          }
-        },
-        {
-          "schema_version": "v1.2.4",
-          "baseline_class": "same_airport_pair",
-          "mission_binding": {
-            "mission_id": "M-L41-INTEGRATION",
-            "origin": "TPE",
-            "destination": "MAD",
-            "travel_date": null,
-            "return_date": "2027-04-25",
-            "is_round_trip": true,
-            "cabin": "economy",
-            "passenger_count": null,
-            "passenger_types": [],
-            "passenger_basis_known": false
-          },
-          "candidate_binding": {
-            "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD"
-          },
-          "canonical_representation": {
-            "origin": "TPE",
-            "destination": "MAD",
-            "routing": [
-              [
-                "TPE",
-                "KUL"
-              ],
-              [
-                "KUL",
-                "MAD"
-              ]
-            ],
-            "segment_count": 2,
-            "travel_date": null,
-            "return_date": null,
-            "is_round_trip": false,
-            "airports": [
-              "TPE",
-              "KUL",
-              "MAD"
-            ],
-            "routing_family": "outer_port",
-            "marketing_carriers": [],
-            "operating_carriers": [],
-            "operating_carriers_known": false,
-            "cabin": "economy",
-            "cabin_known": true,
-            "passenger_count": null,
-            "passenger_count_known": false,
-            "passenger_types": [
-              "ADT"
-            ],
-            "passenger_types_known": true,
-            "ticket_structure": null,
-            "ticket_count": null,
-            "positioning": true,
-            "outer_port": true,
-            "secondary_entry": false,
-            "airport_change": false,
-            "multi_ticket": false,
-            "schedule_evidence_status": "UNKNOWN",
-            "price_evidence_status": "UNKNOWN",
-            "fx_evidence_status": "UNKNOWN"
-          },
-          "canonicalization_reason": "baseline class 'same_airport_pair' is ELIGIBLE for the given mission/candidate pair under rule version v1.2.4/v1. This is a structural reference, NOT a price-based selection (never the cheapest candidate, first candidate, or Jev survivor).",
-          "verification_status": "DATABASE",
-          "source": "baseline_canonicalization_v1_2_4",
-          "is_identity": false,
-          "supports_no_credential": true,
-          "warnings": [],
-          "failure_reason": null,
-          "failure_kind": null,
-          "provenance": {
-            "source": "baseline_canonicalization_v1_2_4",
-            "source_type": "cache",
-            "endpoint": null,
-            "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-            "verification_status": "DATABASE",
-            "canonicalization_rule_version": "v1.2.4/v1",
-            "evidence_arity": 0,
-            "derived_from": {
-              "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-              "candidate_origin": "TPE",
-              "candidate_destination": "MAD",
-              "candidate_provider": null,
-              "candidate_provider_mode": null
-            }
-          }
-        }
-      ],
-      "comparison_pairs": [
-        {
-          "schema_version": "v1.2.4",
-          "comparison_pair_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD::conventional_hub",
-          "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-          "baseline_class": "conventional_hub",
-          "comparability": "unknown",
-          "hard_match": {
-            "origin": true,
-            "destination": true,
-            "date": true,
-            "return_date": false,
-            "cabin": true,
-            "passenger_basis": false
-          },
-          "soft_observations": {
-            "outer_port_candidate": true,
-            "ticket_structure": null,
-            "airport_change": false
-          },
-          "verification_status": "DATABASE",
-          "source": "baseline_canonicalization_v1_2_4",
-          "is_identity": false,
-          "supports_no_credential": true,
-          "warnings": [],
-          "failure_reason": null,
-          "failure_kind": null,
-          "provenance": {
-            "source": "baseline_canonicalization_v1_2_4",
-            "source_type": "cache",
-            "endpoint": null,
-            "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-            "verification_status": "DATABASE",
-            "canonicalization_rule_version": "v1.2.4/v1",
-            "evidence_arity": 0,
-            "derived_from": {
-              "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-              "candidate_origin": "TPE",
-              "candidate_destination": "MAD",
-              "candidate_provider": null,
-              "candidate_provider_mode": null
-            }
-          }
-        },
-        {
-          "schema_version": "v1.2.4",
-          "comparison_pair_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD::same_airport_pair",
-          "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-          "baseline_class": "same_airport_pair",
-          "comparability": "unknown",
-          "hard_match": {
-            "origin": true,
-            "destination": true,
-            "date": true,
-            "return_date": false,
-            "cabin": true,
-            "passenger_basis": false
-          },
-          "soft_observations": {
-            "outer_port_candidate": true,
-            "ticket_structure": null,
-            "airport_change": false
-          },
-          "verification_status": "DATABASE",
-          "source": "baseline_canonicalization_v1_2_4",
-          "is_identity": false,
-          "supports_no_credential": true,
-          "warnings": [],
-          "failure_reason": null,
-          "failure_kind": null,
-          "provenance": {
-            "source": "baseline_canonicalization_v1_2_4",
-            "source_type": "cache",
-            "endpoint": null,
-            "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-            "verification_status": "DATABASE",
-            "canonicalization_rule_version": "v1.2.4/v1",
-            "evidence_arity": 0,
-            "derived_from": {
-              "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
-              "candidate_origin": "TPE",
-              "candidate_destination": "MAD",
-              "candidate_provider": null,
-              "candidate_provider_mode": null
-            }
-          }
-        }
-      ],
-      "canonicalization_rule_version": "v1.2.4/v1",
-      "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-      "verification_status": "DATABASE",
-      "source": "baseline_canonicalization_v1_2_4",
-      "is_identity": false,
-      "supports_no_credential": true,
-      "warnings": [],
-      "failure_reason": null,
-      "failure_kind": null,
-      "provenance": {
-        "source": "baseline_canonicalization_v1_2_4",
-        "source_type": "cache",
-        "endpoint": null,
-        "retrieved_at": "2026-09-27T19:26:39.786234+00:00",
-        "verification_status": "DATABASE",
-        "canonicalization_rule_version": "v1.2.4/v1",
-        "evidence_arity": 3
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527252+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::KUL-QR-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "CGK-EY-1"
       },
-      "stage": "baseline"
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527254+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::CGK-EY-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "CGK-QR-1"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527256+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::CGK-QR-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "CGK-EY-BCN-1"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527259+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::CGK-EY-BCN-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "BKK-EK-1"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527261+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::BKK-EK-1::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-kul-emirates-MAD"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527265+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::AUTO-kul-emirates-MAD::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-kul-emirates-BCN"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527267+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::AUTO-kul-emirates-BCN::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-cgk-emirates-MAD"
+      },
+      "baseline_status": "ELIGIBLE",
+      "baseline_class": "outer_port_positioning",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527270+00:00",
+      "evidence_ref": "baseline::AUTO-cgk-emirates-MAD::OK"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-cgk-emirates-BCN"
+      },
+      "baseline_status": "ELIGIBLE",
+      "baseline_class": "outer_port_positioning",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527272+00:00",
+      "evidence_ref": "baseline::AUTO-cgk-emirates-BCN::OK"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-bkk-emirates-MAD"
+      },
+      "baseline_status": "ELIGIBLE",
+      "baseline_class": "outer_port_positioning",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527275+00:00",
+      "evidence_ref": "baseline::AUTO-bkk-emirates-MAD::OK"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-bkk-emirates-BCN"
+      },
+      "baseline_status": "ELIGIBLE",
+      "baseline_class": "outer_port_positioning",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527277+00:00",
+      "evidence_ref": "baseline::AUTO-bkk-emirates-BCN::OK"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "KE-ICN-MAD-direct"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527278+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::KE-ICN-MAD-direct::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "KE-ICN-BCN-direct"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527280+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::KE-ICN-BCN-direct::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "OZ-ICN-MAD"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527283+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::OZ-ICN-MAD::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "QR-ICN-BCN"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527285+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::QR-ICN-BCN::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "EK-ICN-MAD"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527286+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::EK-ICN-MAD::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "SQ-SIN-CDG"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527288+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::SQ-SIN-CDG::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "TK-SIN-BCN"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527290+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::TK-SIN-BCN::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "TK-SIN-FCO"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527292+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::TK-SIN-FCO::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "LH-SIN-FRA"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527294+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::LH-SIN-FRA::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AY-SIN-CDG"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527296+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::AY-SIN-CDG::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-icn-emirates-MAD"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527298+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::AUTO-icn-emirates-MAD::NOT_ASSESSED"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-icn-emirates-BCN"
+      },
+      "baseline_status": "ELIGIBLE",
+      "baseline_class": "outer_port_positioning",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527300+00:00",
+      "evidence_ref": "baseline::AUTO-icn-emirates-BCN::OK"
+    },
+    {
+      "candidate_canonical": {
+        "candidate_id": "AUTO-sin-lufthansa-FRA"
+      },
+      "baseline_status": "NOT_ASSESSED",
+      "stage": "baseline",
+      "trace_at": "2026-09-28T05:25:42.527302+00:00",
+      "reason": "Candidate not priced; baseline assessment requires live price evidence",
+      "evidence_ref": "baseline::AUTO-sin-lufthansa-FRA::NOT_ASSESSED"
     }
   ]
 }

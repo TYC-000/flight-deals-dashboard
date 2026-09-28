@@ -1,59 +1,27 @@
 {
   "schema": "fx_provider_v1_2_2",
-  "trace_at": "2026-09-27T19:26:39.783201+00:00",
+  "trace_at": "2026-09-28T05:25:42.529002+00:00",
   "fx_provider": "frankfurter",
   "smoke_test": true,
   "summary": {
-    "conversions_succeeded": 1,
-    "conversions_failed": 0,
+    "conversions_succeeded": 0,
+    "conversions_failed": 1,
     "verification_status_distribution": {
-      "LIVE": 1
+      "REFUSED": 1
     }
   },
   "evidences": [
     {
       "base": "TWD",
       "quote": "EUR",
-      "provider": "frankfurter",
-      "provider_mode": "live",
-      "verification_status": "LIVE",
       "fx_evidence": {
-        "schema_version": "v1.2.2",
         "provider": "frankfurter",
-        "provider_mode": "live",
-        "base_currency": "TWD",
-        "quote_currency": "EUR",
-        "rate": 0.02761,
-        "rate_date": "2026-09-27",
-        "rate_source_type": "latest/current",
-        "retrieved_at": "2026-09-27T19:26:39.561882+00:00",
-        "freshness_min": 0,
-        "freshness_bucket": "FRESHNESS_RECENT",
-        "freshness_label": "latest/current",
-        "verification_status": "LIVE",
-        "source": "frankfurter",
-        "endpoint": "/v2/rate/{base}/{quote}",
-        "request_metadata": {
-          "is_historical_request": false,
-          "explicit_rate_date": null
-        },
-        "is_identity": false,
-        "supports_no_credential": true,
-        "warnings": [],
-        "failure_reason": null,
-        "failure_kind": null,
-        "provenance": {
-          "source": "frankfurter",
-          "source_type": "live",
-          "endpoint": "/v2/rate/{base}/{quote}",
-          "retrieved_at": "2026-09-27T19:26:39.561882+00:00",
-          "rate_date": "2026-09-27",
-          "verification_status": "LIVE"
-        }
+        "rate": null,
+        "retrieved_at": "2026-09-28T05:25:42.420756+00:00",
+        "verification_status": "REFUSED",
+        "error": "HTTP Error 403: Forbidden"
       },
-      "retrieved_at": "2026-09-27T19:26:39.561882+00:00",
-      "rate_date": "2026-09-27",
-      "rate": 0.02761
+      "schema_version": "fx_provider_v1_2_2"
     }
   ]
 }
