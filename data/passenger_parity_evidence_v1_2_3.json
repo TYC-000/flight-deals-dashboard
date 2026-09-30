@@ -1,34 +1,130 @@
 {
   "schema": "passenger_parity_v1_2_3",
-  "trace_at": "2026-09-28T05:25:42.529150+00:00",
-  "n_evidences": 3,
+  "trace_at": "2026-09-30T17:10:17.017460+00:00",
+  "n_evidences": 1,
   "evidences": [
     {
-      "candidate_a_id": "AUTO-icn-emirates-BCN",
-      "candidate_b_id": null,
+      "schema_version": "v1.2.3",
       "parity_status": "UNKNOWN",
+      "hard_parity_reasons": [],
+      "soft_parity_observations": [
+        "ITINERARY_UNKNOWN",
+        "BAGGAGE_UNKNOWN"
+      ],
+      "dimension_results": {
+        "passenger_count": {
+          "match": true,
+          "known": true,
+          "a": 1,
+          "b": 1
+        },
+        "passenger_type_composition": {
+          "match": true,
+          "known": true,
+          "a": [
+            "ADT"
+          ],
+          "b": [
+            "ADT"
+          ],
+          "a_pc_known": true,
+          "b_pc_known": true
+        },
+        "cabin": {
+          "match": true,
+          "known": true,
+          "a": "economy",
+          "b": "economy"
+        },
+        "itinerary_identity": {
+          "match": false,
+          "known": false,
+          "a": null,
+          "b": null
+        },
+        "ticket_structure": {
+          "match": true,
+          "known": true,
+          "a": "multi-ticket",
+          "b": "multi-ticket"
+        },
+        "baggage": {
+          "match": false,
+          "known": false,
+          "a": {
+            "checked_pieces": 0,
+            "carry_on": 1,
+            "basis_known": false
+          },
+          "b": {
+            "checked_pieces": 0,
+            "carry_on": 1,
+            "basis_known": false
+          }
+        },
+        "fare_basis": {
+          "match": false,
+          "known": false,
+          "a": null,
+          "b": null
+        },
+        "price_per_passenger": {
+          "match": false,
+          "known": true,
+          "a": 48093.5,
+          "b": 48412.0,
+          "derived": true,
+          "note": "derived analytical field; never interpreted as opportunity"
+        }
+      },
+      "price_per_passenger": {
+        "a": 48093.5,
+        "b": 48412.0,
+        "difference": 318.5,
+        "derived": true,
+        "note": "derived analytical field; never used to claim 'cheaper', 'better', 'opportunity', or 'arbitrage'"
+      },
+      "totals": {
+        "a_total_price": 48093.5,
+        "b_total_price": 48412.0,
+        "currency_a": "TWD",
+        "currency_b": "TWD",
+        "currency_parity": true
+      },
+      "provider_disagreement": null,
+      "providers": {
+        "a": {
+          "provider": null,
+          "provider_mode": null,
+          "retrieved_at": null
+        },
+        "b": {
+          "provider": null,
+          "provider_mode": null,
+          "retrieved_at": null
+        }
+      },
+      "verification_status": "DATABASE",
+      "source": "passenger_parity_v1_2_3",
+      "endpoint": null,
+      "retrieved_at": "2026-09-30T17:10:17.014702+00:00",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
+      "provenance": {
+        "source": "passenger_parity_v1_2_3",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-30T17:10:17.014702+00:00",
+        "verification_status": "DATABASE",
+        "evidence_arity": 2
+      },
+      "candidate_a_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "candidate_b_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
       "stage": "passenger_parity",
-      "trace_at": "2026-09-28T05:25:42.527235+00:00",
-      "reason": "Candidate not paired (no same-O&D LIVE-priced partner)",
-      "evidence_ref": "parity::AUTO-icn-emirates-BCN::NOT_PAIRED"
-    },
-    {
-      "candidate_a_id": "AUTO-cgk-emirates-MAD",
-      "candidate_b_id": "AUTO-bkk-emirates-MAD",
-      "parity_status": "MATCH",
-      "passenger_count_a": 1,
-      "passenger_count_b": 1,
-      "stage": "passenger_parity",
-      "trace_at": "2026-09-28T05:25:42.527242+00:00"
-    },
-    {
-      "candidate_a_id": "AUTO-cgk-emirates-BCN",
-      "candidate_b_id": "AUTO-bkk-emirates-BCN",
-      "parity_status": "MATCH",
-      "passenger_count_a": 1,
-      "passenger_count_b": 1,
-      "stage": "passenger_parity",
-      "trace_at": "2026-09-28T05:25:42.527244+00:00"
+      "trace_at": "2026-09-30T17:10:17.014787+00:00"
     }
   ]
 }

@@ -1,207 +1,337 @@
 {
-  "schema": "l4/v1-list",
-  "trace_at": "2026-09-28T05:25:42.529713+00:00",
-  "n_evidences": 25,
-  "evidences": [
-    {
-      "candidate_id": "KUL-EK-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527311+00:00",
-      "evidence_ref": "arb::KUL-EK-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
+  "schema_version": "l4/v1",
+  "arbitrage_id": "L4::?::?",
+  "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+  "baseline_id": null,
+  "comparison_id": "None::None",
+  "arbitrage_state": "NOT_COMPARABLE",
+  "evidence_maturity": "OBSERVED",
+  "price_difference": null,
+  "normalized_price_difference": null,
+  "percentage_difference": null,
+  "absolute_price_difference": null,
+  "price_evidence_refs": {
+    "candidate": {
+      "provider": "mock_duffel",
+      "provider_mode": "mock",
+      "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+      "verification_status": "LIVE",
+      "currency": "TWD",
+      "amount": null
     },
-    {
-      "candidate_id": "KUL-QR-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527314+00:00",
-      "evidence_ref": "arb::KUL-QR-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "CGK-EY-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527315+00:00",
-      "evidence_ref": "arb::CGK-EY-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "CGK-QR-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527317+00:00",
-      "evidence_ref": "arb::CGK-QR-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "CGK-EY-BCN-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527319+00:00",
-      "evidence_ref": "arb::CGK-EY-BCN-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "BKK-EK-1",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527320+00:00",
-      "evidence_ref": "arb::BKK-EK-1::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-kul-emirates-MAD",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527322+00:00",
-      "evidence_ref": "arb::AUTO-kul-emirates-MAD::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-kul-emirates-BCN",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527323+00:00",
-      "evidence_ref": "arb::AUTO-kul-emirates-BCN::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-cgk-emirates-MAD",
-      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527325+00:00",
-      "evidence_ref": "arb::AUTO-cgk-emirates-MAD::INSUFFICIENT_EVIDENCE",
-      "reason": "Comparison REFUSED due to FX state UNKNOWN; chain cannot establish L4 evidence"
-    },
-    {
-      "candidate_id": "AUTO-cgk-emirates-BCN",
-      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527329+00:00",
-      "evidence_ref": "arb::AUTO-cgk-emirates-BCN::INSUFFICIENT_EVIDENCE",
-      "reason": "Comparison REFUSED due to FX state UNKNOWN; chain cannot establish L4 evidence"
-    },
-    {
-      "candidate_id": "AUTO-bkk-emirates-MAD",
-      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527331+00:00",
-      "evidence_ref": "arb::AUTO-bkk-emirates-MAD::INSUFFICIENT_EVIDENCE",
-      "reason": "Comparison REFUSED due to FX state UNKNOWN; chain cannot establish L4 evidence"
-    },
-    {
-      "candidate_id": "AUTO-bkk-emirates-BCN",
-      "arbitrage_state": "INSUFFICIENT_EVIDENCE",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527332+00:00",
-      "evidence_ref": "arb::AUTO-bkk-emirates-BCN::INSUFFICIENT_EVIDENCE",
-      "reason": "Comparison REFUSED due to FX state UNKNOWN; chain cannot establish L4 evidence"
-    },
-    {
-      "candidate_id": "KE-ICN-MAD-direct",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527334+00:00",
-      "evidence_ref": "arb::KE-ICN-MAD-direct::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "KE-ICN-BCN-direct",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527336+00:00",
-      "evidence_ref": "arb::KE-ICN-BCN-direct::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "OZ-ICN-MAD",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527337+00:00",
-      "evidence_ref": "arb::OZ-ICN-MAD::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "QR-ICN-BCN",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527339+00:00",
-      "evidence_ref": "arb::QR-ICN-BCN::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "EK-ICN-MAD",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527340+00:00",
-      "evidence_ref": "arb::EK-ICN-MAD::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "SQ-SIN-CDG",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527342+00:00",
-      "evidence_ref": "arb::SQ-SIN-CDG::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "TK-SIN-BCN",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527346+00:00",
-      "evidence_ref": "arb::TK-SIN-BCN::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "TK-SIN-FCO",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527347+00:00",
-      "evidence_ref": "arb::TK-SIN-FCO::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "LH-SIN-FRA",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527349+00:00",
-      "evidence_ref": "arb::LH-SIN-FRA::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AY-SIN-CDG",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527350+00:00",
-      "evidence_ref": "arb::AY-SIN-CDG::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-icn-emirates-MAD",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527352+00:00",
-      "evidence_ref": "arb::AUTO-icn-emirates-MAD::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-icn-emirates-BCN",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527354+00:00",
-      "evidence_ref": "arb::AUTO-icn-emirates-BCN::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
-    },
-    {
-      "candidate_id": "AUTO-sin-lufthansa-FRA",
-      "arbitrage_state": "NOT_ANALYZED",
-      "stage": "arbitrage",
-      "trace_at": "2026-09-28T05:25:42.527355+00:00",
-      "evidence_ref": "arb::AUTO-sin-lufthansa-FRA::NOT_ANALYZED",
-      "reason": "Candidate not priced; not advanced through pipeline"
+    "baseline": {
+      "provider": null,
+      "provider_mode": null,
+      "retrieved_at": null,
+      "verification_status": null,
+      "currency": null,
+      "amount": null
     }
-  ]
+  },
+  "schedule_evidence_refs": {
+    "candidate": {
+      "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "provider": "mock_duffel",
+      "provider_mode": "mock",
+      "verification_status": "LIVE",
+      "schedule_status": "SUPPORTED",
+      "schedule_evidence": {
+        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "provider": "mock_duffel",
+        "provider_mode": "mock",
+        "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+        "mission_date_window": "2027-04-15",
+        "searched_date": "2027-04-15",
+        "expires_at": "2026-09-30T17:10:16+00:00Z",
+        "freshness": null,
+        "verification_status": "LIVE",
+        "schedule_status": "SUPPORTED",
+        "live_mode": false,
+        "segments": [
+          {
+            "segment_index": 0,
+            "slice_index": 0,
+            "origin": "TPE",
+            "destination": "KUL",
+            "departure_date": "2027-04-15",
+            "departure_time": "08:00:00",
+            "arrival_date": "2027-04-15",
+            "arrival_time": "13:00:00",
+            "departing_at_iso": "2027-04-15T08:00:00Z",
+            "arriving_at_iso": "2027-04-15T13:00:00Z",
+            "duration_minutes": 300,
+            "flight_number": "D7-100",
+            "operating_carrier_flight_number": "D7-100",
+            "marketing_carrier": "D7",
+            "operating_carrier": "D7",
+            "aircraft": "789",
+            "verification_status": "LIVE"
+          },
+          {
+            "segment_index": 1,
+            "slice_index": 1,
+            "origin": "KUL",
+            "destination": "MAD",
+            "departure_date": "2027-04-15",
+            "departure_time": "15:00:00",
+            "arrival_date": "2027-04-15",
+            "arrival_time": "20:00:00",
+            "departing_at_iso": "2027-04-15T15:00:00Z",
+            "arriving_at_iso": "2027-04-15T20:00:00Z",
+            "duration_minutes": 300,
+            "flight_number": "MH-101",
+            "operating_carrier_flight_number": "MH-101",
+            "marketing_carrier": "MH",
+            "operating_carrier": "MH",
+            "aircraft": "789",
+            "verification_status": "LIVE"
+          }
+        ],
+        "connection_checks": [
+          {
+            "between_segment_index": 0,
+            "arrival_airport": "KUL",
+            "departure_airport": "KUL",
+            "connection_time_min": 120,
+            "overnight_connection": false,
+            "tight_connection": false,
+            "airport_change_required": false
+          }
+        ],
+        "aircraft_in_disclosure": true,
+        "terminal_in_disclosure": false,
+        "live_search_used": true,
+        "warnings": [],
+        "failure_reason": null,
+        "provenance": {
+          "source": "mock_duffel",
+          "source_type": "cache",
+          "endpoint": "/air/offer_requests",
+          "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+          "offer_id": "off_mock_sched_AUTO-L41-multi_ticket-TPE-KUL-MAD",
+          "live_mode": false,
+          "verification_status": "LIVE"
+        }
+      },
+      "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+      "freshness": "FRESHNESS_RECENT"
+    },
+    "baseline": {
+      "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "provider": "mock_duffel",
+      "provider_mode": "mock",
+      "verification_status": "LIVE",
+      "schedule_status": "SUPPORTED",
+      "schedule_evidence": {
+        "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+        "provider": "mock_duffel",
+        "provider_mode": "mock",
+        "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+        "mission_date_window": "2027-04-15",
+        "searched_date": "2027-04-15",
+        "expires_at": "2026-09-30T17:10:16+00:00Z",
+        "freshness": null,
+        "verification_status": "LIVE",
+        "schedule_status": "SUPPORTED",
+        "live_mode": false,
+        "segments": [
+          {
+            "segment_index": 0,
+            "slice_index": 0,
+            "origin": "TPE",
+            "destination": "FRA",
+            "departure_date": "2027-04-15",
+            "departure_time": "08:00:00",
+            "arrival_date": "2027-04-15",
+            "arrival_time": "13:00:00",
+            "departing_at_iso": "2027-04-15T08:00:00Z",
+            "arriving_at_iso": "2027-04-15T13:00:00Z",
+            "duration_minutes": 300,
+            "flight_number": "LH-100",
+            "operating_carrier_flight_number": "LH-100",
+            "marketing_carrier": "LH",
+            "operating_carrier": "LH",
+            "aircraft": "789",
+            "verification_status": "LIVE"
+          },
+          {
+            "segment_index": 1,
+            "slice_index": 1,
+            "origin": "FRA",
+            "destination": "MAD",
+            "departure_date": "2027-04-15",
+            "departure_time": "15:00:00",
+            "arrival_date": "2027-04-15",
+            "arrival_time": "20:00:00",
+            "departing_at_iso": "2027-04-15T15:00:00Z",
+            "arriving_at_iso": "2027-04-15T20:00:00Z",
+            "duration_minutes": 300,
+            "flight_number": "LH-101",
+            "operating_carrier_flight_number": "LH-101",
+            "marketing_carrier": "LH",
+            "operating_carrier": "LH",
+            "aircraft": "789",
+            "verification_status": "LIVE"
+          }
+        ],
+        "connection_checks": [
+          {
+            "between_segment_index": 0,
+            "arrival_airport": "FRA",
+            "departure_airport": "FRA",
+            "connection_time_min": 120,
+            "overnight_connection": false,
+            "tight_connection": false,
+            "airport_change_required": false
+          }
+        ],
+        "aircraft_in_disclosure": true,
+        "terminal_in_disclosure": false,
+        "live_search_used": true,
+        "warnings": [],
+        "failure_reason": null,
+        "provenance": {
+          "source": "mock_duffel",
+          "source_type": "cache",
+          "endpoint": "/air/offer_requests",
+          "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+          "offer_id": "off_mock_sched_AUTO-L41-direct_hub-TPE-FRA-MAD",
+          "live_mode": false,
+          "verification_status": "LIVE"
+        }
+      },
+      "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+      "freshness": "FRESHNESS_RECENT"
+    }
+  },
+  "fx_evidence_ref": {
+    "state": "REFUSED",
+    "evidence_provider": "frankfurter"
+  },
+  "passenger_parity_ref": null,
+  "baseline_evidence_ref": null,
+  "friction_evidence": {
+    "schema_version": "v1.1.4-friction/v1",
+    "baggage": {
+      "included_pieces": null,
+      "recheck_required": null,
+      "evidence_complete": false
+    },
+    "transfer": {
+      "type": "none",
+      "airport_change": null,
+      "overnight_connection": null,
+      "min_connection_min": null,
+      "typical_connection_min": null,
+      "evidence_complete": false
+    },
+    "schedule_uncertainty": {
+      "is_uncertain": false,
+      "schedule_status": "UNAVAILABLE",
+      "verification_status": "UNKNOWN"
+    },
+    "cancellation_refund": {
+      "refundable": null,
+      "changeable": null,
+      "change_fee": null,
+      "refund_fee": null,
+      "evidence_complete": false
+    },
+    "positioning_risk": {
+      "has_positioning": false,
+      "separate_pnr": false,
+      "evidence_complete": false
+    },
+    "visa_transit_risk": {
+      "requires_transit_visa": null,
+      "evidence_complete": false
+    },
+    "warnings": [],
+    "unknown_fields": [
+      "baggage.included_pieces",
+      "baggage.recheck_required",
+      "transfer.airport_change",
+      "cancellation_refund.refundable",
+      "cancellation_refund.changeable",
+      "visa_transit_risk.requires_transit_visa"
+    ]
+  },
+  "ticket_structure": {
+    "candidate": null,
+    "baseline": null
+  },
+  "baggage": {
+    "candidate": null,
+    "baseline": null
+  },
+  "provider_evidence": {
+    "provider_a": {
+      "provider": "mock_duffel",
+      "provider_mode": "mock",
+      "retrieved_at": "2026-09-30T17:10:16.646019+00:00"
+    },
+    "provider_b": {
+      "provider": null,
+      "provider_mode": null,
+      "retrieved_at": null
+    },
+    "provider_disagreement": null,
+    "provider_independence": "UNKNOWN",
+    "provider_independence_known": false
+  },
+  "freshness": {
+    "freshness_a_bucket": "FRESHNESS_RECENT",
+    "freshness_b_bucket": "FRESHNESS_RECENT",
+    "freshness_a_min": 0,
+    "freshness_b_min": 0,
+    "freshness_window_min": 1440,
+    "freshness_window_exceeded": null,
+    "both_fresh": true,
+    "stale_side": null
+  },
+  "required_for_verification": [
+    "second-producer-cross-check",
+    "operating-carrier-rules",
+    "seats-remaining",
+    "multi-passenger-parity",
+    "live-fx-refresh"
+  ],
+  "missing_required_for_verification": [
+    "second-producer-cross-check",
+    "operating-carrier-rules",
+    "seats-remaining",
+    "multi-passenger-parity",
+    "live-fx-refresh"
+  ],
+  "arbitrage_reasons": [],
+  "insufficient_evidence_reasons": [],
+  "refusal_reasons": [
+    "REFUSAL_CURRENCY_UNKNOWN",
+    "REFUSAL_PRICE_NOT_FOUND",
+    "comparison refused"
+  ],
+  "unknown_reasons": [
+    "provider_independence UNKNOWN (two providers may source overlapping inventory)"
+  ],
+  "rule_version": "l4/v1",
+  "rule_definition": "l4/v1",
+  "retrieved_at": "2026-09-30T17:10:17.016784+00:00",
+  "evidence_provenance": {
+    "source": "arbitrage_detection_l4",
+    "source_type": "cache",
+    "endpoint": null,
+    "retrieved_at": "2026-09-30T17:10:17.016784+00:00",
+    "verification_status": "DATABASE",
+    "rule_version": "l4/v1",
+    "evidence_arity": 2
+  },
+  "verification_status": "DATABASE",
+  "source": "arbitrage_detection_l4",
+  "is_identity": false,
+  "supports_no_credential": true,
+  "warnings": [],
+  "failure_reason": null,
+  "failure_kind": null,
+  "trace_at": "2026-09-30T17:10:17.017078+00:00",
+  "stage": "arbitrage"
 }

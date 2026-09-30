@@ -1,7 +1,7 @@
 {
-  "trace_at": "2026-09-27T19:26:29.630976+00:00",
+  "trace_at": "2026-09-30T17:10:06.091276+00:00",
   "fx_provider": "frankfurter",
-  "started_at": "2026-09-27T19:26:29.356710+00:00",
+  "started_at": "2026-09-30T17:10:05.738081+00:00",
   "smoke_test": true,
   "counts": {
     "conversions_requested": 1,
@@ -32,10 +32,10 @@
         "provider_mode": "live",
         "base_currency": "USD",
         "quote_currency": "TWD",
-        "rate": 31.774,
-        "rate_date": "2026-09-27",
+        "rate": 31.861,
+        "rate_date": "2026-09-30",
         "rate_source_type": "latest/current",
-        "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
+        "retrieved_at": "2026-09-30T17:10:05.943540+00:00",
         "freshness_min": 0,
         "freshness_bucket": "FRESHNESS_RECENT",
         "freshness_label": "latest/current",
@@ -55,14 +55,14 @@
           "source": "frankfurter",
           "source_type": "live",
           "endpoint": "/v2/rate/{base}/{quote}",
-          "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
-          "rate_date": "2026-09-27",
+          "retrieved_at": "2026-09-30T17:10:05.943540+00:00",
+          "rate_date": "2026-09-30",
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-09-27T19:26:29.490415+00:00",
-      "rate_date": "2026-09-27",
-      "rate": 31.774
+      "retrieved_at": "2026-09-30T17:10:05.943540+00:00",
+      "rate_date": "2026-09-30",
+      "rate": 31.861
     }
   ]
 }

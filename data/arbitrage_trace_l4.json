@@ -1,19 +1,19 @@
 {
-  "trace_at": "2026-09-27T19:26:38.868899+00:00",
+  "trace_at": "2026-09-30T17:10:16.151283+00:00",
   "arbitrage_id": "L4::A::?",
   "arbitrage_state": "POTENTIAL_OPPORTUNITY",
   "evidence_maturity": "SUPPORTED",
   "delta": -80,
   "delta_pct": -16.0,
   "freshness": {
-    "freshness_a_bucket": "FRESHNESS_COLD",
+    "freshness_a_bucket": "FRESHNESS_EXPIRED",
     "freshness_b_bucket": "FRESHNESS_UNKNOWN",
-    "freshness_a_min": 566,
+    "freshness_a_min": 4750,
     "freshness_b_min": -1.0,
     "freshness_window_min": 1440,
     "freshness_window_exceeded": null,
     "both_fresh": false,
-    "stale_side": "b"
+    "stale_side": "a"
   },
   "required_for_verification": [
     "second-producer-cross-check",

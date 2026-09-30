@@ -51,7 +51,7 @@
     ],
     "cabin": "economy",
     "schedule_intelligence": {
-      "applied_at": "2026-09-27T19:26:39.346394+00:00",
+      "applied_at": "2026-09-30T17:10:16.613016+00:00",
       "data_source": "OpenFlights routes.dat/airports.dat — DATABASE evidence only.",
       "segment_schedules": [
         {
@@ -62,7 +62,7 @@
           "duration_minutes": null,
           "operating_carrier": null,
           "schedule_source": "openflights_database",
-          "retrieved_at": "2026-09-27T19:26:39.346394+00:00",
+          "retrieved_at": "2026-09-30T17:10:16.613016+00:00",
           "verification_status": "DATABASE",
           "confidence": 1.0,
           "is_in_openflights_database": true,
@@ -78,7 +78,7 @@
           "duration_minutes": null,
           "operating_carrier": null,
           "schedule_source": "unknown",
-          "retrieved_at": "2026-09-27T19:26:39.346394+00:00",
+          "retrieved_at": "2026-09-30T17:10:16.613016+00:00",
           "verification_status": "UNKNOWN",
           "confidence": 0.5,
           "is_in_openflights_database": false,
@@ -147,7 +147,7 @@
     ],
     "cabin": "economy",
     "schedule_intelligence": {
-      "applied_at": "2026-09-27T19:26:39.346394+00:00",
+      "applied_at": "2026-09-30T17:10:16.613016+00:00",
       "data_source": "OpenFlights routes.dat/airports.dat — DATABASE evidence only.",
       "segment_schedules": [
         {
@@ -158,7 +158,7 @@
           "duration_minutes": null,
           "operating_carrier": null,
           "schedule_source": "openflights_database",
-          "retrieved_at": "2026-09-27T19:26:39.346394+00:00",
+          "retrieved_at": "2026-09-30T17:10:16.613016+00:00",
           "verification_status": "DATABASE",
           "confidence": 1.0,
           "is_in_openflights_database": true,
@@ -174,7 +174,7 @@
           "duration_minutes": null,
           "operating_carrier": null,
           "schedule_source": "openflights_database",
-          "retrieved_at": "2026-09-27T19:26:39.346394+00:00",
+          "retrieved_at": "2026-09-30T17:10:16.613016+00:00",
           "verification_status": "DATABASE",
           "confidence": 1.0,
           "is_in_openflights_database": true,

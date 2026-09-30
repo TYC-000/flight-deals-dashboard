@@ -1,567 +1,455 @@
 {
   "schema": "price_intelligence_v1_1",
-  "trace_at": "2026-09-28T05:25:42.528484+00:00",
-  "provider": "mock",
+  "trace_at": "2026-09-30T17:10:16.651142+00:00",
+  "provider": "mock_duffel",
   "smoke_test": true,
   "summary": {
-    "provider": "mock",
-    "candidates_received": 25,
-    "candidates_with_evidence": 5,
-    "candidates_failed": 20,
-    "n_live": 5,
-    "n_mock": 20,
+    "provider": "mock_duffel",
+    "candidates_received": 2,
+    "candidates_with_evidence": 2,
+    "candidates_failed": 0,
+    "n_live": 2,
+    "n_mock": 2,
     "n_refused": 0
   },
   "evidences": [
     {
-      "candidate_id": "KUL-EK-1",
+      "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
       "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420709+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::KUL-EK-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "KUL-QR-1",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420714+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::KUL-QR-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "CGK-EY-1",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420716+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::CGK-EY-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "CGK-QR-1",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420717+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::CGK-QR-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "CGK-EY-BCN-1",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420718+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::CGK-EY-BCN-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "BKK-EK-1",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420720+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::BKK-EK-1::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AUTO-kul-emirates-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420721+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::AUTO-kul-emirates-MAD::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AUTO-kul-emirates-BCN",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420731+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::AUTO-kul-emirates-BCN::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AUTO-cgk-emirates-MAD",
-      "selected": true,
-      "provider": "mock",
       "provider_mode": "mock",
       "verification_status": "LIVE",
-      "price_status": "OK",
+      "price_status": "OK_WITH_WARNINGS",
       "currency": "TWD",
-      "total_price": 56320,
+      "total_price": {
+        "amount": 48093.5,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-30T17:10:16.646048+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 2,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
       "freshness_min": 0,
-      "freshness_bucket": "RECENT",
-      "retrieved_at": "2026-09-28T05:25:42.420733+00:00",
-      "evidence_ref": "price::AUTO-cgk-emirates-MAD::OK",
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
       "price_evidence": {
-        "mock_offer": true,
-        "from_total_cost": 56320
-      }
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "KUL",
+                "carrier": "D7",
+                "operating_carrier": "D7",
+                "flight_number": "D7-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 755.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "KUL",
+                "to": "MAD",
+                "carrier": "MH",
+                "operating_carrier": "MH",
+                "flight_number": "MH-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 755.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 2,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 48093.5,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646048+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 40879.47,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646050+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5771.22,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646052+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646059+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646060+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "economy",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-30T17:30:16.646033+00:00",
+        "price_quote_expires_at": "2026-09-30T17:30:16.646033+00:00",
+        "price_retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+        "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "mock_duffel",
+          "source_type": "cache",
+          "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-L41-multi_ticket-TPE-KUL-MAD",
+          "verification_status": "LIVE"
+        },
+        "provider": "mock_duffel",
+        "provider_mode": "mock",
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
     },
     {
-      "candidate_id": "AUTO-cgk-emirates-BCN",
-      "selected": true,
-      "provider": "mock",
+      "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "provider": "mock_duffel",
       "provider_mode": "mock",
       "verification_status": "LIVE",
-      "price_status": "OK",
+      "price_status": "OK_WITH_WARNINGS",
       "currency": "TWD",
-      "total_price": 53154,
+      "total_price": {
+        "amount": 48412.0,
+        "currency": "TWD",
+        "fx_envelope": {
+          "from": "USD",
+          "to": "TWD",
+          "rate": 31.85,
+          "source": "snapshot_only_static_table",
+          "retrieved_at": "2026-09-30T17:10:16.646150+00:00",
+          "freshness_min": 0,
+          "markup_pct": 2.0,
+          "is_identity": false,
+          "verification_status": "DATABASE"
+        }
+      },
+      "ticket_count": 2,
+      "is_single_ticket": false,
+      "self_transfer": false,
+      "separate_ticket_risk": "elevated",
       "freshness_min": 0,
-      "freshness_bucket": "RECENT",
-      "retrieved_at": "2026-09-28T05:25:42.420734+00:00",
-      "evidence_ref": "price::AUTO-cgk-emirates-BCN::OK",
+      "freshness_bucket": "FRESHNESS_RECENT",
+      "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+      "warnings": [
+        "BAGGAGE_UNKNOWN"
+      ],
       "price_evidence": {
-        "mock_offer": true,
-        "from_total_cost": 53154
-      }
-    },
-    {
-      "candidate_id": "AUTO-bkk-emirates-MAD",
-      "selected": true,
-      "provider": "mock",
-      "provider_mode": "mock",
-      "verification_status": "LIVE",
-      "price_status": "OK",
-      "currency": "TWD",
-      "total_price": 51154,
-      "freshness_min": 0,
-      "freshness_bucket": "RECENT",
-      "retrieved_at": "2026-09-28T05:25:42.420736+00:00",
-      "evidence_ref": "price::AUTO-bkk-emirates-MAD::OK",
-      "price_evidence": {
-        "mock_offer": true,
-        "from_total_cost": 51154
-      }
-    },
-    {
-      "candidate_id": "AUTO-bkk-emirates-BCN",
-      "selected": true,
-      "provider": "mock",
-      "provider_mode": "mock",
-      "verification_status": "LIVE",
-      "price_status": "OK",
-      "currency": "TWD",
-      "total_price": 51154,
-      "freshness_min": 0,
-      "freshness_bucket": "RECENT",
-      "retrieved_at": "2026-09-28T05:25:42.420737+00:00",
-      "evidence_ref": "price::AUTO-bkk-emirates-BCN::OK",
-      "price_evidence": {
-        "mock_offer": true,
-        "from_total_cost": 51154
-      }
-    },
-    {
-      "candidate_id": "KE-ICN-MAD-direct",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420738+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::KE-ICN-MAD-direct::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "KE-ICN-BCN-direct",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420740+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::KE-ICN-BCN-direct::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "OZ-ICN-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420741+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::OZ-ICN-MAD::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "QR-ICN-BCN",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420742+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::QR-ICN-BCN::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "EK-ICN-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420744+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::EK-ICN-MAD::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "SQ-SIN-CDG",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420745+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::SQ-SIN-CDG::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "TK-SIN-BCN",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420746+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::TK-SIN-BCN::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "TK-SIN-FCO",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420747+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::TK-SIN-FCO::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "LH-SIN-FRA",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420748+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::LH-SIN-FRA::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AY-SIN-CDG",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420751+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::AY-SIN-CDG::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AUTO-icn-emirates-MAD",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420753+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::AUTO-icn-emirates-MAD::NOT_SELECTED"
-    },
-    {
-      "candidate_id": "AUTO-icn-emirates-BCN",
-      "selected": true,
-      "provider": "mock",
-      "provider_mode": "mock",
-      "verification_status": "LIVE",
-      "price_status": "OK",
-      "currency": "TWD",
-      "total_price": 72814,
-      "freshness_min": 0,
-      "freshness_bucket": "RECENT",
-      "retrieved_at": "2026-09-28T05:25:42.420754+00:00",
-      "evidence_ref": "price::AUTO-icn-emirates-BCN::OK",
-      "price_evidence": {
-        "mock_offer": true,
-        "from_total_cost": 72814
-      }
-    },
-    {
-      "candidate_id": "AUTO-sin-lufthansa-FRA",
-      "provider": "mock_duffel",
-      "provider_mode": "mock",
-      "verification_status": "UNKNOWN",
-      "price_status": "NOT_SELECTED",
-      "failure_kind": "SEARCH_BUDGET_EXHAUSTED",
-      "failure_reason": "Candidate not in top-5 by information_priority_score (25 candidates total)",
-      "currency": null,
-      "total_price": null,
-      "ticket_count": null,
-      "is_single_ticket": null,
-      "self_transfer": null,
-      "separate_ticket_risk": null,
-      "freshness_min": null,
-      "freshness_bucket": null,
-      "retrieved_at": "2026-09-28T05:25:42.420755+00:00",
-      "warnings": [
-        "NOT_SELECTED: budget-controlled price search did not query this candidate"
-      ],
-      "price_evidence": null,
-      "evidence_ref": "price::AUTO-sin-lufthansa-FRA::NOT_SELECTED"
+        "schema_version": "v1.1",
+        "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+        "ticket_groups": [
+          {
+            "group_id": "tg_1",
+            "stops": [
+              {
+                "from": "TPE",
+                "to": "FRA",
+                "carrier": "LH",
+                "operating_carrier": "LH",
+                "flight_number": "LH-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 760.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          },
+          {
+            "group_id": "tg_2",
+            "stops": [
+              {
+                "from": "FRA",
+                "to": "MAD",
+                "carrier": "LH",
+                "operating_carrier": "LH",
+                "flight_number": "LH-100",
+                "depart": "2027-04-15T08:00:00",
+                "arrive": "2027-04-15T13:00:00"
+              }
+            ],
+            "ticket_type": "single_pnr",
+            "subtotal": {
+              "amount": 760.0,
+              "currency": "USD"
+            },
+            "passenger_through_check_baggage": false,
+            "self_transfer_after_group": false
+          }
+        ],
+        "ticket_count": 2,
+        "is_single_ticket": false,
+        "self_transfer": false,
+        "separate_ticket_risk": "elevated",
+        "currency": "TWD",
+        "total_price": {
+          "amount": 48412.0,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646150+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "base_fare": {
+          "amount": 41150.2,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646152+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "taxes": {
+          "amount": 5809.44,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646155+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          }
+        },
+        "fees": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646160+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "optional_extras": {
+          "amount": null,
+          "currency": "TWD",
+          "fx_envelope": {
+            "from": "USD",
+            "to": "TWD",
+            "rate": 31.85,
+            "source": "snapshot_only_static_table",
+            "retrieved_at": "2026-09-30T17:10:16.646161+00:00",
+            "freshness_min": 0,
+            "markup_pct": 2.0,
+            "is_identity": false,
+            "verification_status": "DATABASE"
+          },
+          "missing_reason": "missing_amount"
+        },
+        "fare_basis_code": null,
+        "fare_type": "PUBLISHED",
+        "fare_classes": [],
+        "cabin": "economy",
+        "changeable": null,
+        "refundable": null,
+        "change_fee": null,
+        "refund_fee": null,
+        "baggage": {
+          "included": {
+            "carry_on": 1,
+            "checked_pieces": 0,
+            "checked_weight_kg": null
+          },
+          "purchase_required": null,
+          "recheck_required_at_connection": true,
+          "evidence_complete": false
+        },
+        "seat_selection": {
+          "included": null,
+          "fee_range": null
+        },
+        "meal_included": null,
+        "transit_hotel_included": null,
+        "lounge_access": null,
+        "valid_until": "2026-09-30T17:30:16.646138+00:00",
+        "price_quote_expires_at": "2026-09-30T17:30:16.646138+00:00",
+        "price_retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+        "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+        "price_freshness_min": 0,
+        "freshness_min": 0,
+        "freshness_bucket": "FRESHNESS_RECENT",
+        "confidence_reasons": [
+          "LIVE_PROVIDER",
+          "BAGGAGE_UNKNOWN"
+        ],
+        "warnings": [
+          "BAGGAGE_UNKNOWN"
+        ],
+        "provenance": {
+          "source": "mock_duffel",
+          "source_type": "cache",
+          "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+          "freshness_min": 0,
+          "endpoint": "air/offer_requests",
+          "offer_id": "off_mock_AUTO-L41-direct_hub-TPE-FRA-MAD",
+          "verification_status": "LIVE"
+        },
+        "provider": "mock_duffel",
+        "provider_mode": "mock",
+        "verification_status": "LIVE",
+        "price_status": "OK_WITH_WARNINGS",
+        "failure_reason": null,
+        "failure_kind": null
+      },
+      "failure_kind": null,
+      "failure_reason": null
     }
   ]
 }

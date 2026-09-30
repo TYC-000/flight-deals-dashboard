@@ -1,43 +1,106 @@
 {
   "schema": "comparison_engine_v1_2_5",
-  "trace_at": "2026-09-28T05:25:42.529579+00:00",
-  "n_evidences": 2,
+  "trace_at": "2026-09-30T17:10:17.017087+00:00",
+  "n_evidences": 1,
   "evidences": [
     {
-      "candidate_a_id": "AUTO-cgk-emirates-MAD",
-      "candidate_b_id": "AUTO-bkk-emirates-MAD",
-      "comparability_status": "UNKNOWN",
+      "schema_version": "v1.2.5",
+      "comparison_id": "None::None",
+      "candidate_a_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "candidate_b_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "baseline_pair": null,
+      "price_a": null,
+      "price_b": null,
+      "normalized_price_a": null,
+      "normalized_price_b": null,
+      "comparison_currency": "EUR",
       "fx_state": "REFUSED",
-      "price_a": 56320,
-      "price_b": 51154,
-      "comparison_currency": "TWD",
-      "delta": 5166,
-      "delta_percentage": 10.098916995738358,
-      "provider_disagreement": false,
-      "refusal_reasons": [
-        "FX state unknown — comparison refused at v1.2.5"
+      "fx_used": false,
+      "fx_evidence_ref": null,
+      "delta": null,
+      "abs_delta": null,
+      "delta_percentage": null,
+      "parity_status": [
+        "REFUSED"
       ],
-      "stage": "comparison",
-      "trace_at": "2026-09-28T05:25:42.527306+00:00",
-      "evidence_ref": "comp::AUTO-cgk-emirates-MAD::AUTO-bkk-emirates-MAD"
-    },
-    {
-      "candidate_a_id": "AUTO-cgk-emirates-BCN",
-      "candidate_b_id": "AUTO-bkk-emirates-BCN",
-      "comparability_status": "UNKNOWN",
-      "fx_state": "REFUSED",
-      "price_a": 53154,
-      "price_b": 51154,
-      "comparison_currency": "TWD",
-      "delta": 2000,
-      "delta_percentage": 3.9097626774054817,
-      "provider_disagreement": false,
+      "comparability_status": "REFUSED",
+      "comparison_reasons": [],
       "refusal_reasons": [
-        "FX state unknown — comparison refused at v1.2.5"
+        "REFUSAL_CURRENCY_UNKNOWN",
+        "REFUSAL_PRICE_NOT_FOUND"
       ],
+      "soft_observations": [
+        "SOFT_MISSION_BINDING_UNKNOWN",
+        "TICKET_STRUCTURE_UNKNOWN",
+        "SOFT_BAGGAGE_UNKNOWN",
+        "SOFT_ITINERARY_MISMATCH",
+        "SOFT_PASSENGER_PARITY_UNKNOWN",
+        "PP_PASSENGER_COUNT_UNKNOWN",
+        "PP_PASSENGER_TYPE_UNKNOWN",
+        "PP_ITINERARY_UNKNOWN",
+        "PP_TICKET_STRUCTURE_UNKNOWN",
+        "PP_BAGGAGE_UNKNOWN"
+      ],
+      "unknown_reasons": [],
+      "schedule_evidence_a": {
+        "verification_status": "UNKNOWN",
+        "provider": null,
+        "segments": [],
+        "routing": null,
+        "segment_count": null
+      },
+      "schedule_evidence_b": {
+        "verification_status": "UNKNOWN",
+        "provider": null,
+        "segments": [],
+        "routing": null,
+        "segment_count": null
+      },
+      "passenger_parity_evidence_ref_a": null,
+      "passenger_parity_evidence_ref_b": null,
+      "baseline_evidence_id_a": null,
+      "baseline_evidence_id_b": null,
+      "ticket_structure_a": null,
+      "ticket_structure_b": null,
+      "cabin_a": "economy",
+      "cabin_b": "economy",
+      "baggage_a": {},
+      "baggage_b": {},
+      "itinerary_a": null,
+      "itinerary_b": null,
+      "date_binding": {
+        "travel_date_a": null,
+        "travel_date_b": null,
+        "return_date_a": null,
+        "return_date_b": null
+      },
+      "provider_a": null,
+      "provider_b": null,
+      "provider_mode_a": null,
+      "provider_mode_b": null,
+      "provider_disagreement": null,
+      "verification_status_a": "UNKNOWN",
+      "verification_status_b": "UNKNOWN",
+      "rule_version": "v1.2.5/v1",
+      "retrieved_at": "2026-09-30T17:10:17.016446+00:00",
+      "evidence_provenance": {
+        "source": "comparison_engine_v1_2_5",
+        "source_type": "cache",
+        "endpoint": null,
+        "retrieved_at": "2026-09-30T17:10:17.016446+00:00",
+        "verification_status": "DATABASE",
+        "rule_version": "v1.2.5/v1",
+        "evidence_arity": 2
+      },
+      "verification_status": "DATABASE",
+      "source": "comparison_engine_v1_2_5",
+      "is_identity": false,
+      "supports_no_credential": true,
+      "warnings": [],
+      "failure_reason": null,
+      "failure_kind": null,
       "stage": "comparison",
-      "trace_at": "2026-09-28T05:25:42.527309+00:00",
-      "evidence_ref": "comp::AUTO-cgk-emirates-BCN::AUTO-bkk-emirates-BCN"
+      "trace_at": "2026-09-30T17:10:17.016549+00:00"
     }
   ]
 }
