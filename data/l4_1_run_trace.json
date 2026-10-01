@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-10-01T15:57:32.854574+00:00",
+  "started_at": "2026-10-01T17:06:05.433133+00:00",
   "version": "l4.1/v1",
   "stages": [
     {
@@ -57,7 +57,7 @@
       "endpoint": "/v2/rate/{base}/{quote}",
       "verified_smoke_only": true,
       "verification_status": "LIVE",
-      "retrieved_at": "2026-10-01T15:57:33.192703+00:00"
+      "retrieved_at": "2026-10-01T17:06:05.687798+00:00"
     }
   ],
   "credential_checks": [
@@ -90,7 +90,7 @@
       "max_positioning_hops": 2
     }
   },
-  "completed_at": "2026-10-01T15:57:33.360394+00:00",
+  "completed_at": "2026-10-01T17:06:05.845372+00:00",
   "n_arbitrage_evidences": 1,
   "n_comparison_evidences": 1,
   "n_parity_evidences": 1,
