@@ -34,7 +34,7 @@
       "l7_risk_check_id": "L7::acb687070f97b633",
       "l8_verification_packet_id": "L8::4372cdd82f190ac4",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T08:32:13.084251Z",
+      "verification_queue_created_at": "2026-10-01T15:57:33.975952Z",
       "route": {
         "origin": "TPE",
         "destination": "BCN",
@@ -75,7 +75,7 @@
       "l7_risk_check_id": "L7::8e42f9ccd065581a",
       "l8_verification_packet_id": "L8::ee3e08c29948e20e",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T08:32:13.086193Z",
+      "verification_queue_created_at": "2026-10-01T15:57:33.977979Z",
       "route": {
         "origin": "TPE",
         "destination": "CDG",
@@ -116,7 +116,7 @@
       "l7_risk_check_id": "L7::b27e69deda58c599",
       "l8_verification_packet_id": "L8::8f6ddffae8813201",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T08:32:13.088123Z",
+      "verification_queue_created_at": "2026-10-01T15:57:33.979860Z",
       "route": {
         "origin": "TPE",
         "destination": "FCO",
@@ -157,7 +157,7 @@
       "l7_risk_check_id": "L7::c87558650f6042c8",
       "l8_verification_packet_id": "L8::8c659f5055d06788",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T08:32:13.089942Z",
+      "verification_queue_created_at": "2026-10-01T15:57:33.981606Z",
       "route": {
         "origin": "TPE",
         "destination": "FRA",
@@ -198,7 +198,7 @@
       "l7_risk_check_id": "L7::16b71a412b522422",
       "l8_verification_packet_id": "L8::0d523647ebe8a317",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T08:32:13.091870Z",
+      "verification_queue_created_at": "2026-10-01T15:57:33.983461Z",
       "route": {
         "origin": "TPE",
         "destination": "MAD",
@@ -232,10 +232,10 @@
       "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows."
     }
   ],
-  "created_at": "2026-10-01T08:32:13.092425Z",
+  "created_at": "2026-10-01T15:57:33.984015Z",
   "repair": {
     "version": "L8.5-R1-REPAIR-v0.1",
-    "repaired_at": "2026-10-01T08:33:58.853177Z",
+    "repaired_at": "2026-10-01T15:57:34.021891Z",
     "completeness_summary": [
       {
         "case_id": "R1-0a02feab",
@@ -377,7 +377,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T08:33:58.852595Z",
+        "repaired_at": "2026-10-01T15:57:34.021338Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -514,7 +514,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T08:33:58.852643Z",
+        "repaired_at": "2026-10-01T15:57:34.021491Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -651,7 +651,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T08:33:58.852686Z",
+        "repaired_at": "2026-10-01T15:57:34.021549Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -764,7 +764,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T08:33:58.852728Z",
+        "repaired_at": "2026-10-01T15:57:34.021604Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -909,7 +909,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T08:33:58.852766Z",
+        "repaired_at": "2026-10-01T15:57:34.021654Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -923,6 +923,227 @@
       "R1-35a920a0",
       "R1-124225e5",
       "R1-c36c704d"
+    ],
+    "production_semantic_changes": "NO",
+    "external_api_calls": 0,
+    "browser_automation": 0,
+    "booking": 0,
+    "payment": 0,
+    "ticketing": 0,
+    "machine_snapshot_unmutated": true,
+    "l5_l8_unmutated": true,
+    "jev_unmodified": true
+  },
+  "round_trip_audit": {
+    "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
+    "audited_at": "2026-10-01T15:57:34.035346Z",
+    "audit_summary": [
+      {
+        "case_id": "R1-0a02feab",
+        "candidate_id": "CGK-QR-1",
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "trip_type_source": "NONE",
+        "trip_type_inferred": false,
+        "outbound_slice_present": true,
+        "return_slice_present": false,
+        "slice_count": null,
+        "source_evidence": [],
+        "search_keys_used": [
+          "slices",
+          "itinerary",
+          "legs",
+          "trip",
+          "journey",
+          "trip_type",
+          "one_way",
+          "round_trip",
+          "direction",
+          "outbound",
+          "outbound_segments",
+          "return",
+          "return_segments",
+          "return_date"
+        ]
+      },
+      {
+        "case_id": "R1-1dc1c91b",
+        "candidate_id": "SQ-SIN-CDG",
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "trip_type_source": "NONE",
+        "trip_type_inferred": false,
+        "outbound_slice_present": true,
+        "return_slice_present": false,
+        "slice_count": null,
+        "source_evidence": [],
+        "search_keys_used": [
+          "slices",
+          "itinerary",
+          "legs",
+          "trip",
+          "journey",
+          "trip_type",
+          "one_way",
+          "round_trip",
+          "direction",
+          "outbound",
+          "outbound_segments",
+          "return",
+          "return_segments",
+          "return_date"
+        ]
+      },
+      {
+        "case_id": "R1-35a920a0",
+        "candidate_id": "TK-SIN-FCO",
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "trip_type_source": "NONE",
+        "trip_type_inferred": false,
+        "outbound_slice_present": true,
+        "return_slice_present": false,
+        "slice_count": null,
+        "source_evidence": [],
+        "search_keys_used": [
+          "slices",
+          "itinerary",
+          "legs",
+          "trip",
+          "journey",
+          "trip_type",
+          "one_way",
+          "round_trip",
+          "direction",
+          "outbound",
+          "outbound_segments",
+          "return",
+          "return_segments",
+          "return_date"
+        ]
+      },
+      {
+        "case_id": "R1-124225e5",
+        "candidate_id": "LH-SIN-FRA",
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "trip_type_source": "NONE",
+        "trip_type_inferred": false,
+        "outbound_slice_present": true,
+        "return_slice_present": false,
+        "slice_count": null,
+        "source_evidence": [],
+        "search_keys_used": [
+          "slices",
+          "itinerary",
+          "legs",
+          "trip",
+          "journey",
+          "trip_type",
+          "one_way",
+          "round_trip",
+          "direction",
+          "outbound",
+          "outbound_segments",
+          "return",
+          "return_segments",
+          "return_date"
+        ]
+      },
+      {
+        "case_id": "R1-c36c704d",
+        "candidate_id": "KUL-EK-1",
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "trip_type_source": "NONE",
+        "trip_type_inferred": false,
+        "outbound_slice_present": true,
+        "return_slice_present": false,
+        "slice_count": null,
+        "source_evidence": [],
+        "search_keys_used": [
+          "slices",
+          "itinerary",
+          "legs",
+          "trip",
+          "journey",
+          "trip_type",
+          "one_way",
+          "round_trip",
+          "direction",
+          "outbound",
+          "outbound_segments",
+          "return",
+          "return_segments",
+          "return_date"
+        ]
+      }
+    ],
+    "production_semantic_changes": "NO",
+    "external_api_calls": 0,
+    "browser_automation": 0,
+    "booking": 0,
+    "payment": 0,
+    "ticketing": 0,
+    "machine_snapshot_unmutated": true,
+    "l5_l8_unmutated": true,
+    "jev_unmodified": true,
+    "note": "Production candidate schema lacks trip-type semantics (slices[]/itinerary[]/trip_type/return_segments). All 5 cases marked MISSING_SOURCE_FIELD — no inference performed."
+  },
+  "human_verification_readiness": {
+    "readiness_version": "L8.5-R1-HUMAN-READINESS-v0.1",
+    "evaluated_at": "2026-10-01T15:57:34.001876Z",
+    "summary": [
+      {
+        "case_id": "R1-0a02feab",
+        "candidate_id": "CGK-QR-1",
+        "readiness": "READY_WITH_UNKNOWN_TRIP_TYPE",
+        "missing_evidence": [],
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "self_transfer": true,
+        "return_verification_scope": "UNKNOWN",
+        "human_verification_warning": "Trip type is not represented in machine source; human verification must not assume one-way or round-trip semantics.",
+        "human_verification_scope": "Search the airline's official website for the same machine-provided itinerary (origin, destination, departure date, carrier, flight number, cabin). Record whatever the official site actually shows — including any return option, fare, baggage allowance, fare conditions. These are HUMAN OBSERVATIONS only; do not overwrite machine evidence."
+      },
+      {
+        "case_id": "R1-1dc1c91b",
+        "candidate_id": "SQ-SIN-CDG",
+        "readiness": "READY_WITH_UNKNOWN_TRIP_TYPE",
+        "missing_evidence": [],
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "self_transfer": false,
+        "return_verification_scope": "UNKNOWN",
+        "human_verification_warning": "Trip type is not represented in machine source; human verification must not assume one-way or round-trip semantics.",
+        "human_verification_scope": "Search the airline's official website for the same machine-provided itinerary (origin, destination, departure date, carrier, flight number, cabin). Record whatever the official site actually shows — including any return option, fare, baggage allowance, fare conditions. These are HUMAN OBSERVATIONS only; do not overwrite machine evidence."
+      },
+      {
+        "case_id": "R1-35a920a0",
+        "candidate_id": "TK-SIN-FCO",
+        "readiness": "READY_WITH_UNKNOWN_TRIP_TYPE",
+        "missing_evidence": [],
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "self_transfer": false,
+        "return_verification_scope": "UNKNOWN",
+        "human_verification_warning": "Trip type is not represented in machine source; human verification must not assume one-way or round-trip semantics.",
+        "human_verification_scope": "Search the airline's official website for the same machine-provided itinerary (origin, destination, departure date, carrier, flight number, cabin). Record whatever the official site actually shows — including any return option, fare, baggage allowance, fare conditions. These are HUMAN OBSERVATIONS only; do not overwrite machine evidence."
+      },
+      {
+        "case_id": "R1-124225e5",
+        "candidate_id": "LH-SIN-FRA",
+        "readiness": "READY_WITH_UNKNOWN_TRIP_TYPE",
+        "missing_evidence": [],
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "self_transfer": true,
+        "return_verification_scope": "UNKNOWN",
+        "human_verification_warning": "Trip type is not represented in machine source; human verification must not assume one-way or round-trip semantics.",
+        "human_verification_scope": "Search the airline's official website for the same machine-provided itinerary (origin, destination, departure date, carrier, flight number, cabin). Record whatever the official site actually shows — including any return option, fare, baggage allowance, fare conditions. These are HUMAN OBSERVATIONS only; do not overwrite machine evidence."
+      },
+      {
+        "case_id": "R1-c36c704d",
+        "candidate_id": "KUL-EK-1",
+        "readiness": "READY_WITH_UNKNOWN_TRIP_TYPE",
+        "missing_evidence": [],
+        "trip_type": "MISSING_SOURCE_FIELD",
+        "self_transfer": true,
+        "return_verification_scope": "UNKNOWN",
+        "human_verification_warning": "Trip type is not represented in machine source; human verification must not assume one-way or round-trip semantics.",
+        "human_verification_scope": "Search the airline's official website for the same machine-provided itinerary (origin, destination, departure date, carrier, flight number, cabin). Record whatever the official site actually shows — including any return option, fare, baggage allowance, fare conditions. These are HUMAN OBSERVATIONS only; do not overwrite machine evidence."
+      }
     ],
     "production_semantic_changes": "NO",
     "external_api_calls": 0,

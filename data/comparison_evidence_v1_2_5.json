@@ -1,6 +1,6 @@
 {
   "schema": "comparison_engine_v1_2_5",
-  "trace_at": "2026-10-01T08:32:12.586715+00:00",
+  "trace_at": "2026-10-01T15:57:33.358047+00:00",
   "n_evidences": 1,
   "evidences": [
     {
@@ -82,12 +82,12 @@
       "verification_status_a": "UNKNOWN",
       "verification_status_b": "UNKNOWN",
       "rule_version": "v1.2.5/v1",
-      "retrieved_at": "2026-10-01T08:32:12.585928+00:00",
+      "retrieved_at": "2026-10-01T15:57:33.357221+00:00",
       "evidence_provenance": {
         "source": "comparison_engine_v1_2_5",
         "source_type": "cache",
         "endpoint": null,
-        "retrieved_at": "2026-10-01T08:32:12.585928+00:00",
+        "retrieved_at": "2026-10-01T15:57:33.357221+00:00",
         "verification_status": "DATABASE",
         "rule_version": "v1.2.5/v1",
         "evidence_arity": 2
@@ -100,7 +100,7 @@
       "failure_reason": null,
       "failure_kind": null,
       "stage": "comparison",
-      "trace_at": "2026-10-01T08:32:12.586115+00:00"
+      "trace_at": "2026-10-01T15:57:33.357412+00:00"
     }
   ]
 }
