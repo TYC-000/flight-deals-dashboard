@@ -1,0 +1,881 @@
+{
+  "queue": [
+    {
+      "case_id": "R1-0a02feab",
+      "candidate_id": "CGK-QR-1",
+      "l5_evidence_hash": "sha256:be0039a3a936f3cb22b31d86e853f7e51f7754aaea63bf590ca10c618ba56016",
+      "l6_presentation_id": "L6::74694c96e02d649a",
+      "l7_risk_check_id": "L7::acb687070f97b633",
+      "l8_verification_packet_id": "L8::4372cdd82f190ac4",
+      "machine_observed_at": "2026-10-01T08:00:00Z",
+      "verification_queue_created_at": "2026-10-01T08:32:13.084251Z",
+      "route": {
+        "origin": "TPE",
+        "destination": "BCN",
+        "via": "DOH",
+        "is_direct": false
+      },
+      "carrier": "Qatar Airways QR",
+      "flight_number": "QR-965",
+      "departure_date": "2026-11-12",
+      "departure_time": "09:00",
+      "arrival_time": "13:55",
+      "machine_price": 37000,
+      "machine_currency": "TWD",
+      "cabin": "J",
+      "stops": 1,
+      "self_transfer": true,
+      "provider": "production_data/flight_candidates.json",
+      "evidence_age_minutes": 0,
+      "official_site_target": "https://www.qatarairways.com",
+      "l5_state": "VERIFIED_OPPORTUNITY",
+      "l7_state": "PRE_BOOKING_RISK_CLEAR",
+      "l8_packet_id": "L8::4372cdd82f190ac4",
+      "sampling_dimensions": {
+        "route_family": "TPE-BCN",
+        "carrier_iata": "QR",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "BAND_2000_PLUS",
+        "self_transfer_flag": true,
+        "bucket_index": 3
+      },
+      "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows.",
+      "verification_metadata": {
+        "completeness_status": "COMPLETE",
+        "missing_fields": [],
+        "travel_date_present": true,
+        "flight_numbers_present": true,
+        "segment_structure_present": true,
+        "self_transfer_structure_present": true,
+        "departure_date": "2026-11-12",
+        "departure_time": "09:00",
+        "arrival_date": "2026-11-13",
+        "arrival_time": "13:55",
+        "long_haul_flight": "QR-965",
+        "long_haul_carrier": "Qatar Airways QR",
+        "cabin": "J",
+        "connection_airports": [
+          "DOH"
+        ],
+        "segment_flights": [
+          "QZQZ-852",
+          "QRQR-965",
+          "QRQR-145"
+        ],
+        "structured_segments": [
+          {
+            "segment_index": 0,
+            "origin": "TPE",
+            "destination": "CGK",
+            "departure_date": "2026-11-12",
+            "departure_time": "09:00",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "14:20",
+            "carrier": "QZ",
+            "flight_number": "QZ-852",
+            "cabin": "Y",
+            "operating_carrier": "QZ"
+          },
+          {
+            "segment_index": 1,
+            "origin": "CGK",
+            "destination": "DOH",
+            "departure_date": "2026-11-12",
+            "departure_time": "22:45",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "05:15",
+            "carrier": "QR",
+            "flight_number": "QR-965",
+            "cabin": "J",
+            "operating_carrier": "QR"
+          },
+          {
+            "segment_index": 2,
+            "origin": "DOH",
+            "destination": "BCN",
+            "departure_date": "2026-11-13",
+            "departure_time": "08:30",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "13:55",
+            "carrier": "QR",
+            "flight_number": "QR-145",
+            "cabin": "J",
+            "operating_carrier": "QR"
+          }
+        ],
+        "pnr_structure": {
+          "same_pnr": false,
+          "self_transfer": true,
+          "tickets": [
+            {
+              "pnr_type": "positioning",
+              "segments": [
+                {
+                  "segment_index": 0,
+                  "origin": "TPE",
+                  "destination": "CGK",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "09:00",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "14:20",
+                  "carrier": "QZ",
+                  "flight_number": "QZ-852",
+                  "cabin": "Y",
+                  "operating_carrier": "QZ"
+                }
+              ],
+              "segment_flights": [
+                "QZQZ-852"
+              ],
+              "connection_airport": "CGK"
+            },
+            {
+              "pnr_type": "long_haul",
+              "segments": [
+                {
+                  "segment_index": 1,
+                  "origin": "CGK",
+                  "destination": "DOH",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "22:45",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "05:15",
+                  "carrier": "QR",
+                  "flight_number": "QR-965",
+                  "cabin": "J",
+                  "operating_carrier": "QR"
+                },
+                {
+                  "segment_index": 2,
+                  "origin": "DOH",
+                  "destination": "BCN",
+                  "departure_date": "2026-11-13",
+                  "departure_time": "08:30",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "13:55",
+                  "carrier": "QR",
+                  "flight_number": "QR-145",
+                  "cabin": "J",
+                  "operating_carrier": "QR"
+                }
+              ],
+              "segment_flights": [
+                "QRQR-965",
+                "QRQR-145"
+              ],
+              "connection_airports": [
+                "DOH"
+              ]
+            }
+          ]
+        },
+        "self_transfer_flag": true,
+        "same_pnr": false,
+        "source_trace": [
+          "verification_queue",
+          "candidate_id",
+          "L5_evidence",
+          "L4_candidate_source",
+          "original_machine_observation"
+        ],
+        "repaired_at": "2026-10-01T08:33:58.852595Z",
+        "repair_version": "L8.5-R1-REPAIR-v0.1",
+        "machine_snapshot_unmutated": true,
+        "l5_l8_unmutated": true
+      },
+      "arrival_date": "2026-11-13"
+    },
+    {
+      "case_id": "R1-1dc1c91b",
+      "candidate_id": "SQ-SIN-CDG",
+      "l5_evidence_hash": "sha256:53716c8f566cc4849396689d8b393510a1d08d1a5b818250d3ffa286e71bcca0",
+      "l6_presentation_id": "L6::d5456664b5a067b9",
+      "l7_risk_check_id": "L7::8e42f9ccd065581a",
+      "l8_verification_packet_id": "L8::ee3e08c29948e20e",
+      "machine_observed_at": "2026-10-01T08:00:00Z",
+      "verification_queue_created_at": "2026-10-01T08:32:13.086193Z",
+      "route": {
+        "origin": "TPE",
+        "destination": "CDG",
+        "via": "FRA",
+        "is_direct": false
+      },
+      "carrier": "Singapore Airlines SQ",
+      "flight_number": "SQ-326",
+      "departure_date": "2026-11-12",
+      "departure_time": "07:30",
+      "arrival_time": "09:45",
+      "machine_price": 69000,
+      "machine_currency": "TWD",
+      "cabin": "J",
+      "stops": 1,
+      "self_transfer": false,
+      "provider": "production_data/flight_candidates.json",
+      "evidence_age_minutes": 0,
+      "official_site_target": "https://www.singaporeair.com",
+      "l5_state": "VERIFIED_OPPORTUNITY",
+      "l7_state": "PRE_BOOKING_RISK_CLEAR",
+      "l8_packet_id": "L8::ee3e08c29948e20e",
+      "sampling_dimensions": {
+        "route_family": "TPE-CDG",
+        "carrier_iata": "SQ",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "BAND_2000_PLUS",
+        "self_transfer_flag": false,
+        "bucket_index": 11
+      },
+      "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows.",
+      "verification_metadata": {
+        "completeness_status": "COMPLETE",
+        "missing_fields": [],
+        "travel_date_present": true,
+        "flight_numbers_present": true,
+        "segment_structure_present": true,
+        "self_transfer_structure_present": true,
+        "departure_date": "2026-11-12",
+        "departure_time": "07:30",
+        "arrival_date": "2026-11-13",
+        "arrival_time": "09:45",
+        "long_haul_flight": "SQ326",
+        "long_haul_carrier": "Singapore Airlines SQ",
+        "cabin": "J",
+        "connection_airports": [
+          "FRA"
+        ],
+        "segment_flights": [
+          "TRTR993",
+          "SQSQ326",
+          "SQSQ336"
+        ],
+        "structured_segments": [
+          {
+            "segment_index": 0,
+            "origin": "TPE",
+            "destination": "SIN",
+            "departure_date": "2026-11-12",
+            "departure_time": "07:30",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "12:00",
+            "carrier": "TR",
+            "flight_number": "TR993",
+            "cabin": "Y",
+            "operating_carrier": "TR"
+          },
+          {
+            "segment_index": 1,
+            "origin": "SIN",
+            "destination": "FRA",
+            "departure_date": "2026-11-12",
+            "departure_time": "23:30",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "05:50",
+            "carrier": "SQ",
+            "flight_number": "SQ326",
+            "cabin": "J",
+            "operating_carrier": "SQ"
+          },
+          {
+            "segment_index": 2,
+            "origin": "FRA",
+            "destination": "CDG",
+            "departure_date": "2026-11-13",
+            "departure_time": "08:30",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "09:45",
+            "carrier": "SQ",
+            "flight_number": "SQ336",
+            "cabin": "J",
+            "operating_carrier": "SQ"
+          }
+        ],
+        "pnr_structure": {
+          "same_pnr": true,
+          "self_transfer": false,
+          "tickets": [
+            {
+              "pnr_type": "long_haul",
+              "segments": [
+                {
+                  "segment_index": 0,
+                  "origin": "TPE",
+                  "destination": "SIN",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "07:30",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "12:00",
+                  "carrier": "TR",
+                  "flight_number": "TR993",
+                  "cabin": "Y",
+                  "operating_carrier": "TR"
+                },
+                {
+                  "segment_index": 1,
+                  "origin": "SIN",
+                  "destination": "FRA",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "23:30",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "05:50",
+                  "carrier": "SQ",
+                  "flight_number": "SQ326",
+                  "cabin": "J",
+                  "operating_carrier": "SQ"
+                },
+                {
+                  "segment_index": 2,
+                  "origin": "FRA",
+                  "destination": "CDG",
+                  "departure_date": "2026-11-13",
+                  "departure_time": "08:30",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "09:45",
+                  "carrier": "SQ",
+                  "flight_number": "SQ336",
+                  "cabin": "J",
+                  "operating_carrier": "SQ"
+                }
+              ],
+              "segment_flights": [
+                "TRTR993",
+                "SQSQ326",
+                "SQSQ336"
+              ],
+              "connection_airports": [
+                "FRA"
+              ]
+            }
+          ]
+        },
+        "self_transfer_flag": false,
+        "same_pnr": true,
+        "source_trace": [
+          "verification_queue",
+          "candidate_id",
+          "L5_evidence",
+          "L4_candidate_source",
+          "original_machine_observation"
+        ],
+        "repaired_at": "2026-10-01T08:33:58.852643Z",
+        "repair_version": "L8.5-R1-REPAIR-v0.1",
+        "machine_snapshot_unmutated": true,
+        "l5_l8_unmutated": true
+      },
+      "arrival_date": "2026-11-13"
+    },
+    {
+      "case_id": "R1-35a920a0",
+      "candidate_id": "TK-SIN-FCO",
+      "l5_evidence_hash": "sha256:70c8fbb4d1f4e42257f283c1d5b11e5ccd5b187eeaf8125745cb82e637e71d99",
+      "l6_presentation_id": "L6::29b74baa8b00c247",
+      "l7_risk_check_id": "L7::b27e69deda58c599",
+      "l8_verification_packet_id": "L8::8f6ddffae8813201",
+      "machine_observed_at": "2026-10-01T08:00:00Z",
+      "verification_queue_created_at": "2026-10-01T08:32:13.088123Z",
+      "route": {
+        "origin": "TPE",
+        "destination": "FCO",
+        "via": "IST",
+        "is_direct": false
+      },
+      "carrier": "Turkish Airlines TK",
+      "flight_number": "TK-55",
+      "departure_date": "2026-11-12",
+      "departure_time": "07:30",
+      "arrival_time": "08:00",
+      "machine_price": 55000,
+      "machine_currency": "TWD",
+      "cabin": "J",
+      "stops": 1,
+      "self_transfer": false,
+      "provider": "production_data/flight_candidates.json",
+      "evidence_age_minutes": 0,
+      "official_site_target": null,
+      "l5_state": "VERIFIED_OPPORTUNITY",
+      "l7_state": "PRE_BOOKING_RISK_CLEAR",
+      "l8_packet_id": "L8::8f6ddffae8813201",
+      "sampling_dimensions": {
+        "route_family": "TPE-FCO",
+        "carrier_iata": "TK",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "BAND_2000_PLUS",
+        "self_transfer_flag": false,
+        "bucket_index": 13
+      },
+      "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows.",
+      "verification_metadata": {
+        "completeness_status": "COMPLETE",
+        "missing_fields": [],
+        "travel_date_present": true,
+        "flight_numbers_present": true,
+        "segment_structure_present": true,
+        "self_transfer_structure_present": true,
+        "departure_date": "2026-11-12",
+        "departure_time": "07:30",
+        "arrival_date": "2026-11-13",
+        "arrival_time": "08:00",
+        "long_haul_flight": "TK55",
+        "long_haul_carrier": "Turkish Airlines TK",
+        "cabin": "J",
+        "connection_airports": [
+          "IST"
+        ],
+        "segment_flights": [
+          "TRTR993",
+          "TKTK55",
+          "TKTK1861"
+        ],
+        "structured_segments": [
+          {
+            "segment_index": 0,
+            "origin": "TPE",
+            "destination": "SIN",
+            "departure_date": "2026-11-12",
+            "departure_time": "07:30",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "12:00",
+            "carrier": "TR",
+            "flight_number": "TR993",
+            "cabin": "Y",
+            "operating_carrier": "TR"
+          },
+          {
+            "segment_index": 1,
+            "origin": "SIN",
+            "destination": "IST",
+            "departure_date": "2026-11-12",
+            "departure_time": "20:25",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "01:50",
+            "carrier": "TK",
+            "flight_number": "TK55",
+            "cabin": "J",
+            "operating_carrier": "TK"
+          },
+          {
+            "segment_index": 2,
+            "origin": "IST",
+            "destination": "FCO",
+            "departure_date": "2026-11-13",
+            "departure_time": "06:55",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "08:00",
+            "carrier": "TK",
+            "flight_number": "TK1861",
+            "cabin": "J",
+            "operating_carrier": "TK"
+          }
+        ],
+        "pnr_structure": {
+          "same_pnr": true,
+          "self_transfer": false,
+          "tickets": [
+            {
+              "pnr_type": "long_haul",
+              "segments": [
+                {
+                  "segment_index": 0,
+                  "origin": "TPE",
+                  "destination": "SIN",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "07:30",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "12:00",
+                  "carrier": "TR",
+                  "flight_number": "TR993",
+                  "cabin": "Y",
+                  "operating_carrier": "TR"
+                },
+                {
+                  "segment_index": 1,
+                  "origin": "SIN",
+                  "destination": "IST",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "20:25",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "01:50",
+                  "carrier": "TK",
+                  "flight_number": "TK55",
+                  "cabin": "J",
+                  "operating_carrier": "TK"
+                },
+                {
+                  "segment_index": 2,
+                  "origin": "IST",
+                  "destination": "FCO",
+                  "departure_date": "2026-11-13",
+                  "departure_time": "06:55",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "08:00",
+                  "carrier": "TK",
+                  "flight_number": "TK1861",
+                  "cabin": "J",
+                  "operating_carrier": "TK"
+                }
+              ],
+              "segment_flights": [
+                "TRTR993",
+                "TKTK55",
+                "TKTK1861"
+              ],
+              "connection_airports": [
+                "IST"
+              ]
+            }
+          ]
+        },
+        "self_transfer_flag": false,
+        "same_pnr": true,
+        "source_trace": [
+          "verification_queue",
+          "candidate_id",
+          "L5_evidence",
+          "L4_candidate_source",
+          "original_machine_observation"
+        ],
+        "repaired_at": "2026-10-01T08:33:58.852686Z",
+        "repair_version": "L8.5-R1-REPAIR-v0.1",
+        "machine_snapshot_unmutated": true,
+        "l5_l8_unmutated": true
+      },
+      "arrival_date": "2026-11-13"
+    },
+    {
+      "case_id": "R1-124225e5",
+      "candidate_id": "LH-SIN-FRA",
+      "l5_evidence_hash": "sha256:2166f3503d32209dad09b9765089bd18f46a0ebf0acecc56af27a554baa126c2",
+      "l6_presentation_id": "L6::f98b01d861fdedbd",
+      "l7_risk_check_id": "L7::c87558650f6042c8",
+      "l8_verification_packet_id": "L8::8c659f5055d06788",
+      "machine_observed_at": "2026-10-01T08:00:00Z",
+      "verification_queue_created_at": "2026-10-01T08:32:13.089942Z",
+      "route": {
+        "origin": "TPE",
+        "destination": "FRA",
+        "via": null,
+        "is_direct": true
+      },
+      "carrier": "Lufthansa LH",
+      "flight_number": "LH-778",
+      "departure_date": "2026-11-12",
+      "departure_time": "07:30",
+      "arrival_time": "05:50",
+      "machine_price": 66000,
+      "machine_currency": "TWD",
+      "cabin": "J",
+      "stops": 0,
+      "self_transfer": true,
+      "provider": "production_data/flight_candidates.json",
+      "evidence_age_minutes": 0,
+      "official_site_target": "https://www.lufthansa.com",
+      "l5_state": "VERIFIED_OPPORTUNITY",
+      "l7_state": "PRE_BOOKING_RISK_CLEAR",
+      "l8_packet_id": "L8::8c659f5055d06788",
+      "sampling_dimensions": {
+        "route_family": "TPE-FRA",
+        "carrier_iata": "LH",
+        "direct_or_connecting": "DIRECT",
+        "price_band": "BAND_2000_PLUS",
+        "self_transfer_flag": true,
+        "bucket_index": 14
+      },
+      "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows.",
+      "verification_metadata": {
+        "completeness_status": "COMPLETE",
+        "missing_fields": [],
+        "travel_date_present": true,
+        "flight_numbers_present": true,
+        "segment_structure_present": true,
+        "self_transfer_structure_present": true,
+        "departure_date": "2026-11-12",
+        "departure_time": "07:30",
+        "arrival_date": "2026-11-13",
+        "arrival_time": "05:50",
+        "long_haul_flight": "LH778",
+        "long_haul_carrier": "Lufthansa LH",
+        "cabin": "J",
+        "connection_airports": [],
+        "segment_flights": [
+          "TRTR993",
+          "LHLH778"
+        ],
+        "structured_segments": [
+          {
+            "segment_index": 0,
+            "origin": "TPE",
+            "destination": "SIN",
+            "departure_date": "2026-11-12",
+            "departure_time": "07:30",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "12:00",
+            "carrier": "TR",
+            "flight_number": "TR993",
+            "cabin": "Y",
+            "operating_carrier": "TR"
+          },
+          {
+            "segment_index": 1,
+            "origin": "SIN",
+            "destination": "FRA",
+            "departure_date": "2026-11-12",
+            "departure_time": "22:00",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "05:50",
+            "carrier": "LH",
+            "flight_number": "LH778",
+            "cabin": "J",
+            "operating_carrier": "LH"
+          }
+        ],
+        "pnr_structure": {
+          "same_pnr": false,
+          "self_transfer": true,
+          "tickets": [
+            {
+              "pnr_type": "positioning",
+              "segments": [
+                {
+                  "segment_index": 0,
+                  "origin": "TPE",
+                  "destination": "SIN",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "07:30",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "12:00",
+                  "carrier": "TR",
+                  "flight_number": "TR993",
+                  "cabin": "Y",
+                  "operating_carrier": "TR"
+                }
+              ],
+              "segment_flights": [
+                "TRTR993"
+              ],
+              "connection_airport": "SIN"
+            },
+            {
+              "pnr_type": "long_haul",
+              "segments": [
+                {
+                  "segment_index": 1,
+                  "origin": "SIN",
+                  "destination": "FRA",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "22:00",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "05:50",
+                  "carrier": "LH",
+                  "flight_number": "LH778",
+                  "cabin": "J",
+                  "operating_carrier": "LH"
+                }
+              ],
+              "segment_flights": [
+                "LHLH778"
+              ],
+              "connection_airports": []
+            }
+          ]
+        },
+        "self_transfer_flag": true,
+        "same_pnr": false,
+        "source_trace": [
+          "verification_queue",
+          "candidate_id",
+          "L5_evidence",
+          "L4_candidate_source",
+          "original_machine_observation"
+        ],
+        "repaired_at": "2026-10-01T08:33:58.852728Z",
+        "repair_version": "L8.5-R1-REPAIR-v0.1",
+        "machine_snapshot_unmutated": true,
+        "l5_l8_unmutated": true
+      },
+      "arrival_date": "2026-11-13"
+    },
+    {
+      "case_id": "R1-c36c704d",
+      "candidate_id": "KUL-EK-1",
+      "l5_evidence_hash": "sha256:efa1e1840b740807de4e3bd3247792fbba389c6a07db1a7b8252c31e20d3f314",
+      "l6_presentation_id": "L6::25f1f2cb0557a0bc",
+      "l7_risk_check_id": "L7::16b71a412b522422",
+      "l8_verification_packet_id": "L8::0d523647ebe8a317",
+      "machine_observed_at": "2026-10-01T08:00:00Z",
+      "verification_queue_created_at": "2026-10-01T08:32:13.091870Z",
+      "route": {
+        "origin": "TPE",
+        "destination": "MAD",
+        "via": "DXB",
+        "is_direct": false
+      },
+      "carrier": "Emirates EK",
+      "flight_number": "EK-345",
+      "departure_date": "2026-11-12",
+      "departure_time": "08:00",
+      "arrival_time": "08:30",
+      "machine_price": 64000,
+      "machine_currency": "TWD",
+      "cabin": "J",
+      "stops": 1,
+      "self_transfer": true,
+      "provider": "production_data/flight_candidates.json",
+      "evidence_age_minutes": 0,
+      "official_site_target": "https://www.emirates.com",
+      "l5_state": "VERIFIED_OPPORTUNITY",
+      "l7_state": "PRE_BOOKING_RISK_CLEAR",
+      "l8_packet_id": "L8::0d523647ebe8a317",
+      "sampling_dimensions": {
+        "route_family": "TPE-MAD",
+        "carrier_iata": "EK",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "BAND_2000_PLUS",
+        "self_transfer_flag": true,
+        "bucket_index": 0
+      },
+      "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows.",
+      "verification_metadata": {
+        "completeness_status": "COMPLETE",
+        "missing_fields": [],
+        "travel_date_present": true,
+        "flight_numbers_present": true,
+        "segment_structure_present": true,
+        "self_transfer_structure_present": true,
+        "departure_date": "2026-11-12",
+        "departure_time": "08:00",
+        "arrival_date": "2026-11-13",
+        "arrival_time": "08:30",
+        "long_haul_flight": "EK-345",
+        "long_haul_carrier": "Emirates EK",
+        "cabin": "J",
+        "connection_airports": [
+          "DXB"
+        ],
+        "segment_flights": [
+          "D7D7-371",
+          "EKEK-345",
+          "EKEK-141"
+        ],
+        "structured_segments": [
+          {
+            "segment_index": 0,
+            "origin": "TPE",
+            "destination": "KUL",
+            "departure_date": "2026-11-12",
+            "departure_time": "08:00",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "12:30",
+            "carrier": "D7",
+            "flight_number": "D7-371",
+            "cabin": "Y",
+            "operating_carrier": "D7"
+          },
+          {
+            "segment_index": 1,
+            "origin": "KUL",
+            "destination": "DXB",
+            "departure_date": "2026-11-12",
+            "departure_time": "19:30",
+            "arrival_date": "2026-11-12",
+            "arrival_time": "23:30",
+            "carrier": "EK",
+            "flight_number": "EK-345",
+            "cabin": "J",
+            "operating_carrier": "EK"
+          },
+          {
+            "segment_index": 2,
+            "origin": "DXB",
+            "destination": "MAD",
+            "departure_date": "2026-11-13",
+            "departure_time": "03:25",
+            "arrival_date": "2026-11-13",
+            "arrival_time": "08:30",
+            "carrier": "EK",
+            "flight_number": "EK-141",
+            "cabin": "J",
+            "operating_carrier": "EK"
+          }
+        ],
+        "pnr_structure": {
+          "same_pnr": false,
+          "self_transfer": true,
+          "tickets": [
+            {
+              "pnr_type": "positioning",
+              "segments": [
+                {
+                  "segment_index": 0,
+                  "origin": "TPE",
+                  "destination": "KUL",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "08:00",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "12:30",
+                  "carrier": "D7",
+                  "flight_number": "D7-371",
+                  "cabin": "Y",
+                  "operating_carrier": "D7"
+                }
+              ],
+              "segment_flights": [
+                "D7D7-371"
+              ],
+              "connection_airport": "KUL"
+            },
+            {
+              "pnr_type": "long_haul",
+              "segments": [
+                {
+                  "segment_index": 1,
+                  "origin": "KUL",
+                  "destination": "DXB",
+                  "departure_date": "2026-11-12",
+                  "departure_time": "19:30",
+                  "arrival_date": "2026-11-12",
+                  "arrival_time": "23:30",
+                  "carrier": "EK",
+                  "flight_number": "EK-345",
+                  "cabin": "J",
+                  "operating_carrier": "EK"
+                },
+                {
+                  "segment_index": 2,
+                  "origin": "DXB",
+                  "destination": "MAD",
+                  "departure_date": "2026-11-13",
+                  "departure_time": "03:25",
+                  "arrival_date": "2026-11-13",
+                  "arrival_time": "08:30",
+                  "carrier": "EK",
+                  "flight_number": "EK-141",
+                  "cabin": "J",
+                  "operating_carrier": "EK"
+                }
+              ],
+              "segment_flights": [
+                "EKEK-345",
+                "EKEK-141"
+              ],
+              "connection_airports": [
+                "DXB"
+              ]
+            }
+          ]
+        },
+        "self_transfer_flag": true,
+        "same_pnr": false,
+        "source_trace": [
+          "verification_queue",
+          "candidate_id",
+          "L5_evidence",
+          "L4_candidate_source",
+          "original_machine_observation"
+        ],
+        "repaired_at": "2026-10-01T08:33:58.852766Z",
+        "repair_version": "L8.5-R1-REPAIR-v0.1",
+        "machine_snapshot_unmutated": true,
+        "l5_l8_unmutated": true
+      },
+      "arrival_date": "2026-11-13"
+    }
+  ]
+}

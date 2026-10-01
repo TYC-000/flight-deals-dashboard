@@ -1,20 +1,32 @@
 {
   "schema": "price_intelligence_v1_1",
-  "trace_at": "2026-09-30T17:10:16.651142+00:00",
+  "trace_at": "2026-10-01T08:32:59.161294+00:00",
   "provider": "mock_duffel",
   "smoke_test": true,
   "summary": {
     "provider": "mock_duffel",
-    "candidates_received": 2,
+    "candidates_received": 3,
+    "candidates_selected": 2,
+    "candidates_searched": 2,
+    "candidates_skipped_for_budget": 0,
     "candidates_with_evidence": 2,
     "candidates_failed": 0,
-    "n_live": 2,
-    "n_mock": 2,
-    "n_refused": 0
+    "candidates_skipped_for_selection": 1,
+    "search_budget_used": 2,
+    "search_budget_max": 2,
+    "search_cache_hits": 0,
+    "verification_status_distribution": {
+      "LIVE": 2
+    },
+    "freshness_bucket_distribution": {
+      "FRESHNESS_RECENT": 2
+    },
+    "failure_kind_distribution": {},
+    "refuse_comparison_count": 0
   },
   "evidences": [
     {
-      "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+      "candidate_id": "TEST-A",
       "provider": "mock_duffel",
       "provider_mode": "mock",
       "verification_status": "LIVE",
@@ -28,26 +40,26 @@
           "to": "TWD",
           "rate": 31.85,
           "source": "snapshot_only_static_table",
-          "retrieved_at": "2026-09-30T17:10:16.646048+00:00",
+          "retrieved_at": "2026-10-01T08:32:59.161151+00:00",
           "freshness_min": 0,
           "markup_pct": 2.0,
           "is_identity": false,
           "verification_status": "DATABASE"
         }
       },
-      "ticket_count": 2,
-      "is_single_ticket": false,
+      "ticket_count": 1,
+      "is_single_ticket": true,
       "self_transfer": false,
-      "separate_ticket_risk": "elevated",
+      "separate_ticket_risk": "none",
       "freshness_min": 0,
       "freshness_bucket": "FRESHNESS_RECENT",
-      "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+      "retrieved_at": "2026-10-01T08:32:59.161126+00:00",
       "warnings": [
         "BAGGAGE_UNKNOWN"
       ],
       "price_evidence": {
         "schema_version": "v1.1",
-        "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
+        "candidate_id": "TEST-A",
         "ticket_groups": [
           {
             "group_id": "tg_1",
@@ -64,38 +76,17 @@
             ],
             "ticket_type": "single_pnr",
             "subtotal": {
-              "amount": 755.0,
-              "currency": "USD"
-            },
-            "passenger_through_check_baggage": false,
-            "self_transfer_after_group": false
-          },
-          {
-            "group_id": "tg_2",
-            "stops": [
-              {
-                "from": "KUL",
-                "to": "MAD",
-                "carrier": "MH",
-                "operating_carrier": "MH",
-                "flight_number": "MH-100",
-                "depart": "2027-04-15T08:00:00",
-                "arrive": "2027-04-15T13:00:00"
-              }
-            ],
-            "ticket_type": "single_pnr",
-            "subtotal": {
-              "amount": 755.0,
+              "amount": 1510.0,
               "currency": "USD"
             },
             "passenger_through_check_baggage": false,
             "self_transfer_after_group": false
           }
         ],
-        "ticket_count": 2,
-        "is_single_ticket": false,
+        "ticket_count": 1,
+        "is_single_ticket": true,
         "self_transfer": false,
-        "separate_ticket_risk": "elevated",
+        "separate_ticket_risk": "none",
         "currency": "TWD",
         "total_price": {
           "amount": 48093.5,
@@ -105,7 +96,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646048+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161151+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -120,7 +111,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646050+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161153+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -135,7 +126,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646052+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161154+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -150,7 +141,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646059+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161161+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -166,7 +157,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646060+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161162+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -189,7 +180,7 @@
             "checked_weight_kg": null
           },
           "purchase_required": null,
-          "recheck_required_at_connection": true,
+          "recheck_required_at_connection": false,
           "evidence_complete": false
         },
         "seat_selection": {
@@ -199,10 +190,10 @@
         "meal_included": null,
         "transit_hotel_included": null,
         "lounge_access": null,
-        "valid_until": "2026-09-30T17:30:16.646033+00:00",
-        "price_quote_expires_at": "2026-09-30T17:30:16.646033+00:00",
-        "price_retrieved_at": "2026-09-30T17:10:16.646019+00:00",
-        "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+        "valid_until": "2026-10-01T08:52:59.161139+00:00",
+        "price_quote_expires_at": "2026-10-01T08:52:59.161139+00:00",
+        "price_retrieved_at": "2026-10-01T08:32:59.161126+00:00",
+        "retrieved_at": "2026-10-01T08:32:59.161126+00:00",
         "price_freshness_min": 0,
         "freshness_min": 0,
         "freshness_bucket": "FRESHNESS_RECENT",
@@ -216,10 +207,10 @@
         "provenance": {
           "source": "mock_duffel",
           "source_type": "cache",
-          "retrieved_at": "2026-09-30T17:10:16.646019+00:00",
+          "retrieved_at": "2026-10-01T08:32:59.161126+00:00",
           "freshness_min": 0,
           "endpoint": "air/offer_requests",
-          "offer_id": "off_mock_AUTO-L41-multi_ticket-TPE-KUL-MAD",
+          "offer_id": "off_mock_TEST-A",
           "verification_status": "LIVE"
         },
         "provider": "mock_duffel",
@@ -233,7 +224,7 @@
       "failure_reason": null
     },
     {
-      "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+      "candidate_id": "TEST-B",
       "provider": "mock_duffel",
       "provider_mode": "mock",
       "verification_status": "LIVE",
@@ -247,74 +238,53 @@
           "to": "TWD",
           "rate": 31.85,
           "source": "snapshot_only_static_table",
-          "retrieved_at": "2026-09-30T17:10:16.646150+00:00",
+          "retrieved_at": "2026-10-01T08:32:59.161201+00:00",
           "freshness_min": 0,
           "markup_pct": 2.0,
           "is_identity": false,
           "verification_status": "DATABASE"
         }
       },
-      "ticket_count": 2,
-      "is_single_ticket": false,
+      "ticket_count": 1,
+      "is_single_ticket": true,
       "self_transfer": false,
-      "separate_ticket_risk": "elevated",
+      "separate_ticket_risk": "none",
       "freshness_min": 0,
       "freshness_bucket": "FRESHNESS_RECENT",
-      "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+      "retrieved_at": "2026-10-01T08:32:59.161188+00:00",
       "warnings": [
         "BAGGAGE_UNKNOWN"
       ],
       "price_evidence": {
         "schema_version": "v1.1",
-        "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
+        "candidate_id": "TEST-B",
         "ticket_groups": [
           {
             "group_id": "tg_1",
             "stops": [
               {
                 "from": "TPE",
-                "to": "FRA",
-                "carrier": "LH",
-                "operating_carrier": "LH",
-                "flight_number": "LH-100",
-                "depart": "2027-04-15T08:00:00",
-                "arrive": "2027-04-15T13:00:00"
-              }
-            ],
-            "ticket_type": "single_pnr",
-            "subtotal": {
-              "amount": 760.0,
-              "currency": "USD"
-            },
-            "passenger_through_check_baggage": false,
-            "self_transfer_after_group": false
-          },
-          {
-            "group_id": "tg_2",
-            "stops": [
-              {
-                "from": "FRA",
                 "to": "MAD",
-                "carrier": "LH",
-                "operating_carrier": "LH",
-                "flight_number": "LH-100",
+                "carrier": "MH",
+                "operating_carrier": "MH",
+                "flight_number": "MH-100",
                 "depart": "2027-04-15T08:00:00",
                 "arrive": "2027-04-15T13:00:00"
               }
             ],
             "ticket_type": "single_pnr",
             "subtotal": {
-              "amount": 760.0,
+              "amount": 1520.0,
               "currency": "USD"
             },
             "passenger_through_check_baggage": false,
             "self_transfer_after_group": false
           }
         ],
-        "ticket_count": 2,
-        "is_single_ticket": false,
+        "ticket_count": 1,
+        "is_single_ticket": true,
         "self_transfer": false,
-        "separate_ticket_risk": "elevated",
+        "separate_ticket_risk": "none",
         "currency": "TWD",
         "total_price": {
           "amount": 48412.0,
@@ -324,7 +294,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646150+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161201+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -339,7 +309,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646152+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161202+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -354,7 +324,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646155+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161205+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -369,7 +339,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646160+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161252+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -385,7 +355,7 @@
             "to": "TWD",
             "rate": 31.85,
             "source": "snapshot_only_static_table",
-            "retrieved_at": "2026-09-30T17:10:16.646161+00:00",
+            "retrieved_at": "2026-10-01T08:32:59.161254+00:00",
             "freshness_min": 0,
             "markup_pct": 2.0,
             "is_identity": false,
@@ -408,7 +378,7 @@
             "checked_weight_kg": null
           },
           "purchase_required": null,
-          "recheck_required_at_connection": true,
+          "recheck_required_at_connection": false,
           "evidence_complete": false
         },
         "seat_selection": {
@@ -418,10 +388,10 @@
         "meal_included": null,
         "transit_hotel_included": null,
         "lounge_access": null,
-        "valid_until": "2026-09-30T17:30:16.646138+00:00",
-        "price_quote_expires_at": "2026-09-30T17:30:16.646138+00:00",
-        "price_retrieved_at": "2026-09-30T17:10:16.646130+00:00",
-        "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+        "valid_until": "2026-10-01T08:52:59.161195+00:00",
+        "price_quote_expires_at": "2026-10-01T08:52:59.161195+00:00",
+        "price_retrieved_at": "2026-10-01T08:32:59.161188+00:00",
+        "retrieved_at": "2026-10-01T08:32:59.161188+00:00",
         "price_freshness_min": 0,
         "freshness_min": 0,
         "freshness_bucket": "FRESHNESS_RECENT",
@@ -435,10 +405,10 @@
         "provenance": {
           "source": "mock_duffel",
           "source_type": "cache",
-          "retrieved_at": "2026-09-30T17:10:16.646130+00:00",
+          "retrieved_at": "2026-10-01T08:32:59.161188+00:00",
           "freshness_min": 0,
           "endpoint": "air/offer_requests",
-          "offer_id": "off_mock_AUTO-L41-direct_hub-TPE-FRA-MAD",
+          "offer_id": "off_mock_TEST-B",
           "verification_status": "LIVE"
         },
         "provider": "mock_duffel",

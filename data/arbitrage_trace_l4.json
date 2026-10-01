@@ -1,5 +1,5 @@
 {
-  "trace_at": "2026-09-30T17:10:16.151283+00:00",
+  "trace_at": "2026-10-01T08:32:11.815310+00:00",
   "arbitrage_id": "L4::A::?",
   "arbitrage_state": "POTENTIAL_OPPORTUNITY",
   "evidence_maturity": "SUPPORTED",
@@ -8,7 +8,7 @@
   "freshness": {
     "freshness_a_bucket": "FRESHNESS_EXPIRED",
     "freshness_b_bucket": "FRESHNESS_UNKNOWN",
-    "freshness_a_min": 4750,
+    "freshness_a_min": 5672,
     "freshness_b_min": -1.0,
     "freshness_window_min": 1440,
     "freshness_window_exceeded": null,

@@ -1,6 +1,6 @@
 {
   "schema": "live_schedule_provider_v1_2_1",
-  "trace_at": "2026-09-30T17:10:16.682431+00:00",
+  "trace_at": "2026-10-01T08:32:12.292072+00:00",
   "provider": "mock_duffel",
   "smoke_test": true,
   "summary": {
@@ -31,10 +31,10 @@
         "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
         "provider": "mock_duffel",
         "provider_mode": "mock",
-        "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+        "retrieved_at": "2026-10-01T08:32:12.291880+00:00",
         "mission_date_window": "2027-04-15",
         "searched_date": "2027-04-15",
-        "expires_at": "2026-09-30T17:10:16+00:00Z",
+        "expires_at": "2026-10-01T08:32:12+00:00Z",
         "freshness": null,
         "verification_status": "LIVE",
         "schedule_status": "SUPPORTED",
@@ -99,13 +99,13 @@
           "source": "mock_duffel",
           "source_type": "cache",
           "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+          "retrieved_at": "2026-10-01T08:32:12.291880+00:00",
           "offer_id": "off_mock_sched_AUTO-L41-multi_ticket-TPE-KUL-MAD",
           "live_mode": false,
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-09-30T17:10:16.682236+00:00",
+      "retrieved_at": "2026-10-01T08:32:12.291880+00:00",
       "freshness": "FRESHNESS_RECENT"
     },
     {
@@ -118,10 +118,10 @@
         "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
         "provider": "mock_duffel",
         "provider_mode": "mock",
-        "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+        "retrieved_at": "2026-10-01T08:32:12.292014+00:00",
         "mission_date_window": "2027-04-15",
         "searched_date": "2027-04-15",
-        "expires_at": "2026-09-30T17:10:16+00:00Z",
+        "expires_at": "2026-10-01T08:32:12+00:00Z",
         "freshness": null,
         "verification_status": "LIVE",
         "schedule_status": "SUPPORTED",
@@ -186,13 +186,13 @@
           "source": "mock_duffel",
           "source_type": "cache",
           "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+          "retrieved_at": "2026-10-01T08:32:12.292014+00:00",
           "offer_id": "off_mock_sched_AUTO-L41-direct_hub-TPE-FRA-MAD",
           "live_mode": false,
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-09-30T17:10:16.682372+00:00",
+      "retrieved_at": "2026-10-01T08:32:12.292014+00:00",
       "freshness": "FRESHNESS_RECENT"
     }
   ]
