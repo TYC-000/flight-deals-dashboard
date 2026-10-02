@@ -1,6 +1,6 @@
 {
   "schema": "live_schedule_provider_v1_2_1",
-  "trace_at": "2026-10-02T03:46:59.675053+00:00",
+  "trace_at": "2026-10-02T04:26:15.988864+00:00",
   "provider": "duffel",
   "smoke_test": false,
   "summary": {
@@ -24,7 +24,7 @@
       "provider": "duffel",
       "provider_mode": "live",
       "schedule_evidence": null,
-      "retrieved_at": "2026-10-02T03:46:59.161603+00:00",
+      "retrieved_at": "2026-10-02T04:26:15.559404+00:00",
       "failure_kind": "PROVIDER_ERROR",
       "failure_reason": "http 401",
       "freshness": null

@@ -8,7 +8,7 @@
       "l7_risk_check_id": "L7::acb687070f97b633",
       "l8_verification_packet_id": "L8::4372cdd82f190ac4",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T03:46:07.239184Z",
+      "verification_queue_created_at": "2026-10-02T04:25:22.386008Z",
       "route": {
         "origin": "TPE",
         "destination": "BCN",
@@ -178,13 +178,13 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T03:46:07.285194Z",
+        "repaired_at": "2026-10-02T04:25:22.431827Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true,
         "round_trip_audit": {
           "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-          "audited_at": "2026-10-02T03:46:07.298819Z",
+          "audited_at": "2026-10-02T04:25:22.445413Z",
           "trip_type": "MISSING_SOURCE_FIELD",
           "outbound_slice_present": true,
           "return_slice_present": false,
@@ -223,7 +223,7 @@
       "l7_risk_check_id": "L7::8e42f9ccd065581a",
       "l8_verification_packet_id": "L8::ee3e08c29948e20e",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T03:46:07.241224Z",
+      "verification_queue_created_at": "2026-10-02T04:25:22.388025Z",
       "route": {
         "origin": "TPE",
         "destination": "CDG",
@@ -385,13 +385,13 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T03:46:07.285345Z",
+        "repaired_at": "2026-10-02T04:25:22.431979Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true,
         "round_trip_audit": {
           "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-          "audited_at": "2026-10-02T03:46:07.298860Z",
+          "audited_at": "2026-10-02T04:25:22.445455Z",
           "trip_type": "MISSING_SOURCE_FIELD",
           "outbound_slice_present": true,
           "return_slice_present": false,
@@ -430,7 +430,7 @@
       "l7_risk_check_id": "L7::b27e69deda58c599",
       "l8_verification_packet_id": "L8::8f6ddffae8813201",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T03:46:07.243092Z",
+      "verification_queue_created_at": "2026-10-02T04:25:22.389886Z",
       "route": {
         "origin": "TPE",
         "destination": "FCO",
@@ -592,13 +592,13 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T03:46:07.285403Z",
+        "repaired_at": "2026-10-02T04:25:22.432036Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true,
         "round_trip_audit": {
           "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-          "audited_at": "2026-10-02T03:46:07.298901Z",
+          "audited_at": "2026-10-02T04:25:22.445497Z",
           "trip_type": "MISSING_SOURCE_FIELD",
           "outbound_slice_present": true,
           "return_slice_present": false,
@@ -637,7 +637,7 @@
       "l7_risk_check_id": "L7::c87558650f6042c8",
       "l8_verification_packet_id": "L8::8c659f5055d06788",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T03:46:07.244851Z",
+      "verification_queue_created_at": "2026-10-02T04:25:22.391622Z",
       "route": {
         "origin": "TPE",
         "destination": "FRA",
@@ -775,13 +775,13 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T03:46:07.285457Z",
+        "repaired_at": "2026-10-02T04:25:22.432090Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true,
         "round_trip_audit": {
           "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-          "audited_at": "2026-10-02T03:46:07.298937Z",
+          "audited_at": "2026-10-02T04:25:22.445533Z",
           "trip_type": "MISSING_SOURCE_FIELD",
           "outbound_slice_present": true,
           "return_slice_present": false,
@@ -820,7 +820,7 @@
       "l7_risk_check_id": "L7::16b71a412b522422",
       "l8_verification_packet_id": "L8::0d523647ebe8a317",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T03:46:07.246691Z",
+      "verification_queue_created_at": "2026-10-02T04:25:22.393493Z",
       "route": {
         "origin": "TPE",
         "destination": "MAD",
@@ -990,13 +990,13 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T03:46:07.285506Z",
+        "repaired_at": "2026-10-02T04:25:22.432139Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true,
         "round_trip_audit": {
           "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-          "audited_at": "2026-10-02T03:46:07.298978Z",
+          "audited_at": "2026-10-02T04:25:22.445575Z",
           "trip_type": "MISSING_SOURCE_FIELD",
           "outbound_slice_present": true,
           "return_slice_present": false,

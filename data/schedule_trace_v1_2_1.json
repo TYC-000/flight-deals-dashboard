@@ -1,7 +1,7 @@
 {
-  "trace_at": "2026-10-02T03:46:59.676024+00:00",
+  "trace_at": "2026-10-02T04:26:15.989782+00:00",
   "schedule_provider": "duffel",
-  "started_at": "2026-10-02T03:46:58.632355+00:00",
+  "started_at": "2026-10-02T04:26:15.039528+00:00",
   "smoke_test": false,
   "counts": {
     "candidates_received": 5,
@@ -24,7 +24,7 @@
       "provider": "duffel",
       "provider_mode": "live",
       "schedule_evidence": null,
-      "retrieved_at": "2026-10-02T03:46:59.161603+00:00",
+      "retrieved_at": "2026-10-02T04:26:15.559404+00:00",
       "failure_kind": "PROVIDER_ERROR",
       "failure_reason": "http 401",
       "freshness": null
