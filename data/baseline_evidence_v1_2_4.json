@@ -1,6 +1,6 @@
 {
   "schema": "baseline_canonicalization_v1_2_4",
-  "trace_at": "2026-10-02T04:25:21.665867+00:00",
+  "trace_at": "2026-10-02T09:58:37.031594+00:00",
   "n_evidences": 1,
   "evidences": [
     {
@@ -185,7 +185,7 @@
             "source": "baseline_canonicalization_v1_2_4",
             "source_type": "cache",
             "endpoint": null,
-            "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+            "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
             "verification_status": "DATABASE",
             "canonicalization_rule_version": "v1.2.4/v1",
             "evidence_arity": 0,
@@ -273,7 +273,7 @@
             "source": "baseline_canonicalization_v1_2_4",
             "source_type": "cache",
             "endpoint": null,
-            "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+            "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
             "verification_status": "DATABASE",
             "canonicalization_rule_version": "v1.2.4/v1",
             "evidence_arity": 0,
@@ -318,7 +318,7 @@
             "source": "baseline_canonicalization_v1_2_4",
             "source_type": "cache",
             "endpoint": null,
-            "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+            "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
             "verification_status": "DATABASE",
             "canonicalization_rule_version": "v1.2.4/v1",
             "evidence_arity": 0,
@@ -361,7 +361,7 @@
             "source": "baseline_canonicalization_v1_2_4",
             "source_type": "cache",
             "endpoint": null,
-            "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+            "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
             "verification_status": "DATABASE",
             "canonicalization_rule_version": "v1.2.4/v1",
             "evidence_arity": 0,
@@ -376,7 +376,7 @@
         }
       ],
       "canonicalization_rule_version": "v1.2.4/v1",
-      "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+      "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
       "verification_status": "DATABASE",
       "source": "baseline_canonicalization_v1_2_4",
       "is_identity": false,
@@ -388,7 +388,7 @@
         "source": "baseline_canonicalization_v1_2_4",
         "source_type": "cache",
         "endpoint": null,
-        "retrieved_at": "2026-10-02T04:25:21.663804+00:00",
+        "retrieved_at": "2026-10-02T09:58:37.029637+00:00",
         "verification_status": "DATABASE",
         "canonicalization_rule_version": "v1.2.4/v1",
         "evidence_arity": 3

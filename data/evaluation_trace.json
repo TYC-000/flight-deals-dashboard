@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-10-02 12:25:52",
+  "evaluated_at": "2026-10-02 17:59:09",
   "lifecycle_stages": [
     "input",
     "evaluated",
@@ -9,11 +9,11 @@
   ],
   "counts": {
     "submitted": 80,
-    "jev_survivors_print": 29,
+    "jev_survivors_print": 32,
     "json_evaluated": 80,
-    "json_survivors": 29,
+    "json_survivors": 32,
     "json_top3": 3,
-    "json_dropped": 51
+    "json_dropped": 48
   },
   "candidates": [
     {
@@ -84,7 +84,7 @@
       "evaluation_success": true,
       "survived": true,
       "in_top3": true,
-      "final_rank": 3
+      "final_rank": 1
     },
     {
       "candidate_id": "AUTO-direct_hub-TPE-DXB-MAD",
@@ -126,23 +126,23 @@
       "evaluation_success": true,
       "survived": true,
       "in_top3": true,
-      "final_rank": 2
+      "final_rank": 3
     },
     {
       "candidate_id": "AUTO-direct_hub-TPE-DXB-BCN",
       "submitted_to_jev": true,
       "evaluation_success": true,
       "survived": true,
-      "in_top3": true,
-      "final_rank": 1
+      "in_top3": false,
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-direct_hub-TPE-AUH-BCN",
       "submitted_to_jev": true,
       "evaluation_success": true,
       "survived": true,
-      "in_top3": false,
-      "final_rank": null
+      "in_top3": true,
+      "final_rank": 2
     },
     {
       "candidate_id": "AUTO-europe_entry-TPE-ZRH-MAD",
@@ -404,11 +404,10 @@
     {
       "candidate_id": "AUTO-northeast_asia-TPE-NRT-FRA-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "aircraft_comfort<4"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-northeast_asia-TPE-NRT-CDG-MAD",
@@ -426,7 +425,7 @@
       "survived": false,
       "in_top3": false,
       "final_rank": null,
-      "evaluation_failure_reason": "aircraft_comfort<4"
+      "evaluation_failure_reason": "fatigue>7.5, aircraft_comfort<4"
     },
     {
       "candidate_id": "AUTO-northeast_asia-TPE-NRT-FRA-BCN",
@@ -453,7 +452,7 @@
       "survived": false,
       "in_top3": false,
       "final_rank": null,
-      "evaluation_failure_reason": "fatigue>7.5, aircraft_comfort<4"
+      "evaluation_failure_reason": "aircraft_comfort<4"
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-MAD",
@@ -466,20 +465,18 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "aircraft_comfort<4"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "aircraft_comfort<4"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-BCN",
@@ -534,10 +531,11 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
+      "evaluation_success": false,
+      "survived": false,
       "in_top3": false,
-      "final_rank": null
+      "final_rank": null,
+      "evaluation_failure_reason": "fatigue>7.5"
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-BCN",
@@ -623,11 +621,10 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "fatigue>7.5"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-BCN",
@@ -649,11 +646,10 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "fatigue>7.5"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
@@ -702,10 +698,11 @@
     {
       "candidate_id": "AUTO-positioning-TPE-KUL-FRA-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
+      "evaluation_success": false,
+      "survived": false,
       "in_top3": false,
-      "final_rank": null
+      "final_rank": null,
+      "evaluation_failure_reason": "aircraft_comfort<4"
     }
   ]
 }

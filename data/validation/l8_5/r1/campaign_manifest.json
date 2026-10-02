@@ -34,7 +34,7 @@
       "l7_risk_check_id": "L7::acb687070f97b633",
       "l8_verification_packet_id": "L8::4372cdd82f190ac4",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T04:25:22.386008Z",
+      "verification_queue_created_at": "2026-10-02T09:58:37.785324Z",
       "route": {
         "origin": "TPE",
         "destination": "BCN",
@@ -75,7 +75,7 @@
       "l7_risk_check_id": "L7::8e42f9ccd065581a",
       "l8_verification_packet_id": "L8::ee3e08c29948e20e",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T04:25:22.388025Z",
+      "verification_queue_created_at": "2026-10-02T09:58:37.787337Z",
       "route": {
         "origin": "TPE",
         "destination": "CDG",
@@ -116,7 +116,7 @@
       "l7_risk_check_id": "L7::b27e69deda58c599",
       "l8_verification_packet_id": "L8::8f6ddffae8813201",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T04:25:22.389886Z",
+      "verification_queue_created_at": "2026-10-02T09:58:37.789206Z",
       "route": {
         "origin": "TPE",
         "destination": "FCO",
@@ -157,7 +157,7 @@
       "l7_risk_check_id": "L7::c87558650f6042c8",
       "l8_verification_packet_id": "L8::8c659f5055d06788",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T04:25:22.391622Z",
+      "verification_queue_created_at": "2026-10-02T09:58:37.790943Z",
       "route": {
         "origin": "TPE",
         "destination": "FRA",
@@ -198,7 +198,7 @@
       "l7_risk_check_id": "L7::16b71a412b522422",
       "l8_verification_packet_id": "L8::0d523647ebe8a317",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-02T04:25:22.393493Z",
+      "verification_queue_created_at": "2026-10-02T09:58:37.792779Z",
       "route": {
         "origin": "TPE",
         "destination": "MAD",
@@ -232,10 +232,10 @@
       "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows."
     }
   ],
-  "created_at": "2026-10-02T04:25:22.394033Z",
+  "created_at": "2026-10-02T09:58:37.793320Z",
   "repair": {
     "version": "L8.5-R1-REPAIR-v0.1",
-    "repaired_at": "2026-10-02T04:25:22.432371Z",
+    "repaired_at": "2026-10-02T09:58:37.831153Z",
     "completeness_summary": [
       {
         "case_id": "R1-0a02feab",
@@ -377,7 +377,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T04:25:22.431827Z",
+        "repaired_at": "2026-10-02T09:58:37.830584Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -514,7 +514,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T04:25:22.431979Z",
+        "repaired_at": "2026-10-02T09:58:37.830739Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -651,7 +651,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T04:25:22.432036Z",
+        "repaired_at": "2026-10-02T09:58:37.830799Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -764,7 +764,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T04:25:22.432090Z",
+        "repaired_at": "2026-10-02T09:58:37.830854Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -909,7 +909,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-02T04:25:22.432139Z",
+        "repaired_at": "2026-10-02T09:58:37.830905Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -936,7 +936,7 @@
   },
   "round_trip_audit": {
     "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-    "audited_at": "2026-10-02T04:25:22.445689Z",
+    "audited_at": "2026-10-02T09:58:37.844613Z",
     "audit_summary": [
       {
         "case_id": "R1-0a02feab",
@@ -1087,7 +1087,7 @@
   },
   "human_verification_readiness": {
     "readiness_version": "L8.5-R1-HUMAN-READINESS-v0.1",
-    "evaluated_at": "2026-10-02T04:25:22.412199Z",
+    "evaluated_at": "2026-10-02T09:58:37.811178Z",
     "summary": [
       {
         "case_id": "R1-0a02feab",
@@ -1154,5 +1154,83 @@
     "machine_snapshot_unmutated": true,
     "l5_l8_unmutated": true,
     "jev_unmodified": true
+  },
+  "batch_02": {
+    "selector_version": "L8.5-R1-BATCH02-SELECTOR-v0.1",
+    "created_at": "2026-10-01T08:00:00Z",
+    "real_candidates_discovered": 16,
+    "synthetic_candidates_excluded": 9,
+    "batch_01_candidates_excluded": 5,
+    "eligible_candidates_remaining": 11,
+    "queue_size": 5,
+    "negative_control_count": 4,
+    "bucket_assignments": [
+      {
+        "case_id": "R1-B2::00ff71ab76cdd4b6",
+        "candidate_id": "CGK-EY-BCN-1",
+        "route_family": "TPE-BCN",
+        "carrier": "Etihad EY",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "UNKNOWN",
+        "self_transfer_flag": true,
+        "official_site": "https://www.iata.org"
+      },
+      {
+        "case_id": "R1-B2::5442766c6af2d30e",
+        "candidate_id": "AY-SIN-CDG",
+        "route_family": "TPE-CDG",
+        "carrier": "Finnair AY",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "UNKNOWN",
+        "self_transfer_flag": false,
+        "official_site": "https://www.iata.org"
+      },
+      {
+        "case_id": "R1-B2::34c4924b1a42c384",
+        "candidate_id": "KUL-QR-1",
+        "route_family": "TPE-MAD",
+        "carrier": "Qatar Airways QR",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "UNKNOWN",
+        "self_transfer_flag": true,
+        "official_site": "https://www.iata.org"
+      },
+      {
+        "case_id": "R1-B2::d082def4a9e56e3d",
+        "candidate_id": "BKK-EK-1",
+        "route_family": "TPE-BCN",
+        "carrier": "Emirates EK",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "UNKNOWN",
+        "self_transfer_flag": true,
+        "official_site": "https://www.iata.org"
+      },
+      {
+        "case_id": "R1-B2::ff1ed03aec9e7203",
+        "candidate_id": "CGK-EY-1",
+        "route_family": "TPE-MAD",
+        "carrier": "Etihad EY",
+        "direct_or_connecting": "CONNECTING",
+        "price_band": "UNKNOWN",
+        "self_transfer_flag": true,
+        "official_site": "https://www.iata.org"
+      }
+    ],
+    "case_ids": [
+      "R1-B2::00ff71ab76cdd4b6",
+      "R1-B2::5442766c6af2d30e",
+      "R1-B2::34c4924b1a42c384",
+      "R1-B2::d082def4a9e56e3d",
+      "R1-B2::ff1ed03aec9e7203"
+    ],
+    "candidate_ids": [
+      "CGK-EY-BCN-1",
+      "AY-SIN-CDG",
+      "KUL-QR-1",
+      "BKK-EK-1",
+      "CGK-EY-1"
+    ],
+    "production_files_modified": false,
+    "machine_evidence_modified": false
   }
 }
