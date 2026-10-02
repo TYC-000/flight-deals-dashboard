@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-10-02 01:06:37",
+  "evaluated_at": "2026-10-02 11:46:37",
   "lifecycle_stages": [
     "input",
     "evaluated",
@@ -28,11 +28,10 @@
     {
       "candidate_id": "AUTO-multi_ticket-TPE-BKK-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "aircraft_comfort<4"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-multi_ticket-TPE-SIN-MAD",
@@ -84,7 +83,7 @@
       "evaluation_success": true,
       "survived": true,
       "in_top3": true,
-      "final_rank": 2
+      "final_rank": 3
     },
     {
       "candidate_id": "AUTO-direct_hub-TPE-DXB-MAD",
@@ -142,7 +141,7 @@
       "evaluation_success": true,
       "survived": true,
       "in_top3": true,
-      "final_rank": 3
+      "final_rank": 2
     },
     {
       "candidate_id": "AUTO-europe_entry-TPE-ZRH-MAD",
@@ -474,10 +473,11 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
+      "evaluation_success": false,
+      "survived": false,
       "in_top3": false,
-      "final_rank": null
+      "final_rank": null,
+      "evaluation_failure_reason": "aircraft_comfort<4"
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-BKK-BCN",
@@ -515,10 +515,11 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
+      "evaluation_success": false,
+      "survived": false,
       "in_top3": false,
-      "final_rank": null
+      "final_rank": null,
+      "evaluation_failure_reason": "fatigue>7.5"
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-IST-MAD",
@@ -532,11 +533,10 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DOH-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "fatigue>7.5"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-KUL-DXB-BCN",
@@ -622,11 +622,10 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-MAD",
       "submitted_to_jev": true,
-      "evaluation_success": false,
-      "survived": false,
+      "evaluation_success": true,
+      "survived": true,
       "in_top3": false,
-      "final_rank": null,
-      "evaluation_failure_reason": "fatigue>7.5"
+      "final_rank": null
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-DOH-BCN",
@@ -647,10 +646,11 @@
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-SIN-IST-BCN",
       "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
+      "evaluation_success": false,
+      "survived": false,
       "in_top3": false,
-      "final_rank": null
+      "final_rank": null,
+      "evaluation_failure_reason": "fatigue>7.5"
     },
     {
       "candidate_id": "AUTO-southeast_asia_outer_port-TPE-CGK-DOH-MAD",
@@ -691,19 +691,19 @@
     {
       "candidate_id": "AUTO-positioning-TPE-KUL-FRA-MAD",
       "submitted_to_jev": true,
+      "evaluation_success": true,
+      "survived": true,
+      "in_top3": false,
+      "final_rank": null
+    },
+    {
+      "candidate_id": "AUTO-positioning-TPE-KUL-FRA-BCN",
+      "submitted_to_jev": true,
       "evaluation_success": false,
       "survived": false,
       "in_top3": false,
       "final_rank": null,
       "evaluation_failure_reason": "aircraft_comfort<4"
-    },
-    {
-      "candidate_id": "AUTO-positioning-TPE-KUL-FRA-BCN",
-      "submitted_to_jev": true,
-      "evaluation_success": true,
-      "survived": true,
-      "in_top3": false,
-      "final_rank": null
     }
   ]
 }

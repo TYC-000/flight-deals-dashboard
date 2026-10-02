@@ -34,7 +34,7 @@
       "l7_risk_check_id": "L7::acb687070f97b633",
       "l8_verification_packet_id": "L8::4372cdd82f190ac4",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T17:06:06.464887Z",
+      "verification_queue_created_at": "2026-10-02T03:46:07.239184Z",
       "route": {
         "origin": "TPE",
         "destination": "BCN",
@@ -75,7 +75,7 @@
       "l7_risk_check_id": "L7::8e42f9ccd065581a",
       "l8_verification_packet_id": "L8::ee3e08c29948e20e",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T17:06:06.466892Z",
+      "verification_queue_created_at": "2026-10-02T03:46:07.241224Z",
       "route": {
         "origin": "TPE",
         "destination": "CDG",
@@ -116,7 +116,7 @@
       "l7_risk_check_id": "L7::b27e69deda58c599",
       "l8_verification_packet_id": "L8::8f6ddffae8813201",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T17:06:06.468763Z",
+      "verification_queue_created_at": "2026-10-02T03:46:07.243092Z",
       "route": {
         "origin": "TPE",
         "destination": "FCO",
@@ -157,7 +157,7 @@
       "l7_risk_check_id": "L7::c87558650f6042c8",
       "l8_verification_packet_id": "L8::8c659f5055d06788",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T17:06:06.470507Z",
+      "verification_queue_created_at": "2026-10-02T03:46:07.244851Z",
       "route": {
         "origin": "TPE",
         "destination": "FRA",
@@ -198,7 +198,7 @@
       "l7_risk_check_id": "L7::16b71a412b522422",
       "l8_verification_packet_id": "L8::0d523647ebe8a317",
       "machine_observed_at": "2026-10-01T08:00:00Z",
-      "verification_queue_created_at": "2026-10-01T17:06:06.472352Z",
+      "verification_queue_created_at": "2026-10-02T03:46:07.246691Z",
       "route": {
         "origin": "TPE",
         "destination": "MAD",
@@ -232,10 +232,10 @@
       "verification_instructions": "1. Open airline's official website (URL above if available, else locate it manually).\n2. Search the same itinerary: same origin, destination, dates, carrier, cabin.\n3. Compare: route, flight number(s), carrier, date, depart/arrival times, cabin, fare, currency, baggage, fare conditions.\n4. Record the actual finding using one of the L8 actions: OPEN_OFFICIAL_SITE / CONFIRM / REPORT_PRICE_CHANGE / REPORT_ITINERARY_CHANGE / REPORT_FARE_CHANGE / REPORT_NOT_FOUND / REPORT_OTHER_DISCREPANCY / DEFER.\n5. Do NOT judge 'good deal' — only record what the official site currently shows."
     }
   ],
-  "created_at": "2026-10-01T17:06:06.472908Z",
+  "created_at": "2026-10-02T03:46:07.247226Z",
   "repair": {
     "version": "L8.5-R1-REPAIR-v0.1",
-    "repaired_at": "2026-10-01T17:06:06.510544Z",
+    "repaired_at": "2026-10-02T03:46:07.285747Z",
     "completeness_summary": [
       {
         "case_id": "R1-0a02feab",
@@ -377,7 +377,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T17:06:06.509990Z",
+        "repaired_at": "2026-10-02T03:46:07.285194Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -514,7 +514,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T17:06:06.510144Z",
+        "repaired_at": "2026-10-02T03:46:07.285345Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -651,7 +651,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T17:06:06.510203Z",
+        "repaired_at": "2026-10-02T03:46:07.285403Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -764,7 +764,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T17:06:06.510257Z",
+        "repaired_at": "2026-10-02T03:46:07.285457Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -909,7 +909,7 @@
           "L4_candidate_source",
           "original_machine_observation"
         ],
-        "repaired_at": "2026-10-01T17:06:06.510307Z",
+        "repaired_at": "2026-10-02T03:46:07.285506Z",
         "repair_version": "L8.5-R1-REPAIR-v0.1",
         "machine_snapshot_unmutated": true,
         "l5_l8_unmutated": true
@@ -936,7 +936,7 @@
   },
   "round_trip_audit": {
     "audit_version": "L8.5-R1-ROUNDTRIP-AUDIT-v0.1",
-    "audited_at": "2026-10-01T17:06:06.523833Z",
+    "audited_at": "2026-10-02T03:46:07.299099Z",
     "audit_summary": [
       {
         "case_id": "R1-0a02feab",
@@ -1087,7 +1087,7 @@
   },
   "human_verification_readiness": {
     "readiness_version": "L8.5-R1-HUMAN-READINESS-v0.1",
-    "evaluated_at": "2026-10-01T17:06:06.490907Z",
+    "evaluated_at": "2026-10-02T03:46:07.265368Z",
     "summary": [
       {
         "case_id": "R1-0a02feab",

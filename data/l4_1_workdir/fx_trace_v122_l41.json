@@ -1,7 +1,7 @@
 {
-  "trace_at": "2026-10-01T17:06:05.813344+00:00",
+  "trace_at": "2026-10-02T03:46:06.520878+00:00",
   "fx_provider": "frankfurter",
-  "started_at": "2026-10-01T17:06:05.582595+00:00",
+  "started_at": "2026-10-02T03:46:06.299178+00:00",
   "smoke_test": true,
   "counts": {
     "conversions_requested": 1,
@@ -32,18 +32,18 @@
         "provider_mode": "live",
         "base_currency": "TWD",
         "quote_currency": "EUR",
-        "rate": 0.02764,
+        "rate": 0.02768,
         "rate_date": "2026-10-02",
-        "rate_source_type": "historical",
-        "retrieved_at": "2026-10-01T17:06:05.687798+00:00",
+        "rate_source_type": "latest/current",
+        "retrieved_at": "2026-10-02T03:46:06.407538+00:00",
         "freshness_min": 0,
         "freshness_bucket": "FRESHNESS_RECENT",
-        "freshness_label": "historical",
+        "freshness_label": "latest/current",
         "verification_status": "LIVE",
         "source": "frankfurter",
         "endpoint": "/v2/rate/{base}/{quote}",
         "request_metadata": {
-          "is_historical_request": true,
+          "is_historical_request": false,
           "explicit_rate_date": null
         },
         "is_identity": false,
@@ -55,14 +55,14 @@
           "source": "frankfurter",
           "source_type": "live",
           "endpoint": "/v2/rate/{base}/{quote}",
-          "retrieved_at": "2026-10-01T17:06:05.687798+00:00",
+          "retrieved_at": "2026-10-02T03:46:06.407538+00:00",
           "rate_date": "2026-10-02",
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-10-01T17:06:05.687798+00:00",
+      "retrieved_at": "2026-10-02T03:46:06.407538+00:00",
       "rate_date": "2026-10-02",
-      "rate": 0.02764
+      "rate": 0.02768
     }
   ]
 }

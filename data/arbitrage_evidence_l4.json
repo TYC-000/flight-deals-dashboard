@@ -14,7 +14,7 @@
     "candidate": {
       "provider": "mock_duffel",
       "provider_mode": "mock",
-      "retrieved_at": "2026-10-01T17:06:05.518136+00:00",
+      "retrieved_at": "2026-10-02T03:46:06.233994+00:00",
       "verification_status": "LIVE",
       "currency": "TWD",
       "amount": null
@@ -39,10 +39,10 @@
         "candidate_id": "AUTO-L41-multi_ticket-TPE-KUL-MAD",
         "provider": "mock_duffel",
         "provider_mode": "mock",
-        "retrieved_at": "2026-10-01T17:06:05.550986+00:00",
+        "retrieved_at": "2026-10-02T03:46:06.266869+00:00",
         "mission_date_window": "2027-04-15",
         "searched_date": "2027-04-15",
-        "expires_at": "2026-10-01T17:06:05+00:00Z",
+        "expires_at": "2026-10-02T03:46:06+00:00Z",
         "freshness": null,
         "verification_status": "LIVE",
         "schedule_status": "SUPPORTED",
@@ -107,13 +107,13 @@
           "source": "mock_duffel",
           "source_type": "cache",
           "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-10-01T17:06:05.550986+00:00",
+          "retrieved_at": "2026-10-02T03:46:06.266869+00:00",
           "offer_id": "off_mock_sched_AUTO-L41-multi_ticket-TPE-KUL-MAD",
           "live_mode": false,
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-10-01T17:06:05.550986+00:00",
+      "retrieved_at": "2026-10-02T03:46:06.266869+00:00",
       "freshness": "FRESHNESS_RECENT"
     },
     "baseline": {
@@ -126,10 +126,10 @@
         "candidate_id": "AUTO-L41-direct_hub-TPE-FRA-MAD",
         "provider": "mock_duffel",
         "provider_mode": "mock",
-        "retrieved_at": "2026-10-01T17:06:05.551122+00:00",
+        "retrieved_at": "2026-10-02T03:46:06.267005+00:00",
         "mission_date_window": "2027-04-15",
         "searched_date": "2027-04-15",
-        "expires_at": "2026-10-01T17:06:05+00:00Z",
+        "expires_at": "2026-10-02T03:46:06+00:00Z",
         "freshness": null,
         "verification_status": "LIVE",
         "schedule_status": "SUPPORTED",
@@ -194,13 +194,13 @@
           "source": "mock_duffel",
           "source_type": "cache",
           "endpoint": "/air/offer_requests",
-          "retrieved_at": "2026-10-01T17:06:05.551122+00:00",
+          "retrieved_at": "2026-10-02T03:46:06.267005+00:00",
           "offer_id": "off_mock_sched_AUTO-L41-direct_hub-TPE-FRA-MAD",
           "live_mode": false,
           "verification_status": "LIVE"
         }
       },
-      "retrieved_at": "2026-10-01T17:06:05.551122+00:00",
+      "retrieved_at": "2026-10-02T03:46:06.267005+00:00",
       "freshness": "FRESHNESS_RECENT"
     }
   },
@@ -268,7 +268,7 @@
     "provider_a": {
       "provider": "mock_duffel",
       "provider_mode": "mock",
-      "retrieved_at": "2026-10-01T17:06:05.518136+00:00"
+      "retrieved_at": "2026-10-02T03:46:06.233994+00:00"
     },
     "provider_b": {
       "provider": null,
@@ -315,12 +315,12 @@
   ],
   "rule_version": "l4/v1",
   "rule_definition": "l4/v1",
-  "retrieved_at": "2026-10-01T17:06:05.842383+00:00",
+  "retrieved_at": "2026-10-02T03:46:06.547927+00:00",
   "evidence_provenance": {
     "source": "arbitrage_detection_l4",
     "source_type": "cache",
     "endpoint": null,
-    "retrieved_at": "2026-10-01T17:06:05.842383+00:00",
+    "retrieved_at": "2026-10-02T03:46:06.547927+00:00",
     "verification_status": "DATABASE",
     "rule_version": "l4/v1",
     "evidence_arity": 2
@@ -332,6 +332,6 @@
   "warnings": [],
   "failure_reason": null,
   "failure_kind": null,
-  "trace_at": "2026-10-01T17:06:05.842698+00:00",
+  "trace_at": "2026-10-02T03:46:06.548232+00:00",
   "stage": "arbitrage"
 }

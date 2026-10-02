@@ -1,0 +1,188 @@
+{
+  "taxonomy_version": "0.1",
+  "layer": "R1_ANALYSIS_ONLY",
+  "date": "2026-10-01",
+  "specification_intent": "Analysis-only taxonomy of human-vs-machine discrepancies observed in R1 Cases 01-04. NOT an L8 enum, NOT a ranking, NOT a score, NOT a booking layer. Each taxonomy label is an analytical classification of the type of failure/limitation observed. Categories are derived from recorded reports only.",
+  "cases_analyzed": 4,
+  "categories": [
+    {
+      "label": "EXISTENCE_FAILURE",
+      "definition": "Machine evidence identifies a flight, but human official-site verification for the target search cannot find the claimed flight.",
+      "example_case": "R1-0a02feab / Case 01 / Qatar Airways",
+      "scope_limitation": "Does NOT mean the flight can never exist historically or on another date. It means the claimed machine flight was not found in the human target-date official-site verification.",
+      "l8_handling_pattern": "REPORT_NOT_FOUND -> NOT_FOUND"
+    },
+    {
+      "label": "ROUTE_IDENTITY_MISMATCH",
+      "definition": "The machine flight number exists, but the official-site observation associates that flight number with a different route than the machine evidence.",
+      "example_case": "R1-1dc1c91b / Case 02 / Singapore Airlines",
+      "scope_limitation": "The flight number exists. The discrepancy is specifically route identity.",
+      "l8_handling_pattern": "REPORT_ITINERARY_CHANGE -> ITINERARY_CHANGED"
+    },
+    {
+      "label": "TARGET_DATE_UNESTABLISHED",
+      "definition": "Human verification establishes that a flight/route exists on some observed date, but does not establish the requested target date.",
+      "example_case": "R1-35a920a0 / Case 03 / Turkish Airlines",
+      "scope_limitation": "Evidence sufficiency limitation, not a flight-existence conclusion. Do NOT map to NOT_FOUND or CONFIRMED. Do NOT infer target-date existence.",
+      "l8_handling_pattern": "L8_ACTION = NONE; L8 state UNVERIFIED (unchanged). Schema observation - cannot enumerate target-date-unobservability without false classification."
+    },
+    {
+      "label": "FLIGHT_IDENTITY_MISMATCH",
+      "definition": "Machine and official-site observations agree on carrier, route, and target date, but the flight number and/or schedule identity differs.",
+      "example_case": "R1-124225e5 / Case 04 / Lufthansa",
+      "scope_limitation": "Analysis-only label. Do NOT create FLIGHT_IDENTITY_MISMATCH as an L8 enum. The existing L8 enum REPORT_ITINERARY_CHANGE is sufficient.",
+      "l8_handling_pattern": "REPORT_ITINERARY_CHANGE -> ITINERARY_CHANGED"
+    }
+  ],
+  "case_assignments": [
+    {
+      "case_id": "R1-0a02feab",
+      "candidate_id": "CGK-QR-1",
+      "machine_claim": "QR965 / CGK -> DOH / 2026-11-12",
+      "human_observation": "QR965 NOT present in official Qatar Airways search for CGK -> DOH on 2026-11-12. Official alternatives: QR955, QR957, QR959.",
+      "taxonomy_label": "EXISTENCE_FAILURE",
+      "machine_evidence_preserved": true,
+      "l8_action": "REPORT_NOT_FOUND",
+      "l8_state": "NOT_FOUND",
+      "error_dimension": "EXISTENCE"
+    },
+    {
+      "case_id": "R1-1dc1c91b",
+      "candidate_id": "SQ-SIN-CDG",
+      "machine_claim": "SQ336 / FRA -> CDG / 2026-11-12",
+      "human_observation": "SQ336 EXISTS on Singapore Airlines official site, but routing differs: official = SIN -> CDG.",
+      "taxonomy_label": "ROUTE_IDENTITY_MISMATCH",
+      "machine_evidence_preserved": true,
+      "l8_action": "REPORT_ITINERARY_CHANGE",
+      "l8_state": "ITINERARY_CHANGED",
+      "error_dimension": "ROUTE_IDENTITY"
+    },
+    {
+      "case_id": "R1-35a920a0",
+      "candidate_id": "TK-SIN-FCO",
+      "machine_claim": "TK55 SIN -> IST 2026-11-12 20:25 -> 01:50+1; TK1861 IST -> FCO 2026-11-13 06:55 -> 08:00; TR993 TPE -> SIN 2026-11-12 07:30 -> 12:00",
+      "human_observation": "TK55 observed on 2026-10-31 23:15 -> 05:50+1 (route matches, date differs). TK1861 observed on 2026-10-31 09:00 -> 09:45 (route matches, date differs). TR993 observed historically on 2024-03-26 19:27 -> 23:48 (route matches, HISTORICAL).",
+      "taxonomy_label": "TARGET_DATE_UNESTABLISHED",
+      "machine_evidence_preserved": true,
+      "l8_action": "NONE",
+      "l8_state": "UNVERIFIED",
+      "l8_state_note": "Unchanged from before recording. L8_ACTION = NONE because no existing L8 action semantically represents target-date-unobservability without falsely classifying as NOT_FOUND or CONFIRMED.",
+      "error_dimension": "TARGET_DATE_EVIDENCE"
+    },
+    {
+      "case_id": "R1-124225e5",
+      "candidate_id": "LH-SIN-FRA",
+      "machine_claim": "LH778 / SIN -> FRA / 2026-11-12 22:00 -> 05:50+1; TR993 / TPE -> SIN / 2026-11-12 07:30 -> 12:00 (positioning)",
+      "human_observation": "LH781 / SIN -> FRA / 2026-11-12 23:55 -> 06:15+1 (T2 -> T1, 13h 20m). Carrier matches Lufthansa; route matches SIN -> FRA; date matches 2026-11-12. Flight number and schedule differ from machine.",
+      "taxonomy_label": "FLIGHT_IDENTITY_MISMATCH",
+      "machine_evidence_preserved": true,
+      "l8_action": "REPORT_ITINERARY_CHANGE",
+      "l8_state": "ITINERARY_CHANGED",
+      "error_dimension": "FLIGHT_IDENTITY / SCHEDULE"
+    }
+  ],
+  "taxonomy_vs_l8_state_separation": {
+    "principle": "The taxonomy labels are ANALYSIS-ONLY. They are NOT L8 enums, NOT L8 states, NOT L8 actions. L8 enums remain FROZEN. The taxonomy categorizes what TYPE of discrepancy was observed; the L8 enum records the OPERATIONAL consequence within the bounded L8 vocabulary.",
+    "example_case04_separation": {
+      "case_id": "R1-124225e5",
+      "analysis_taxonomy_label": "FLIGHT_IDENTITY_MISMATCH",
+      "l8_action": "REPORT_ITINERARY_CHANGE",
+      "l8_state": "ITINERARY_CHANGED",
+      "note": "These are different semantic layers. Analysis layer describes the failure mode; L8 layer represents the operational state within the existing bounded vocabulary."
+    }
+  },
+  "error_dimension_taxonomy": {
+    "purpose": "Distinguish which MACHINE EVIDENCE DIMENSION failed. Do NOT collapse into a generic 'flight error'.",
+    "dimensions_observed": [
+      {
+        "dimension": "EXISTENCE",
+        "meaning": "Whether the flight identity itself appears in the official-site search for the target route/date.",
+        "case_id": "R1-0a02feab",
+        "taxonomy_label": "EXISTENCE_FAILURE"
+      },
+      {
+        "dimension": "ROUTE_IDENTITY",
+        "meaning": "Whether the route (carrier, origin, destination) assigned to the machine-recorded flight number matches the official-site observation.",
+        "case_id": "R1-1dc1c91b",
+        "taxonomy_label": "ROUTE_IDENTITY_MISMATCH"
+      },
+      {
+        "dimension": "TARGET_DATE_EVIDENCE",
+        "meaning": "Whether the target-date operation can be established from official-site observations. Includes observed-date vs target-date distinction and historical-evidence-class handling.",
+        "case_id": "R1-35a920a0",
+        "taxonomy_label": "TARGET_DATE_UNESTABLISHED"
+      },
+      {
+        "dimension": "FLIGHT_IDENTITY",
+        "meaning": "Whether the specific flight number/schedule identity for the target route/date matches between machine and official site.",
+        "case_id": "R1-124225e5",
+        "taxonomy_label": "FLIGHT_IDENTITY_MISMATCH"
+      }
+    ]
+  },
+  "machine_evidence_preservation_verification": {
+    "case_01": {
+      "case_id": "R1-0a02feab",
+      "machine_qr965_status": "UNCHANGED (machine evidence intact)"
+    },
+    "case_02": {
+      "case_id": "R1-1dc1c91b",
+      "machine_sq336_route": "FRA -> CDG (UNCHANGED)"
+    },
+    "case_03": {
+      "case_id": "R1-35a920a0",
+      "machine_target_date_itinerary_status": "UNCHANGED"
+    },
+    "case_04": {
+      "case_id": "R1-124225e5",
+      "machine_lh778_status": "UNCHANGED (machine evidence intact)"
+    }
+  },
+  "future_case_rule": {
+    "rule": "For Case 05 onward, do NOT force a new case into an existing category merely for convenience. Do NOT automatically create a new taxonomy category. If a genuinely new failure mode appears, record it as 'UNCLASSIFIED_NEW_OBSERVATION' and STOP taxonomy expansion for that case. Do NOT modify L8. This allows later taxonomy review after additional ground-truth cases accumulate.",
+    "unclassified_label": "UNCLASSIFIED_NEW_OBSERVATION"
+  },
+  "analytical_purpose": {
+    "what_r1_is_measuring": [
+      "Machine observation",
+      "Human official-site verification",
+      "Observed discrepancy / evidence limitation",
+      "Analysis taxonomy"
+    ],
+    "what_r1_is_NOT_measuring": [
+      "profitability",
+      "booking success",
+      "commercial value",
+      "best flight",
+      "winner",
+      "loser"
+    ]
+  },
+  "constraints_respected": {
+    "production_modules_modified": false,
+    "l8_enums_modified": false,
+    "l8_states_added": false,
+    "l8_human_actions_added": false,
+    "machine_evidence_altered": false,
+    "machine_human_reconciliation": false,
+    "jev_routing_altered": false,
+    "thresholds_modified": false,
+    "policy_modified": false,
+    "candidate_selection_modified": false,
+    "serpapi_calls": 0,
+    "kiwi_calls": 0,
+    "duffel_calls": 0,
+    "jev_calls": 0,
+    "browser_automation": 0,
+    "booking_actions": 0,
+    "payment_actions": 0,
+    "ticketing_actions": 0,
+    "scores_added": false,
+    "rankings_added": false,
+    "confidence_values_added": false,
+    "profitability_estimates_added": false,
+    "winner_labels_added": false,
+    "loser_labels_added": false,
+    "best_flight_labels_added": false
+  }
+}
