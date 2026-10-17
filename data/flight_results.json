@@ -1,5 +1,5 @@
 {
-  "evaluated_at": "2026-10-17 07:22:06",
+  "evaluated_at": "2026-10-17 12:00:10",
   "filters": {
     "min_savings_pct_vs_tpe": 35,
     "max_connection_risk": 0.25,
@@ -69,8 +69,8 @@
       "lounge_info": "SIN: SQ SilverKris（同航廈）可在 TR 抵達後走",
       "notes": "唯一『無轉機』轉到 FRA — 德國旅客超夢幻路線；FRA 後可接陸路+廉航去 BCN/AMS/BCN",
       "evaluation": {
-        "connection_failure_risk": 0.06,
-        "fatigue_index": 5.9,
+        "connection_failure_risk": 0.07,
+        "fatigue_index": 5.87,
         "aircraft_comfort": 8.5,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
@@ -152,9 +152,9 @@
       "lounge_info": "SIN: SilverKris (SQ Hub) — buffet + 淋浴, FRA: Lufthansa Senator",
       "notes": "新航自家全 PNR，餐飲亞洲最佳（含台灣料理）, FRA hub 轉機 SUITE 感受佳",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 6.69,
-        "aircraft_comfort": 6.3,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 6.45,
+        "aircraft_comfort": 6.1,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -221,8 +221,8 @@
       "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
       "evaluation": {
         "connection_failure_risk": 0.05,
-        "fatigue_index": 6.8,
-        "aircraft_comfort": 6.8,
+        "fatigue_index": 6.73,
+        "aircraft_comfort": 6.9,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -292,8 +292,8 @@
       "lounge_info": "SIN: SQ SilverKris（同航廈）可在 TR 抵達後走",
       "notes": "唯一『無轉機』轉到 FRA — 德國旅客超夢幻路線；FRA 後可接陸路+廉航去 BCN/AMS/BCN",
       "evaluation": {
-        "connection_failure_risk": 0.06,
-        "fatigue_index": 5.9,
+        "connection_failure_risk": 0.07,
+        "fatigue_index": 5.87,
         "aircraft_comfort": 8.5,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
@@ -375,9 +375,9 @@
       "lounge_info": "SIN: SilverKris (SQ Hub) — buffet + 淋浴, FRA: Lufthansa Senator",
       "notes": "新航自家全 PNR，餐飲亞洲最佳（含台灣料理）, FRA hub 轉機 SUITE 感受佳",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 6.69,
-        "aircraft_comfort": 6.3,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 6.45,
+        "aircraft_comfort": 6.1,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -444,8 +444,8 @@
       "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
       "evaluation": {
         "connection_failure_risk": 0.05,
-        "fatigue_index": 6.8,
-        "aircraft_comfort": 6.8,
+        "fatigue_index": 6.73,
+        "aircraft_comfort": 6.9,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -524,9 +524,9 @@
       "total_elapsed_min": 1470,
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 6.83,
-        "aircraft_comfort": 6.9,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 6.75,
+        "aircraft_comfort": 6.7,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -606,8 +606,91 @@
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
         "connection_failure_risk": 0.24,
-        "fatigue_index": 6.97,
-        "aircraft_comfort": 6.6,
+        "fatigue_index": 6.9,
+        "aircraft_comfort": 6.8,
+        "routing_verdict": "prime_deal",
+        "aircraft_auto_downgrade": false
+      }
+    },
+    {
+      "id": "AY-SIN-CDG",
+      "label": "SIN→HEL→CDG (Finnair via Helsinki)",
+      "currency": "TWD",
+      "positioning_cost": 11000,
+      "long_haul_cost": 48000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 61000,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 66,
+      "positioning": {
+        "from": "TPE",
+        "to": "SIN",
+        "carrier": "Scoot TR",
+        "duration_min": 250,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "SIN",
+        "to": "CDG",
+        "via": "HEL",
+        "carrier": "Finnair AY",
+        "duration_min": 1310,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TR",
+          "flight": "TR993",
+          "from": "TPE",
+          "to": "SIN",
+          "depart": "2026-11-12T07:30",
+          "arrive": "2026-11-12T12:00",
+          "cabin": "Y",
+          "duration_min": 250,
+          "operating_carrier": "TR",
+          "aircraft_type": "A320neo",
+          "aircraft_age_yr": 4
+        },
+        {
+          "carrier": "AY",
+          "flight": "AY132",
+          "from": "SIN",
+          "to": "HEL",
+          "depart": "2026-11-12T19:55",
+          "arrive": "2026-11-13T05:25",
+          "cabin": "J",
+          "duration_min": 720,
+          "operating_carrier": "AY",
+          "aircraft_type": "A350-900",
+          "aircraft_age_yr": 5
+        },
+        {
+          "carrier": "AY",
+          "flight": "AY873",
+          "from": "HEL",
+          "to": "CDG",
+          "depart": "2026-11-13T08:00",
+          "arrive": "2026-11-13T10:35",
+          "cabin": "J",
+          "duration_min": 155,
+          "operating_carrier": "AY",
+          "aircraft_type": "A321neo",
+          "aircraft_age_yr": 4
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 475,
+      "min_connection_dxb_mad_min": 155,
+      "total_elapsed_min": 1565,
+      "catering_friendly": "★★★★☆",
+      "lounge_info": "HEL: Finnair Lounge — 北歐風, SMR is one of the cleanest in Europe",
+      "notes": "HEL 轉機搭順風 — 冬天可省 1 小時 daylight，芬蘭航空北歐節奏友善",
+      "evaluation": {
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.04,
+        "aircraft_comfort": 8.3,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -689,91 +772,8 @@
       "notes": "羅馬 FCO 直達 5h 共乘 — TK 飛歐洲最便宜入口之一",
       "evaluation": {
         "connection_failure_risk": 0.1,
-        "fatigue_index": 7.22,
-        "aircraft_comfort": 8.5,
-        "routing_verdict": "prime_deal",
-        "aircraft_auto_downgrade": false
-      }
-    },
-    {
-      "id": "AY-SIN-CDG",
-      "label": "SIN→HEL→CDG (Finnair via Helsinki)",
-      "currency": "TWD",
-      "positioning_cost": 11000,
-      "long_haul_cost": 48000,
-      "transit_hotel_cost": 2000,
-      "total_cost": 61000,
-      "tpe_direct_baseline": 180000,
-      "savings_pct": 66,
-      "positioning": {
-        "from": "TPE",
-        "to": "SIN",
-        "carrier": "Scoot TR",
-        "duration_min": 250,
-        "cabin": "Y"
-      },
-      "long_haul": {
-        "from": "SIN",
-        "to": "CDG",
-        "via": "HEL",
-        "carrier": "Finnair AY",
-        "duration_min": 1310,
-        "cabin": "J"
-      },
-      "segments": [
-        {
-          "carrier": "TR",
-          "flight": "TR993",
-          "from": "TPE",
-          "to": "SIN",
-          "depart": "2026-11-12T07:30",
-          "arrive": "2026-11-12T12:00",
-          "cabin": "Y",
-          "duration_min": 250,
-          "operating_carrier": "TR",
-          "aircraft_type": "A320neo",
-          "aircraft_age_yr": 4
-        },
-        {
-          "carrier": "AY",
-          "flight": "AY132",
-          "from": "SIN",
-          "to": "HEL",
-          "depart": "2026-11-12T19:55",
-          "arrive": "2026-11-13T05:25",
-          "cabin": "J",
-          "duration_min": 720,
-          "operating_carrier": "AY",
-          "aircraft_type": "A350-900",
-          "aircraft_age_yr": 5
-        },
-        {
-          "carrier": "AY",
-          "flight": "AY873",
-          "from": "HEL",
-          "to": "CDG",
-          "depart": "2026-11-13T08:00",
-          "arrive": "2026-11-13T10:35",
-          "cabin": "J",
-          "duration_min": 155,
-          "operating_carrier": "AY",
-          "aircraft_type": "A321neo",
-          "aircraft_age_yr": 4
-        }
-      ],
-      "same_pnr": true,
-      "interlined_baggage": true,
-      "terminal_change_kul_dxb": false,
-      "min_connection_kul_dxb_min": 475,
-      "min_connection_dxb_mad_min": 155,
-      "total_elapsed_min": 1565,
-      "catering_friendly": "★★★★☆",
-      "lounge_info": "HEL: Finnair Lounge — 北歐風, SMR is one of the cleanest in Europe",
-      "notes": "HEL 轉機搭順風 — 冬天可省 1 小時 daylight，芬蘭航空北歐節奏友善",
-      "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 7.29,
-        "aircraft_comfort": 8.3,
+        "fatigue_index": 7.25,
+        "aircraft_comfort": 8.4,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -852,9 +852,9 @@
       "total_elapsed_min": 1680,
       "notes": "trip.com 報價 USD 2,249；Etihad EY 47 為連續夜航，AUH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.42,
-        "aircraft_comfort": 7.4,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.46,
+        "aircraft_comfort": 7.5,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -931,8 +931,8 @@
       "total_elapsed_min": 1645,
       "notes": "全部 QR 自己的票 + MCT 達標；DOH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.18,
-        "fatigue_index": 6.87,
+        "connection_failure_risk": 0.14,
+        "fatigue_index": 7.0,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": true
@@ -1012,92 +1012,11 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.04,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.1,
         "aircraft_comfort": 8.5,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
-      }
-    },
-    {
-      "id": "KE-ICN-BCN-direct",
-      "label": "ICN→BCN (Korean Air via ICN→AMS→BCN) — KE+KL partner",
-      "currency": "TWD",
-      "positioning_cost": 7500,
-      "long_haul_cost": 68000,
-      "transit_hotel_cost": 2000,
-      "total_cost": 77500,
-      "tpe_direct_baseline": 180000,
-      "savings_pct": 57,
-      "positioning": {
-        "from": "TPE",
-        "to": "ICN",
-        "carrier": "Tigerair TW",
-        "duration_min": 165,
-        "cabin": "Y"
-      },
-      "long_haul": {
-        "from": "ICN",
-        "to": "BCN",
-        "via": "AMS",
-        "carrier": "Korean Air + KLM partner",
-        "duration_min": 1010,
-        "cabin": "J"
-      },
-      "segments": [
-        {
-          "carrier": "TW",
-          "flight": "TW672",
-          "from": "TPE",
-          "to": "ICN",
-          "depart": "2026-11-12T07:00",
-          "arrive": "2026-11-12T10:45",
-          "cabin": "Y",
-          "duration_min": 165,
-          "operating_carrier": "TW",
-          "aircraft_type": "A320neo",
-          "aircraft_age_yr": 3
-        },
-        {
-          "carrier": "KE",
-          "flight": "KE925",
-          "from": "ICN",
-          "to": "AMS",
-          "depart": "2026-11-12T17:30",
-          "arrive": "2026-11-12T23:45",
-          "cabin": "J",
-          "duration_min": 750,
-          "operating_carrier": "KE",
-          "aircraft_type": "B777-300ER",
-          "aircraft_age_yr": 11
-        },
-        {
-          "carrier": "KL",
-          "flight": "KL1685",
-          "from": "AMS",
-          "to": "BCN",
-          "depart": "2026-11-13T07:30",
-          "arrive": "2026-11-13T09:50",
-          "cabin": "J",
-          "duration_min": 140,
-          "operating_carrier": "KL",
-          "aircraft_type": "B737",
-          "aircraft_age_yr": 10
-        }
-      ],
-      "same_pnr": true,
-      "interlined_baggage": true,
-      "terminal_change_kul_dxb": false,
-      "min_connection_kul_dxb_min": 405,
-      "min_connection_dxb_mad_min": 465,
-      "total_elapsed_min": 1610,
-      "notes": "SkyTeam partner 同 PNR；AMS 貴賓室休息時間充裕；BCN 無中轉",
-      "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.18,
-        "aircraft_comfort": 5.0,
-        "routing_verdict": "acceptable_economy",
-        "aircraft_auto_downgrade": true
       }
     },
     {
@@ -1184,6 +1103,87 @@
       }
     },
     {
+      "id": "KE-ICN-BCN-direct",
+      "label": "ICN→BCN (Korean Air via ICN→AMS→BCN) — KE+KL partner",
+      "currency": "TWD",
+      "positioning_cost": 7500,
+      "long_haul_cost": 68000,
+      "transit_hotel_cost": 2000,
+      "total_cost": 77500,
+      "tpe_direct_baseline": 180000,
+      "savings_pct": 57,
+      "positioning": {
+        "from": "TPE",
+        "to": "ICN",
+        "carrier": "Tigerair TW",
+        "duration_min": 165,
+        "cabin": "Y"
+      },
+      "long_haul": {
+        "from": "ICN",
+        "to": "BCN",
+        "via": "AMS",
+        "carrier": "Korean Air + KLM partner",
+        "duration_min": 1010,
+        "cabin": "J"
+      },
+      "segments": [
+        {
+          "carrier": "TW",
+          "flight": "TW672",
+          "from": "TPE",
+          "to": "ICN",
+          "depart": "2026-11-12T07:00",
+          "arrive": "2026-11-12T10:45",
+          "cabin": "Y",
+          "duration_min": 165,
+          "operating_carrier": "TW",
+          "aircraft_type": "A320neo",
+          "aircraft_age_yr": 3
+        },
+        {
+          "carrier": "KE",
+          "flight": "KE925",
+          "from": "ICN",
+          "to": "AMS",
+          "depart": "2026-11-12T17:30",
+          "arrive": "2026-11-12T23:45",
+          "cabin": "J",
+          "duration_min": 750,
+          "operating_carrier": "KE",
+          "aircraft_type": "B777-300ER",
+          "aircraft_age_yr": 11
+        },
+        {
+          "carrier": "KL",
+          "flight": "KL1685",
+          "from": "AMS",
+          "to": "BCN",
+          "depart": "2026-11-13T07:30",
+          "arrive": "2026-11-13T09:50",
+          "cabin": "J",
+          "duration_min": 140,
+          "operating_carrier": "KL",
+          "aircraft_type": "B737",
+          "aircraft_age_yr": 10
+        }
+      ],
+      "same_pnr": true,
+      "interlined_baggage": true,
+      "terminal_change_kul_dxb": false,
+      "min_connection_kul_dxb_min": 405,
+      "min_connection_dxb_mad_min": 465,
+      "total_elapsed_min": 1610,
+      "notes": "SkyTeam partner 同 PNR；AMS 貴賓室休息時間充裕；BCN 無中轉",
+      "evaluation": {
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.32,
+        "aircraft_comfort": 5.0,
+        "routing_verdict": "acceptable_economy",
+        "aircraft_auto_downgrade": true
+      }
+    },
+    {
       "id": "CGK-QR-1",
       "label": "CGK→DOH→BCN (QR via DOH) — Google Flights $811",
       "currency": "TWD",
@@ -1260,7 +1260,7 @@
       "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
       "evaluation": {
         "connection_failure_risk": 0.13,
-        "fatigue_index": 7.49,
+        "fatigue_index": 7.42,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1342,9 +1342,9 @@
       "total_elapsed_min": 1470,
       "notes": "KUL EK 是同 PNR；TPE→KUL D7 廉航自購，銜接時間 7h",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 6.83,
-        "aircraft_comfort": 6.9,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 6.75,
+        "aircraft_comfort": 6.7,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -1424,8 +1424,8 @@
       "total_elapsed_min": 1470,
       "notes": "DOH 中轉只需 1h55m，可機場貴賓室休息",
       "evaluation": {
-        "connection_failure_risk": 0.35,
-        "fatigue_index": 6.59,
+        "connection_failure_risk": 0.31,
+        "fatigue_index": 6.69,
         "aircraft_comfort": 7.8,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
@@ -1505,9 +1505,9 @@
       "total_elapsed_min": 1680,
       "notes": "trip.com 報價 USD 2,249；Etihad EY 47 為連續夜航，AUH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.42,
-        "aircraft_comfort": 7.4,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.46,
+        "aircraft_comfort": 7.5,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -1589,7 +1589,7 @@
       "notes": "Google Flights 報價 USD 811；總成本最便宜，但是含夜航",
       "evaluation": {
         "connection_failure_risk": 0.13,
-        "fatigue_index": 7.49,
+        "fatigue_index": 7.42,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1669,8 +1669,8 @@
       "total_elapsed_min": 1685,
       "notes": "trip.com 報價 USD 1,587；AUH 5h 轉機相對舒適",
       "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.04,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.1,
         "aircraft_comfort": 8.5,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1751,8 +1751,8 @@
       "notes": "DXB 跨航廈轉機（Term 3 → Term 1），但時間充裕",
       "evaluation": {
         "connection_failure_risk": 0.24,
-        "fatigue_index": 6.97,
-        "aircraft_comfort": 6.6,
+        "fatigue_index": 6.9,
+        "aircraft_comfort": 6.8,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -1791,9 +1791,9 @@
       "total_elapsed_min": 1480,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1407.",
       "evaluation": {
-        "connection_failure_risk": 0.26,
-        "fatigue_index": 7.79,
-        "aircraft_comfort": 2.9,
+        "connection_failure_risk": 0.3,
+        "fatigue_index": 7.85,
+        "aircraft_comfort": 3.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
       }
@@ -1832,8 +1832,8 @@
       "total_elapsed_min": 1480,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1507.",
       "evaluation": {
-        "connection_failure_risk": 0.28,
-        "fatigue_index": 7.88,
+        "connection_failure_risk": 0.29,
+        "fatigue_index": 7.75,
         "aircraft_comfort": 3.2,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1914,8 +1914,8 @@
       "total_elapsed_min": 1528,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
-        "connection_failure_risk": 0.14,
-        "fatigue_index": 7.89,
+        "connection_failure_risk": 0.15,
+        "fatigue_index": 7.85,
         "aircraft_comfort": 3.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1955,8 +1955,8 @@
       "total_elapsed_min": 1450,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
-        "connection_failure_risk": 0.3,
-        "fatigue_index": 7.48,
+        "connection_failure_risk": 0.28,
+        "fatigue_index": 7.41,
         "aircraft_comfort": 3.1,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -1996,9 +1996,9 @@
       "total_elapsed_min": 1450,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1306.",
       "evaluation": {
-        "connection_failure_risk": 0.25,
+        "connection_failure_risk": 0.27,
         "fatigue_index": 7.54,
-        "aircraft_comfort": 3.3,
+        "aircraft_comfort": 3.1,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
       }
@@ -2065,8 +2065,8 @@
       "notes": "Korean Air ICN→MAD 直飛商務艙 — 唯一『零連接風險 + 不用過境旅館』方案。KE J 服務是 Prestige Suite，IFE 完整。",
       "evaluation": {
         "connection_failure_risk": 0.05,
-        "fatigue_index": 6.8,
-        "aircraft_comfort": 6.8,
+        "fatigue_index": 6.73,
+        "aircraft_comfort": 6.9,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -2145,8 +2145,8 @@
       "total_elapsed_min": 1610,
       "notes": "SkyTeam partner 同 PNR；AMS 貴賓室休息時間充裕；BCN 無中轉",
       "evaluation": {
-        "connection_failure_risk": 0.09,
-        "fatigue_index": 7.18,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 7.32,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": true
@@ -2224,8 +2224,8 @@
       "total_elapsed_min": 1650,
       "notes": "QR SkyTeam codeshare with OZ；DOH MCT 80 分鐘達標",
       "evaluation": {
-        "connection_failure_risk": 0.51,
-        "fatigue_index": 6.97,
+        "connection_failure_risk": 0.54,
+        "fatigue_index": 6.9,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": true
@@ -2303,8 +2303,8 @@
       "total_elapsed_min": 1645,
       "notes": "全部 QR 自己的票 + MCT 達標；DOH 貴賓室可沖澡",
       "evaluation": {
-        "connection_failure_risk": 0.18,
-        "fatigue_index": 6.87,
+        "connection_failure_risk": 0.14,
+        "fatigue_index": 7.0,
         "aircraft_comfort": 5.0,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": true
@@ -2384,8 +2384,8 @@
       "total_elapsed_min": 1650,
       "notes": "DXB Term 3 → Term 1 跨航廈；90 分鐘 MCT 達標但稍趕",
       "evaluation": {
-        "connection_failure_risk": 0.53,
-        "fatigue_index": 7.53,
+        "connection_failure_risk": 0.49,
+        "fatigue_index": 7.38,
         "aircraft_comfort": 8.3,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -2467,9 +2467,9 @@
       "lounge_info": "SIN: SilverKris (SQ Hub) — buffet + 淋浴, FRA: Lufthansa Senator",
       "notes": "新航自家全 PNR，餐飲亞洲最佳（含台灣料理）, FRA hub 轉機 SUITE 感受佳",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 6.69,
-        "aircraft_comfort": 6.3,
+        "connection_failure_risk": 0.1,
+        "fatigue_index": 6.45,
+        "aircraft_comfort": 6.1,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -2634,8 +2634,8 @@
       "notes": "羅馬 FCO 直達 5h 共乘 — TK 飛歐洲最便宜入口之一",
       "evaluation": {
         "connection_failure_risk": 0.1,
-        "fatigue_index": 7.22,
-        "aircraft_comfort": 8.5,
+        "fatigue_index": 7.25,
+        "aircraft_comfort": 8.4,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
       }
@@ -2703,8 +2703,8 @@
       "lounge_info": "SIN: SQ SilverKris（同航廈）可在 TR 抵達後走",
       "notes": "唯一『無轉機』轉到 FRA — 德國旅客超夢幻路線；FRA 後可接陸路+廉航去 BCN/AMS/BCN",
       "evaluation": {
-        "connection_failure_risk": 0.06,
-        "fatigue_index": 5.9,
+        "connection_failure_risk": 0.07,
+        "fatigue_index": 5.87,
         "aircraft_comfort": 8.5,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
@@ -2786,8 +2786,8 @@
       "lounge_info": "HEL: Finnair Lounge — 北歐風, SMR is one of the cleanest in Europe",
       "notes": "HEL 轉機搭順風 — 冬天可省 1 小時 daylight，芬蘭航空北歐節奏友善",
       "evaluation": {
-        "connection_failure_risk": 0.11,
-        "fatigue_index": 7.29,
+        "connection_failure_risk": 0.09,
+        "fatigue_index": 7.04,
         "aircraft_comfort": 8.3,
         "routing_verdict": "prime_deal",
         "aircraft_auto_downgrade": false
@@ -2827,7 +2827,7 @@
       "total_elapsed_min": 1372,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1909.",
       "evaluation": {
-        "connection_failure_risk": 0.19,
+        "connection_failure_risk": 0.22,
         "fatigue_index": 7.29,
         "aircraft_comfort": 2.7,
         "routing_verdict": "acceptable_economy",
@@ -2868,9 +2868,9 @@
       "total_elapsed_min": 1372,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 2010.",
       "evaluation": {
-        "connection_failure_risk": 0.2,
-        "fatigue_index": 7.35,
-        "aircraft_comfort": 2.7,
+        "connection_failure_risk": 0.19,
+        "fatigue_index": 7.42,
+        "aircraft_comfort": 2.8,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
       }
@@ -2909,8 +2909,8 @@
       "total_elapsed_min": 1462,
       "notes": "Auto-collected 2026-09-27 via heuristic scan; fare ~USD 1708.",
       "evaluation": {
-        "connection_failure_risk": 0.22,
-        "fatigue_index": 7.82,
+        "connection_failure_risk": 0.21,
+        "fatigue_index": 7.89,
         "aircraft_comfort": 2.6,
         "routing_verdict": "acceptable_economy",
         "aircraft_auto_downgrade": false
@@ -2944,7 +2944,7 @@
     },
     {
       "id": "AUTO-bkk-emirates-BCN",
-      "reason": "fatigue>7.5, aircraft_comfort<4"
+      "reason": "risk>25%, fatigue>7.5, aircraft_comfort<4"
     },
     {
       "id": "OZ-ICN-MAD",
@@ -2952,7 +2952,7 @@
     },
     {
       "id": "EK-ICN-MAD",
-      "reason": "risk>25%, fatigue>7.5"
+      "reason": "risk>25%"
     },
     {
       "id": "AUTO-icn-emirates-MAD",
